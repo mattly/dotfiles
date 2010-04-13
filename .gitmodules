@@ -1,9 +1,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/fuzzyfinder_textmate"]
-	path = vim/bundle/fuzzyfinder_textmate
-	url = git://github.com/nate/vim-fuzzy-finder-textmate-bundle.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
