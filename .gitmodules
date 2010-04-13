@@ -1,0 +1,51 @@
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/fuzzyfinder_textmate"]
+	path = vim/bundle/fuzzyfinder_textmate
+	url = git://github.com/nate/vim-fuzzy-finder-textmate-bundle.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-unimpaired"]
+	path = vim/bundle/vim-unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = git://github.com/esukram/taglist.vim.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/vim-ragtag"]
+	path = vim/bundle/vim-ragtag
+	url = git://github.com/tpope/vim-ragtag.git
+[submodule "vim/bundle/vim-git"]
+	path = vim/bundle/vim-git
+	url = git://github.com/tpope/vim-git.git
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = git://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/vim-rdoc"]
+	path = vim/bundle/vim-rdoc
+	url = git://github.com/hallison/vim-rdoc.git
+[submodule "vim/bundle/vim-tcomment"]
+	path = vim/bundle/vim-tcomment
+	url = git://github.com/tsaleh/vim-tcomment.git
+[submodule "vim/bundle/vim-supertab"]
+	path = vim/bundle/vim-supertab
+	url = git://github.com/tsaleh/vim-supertab.git
+[submodule "vim/bundle/vim-indent-object"]
+	path = vim/bundle/vim-indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule "git/bundle/vim-autoclose"]
+	path = git/bundle/vim-autoclose
+	url = git://github.com/Townk/vim-autoclose.git
+[submodule "git/bundle/vim-coffee-script"]
+	path = git/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git

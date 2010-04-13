@@ -1,0 +1,41 @@
+# ~/.screenrc
+
+startup_message off
+shelltitle ''
+shell /bin/zsh
+
+# because we like C-a is useful as 'goto beginning of line'
+# instead we use C-z to enter commands
+escape ^Zz
+
+# remove some stupid/dangerous key bindings
+bind k
+bind ^k
+bind ^\
+bind \\
+bind ^h
+
+# a is title instead of A
+bind a title
+
+# . is windowlist, in recent order
+bind '.' windowlist -b -m
+
+# comma enters command mode, so much easier to type
+bind , colon
+
+# switching windows should be easier than ^-Shift-i
+bind s focus
+
+# always show the caption
+# caption always "%?%F%{.R.}%?%3n %t%?"
+caption splitonly
+hardstatus alwayslastline
+hardstatus string "%{kbW}%-w%{.rW}%n %t%{-}%+w %=%{kbW} %H %m/%d %0c:%s"
+
+term xterm-256color
+termcapinfo xterm*|rxvt*|kterm*|Eterm* ti@:te@
+altscreen on
+encoding UTF-8
+
+screen -t hi

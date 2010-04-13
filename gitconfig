@@ -1,0 +1,58 @@
+[core]
+  excludesfile = /Users/mattly/.gitignore
+
+[apply]
+
+[branch]
+  autosetupmerge=false
+  autosetuprebase=always
+
+[color]
+  ui = auto
+[color "branch"]
+  current=reverse
+  remote=red
+[color "diff"]
+  meta= yellow bold
+  frag=magenta bold
+  old=red bold
+  new=green bold
+[color "status"]
+  added=magenta
+  changed=red
+  untracked=green
+
+[user]
+  email = matt@flowerpowered.com
+  name = Matt Lyon
+
+[merge]
+  log = true
+  tool = opendiff
+
+[diff "ruby"]
+  funcname = "^ *\\(\\(class\\|module\\|def\\) .*\\)"
+
+[format]
+  pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
+
+[log]
+  date=short
+
+[alias]
+  amend = commit -v --amend
+  addp = add --patch
+  axe = !sh -c 'git log -S"$0"'
+  branches = branch -a --color -v
+  cheat = !sh -c 'cheat git | less'
+  delete = !sh -c 'git branch -d "$1" && git push "$0" :refs/heads/"$1"'
+  fold = !sh -c 'git merge --no-ff "$0" && git branch -d "$0"'
+  label = tag -a
+  pending = !git --no-pager log origin/master..master && echo
+  promote = !sh -c 'git push "$0" `git branch | grep \"^*\" | cut -d\" \" -f2`'
+  prune = !git remote | xargs -n 1 git remote prune
+  staged = diff --cached
+  track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
+  up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  who = log --pretty="format:%an - %s"
+
