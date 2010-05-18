@@ -1,4 +1,5 @@
 silent! call pathogen#runtime_append_all_bundles()
+
 silent! call pathogen#helptags()
 
 set nocompatible " the past is better left in the past
@@ -43,13 +44,19 @@ set whichwrap+=<,>,h,l
 " o: ditto, but for o/O in normal node
 " q: allow 'gq' to autowrap/format comments as well as normal text
 " 2: use the second line of a paragraph to determine proper indentation level
-set formatoptions=tcroq2
+set formatoptions+=tcroq2
+set formatprg="par -qe"
 set listchars=tab:»·,trail:·,precedes:<,extends:>
-set list
+set nolist
 set cursorline
 
 set laststatus=2
 set backspace=indent,eol,start	" backspace over anything
+
+inoremap <M-Backspace> <C-[>ciw
+
+" get out of insert moar easily
+inoremap jj <Esc>
 
 set gdefault
 set ignorecase
@@ -57,7 +64,6 @@ set smartcase
 set wrapscan
 set incsearch hlsearch
 nnoremap <Esc> :call RemoveHighlight()<cr>
-
 function! RemoveHighlight()
   if &hlsearch
     set nohlsearch
@@ -83,20 +89,11 @@ cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
 
-" Return exits insert mode and shifts the cursor after what we just typed
-inoremap <CR> <Esc>`^
-" so does esc, for that matter
-inoremap <Esc> <Esc>`^
-" and shift-return inserts a carraige-return
-inoremap <S-CR> <cr>
-" and return also enters insert mode on the next line from normal mode
-nnoremap <CR> o
-
 " set our leader:
-
+let mapleader = ','
 
 if has("gui_running")
-	set gfn=Menlo:h13
+	set gfn=Inconsolata:h16
 	set linespace=1
   " a: visual-mode autoselect (takes over the OS selection process)
   " e: use the gui's tabs
@@ -107,12 +104,12 @@ if has("gui_running")
   " r: right-hand scrollbar
   " l: left-hand scrollbar
   " L: left-hand scrollbar when vertically-split window
-	set guioptions=aegmt
+  set guioptions=aegmt
   set guioptions-=TrlL
 
   set fuoptions=maxvert,maxhorz
 
-  set lines=40 columns=100
+  " set lines=35 columns=100
 endif
 
 set scrolloff=10
@@ -122,6 +119,15 @@ set splitbelow
 
 set wildmenu
 set wildmode=list:longest
+
+function! DiffOrig()
+  if &diff
+    wincmd p | bdel | diffoff
+  else
+    vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+  endif
+endfunction
+nnoremap FD :call DiffOrig()<cr>
 
 syntax on
 filetype plugin indent on
@@ -164,4 +170,9 @@ endfunction
 " turn some ragtag stuff on globally
 let g:ragtag_global_maps = 1
 
+" NERDTree crap
+
+nnoremap <D-d> :NERDTree<cr>
+let loaded_nerd_tree = 1
+let NERDTreeShowHidden = 1
 
