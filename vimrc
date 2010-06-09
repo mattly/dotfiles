@@ -1,5 +1,4 @@
 silent! call pathogen#runtime_append_all_bundles()
-
 silent! call pathogen#helptags()
 
 set nocompatible " the past is better left in the past
@@ -70,10 +69,12 @@ function! RemoveHighlight()
   endif
 endfunction
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme mustang
+" colorscheme github
 
 set foldmethod=indent
-set foldcolumn=2
+set foldcolumn=0
 set foldnestmax=8
 set foldlevel=3
 
@@ -91,6 +92,8 @@ cnoremap <C-K>      <C-U>
 
 " set our leader:
 let mapleader = ','
+
+nnoremap <Leader>a :Ack 
 
 if has("gui_running")
 	set gfn=Inconsolata:h16
@@ -173,6 +176,7 @@ let g:ragtag_global_maps = 1
 " NERDTree crap
 
 nnoremap <D-d> :NERDTree<cr>
-let loaded_nerd_tree = 1
+" let loaded_nerd_tree = 1
 let NERDTreeShowHidden = 1
 
+set statusline=%<%f\ %h%m%r%y%=%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%-14.(%l,%c%V%)\ %P
