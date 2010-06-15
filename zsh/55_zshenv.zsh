@@ -2,6 +2,9 @@
 
 export PATH=/bin:/sbin:/usr/sbin:/usr/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
+if [ -d "$HOME/bin" ]; then
+    export PATH=$HOME/bin:$PATH
+fi
 
 export TERM=linux
 export EDITOR="mvim -f" 
@@ -15,8 +18,5 @@ export GREP_COLOR='1;36'
 
 # set word boundries to include puncutation
 export WORDCHARS=''
-
-# export MAGICK_HOME='/usr/local'
-# export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 
 source ~/.env
