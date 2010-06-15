@@ -69,9 +69,8 @@ function! RemoveHighlight()
   endif
 endfunction
 
-" colorscheme molokai
-colorscheme mustang
-" colorscheme github
+" colorscheme mustang
+colorscheme dawn
 
 set foldmethod=indent
 set foldcolumn=0
@@ -96,7 +95,7 @@ let mapleader = ','
 nnoremap <Leader>a :Ack 
 
 if has("gui_running")
-	set gfn=Inconsolata:h16
+	set gfn=Menlo:h13
 	set linespace=1
   " a: visual-mode autoselect (takes over the OS selection process)
   " e: use the gui's tabs
