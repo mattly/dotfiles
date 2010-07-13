@@ -69,13 +69,20 @@ function! RemoveHighlight()
   endif
 endfunction
 
-colorscheme mustang
-" colorscheme dawn
+" colorscheme mustang
+colorscheme dawn
 
 set foldmethod=indent
 set foldcolumn=0
 set foldnestmax=8
 set foldlevel=3
+
+" F2 toggles folding
+nnoremap <F2> za
+" F1 opens all folding
+nnoremap <F1> zR
+" F3 closes all folding
+nnoremap <F3> zM
 
 " command line mappings for Ex mode, use emacs key bindings, sorry
 cnoremap <C-A>      <Home>
@@ -85,36 +92,29 @@ cnoremap <C-K>      <C-U>
 " set our leader:
 let mapleader = ','
 
-" open folding, toggle folding, close folding
-nnoremap <Leader>ft zA
-nnoremap <Leader>fo zR
-nnoremap <Leader>fc zM
-
-nnoremap <Leader>T :CommandTFlush<CR>
-
 nnoremap <Leader>a :Ack 
 
-nnoremap <Leader>g :Gstatus<CR>
-
 if has("gui_running")
-	set gfn=Menlo:h15
+	set gfn=Menlo:h13
 	set linespace=1
   " a: visual-mode autoselect (takes over the OS selection process)
   " e: use the gui's tabs
   " g: grey-out non-active menu items
   " m: show system menu bars
   " t: include tear-off menu items
-  set guioptions=aegmt
   " T: system toolbar
   " r: right-hand scrollbar
   " l: left-hand scrollbar
   " L: left-hand scrollbar when vertically-split window
+  set guioptions=aegmt
   set guioptions-=TrlL
 
   set fuoptions=maxvert,maxhorz
+
+  " set lines=35 columns=100
 endif
 
-set scrolloff=8
+set scrolloff=10
 
 set switchbuf=usetab
 set splitbelow
@@ -129,10 +129,17 @@ function! DiffOrig()
     vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
   endif
 endfunction
-nnoremap <Leader>d :call DiffOrig()<cr>
+nnoremap FD :call DiffOrig()<cr>
 
 syntax on
 filetype plugin indent on
+
+nnoremap <C-t> :FufRenewCache<cr>:FufFile**/<cr>
+nnoremap <C-q> :FufBuffer<cr>
+nnoremap <C-z> :FufDir**/<cr>
+nnoremap <C-l> :FufLine<cr>
+
+let g:fuf_keyOpenTabpage='<S-CR>'
 
 " window and tab movement, cmd-shift-(move) for tabs, cmd-option-(move) for
 " windows
@@ -171,6 +178,4 @@ nnoremap <D-d> :NERDTree<cr>
 " let loaded_nerd_tree = 1
 let NERDTreeShowHidden = 1
 
-set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
-
-
+set statusline=%<%f\ %h%m%r%y%=%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%-14.(%l,%c%V%)\ %P
