@@ -86,9 +86,12 @@ cnoremap <C-K>      <C-U>
 let mapleader = ','
 
 " open folding, toggle folding, close folding
-nnoremap <Leader>ft zA
-nnoremap <Leader>fo zR
-nnoremap <Leader>fc zM
+nnoremap <Leader>ft za
+nnoremap <Leader>fT zA
+nnoremap <Leader>fo zr
+nnoremap <Leader>fO zR
+nnoremap <Leader>fc zm
+nnoremap <Leader>fC zM
 
 nnoremap <Leader>T :CommandTFlush<CR>
 
