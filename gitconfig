@@ -49,7 +49,7 @@
   fold = !sh -c 'git merge --no-ff "$0" && git branch -d "$0"'
   label = tag -a
   pending = !git --no-pager log origin/master..master && echo
-  promote = !sh -c 'git push "$0" `git branch | grep \"^*\" | cut -d\" \" -f2`'
+  promote = !sh -c 'git push -u "$0" `git branch | grep \"^*\" | cut -d\" \" -f2`'
   prune = !git remote | xargs -n 1 git remote prune
   staged = diff --cached
   track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
