@@ -5,6 +5,8 @@ augroup filetypedetect
   au BufNewFile,BufRead nginx/*.conf      setf nginx
   
   au BufNewFile,BufRead Capfile,Gemfile,config.ru         setf ruby
+
+  au BufNewFile,BufRead gitconfig         setf gitconfig
 augroup END
 
 let g:surround_45 = "<% \r %>"

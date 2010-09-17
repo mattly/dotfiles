@@ -1,11 +1,11 @@
 [core]
-  excludesfile = /Users/mattly/.gitignore
+  excludesfile=/Users/mattly/.gitignore
 
 [apply]
 
 [branch]
-  autosetupmerge=false
-  autosetuprebase=always
+  ; autosetupmerge=false
+  ; autosetuprebase=always
 
 [color]
   ui = auto
@@ -13,7 +13,7 @@
   current=reverse
   remote=red
 [color "diff"]
-  meta= yellow bold
+  meta=yellow bold
   frag=magenta bold
   old=red bold
   new=green bold
@@ -23,15 +23,15 @@
   untracked=green
 
 [user]
-  email = matt@flowerpowered.com
-  name = Matt Lyon
+  email=matt@flowerpowered.com
+  name=Matt Lyon
 
 [merge]
-  log = true
-  tool = opendiff
+  log=true
+  tool=opendiff
 
 [diff "ruby"]
-  funcname = "^ *\\(\\(class\\|module\\|def\\) .*\\)"
+  funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
 
 [format]
   pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
@@ -56,3 +56,5 @@
   up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
   who = log --pretty="format:%an - %s"
 
+[push]
+	default = tracking
