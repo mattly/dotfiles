@@ -5,7 +5,7 @@
 
 [branch]
   ; autosetupmerge=false
-  ; autosetuprebase=always
+  autosetuprebase=always
 
 [color]
   ui = auto

@@ -3,6 +3,8 @@ silent! call pathogen#helptags()
 
 set nocompatible " the past is better left in the past
 
+set modelines=0 " workaround for vulnerability with spell files
+
 set encoding=utf-8 nobomb
 
 set noautochdir
@@ -11,6 +13,8 @@ set sessionoptions=buffers,folds,curdir,tabpages
 " Session Management
 nnoremap SS :wa<cr>:mksession! ~/.vim/session/
 nnoremap SO :so ~/.vim/session/
+
+nmap <Leader>x <Plug>ToggleAutoCloseMappings
 
 set noerrorbells
 set visualbell
@@ -25,10 +29,14 @@ set noswapfile
 
 set spell spelllang=en_us
 
-set expandtab shiftwidth=2 tabstop=2 " ruby and javascript
+set expandtab 
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set smarttab
 set autoindent
 
+set ttyfast
 set scrolloff=3		" minimum lines to show around cursor
 set sidescrolloff=4	" min characters to show
 set linebreak
@@ -45,23 +53,43 @@ set whichwrap+=<,>,h,l
 " 2: use the second line of a paragraph to determine proper indentation level
 set formatoptions+=tcroq2
 set formatprg="par -qe"
-set listchars=tab:»·,trail:·,precedes:<,extends:>
-set nolist
+set listchars=tab:»·,trail:·,precedes:<,extends:>,eol:¬
+set list
 set cursorline
 
 set laststatus=2
 set backspace=indent,eol,start	" backspace over anything
+
+set undofile
+
+nnoremap / /\v
+vnoremap / /\v
+
+nnoremap <tab> %
+vnoremap <tab> %
 
 inoremap <M-Backspace> <C-[>ciw
 
 " get out of insert moar easily
 inoremap jj <Esc>
 
+" don't use the fucking arrow keys in insert mode
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" fucking help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
 set gdefault
 set ignorecase
 set smartcase
 set wrapscan
-set incsearch hlsearch
+set incsearch
+set hlsearch
 nnoremap <Esc> :call RemoveHighlight()<cr>
 function! RemoveHighlight()
   if &hlsearch
@@ -100,7 +128,7 @@ nnoremap <Leader>a :Ack
 nnoremap <Leader>g :Gstatus<CR>
 
 if has("gui_running")
-	set gfn=Menlo:h15
+	set gfn=Menlo:h14
 	set linespace=1
   " a: visual-mode autoselect (takes over the OS selection process)
   " e: use the gui's tabs
@@ -135,6 +163,7 @@ endfunction
 nnoremap <Leader>d :call DiffOrig()<cr>
 
 syntax on
+filetype off
 filetype plugin indent on
 
 " window and tab movement, cmd-shift-(move) for tabs, cmd-option-(move) for
