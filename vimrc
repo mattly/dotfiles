@@ -139,6 +139,7 @@ set foldlevel=3
 " --- navigation ------------------------------------------------------
 
 " --- Plugins ---------------------------------------------------------
+" --- RagTag ----------------------------------------------------------
 let g:ragtag_global_maps = 1
 
 " --- Git / Fugitive --------------------------------------------------
@@ -173,9 +174,6 @@ if has("gui_running")
 
   set fuoptions=maxvert,maxhorz
 endif
-
-
-map <silent> <Leader>r :!ctags --extra=+f -R *<CR>
 
 function! DiffOrig()
   if &diff
