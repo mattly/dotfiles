@@ -1,11 +1,9 @@
+[user]
+  email=matthew@lyonheart.us
+  name=Matthew Lyon
+
 [core]
   excludesfile=/Users/mattly/.gitignore
-
-[apply]
-
-[branch]
-  ; autosetupmerge=false
-  autosetuprebase=always
 
 [color]
   ui = auto
@@ -22,13 +20,9 @@
   changed=red
   untracked=green
 
-[user]
-  email=matthew@lyonheart.us
-  name=Matthew Lyon
-
 [merge]
   log=true
-  tool=opendiff
+  tool=vimdiff
 
 [diff "ruby"]
   funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
@@ -40,21 +34,37 @@
   date=short
 
 [alias]
+  # amend to the last commit
   amend = commit -v --amend
+  # add only part of the commit to index
   addp = add --patch
+  # search through the log
   axe = !sh -c 'git log -S"$0"'
+  # show all branches, even across remotes
   branches = branch -a --color -v
+  # git cheat sheet
   cheat = !sh -c 'cheat git | less'
-  delete = !sh -c 'git branch -d "$1" && git push "$0" :refs/heads/"$1"'
-  fold = !sh -c 'git merge --no-ff "$0" && git branch -d "$0"'
+  # delete a remote branch
+  delete = !sh -c 'git push "$0" :refs/heads/"$1"'
+  # merge the branch, keeping its commits in their own branch
+  fold = merge --no-ff
+  mnff = merge --no-ff
+  # set a tag
   label = tag -a
-  pending = !git --no-pager log origin/master..master && echo
+  # show commits that haven't been pushed to the remote yet
+  pending = !git --no-pager log "$0"/HEAD..HEAD && echo
+  # promote the current branch to the remote
   promote = !sh -c 'git push -u "$0" `git branch | grep \"^*\" | cut -d\" \" -f2`'
+  # prune remote branches
   prune = !git remote | xargs -n 1 git remote prune
+  # push HEAD to origin HEAD
+  put = push origin HEAD
+  # interactive rebase
+  ri = rebase --interactive --autosquash
+  # diff the index against the previous commit
   staged = diff --cached
+  # track a remote branch
   track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
+  # pull changes, show commits since last pull/push
   up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
-  who = log --pretty="format:%an - %s"
 
-[push]
-	default = tracking
