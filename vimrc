@@ -147,6 +147,7 @@ nnoremap <Leader>gd :w<CR>:Gdiff<CR>
 nnoremap <Leader>gb :Gblame<CR>
 
 " --- File Navigation -------------------------------------------------
+let g:CommandTMatchWindowAtTop=1
 nnoremap <Leader>T :CommandTFlush<CR>
 
 " --- dragons ---------------------------------------------------------
