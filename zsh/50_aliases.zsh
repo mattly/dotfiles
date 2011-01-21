@@ -30,7 +30,3 @@ alias bz='bzip2 -k'
 alias bzip='bzip2 -kz'
 alias bunzip='bzip2 -kd'
 
-# Editor Tools
-alias e='mate'
-alias ew='mate -w'
-alias er='mate `ls | grep -v "vendor\|tmp\|log\|assets"`'
