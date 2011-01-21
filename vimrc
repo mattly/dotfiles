@@ -1,49 +1,59 @@
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
-set nocompatible " the past is better left in the past
+" Display
+colorscheme mustang
+set background=dark
+" colorscheme dawn
 
-set modelines=0 " workaround for vulnerability with spell files
-
+set nocompatible     " the past is better left in the past
+set modelines=0      " workaround for vulnerability with spell files
 set encoding=utf-8 nobomb
-
-set noautochdir
-
-set sessionoptions=buffers,folds,curdir,tabpages
-" Session Management
-nnoremap SS :wa<cr>:mksession! ~/.vim/session/
-nnoremap SO :so ~/.vim/session/
-
-nmap <Leader>x <Plug>ToggleAutoCloseMappings
+set spell spelllang=en_us
 
 set noerrorbells
 set visualbell
 
+set noautochdir
+
 set showcmd
 set ruler
+set nu
 set autoread
 set hidden
 set nobackup
 set nowb
 set noswapfile
 
-set spell spelllang=en_us
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
 
-set expandtab 
+set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set smarttab
 set autoindent
 
+set list
+" eol:¬
+set listchars=tab:»·,trail:·,precedes:<,extends:>
+
+set backspace=indent,eol,start     " backspace over anything
+
+set gfn=Menlo:h14
+set linespace=2                    " don't add any extra pixels between rows
 set ttyfast
-set scrolloff=3		" minimum lines to show around cursor
-set sidescrolloff=4	" min characters to show
-set linebreak
-set wrap
-set nolist
-set showbreak=>
-set whichwrap+=<,>,h,l
+set scrolloff=3                    " minimum lines to show around cursor
+set sidescrolloff=4                " min characters to show
+set cursorline
+
+set wildmenu
+set wildmode=list:longest,full
+
+
 " formatting options:
 " t: automatically hard-wrap based on text-width
 " c: do the same for comments, but
@@ -53,21 +63,38 @@ set whichwrap+=<,>,h,l
 " 2: use the second line of a paragraph to determine proper indentation level
 set formatoptions+=tcroq2
 set formatprg="par -qe"
-set listchars=tab:»·,trail:·,precedes:<,extends:>,eol:¬
-set list
-set cursorline
 
-set laststatus=2
-set backspace=indent,eol,start	" backspace over anything
+let mapleader = ','
 
-set undofile
+" --- sessions -----------------------------------------------------------
+set sessionoptions=buffers,folds,curdir,tabpages
+nnoremap SS :wa<cr>:mksession! ~/.vim/session/
+nnoremap SO :so ~/.vim/session/
 
-nnoremap / /\v
-vnoremap / /\v
+" --- Gui Window Tabs ----------------------------------------------------
+" tab movement, cmd-shift-(move)
+nnoremap <D-S-right>  :tabnext<CR>
+nnoremap <D-S-l>      :tabnext<CR>
+nnoremap <D-S-left>   :tabprevious<CR>
+nnoremap <D-S-h>      :tabprevious<CR>
 
-nnoremap <tab> %
-vnoremap <tab> %
+" --- Vim Windows ---------------------------------------------------------
+set laststatus=2 " always show the status line
+set splitbelow
+set splitright
 
+" Window movement, cmd-opt-shift-(move)
+nnoremap <D-M-down>   <C-w><Down>
+nnoremap <D-M-j>      <C-w><Down>
+nnoremap <D-M-up>     <C-w><Up>
+nnoremap <D-M-k>      <C-w><Up>
+nnoremap <D-M-left>   <C-w><Left>
+nnoremap <D-M-h>      <C-w><Left>
+nnoremap <D-M-right>  <C-w><Right>
+nnoremap <D-M-l>      <C-w><Right>
+
+" --- Insert Mode --------------------------------------------------------
+" option-backspace over words, emacs style
 inoremap <M-Backspace> <C-[>ciw
 
 " get out of insert moar easily
@@ -79,57 +106,53 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" fucking help
+" disable the fucking help
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-set gdefault
+" --- searching --------------------------------------------------------
 set ignorecase
 set smartcase
 set wrapscan
 set incsearch
 set hlsearch
-nnoremap <Esc> :call RemoveHighlight()<cr>
+nnoremap <silent> <Esc> :call RemoveHighlight()<cr>
 function! RemoveHighlight()
   if &hlsearch
     set nohlsearch
   endif
 endfunction
 
-colorscheme mustang
-" colorscheme dawn
+" make search use real regexes
+nnoremap / /\v
+vnoremap / /\v
 
+set grepprg=ack
+
+" --- folding ---------------------------------------------------------
 set foldmethod=indent
 set foldcolumn=0
 set foldnestmax=8
 set foldlevel=3
 
+" --- navigation ------------------------------------------------------
+
+" --- Plugins ---------------------------------------------------------
+let g:ragtag_global_maps = 1
+
+nnoremap <Leader>g :Gstatus<CR>
+nnoremap <Leader>T :CommandTFlush<CR>
+
+" --- dragons ---------------------------------------------------------
 " command line mappings for Ex mode, use emacs key bindings, sorry
 cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
 
-" set our leader:
-let mapleader = ','
-
-" open folding, toggle folding, close folding
-nnoremap <Leader>ft za
-nnoremap <Leader>fT zA
-nnoremap <Leader>fo zr
-nnoremap <Leader>fO zR
-nnoremap <Leader>fc zm
-nnoremap <Leader>fC zM
-
-nnoremap <Leader>T :CommandTFlush<CR>
-
-nnoremap <Leader>a :Ack 
-
-nnoremap <Leader>g :Gstatus<CR>
+nnoremap <silent> <Leader>r :!ctags --extra=+f -R *<CR><CR>
 
 if has("gui_running")
-	set gfn=Menlo:h14
-	set linespace=1
   " a: visual-mode autoselect (takes over the OS selection process)
   " e: use the gui's tabs
   " g: grey-out non-active menu items
@@ -145,13 +168,8 @@ if has("gui_running")
   set fuoptions=maxvert,maxhorz
 endif
 
-set scrolloff=8
 
-set switchbuf=usetab
-set splitbelow
-
-set wildmenu
-set wildmode=list:longest
+map <silent> <Leader>r :!ctags --extra=+f -R *<CR>
 
 function! DiffOrig()
   if &diff
@@ -161,26 +179,6 @@ function! DiffOrig()
   endif
 endfunction
 nnoremap <Leader>d :call DiffOrig()<cr>
-
-syntax on
-filetype off
-filetype plugin indent on
-
-" window and tab movement, cmd-shift-(move) for tabs, cmd-option-(move) for
-" windows
-nnoremap <D-S-right> :tabnext<cr>
-nnoremap <D-S-l> :tabnext<cr>
-nnoremap <D-S-left> :tabprevious<cr>
-nnoremap <D-S-h> :tabprevious<cr>
-
-nnoremap <D-M-down> :wincmd j<cr>
-nnoremap <D-M-j> :wincmd j<cr>
-nnoremap <D-M-up> :wincmd k<cr>
-nnoremap <D-M-k> :wincmd k<cr>
-nnoremap <D-M-left> :wincmd h<cr>
-nnoremap <D-M-h> :wincmd h<cr>
-nnoremap <D-M-right> :wincmd l<cr>
-nnoremap <D-M-l> :wincmd l<cr>
 
 " jump to last cursor position when opening a file; don't do it when writing a
 " commit log entry
@@ -194,15 +192,11 @@ function! SetCursorPosition()
   end
 endfunction
 
-" turn some ragtag stuff on globally
-let g:ragtag_global_maps = 1
-
-" NERDTree crap
-
-nnoremap <D-d> :NERDTree<cr>
-" let loaded_nerd_tree = 1
-let NERDTreeShowHidden = 1
-
 set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
+
+nmap <Leader>x <Plug>ToggleAutoCloseMappings
+
+nnoremap <tab> %
+vnoremap <tab> %
 
 
