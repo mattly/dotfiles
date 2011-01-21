@@ -30,3 +30,6 @@ alias bz='bzip2 -k'
 alias bzip='bzip2 -kz'
 alias bunzip='bzip2 -kd'
 
+# git
+alias hub=git
+
