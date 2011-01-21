@@ -141,7 +141,12 @@ set foldlevel=3
 " --- Plugins ---------------------------------------------------------
 let g:ragtag_global_maps = 1
 
-nnoremap <Leader>g :Gstatus<CR>
+" --- Git / Fugitive --------------------------------------------------
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :w<CR>:Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
+
+" --- File Navigation -------------------------------------------------
 nnoremap <Leader>T :CommandTFlush<CR>
 
 " --- dragons ---------------------------------------------------------
