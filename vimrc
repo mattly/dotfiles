@@ -144,7 +144,7 @@ let g:ragtag_global_maps = 1
 
 " --- Git / Fugitive --------------------------------------------------
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :w<CR>:Gdiff<CR>
+nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
 nnoremap <Leader>gb :Gblame<CR>
 
 " --- File Navigation -------------------------------------------------
