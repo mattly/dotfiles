@@ -2,6 +2,7 @@ silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
 " Display
+set t_Co=256
 colorscheme mustang
 set background=dark
 " colorscheme dawn
@@ -13,8 +14,6 @@ set spell spelllang=en_us
 
 set noerrorbells
 set visualbell
-
-set noautochdir
 
 set showcmd
 set ruler
