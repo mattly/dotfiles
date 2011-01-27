@@ -68,3 +68,5 @@
   # pull changes, show commits since last pull/push
   up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
 
+[github]
+	user = mattly
