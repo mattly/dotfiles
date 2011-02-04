@@ -1,5 +1,11 @@
+filetype off
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
+
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
 
 " Display
 set t_Co=256
@@ -24,11 +30,6 @@ set nobackup
 set nowb
 set noswapfile
 
-syntax on
-filetype on
-filetype indent on
-filetype plugin on
-
 set expandtab
 set shiftwidth=2
 set tabstop=2
@@ -38,7 +39,7 @@ set autoindent
 
 set list
 " eol:¬
-set listchars=tab:»·,trail:·,precedes:<,extends:>
+set listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 set backspace=indent,eol,start     " backspace over anything
 
@@ -52,15 +53,22 @@ set cursorline
 set wildmenu
 set wildmode=list:longest,full
 
+nnoremap ; :
 
 " formatting options:
+" help fo-table
 " t: automatically hard-wrap based on text-width
 " c: do the same for comments, but
 " r:   autoinsert comment character too
 " o: ditto, but for o/O in normal node
 " q: allow 'gq' to autowrap/format comments as well as normal text
-" 2: use the second line of a paragraph to determine proper indentation level
-set formatoptions+=tcroq2
+" 1: Don't break a line before a one-character word
+" n: recognize numbered lists
+set formatoptions+=tcroq1n
+set wrap
+set linebreak
+set textwidth=79
+" set colorcolumn=85
 set formatprg="par -qe"
 
 let mapleader = ','
@@ -116,12 +124,8 @@ set smartcase
 set wrapscan
 set incsearch
 set hlsearch
-nnoremap <silent> <Esc> :call RemoveHighlight()<cr>
-function! RemoveHighlight()
-  if &hlsearch
-    set nohlsearch
-  endif
-endfunction
+" remove the highlight
+nnoremap <silent> <Esc> :noh<cr>
 
 " make search use real regexes
 nnoremap / /\v
@@ -136,6 +140,9 @@ set foldnestmax=8
 set foldlevel=3
 
 " --- navigation ------------------------------------------------------
+" make the tab key match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
 
 " --- Plugins ---------------------------------------------------------
 " --- RagTag ----------------------------------------------------------
@@ -149,6 +156,22 @@ nnoremap <Leader>gb :Gblame<CR>
 " --- File Navigation -------------------------------------------------
 let g:CommandTMatchWindowAtTop=1
 nnoremap <Leader>T :CommandTFlush<CR>
+
+" --- Yankring --------------------------------------------------------
+nnoremap <silent> <Leader>y :YRShow<CR>
+
+" === Custom Shit =====================================================
+" DiffOrig() will do a diff with of the buffer vs. its unsaved state.
+" This is handy for seeing what you've changed and accepting/reverting
+" changes before writing
+nnoremap <Leader>d :call DiffOrig()<cr>
+function! DiffOrig()
+  if &diff
+    wincmd p | bdel | diffoff
+  else
+    vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+  endif
+endfunction
 
 " --- dragons ---------------------------------------------------------
 " command line mappings for Ex mode, use emacs key bindings, sorry
@@ -174,32 +197,6 @@ if has("gui_running")
   set fuoptions=maxvert,maxhorz
 endif
 
-function! DiffOrig()
-  if &diff
-    wincmd p | bdel | diffoff
-  else
-    vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
-  endif
-endfunction
-nnoremap <Leader>d :call DiffOrig()<cr>
-
-" jump to last cursor position when opening a file; don't do it when writing a
-" commit log entry
-
-autocmd BufReadPost * call SetCursorPosition()
-function! SetCursorPosition()
-  if &filetype !~ "commit\c"
-    if line("'\"") > 0 && line("'\"") <= line("$")
-      exe "normal g`\""
-    endif
-  end
-endfunction
 
 set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
-
-nmap <Leader>x <Plug>ToggleAutoCloseMappings
-
-nnoremap <tab> %
-vnoremap <tab> %
-
 
