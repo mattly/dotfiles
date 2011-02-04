@@ -1,3 +1,6 @@
 [submodule "vim/bundle/surround.git"]
 	path = vim/bundle/surround.git
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-unimpaired.git"]
+	path = vim/bundle/vim-unimpaired.git
+	url = git://github.com/tpope/vim-unimpaired.git
