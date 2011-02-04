@@ -22,3 +22,27 @@
 [submodule "vim/bundle/vim-endwise.git"]
 	path = vim/bundle/vim-endwise.git
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "vim/bundle/vim-repeat.git"]
+	path = vim/bundle/vim-repeat.git
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/vim-tcomment.git"]
+	path = vim/bundle/vim-tcomment.git
+	url = git://github.com/tsaleh/vim-tcomment.git
+[submodule "vim/bundle/supertab.git"]
+	path = vim/bundle/supertab.git
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/bundle/vim-indent-object.git"]
+	path = vim/bundle/vim-indent-object.git
+	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule "vim/bundle/tabular.git"]
+	path = vim/bundle/tabular.git
+	url = http://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/vim-autoclose.git"]
+	path = vim/bundle/vim-autoclose.git
+	url = https://github.com/Townk/vim-autoclose.git
+[submodule "vim/bundle/command-t.git"]
+	path = vim/bundle/command-t.git
+	url = git://git.wincent.com/command-t.git
+[submodule "vim/bundle/vim-rails.git"]
+	path = vim/bundle/vim-rails.git
+	url = git://github.com/tpope/vim-rails.git
