@@ -54,4 +54,4 @@
 	url = https://github.com/Townk/vim-autoclose.git
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git/blob_plain/HEAD
+	url = git://git.wincent.com/command-t.git
