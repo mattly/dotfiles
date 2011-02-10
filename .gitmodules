@@ -70,3 +70,7 @@
 	path = vim/bundle/syntastic.git
 	url = https://github.com/scrooloose/syntastic.git
   ignore = untracked
+[submodule "vim/bundle/vim-rake.git"]
+	path = vim/bundle/vim-rake.git
+	url = https://github.com/tpope/vim-rake.git
+  ignore = untracked
