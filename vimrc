@@ -72,11 +72,6 @@ set formatprg="par -qe"
 
 let mapleader = ','
 
-" --- sessions -----------------------------------------------------------
-set sessionoptions=buffers,folds,curdir,tabpages
-nnoremap SS :wa<cr>:mksession! ~/.vim/session/
-nnoremap SO :so ~/.vim/session/
-
 " --- Gui Window Tabs ----------------------------------------------------
 " tab movement, cmd-shift-(move)
 nnoremap <D-S-right>  :tabnext<CR>
