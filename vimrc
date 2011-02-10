@@ -44,7 +44,6 @@ set listchars=tab:»\ ,trail:·,precedes:<,extends:>
 set backspace=indent,eol,start     " backspace over anything
 
 set gfn=Menlo:h14
-set linespace=2                    " don't add any extra pixels between rows
 set ttyfast
 set scrolloff=3                    " minimum lines to show around cursor
 set sidescrolloff=4                " min characters to show
@@ -179,15 +178,13 @@ cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
 
-nnoremap <silent> <Leader>r :!ctags --extra=+f -R *<CR><CR>
-
 if has("gui_running")
   " a: visual-mode autoselect (takes over the OS selection process)
   " e: use the gui's tabs
   " g: grey-out non-active menu items
   " m: show system menu bars
   " t: include tear-off menu items
-  set guioptions=aegmt
+  set guioptions=aAcegmt
   " T: system toolbar
   " r: right-hand scrollbar
   " l: left-hand scrollbar
