@@ -151,6 +151,12 @@ nnoremap <Leader>gb :Gblame<CR>
 let g:CommandTMatchWindowAtTop=1
 nnoremap <Leader>T :CommandTFlush<CR>
 
+" Rails.vim custom nav
+autocmd User Rails Rnavcommand -suffix=.rb processor app/processors
+autocmd User Rails Rnavcommand -suffix=.rb ernie app/ernie
+autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
+autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
+
 " --- Yankring --------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
 
