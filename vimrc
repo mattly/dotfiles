@@ -98,9 +98,6 @@ nnoremap <D-M-l>      <C-w><Right>
 " option-backspace over words, emacs style
 inoremap <M-Backspace> <C-[>ciw
 
-" get out of insert moar easily
-inoremap jj <Esc>
-
 " don't use the fucking arrow keys in insert mode
 inoremap <up> <nop>
 inoremap <down> <nop>
@@ -111,6 +108,16 @@ inoremap <right> <nop>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+" --- Ex Mode ------------------------------------------------------------
+cnoremap <C-A>      <Home>
+cnoremap <C-E>      <End>
+cnoremap <C-K>      <C-U>
+" option-backspace over words
+cnoremap <M-Backspace> <S-Right> <C-W>
+cnoremap <M-Right>  <S-Right>
+cnoremap <M-Left>   <S-Left>
+
 
 " --- searching --------------------------------------------------------
 set ignorecase
@@ -138,6 +145,9 @@ set foldlevel=3
 nnoremap <tab> %
 vnoremap <tab> %
 
+" toggle between relative line numbers
+nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
+
 " --- Plugins ---------------------------------------------------------
 " --- RagTag ----------------------------------------------------------
 let g:ragtag_global_maps = 1
@@ -150,6 +160,14 @@ nnoremap <Leader>gb :Gblame<CR>
 " --- File Navigation -------------------------------------------------
 let g:CommandTMatchWindowAtTop=1
 nnoremap <Leader>T :CommandTFlush<CR>
+
+nnoremap <Leader>e :e **/
+cnoremap <Leader>e **/
+
+" tags
+set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
+map <silent> <Leader>r :!ctags --extra=+f -R *<CR><CR>
+
 
 " Rails.vim custom nav
 autocmd User Rails Rnavcommand -suffix=.rb processor app/processors
@@ -173,12 +191,7 @@ function! DiffOrig()
   endif
 endfunction
 
-" --- dragons ---------------------------------------------------------
-" command line mappings for Ex mode, use emacs key bindings, sorry
-cnoremap <C-A>      <Home>
-cnoremap <C-E>      <End>
-cnoremap <C-K>      <C-U>
-
+" --- gui stuff -------------------------------------------------------
 if has("gui_running")
   " a: visual-mode autoselect (takes over the OS selection process)
   " e: use the gui's tabs
