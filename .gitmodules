@@ -74,3 +74,7 @@
 	path = vim/bundle/vim-rake.git
 	url = https://github.com/tpope/vim-rake.git
   ignore = untracked
+[submodule "vim/bundle/vim-ragtag.git"]
+	path = vim/bundle/vim-ragtag.git
+	url = https://github.com/tpope/vim-ragtag.git
+  ignore = untracked
