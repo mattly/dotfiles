@@ -166,7 +166,7 @@ cnoremap <Leader>e **/
 
 " tags
 set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
-map <silent> <Leader>r :!ctags --extra=+f -R *<CR><CR>
+map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
 
 
 " Rails.vim custom nav
