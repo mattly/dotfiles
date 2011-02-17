@@ -176,6 +176,9 @@ autocmd User Rails Rnavcommand -suffix=.rb ernie app/ernie
 autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
 autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
 
+" --- Indent Guides ---------------------------------------------------
+let g:indent_guides_enable_on_vim_startup = 1
+
 " --- Yankring --------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
 
