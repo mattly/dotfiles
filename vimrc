@@ -156,6 +156,7 @@ let g:ragtag_global_maps = 1
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
 nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gw :Gw<CR>
 
 " --- File Navigation -------------------------------------------------
 let g:CommandTMatchWindowAtTop=1
