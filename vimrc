@@ -177,7 +177,9 @@ autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
 autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
 
 " --- Indent Guides ---------------------------------------------------
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup=0
+let g:indent_guides_color_change_percent=5
+
 
 " --- Yankring --------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
