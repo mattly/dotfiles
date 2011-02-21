@@ -12,7 +12,7 @@ Dir['*'].each do |file|
   next if file =~ /install.rb/
   target = File.join(home, ".#{file}")
   if File.exists?(target)
-    File.unlink(target)
+    FIle.directory?(target) ? FileUtils.rm_rf(target) : File.unlink(target)
   end
   `ln -s #{File.expand_path file} #{target}`
 end
