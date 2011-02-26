@@ -39,6 +39,8 @@
   cheat = !sh -c 'cheat git | less'
   # delete a remote branch
   delete = !sh -c 'git push "$0" :refs/heads/"$1"'
+  # fetch all remotes
+  fetch-all = !git remote | xargs -n 1 git fetch
   # merge the branch, keeping its commits in their own branch
   fold = merge --no-ff
   mnff = merge --no-ff
