@@ -28,7 +28,7 @@
 
 [alias]
   # amend to the last commit
-  amend = commit -v --amend
+  amend = commit --amend -C HEAD
   # add only part of the commit to index
   addp = add --patch
   # search through the log
