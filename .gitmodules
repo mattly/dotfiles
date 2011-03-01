@@ -86,3 +86,7 @@
 	path = vim/bundle/vim-align.git
 	url = https://github.com/tsaleh/vim-align.git
   ignore = untracked
+[submodule "vim/bundle/vim-javascript.git"]
+	path = vim/bundle/vim-javascript.git
+	url = https://github.com/pangloss/vim-javascript.git
+  ignore = untracked
