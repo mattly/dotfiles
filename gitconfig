@@ -5,7 +5,7 @@
   user = mattly
 
 [core]
-  excludesfile=/Users/mattly/.gitignore
+  excludesfile=~/.gitignore
 
 [color]
   ui = auto
