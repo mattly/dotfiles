@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.haml :IndentGuidesEnable
+autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set foldignore=/

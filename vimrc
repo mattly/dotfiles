@@ -136,9 +136,6 @@ set grepprg=ack
 
 " --- folding ---------------------------------------------------------
 set foldmethod=indent
-set foldcolumn=0
-set foldnestmax=8
-set foldlevel=3
 
 " --- navigation ------------------------------------------------------
 " make the tab key match bracket pairs
@@ -177,9 +174,8 @@ autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
 autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
 
 " --- Indent Guides ---------------------------------------------------
-let g:indent_guides_enable_on_vim_startup=0
+let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_color_change_percent=5
-
 
 " --- Yankring --------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
@@ -204,7 +200,7 @@ if has("gui_running")
   " g: grey-out non-active menu items
   " m: show system menu bars
   " t: include tear-off menu items
-  set guioptions=aAcegmt
+  set guioptions=aAegmt
   " T: system toolbar
   " r: right-hand scrollbar
   " l: left-hand scrollbar
