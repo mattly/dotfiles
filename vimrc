@@ -43,7 +43,7 @@ set listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 set backspace=indent,eol,start     " backspace over anything
 
-set gfn=Menlo:h14
+set guifont=Menlo:h14
 set ttyfast
 set scrolloff=3                    " minimum lines to show around cursor
 set sidescrolloff=4                " min characters to show
