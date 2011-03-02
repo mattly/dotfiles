@@ -197,6 +197,7 @@ endfunction
 " --- gui stuff -------------------------------------------------------
 if has("gui_running")
   " a: visual-mode autoselect (takes over the OS selection process)
+  " A: autoselect for modeless selection
   " e: use the gui's tabs
   " g: grey-out non-active menu items
   " m: show system menu bars
@@ -212,5 +213,5 @@ if has("gui_running")
 endif
 
 
-set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %y%q%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
 
