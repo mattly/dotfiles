@@ -136,6 +136,7 @@ set grepprg=ack
 
 " --- folding ---------------------------------------------------------
 set foldmethod=indent
+set foldlevelstart=99
 
 " --- navigation ------------------------------------------------------
 " make the tab key match bracket pairs
