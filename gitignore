@@ -1,8 +1,30 @@
+# OS X
 .DS_Store
+
+# Linux
 *~
+
+# Vim
 .viminfo
+*.un~
+
+# Textmate
 *.tmproj
+
+# Logging
 *.log
+
+# Subversion
 .svn
-*.gem
+
+# ctags
 tags
+
+# ruby
+*.gem
+
+# rails
+.sass-cache
+/log/*
+/tmp/*
+
