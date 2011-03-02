@@ -62,4 +62,6 @@
   track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
   # pull changes, show commits since last pull/push
   up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  # update all remotes, pruning removed tracking branches
+  update-remotes = remote update --prune
 
