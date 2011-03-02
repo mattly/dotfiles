@@ -50,8 +50,6 @@
   pending = !git --no-pager log "$0"/HEAD..HEAD && echo
   # promote the current branch to the remote
   promote = !sh -c 'git push -u "$0" `git branch | grep \"^*\" | cut -d\" \" -f2`'
-  # prune remote branches
-  prune = !git remote | xargs -n 1 git remote prune'
   # push HEAD to origin HEAD
   put = push origin HEAD
   # interactive rebase
