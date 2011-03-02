@@ -23,6 +23,9 @@
 [format]
   pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 
+[help]
+  autocorrect=1
+
 [log]
   date=short
 
