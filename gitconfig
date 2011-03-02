@@ -43,7 +43,6 @@
   fetch-all = !git remote | xargs -n 1 git fetch
   # merge the branch, keeping its commits in their own branch
   fold = merge --no-ff
-  mnff = merge --no-ff
   # set a tag
   label = tag -a
   # show commits that haven't been pushed to the remote yet
