@@ -42,18 +42,14 @@
   cheat = !sh -c 'cheat git | less'
   # delete a remote branch
   delete = !sh -c 'git push "$0" :refs/heads/"$1"'
-  # fetch all remotes
-  fetch-all = !git remote | xargs -n 1 git fetch
   # merge the branch, keeping its commits in their own branch
   fold = merge --no-ff
   # set a tag
   label = tag -a
   # show commits that haven't been pushed to the remote yet
   pending = !git --no-pager log "$0"/HEAD..HEAD && echo
-  # promote the current branch to the remote
-  promote = !sh -c 'git push -u "$0" `git branch | grep \"^*\" | cut -d\" \" -f2`'
   # push HEAD to origin HEAD
-  put = push origin HEAD
+  put = !sh -c 'git push "$0" HEAD'
   # interactive rebase
   ri = rebase --interactive --autosquash
   # diff the index against the previous commit
