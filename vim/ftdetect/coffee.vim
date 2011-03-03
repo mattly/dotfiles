@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.coffee *Cakefile :IndentGuidesEnable
+autocmd BufNewFile,BufRead *.coffee,*Cakefile :IndentGuidesEnable
