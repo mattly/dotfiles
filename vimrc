@@ -94,6 +94,11 @@ nnoremap <D-M-h>      <C-w><Left>
 nnoremap <D-M-right>  <C-w><Right>
 nnoremap <D-M-l>      <C-w><Right>
 
+nnoremap <C-h>        <C-w><Left>
+nnoremap <C-l>        <C-w><Right>
+nnoremap <C-j>        <C-w><Up>
+nnoremap <C-k>        <C-w><Down>
+
 " --- Insert Mode --------------------------------------------------------
 " option-backspace over words, emacs style
 inoremap <M-Backspace> <C-[>ciw
