@@ -173,6 +173,12 @@ autocmd User Rails Rnavcommand -suffix=.rb processor app/processors
 autocmd User Rails Rnavcommand -suffix=.rb ernie app/ernie
 autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
 autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
+autocmd User Rails Rnavcommand -suffix=.rb lib app/lib
+
+" --- Visual Column Stuff ---------------------------------------------
+autocmd BufNewFile,BufRead * set nocursorcolumn
+autocmd BufNewFile,BufRead *.coffee,*Cakefile set cursorcolumn
+autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
 
 " --- Indent Guides ---------------------------------------------------
 let g:indent_guides_enable_on_vim_startup=1
