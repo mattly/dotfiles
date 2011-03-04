@@ -9,7 +9,7 @@ filetype plugin on
 
 " Display
 set t_Co=256
-colorscheme mustang
+colorscheme molokai
 set background=dark
 " colorscheme dawn
 
