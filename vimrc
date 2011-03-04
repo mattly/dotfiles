@@ -137,6 +137,7 @@ set grepprg=ack
 " --- folding ---------------------------------------------------------
 set foldmethod=indent
 set foldlevelstart=99
+autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=/
 
 " --- navigation ------------------------------------------------------
 " make the tab key match bracket pairs
