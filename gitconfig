@@ -21,7 +21,7 @@
   funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
 
 [format]
-  pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
+  pretty="format:%Cred%ae %Creset- %C(yellow)%h %s %Creset(%ar)"
 
 [help]
   autocorrect=1
@@ -61,7 +61,7 @@
   # remove a file from the index
   unstage = reset HEAD --
   # pull changes, show commits since last pull/push
-  up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  up = !sh -c 'git pull "$0" HEAD && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
   # update all remotes, pruning removed tracking branches
   update-remotes = remote update --prune
 
