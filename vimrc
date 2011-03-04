@@ -180,9 +180,14 @@ autocmd BufNewFile,BufRead * set nocursorcolumn
 autocmd BufNewFile,BufRead *.coffee,*Cakefile set cursorcolumn
 autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
 
-" --- Indent Guides ---------------------------------------------------
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_color_change_percent=5
+
+" disbale IndentGuides for all filetypes except those where indent is
+" significant
+autocmd BufNewFile,BufRead * :IndentGuidesDisable
+autocmd BufNewFile,BufRead *.coffee,*Cakefile :IndentGuidesEnable
+autocmd BufNewFile,BufRead *.haml,*.sass,*.scss :IndentGuidesEnable
 
 " --- Yankring --------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
