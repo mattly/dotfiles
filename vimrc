@@ -139,6 +139,9 @@ vnoremap / /\v
 
 set grepprg=ack
 
+" --- quickfix --------------------------------------------------------
+autocmd QuickfixCmdPost * copen
+
 " --- folding ---------------------------------------------------------
 set foldmethod=indent
 set foldlevelstart=99
