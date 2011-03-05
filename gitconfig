@@ -16,6 +16,9 @@
 [merge]
   log=true
   tool=vimdiff
+[merge "gemfilelock"]
+  name = relocks the gemfile.lock
+  driver = bundle lock
 
 [diff "ruby"]
   funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
