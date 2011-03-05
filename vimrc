@@ -140,7 +140,7 @@ vnoremap / /\v
 set grepprg=ack
 
 " --- quickfix --------------------------------------------------------
-autocmd QuickfixCmdPost * copen
+autocmd QuickfixCmdPost grep copen
 
 " --- folding ---------------------------------------------------------
 set foldmethod=indent
