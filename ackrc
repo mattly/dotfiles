@@ -1,3 +1,5 @@
+--ignore-case
+--smart-case
 --ignore-dir=log
 --ignore-dir=vendor
 --type-add=ruby=haml,rake,ru

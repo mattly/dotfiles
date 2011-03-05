@@ -24,7 +24,7 @@
   funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
 
 [format]
-  pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
+  pretty="format:%Cred%ae %Creset- %C(yellow)%h %s %Creset(%ar)"
 
 [help]
   autocorrect=1
@@ -53,6 +53,7 @@
   pending = !git --no-pager log "$0"/HEAD..HEAD && echo
   # push HEAD to origin HEAD
   put = !sh -c 'git push "$0" HEAD'
+  put-force = !sh -c 'git push -f "$0" HEAD'
   # interactive rebase
   ri = rebase --interactive --autosquash
   # diff the index against the previous commit
@@ -64,7 +65,7 @@
   # remove a file from the index
   unstage = reset HEAD --
   # pull changes, show commits since last pull/push
-  up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  up = !sh -c 'git pull "$0" HEAD && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
   # update all remotes, pruning removed tracking branches
   update-remotes = remote update --prune
 

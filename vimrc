@@ -9,7 +9,7 @@ filetype plugin on
 
 " Display
 set t_Co=256
-colorscheme mustang
+colorscheme molokai
 set background=dark
 " colorscheme dawn
 
@@ -94,6 +94,11 @@ nnoremap <D-M-h>      <C-w><Left>
 nnoremap <D-M-right>  <C-w><Right>
 nnoremap <D-M-l>      <C-w><Right>
 
+nnoremap <C-h>        <C-w><Left>
+nnoremap <C-l>        <C-w><Right>
+nnoremap <C-j>        <C-w><Up>
+nnoremap <C-k>        <C-w><Down>
+
 " --- Insert Mode --------------------------------------------------------
 " option-backspace over words, emacs style
 inoremap <M-Backspace> <C-[>ciw
@@ -134,9 +139,13 @@ vnoremap / /\v
 
 set grepprg=ack
 
+" --- quickfix --------------------------------------------------------
+autocmd QuickfixCmdPost grep copen
+
 " --- folding ---------------------------------------------------------
 set foldmethod=indent
 set foldlevelstart=99
+autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=/
 
 " --- navigation ------------------------------------------------------
 " make the tab key match bracket pairs
@@ -173,10 +182,21 @@ autocmd User Rails Rnavcommand -suffix=.rb processor app/processors
 autocmd User Rails Rnavcommand -suffix=.rb ernie app/ernie
 autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
 autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
+autocmd User Rails Rnavcommand -suffix=.rb lib app/lib
 
-" --- Indent Guides ---------------------------------------------------
+" --- Visual Column Stuff ---------------------------------------------
+autocmd BufNewFile,BufRead * set nocursorcolumn
+autocmd BufNewFile,BufRead *.coffee,*Cakefile set cursorcolumn
+autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
+
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_color_change_percent=5
+
+" disbale IndentGuides for all filetypes except those where indent is
+" significant
+autocmd BufNewFile,BufRead * :IndentGuidesDisable
+autocmd BufNewFile,BufRead *.coffee,*Cakefile :IndentGuidesEnable
+autocmd BufNewFile,BufRead *.haml,*.sass,*.scss :IndentGuidesEnable
 
 " --- Yankring --------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
