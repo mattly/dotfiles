@@ -82,3 +82,7 @@
 	path = vim/bundle/vim-javascript.git
 	url = https://github.com/pangloss/vim-javascript.git
   ignore = untracked
+[submodule "vim/bundle/nerdcommenter.git"]
+	path = vim/bundle/nerdcommenter.git
+	url = https://github.com/scrooloose/nerdcommenter.git
+  ignore = untracked
