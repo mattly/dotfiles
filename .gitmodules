@@ -34,10 +34,6 @@
 	path = vim/bundle/vim-repeat.git
 	url = git://github.com/tpope/vim-repeat.git
   ignore = untracked
-[submodule "vim/bundle/vim-tcomment.git"]
-	path = vim/bundle/vim-tcomment.git
-	url = git://github.com/tsaleh/vim-tcomment.git
-  ignore = untracked
 [submodule "vim/bundle/supertab.git"]
 	path = vim/bundle/supertab.git
 	url = https://github.com/ervandew/supertab.git
