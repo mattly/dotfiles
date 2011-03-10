@@ -9,7 +9,7 @@ filetype plugin on
 
 " Display
 set t_Co=256
-colorscheme molokai
+colorscheme mustang
 set background=dark
 " colorscheme dawn
 
@@ -122,7 +122,6 @@ cnoremap <C-K>      <C-U>
 cnoremap <M-Backspace> <S-Right> <C-W>
 cnoremap <M-Right>  <S-Right>
 cnoremap <M-Left>   <S-Left>
-
 
 " --- searching --------------------------------------------------------
 set ignorecase
