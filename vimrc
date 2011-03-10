@@ -233,11 +233,13 @@ let html_use_css=1
 if has("gui_running")
   " a: visual-mode autoselect (takes over the OS selection process)
   " A: autoselect for modeless selection
-  " e: use the gui's tabs
+  " c: use console dialogs for simple choices
+  " e: use the gui's tabs -- not using for now, prevent macvim from resizing
+  "    window on tabs
   " g: grey-out non-active menu items
   " m: show system menu bars
   " t: include tear-off menu items
-  set guioptions=aAegmt
+  set guioptions=aAcgmt
   " T: system toolbar
   " r: right-hand scrollbar
   " l: left-hand scrollbar
