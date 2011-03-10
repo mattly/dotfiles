@@ -213,6 +213,22 @@ function! DiffOrig()
   endif
 endfunction
 
+" UPPER CASE -> lower case -> Title Case
+" from http://vim.wikia.com/wiki/Switching_case_of_characters
+function! TwiddleCase(str)
+  if a:str ==# toupper(a:str)
+    let result = tolower(a:str)
+  elseif a:str ==# tolower(a:str)
+    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+  else
+    let result = toupper(a:str)
+  endif
+  return result
+endfunction
+vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+
+let html_use_css=1
+
 " --- gui stuff -------------------------------------------------------
 if has("gui_running")
   " a: visual-mode autoselect (takes over the OS selection process)
