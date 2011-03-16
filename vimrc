@@ -166,6 +166,7 @@ nnoremap <Leader>gw :Gw<CR>
 
 " --- File Navigation -------------------------------------------------
 let g:CommandTMatchWindowAtTop=1
+silent! nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <Leader>T :CommandTFlush<CR>
 
 nnoremap <Leader>e :e **/
@@ -191,7 +192,7 @@ autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_color_change_percent=5
 
-" disbale IndentGuides for all filetypes except those where indent is
+" disable IndentGuides for all filetypes except those where indent is
 " significant
 autocmd BufNewFile,BufRead * :IndentGuidesDisable
 autocmd BufNewFile,BufRead *.coffee,*Cakefile :IndentGuidesEnable
