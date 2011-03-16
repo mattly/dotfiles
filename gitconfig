@@ -58,6 +58,8 @@
   ri = rebase --interactive --autosquash
   # diff the index against the previous commit
   staged = diff --cached
+  # better status
+  stat = status -sb
   # update all submodules
   submodule-pull = submodule foreach "git checkout master && git pull origin master"
   # track a remote branch
