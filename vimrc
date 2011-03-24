@@ -167,6 +167,8 @@ vnoremap <tab> %
 nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
 
 " --- Plugins ---------------------------------------------------------
+au BufRead,BufNewFile *.pp              set filetype=puppet
+
 " --- RagTag ----------------------------------------------------------
 let g:ragtag_global_maps = 1
 
