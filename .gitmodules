@@ -90,3 +90,7 @@
 	path = vim/bundle/tcomment_vim.git
 	url = https://github.com/tomtom/tcomment_vim.git
   ignore = untracked
+[submodule "vim/bundle/colors-solarized.git"]
+	path = vim/bundle/colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
+  ignore = untracked

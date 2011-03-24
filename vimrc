@@ -9,9 +9,21 @@ filetype plugin on
 
 " Display
 set t_Co=256
-colorscheme mustang
 set background=dark
+let g:solarized_contrast="high"
+colorscheme solarized
 " colorscheme dawn
+"
+function! ToggleBackground()
+  if (w:solarized_style=="dark")
+    let w:solarized_style="light"
+  else
+    let w:solarized_style="dark"
+  end
+  colorscheme solarized
+endfunction
+
+nnoremap <F5> :call ToggleBackground()<CR>
 
 set nocompatible     " the past is better left in the past
 set modelines=0      " workaround for vulnerability with spell files
