@@ -63,7 +63,7 @@
   # update all submodules
   submodule-pull = submodule foreach "git checkout master && git pull origin master"
   # track a remote branch
-  track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
+  track = checkout -t
   # remove a file from the index
   unstage = reset HEAD --
   # pull changes, show commits since last pull/push
