@@ -19,6 +19,9 @@
 [merge "gemfilelock"]
   name = relocks the gemfile.lock
   driver = bundle lock
+[merge "compass"]
+  name = recompile the sass files
+  driver = rake compass
 
 [diff "ruby"]
   funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
