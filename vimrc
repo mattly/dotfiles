@@ -15,10 +15,12 @@ colorscheme solarized
 " colorscheme dawn
 "
 function! ToggleBackground()
-  if (w:solarized_style=="dark")
-    let w:solarized_style="light"
+  if (g:solarized_style=="dark")
+    set background=light
+    let g:solarized_style="light"
   else
-    let w:solarized_style="dark"
+    set background=dark
+    let g:solarized_style="dark"
   end
   colorscheme solarized
 endfunction
