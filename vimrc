@@ -11,9 +11,6 @@ filetype plugin on
 set t_Co=256
 set background=dark
 let g:solarized_contrast="high"
-colorscheme solarized
-" colorscheme dawn
-"
 if has('gui_running')
   function! ToggleBackground()
     if (g:solarized_style=="dark")
@@ -29,6 +26,7 @@ if has('gui_running')
 else
   let g:solarized_termcolors=16
 endif
+colorscheme solarized
 
 
 set nocompatible     " the past is better left in the past
