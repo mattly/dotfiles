@@ -244,6 +244,13 @@ function! TwiddleCase(str)
 endfunction
 vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
+
+" change directory to that of current file
+nmap <Leader>cd :cd%:p:h<cr>
+
+" just sudo it
+cmap w!! %!sudo tee > /dev/null %
+
 let html_use_css=1
 
 " --- gui stuff -------------------------------------------------------
