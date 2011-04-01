@@ -152,6 +152,12 @@ vnoremap / /\v
 
 set grepprg=ack
 
+" --- spelling -------------------------------------------------------
+if v:version >= 700
+  setlocal spell spelllang=en
+  nmap <LocalLeader>ss :set spell!<CR>
+endif
+
 " --- quickfix --------------------------------------------------------
 autocmd QuickfixCmdPost grep copen
 
