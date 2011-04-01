@@ -14,21 +14,23 @@ let g:solarized_contrast="high"
 colorscheme solarized
 " colorscheme dawn
 "
+function! ToggleBackground()
+  if (g:solarized_style=="dark")
+    set background=light
+    let g:solarized_style="light"
+  else
+    set background=dark
+    let g:solarized_style="dark"
+  end
+  colorscheme solarized
+endfunction
+
 if has('gui_running')
-  function! ToggleBackground()
-    if (g:solarized_style=="dark")
-      set background=light
-      let g:solarized_style="light"
-    else
-      set background=dark
-      let g:solarized_style="dark"
-    end
-    colorscheme solarized
-  endfunction
-  nnoremap <F5> :call ToggleBackground()<CR>
 else
   let g:solarized_termcolors=16
 endif
+
+silent! nnoremap <F5> :call ToggleBackground()<CR>
 
 set nocompatible     " the past is better left in the past
 set modelines=0      " workaround for vulnerability with spell files
