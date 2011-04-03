@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'fileutils'
+
 # from http://errtheblog.com/posts/89-huba-huba
 home = File.expand_path('~')
 
@@ -12,7 +14,7 @@ Dir['*'].each do |file|
   next if file =~ /install.rb/
   target = File.join(home, ".#{file}")
   if File.exists?(target)
-    FIle.directory?(target) ? FileUtils.rm_rf(target) : File.unlink(target)
+    File.directory?(target) ? FileUtils.rm_rf(target) : File.unlink(target)
   end
   `ln -s #{File.expand_path file} #{target}`
 end
