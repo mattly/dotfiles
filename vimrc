@@ -277,7 +277,42 @@ if has("gui_running")
   set fuoptions=maxvert,maxhorz
 endif
 
+" --- statusline ----------------------------------------------------
 
-" %q is apparently a macvim thing?
-set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
+function! ErrGroup()
+  let err = "%-12.("
+  let err .= "%#ErrorMsg#"
+  let err .= "%R" " read-only
+  let err .= "%M"
+  " modified
+  let err .= exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''
+  let err .= "%*"
+  let err .= "%)"
+  return err
+endfunction
+
+function! Status()
+  let status = "%<" " cut at start
+  let status .= ErrGroup()
+
+  let status .= "%f" " filename
+  let status .= " (%{&fileformat})"
+
+  " let status .= exists('*rails#statusline')?rails#statusline():''
+
+  if exists('*fugitive#statusline')
+    let git = substitute(fugitive#statusline(), '[Git(', ' ± ', '')
+    let git = substitute(git, ')]$', '', '')
+    let status .= git
+  endif
+
+  let status .= "%="
+  let status .= "%-14.(%l,%c%V%)"
+  let status .= " %P"
+
+  return status
+endfunction
+
+let rails_statusline = 0
+set statusline=%!Status()
 
