@@ -102,18 +102,14 @@ set splitright
 
 " Window movement, cmd-opt-shift-(move)
 nnoremap <D-M-down>   <C-w><Down>
-nnoremap <D-M-j>      <C-w><Down>
 nnoremap <D-M-up>     <C-w><Up>
-nnoremap <D-M-k>      <C-w><Up>
 nnoremap <D-M-left>   <C-w><Left>
-nnoremap <D-M-h>      <C-w><Left>
 nnoremap <D-M-right>  <C-w><Right>
-nnoremap <D-M-l>      <C-w><Right>
 
 nnoremap <C-h>        <C-w><Left>
 nnoremap <C-l>        <C-w><Right>
-nnoremap <C-j>        <C-w><Up>
-nnoremap <C-k>        <C-w><Down>
+nnoremap <C-j>        <C-w><Down>
+nnoremap <C-k>        <C-w><Up>
 
 " --- Insert Mode --------------------------------------------------------
 " option-backspace over words, emacs style
