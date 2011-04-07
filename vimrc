@@ -285,40 +285,55 @@ endif
 
 " --- statusline ----------------------------------------------------
 
-function! ErrGroup()
-  let err = "%-12.("
-  let err .= "%#ErrorMsg#"
-  let err .= "%M" " modified
-  let err .= exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''
-  let err .= "%*"
-  let err .= &paste > 0 ? "▲" : ""
-  let err .= &spell > 0 ? "❖" : ""
-  let err .= "%)"
-  return err
-endfunction
-
-function! Status()
-  let status = "%<" " cut at start
-  let status .= ErrGroup()
-
-  let status .= "%f" " filename
-  let status .= " (%{&filetype})"
-
-  " let status .= exists('*rails#statusline')?rails#statusline():''
-
+function! GitStatus()
   if exists('*fugitive#statusline')
     let git = substitute(fugitive#statusline(), '[Git(', ' ±', '')
-    let git = substitute(git, ')]$', '', '')
-    let status .= git
+    let git = substitute(git, ')]$', ' ', '')
+  else
+    let git=''
   endif
+  return git
+endfunction
 
-  let status .= "%="
-  let status .= "%-14.(%l,%c%V%)"
-  let status .= " %P"
-
-  return status
+function! SyntaxStatus()
+  if exists('*SyntasticStatuslineFlag')
+    let toReturn = SyntasticStatuslineFlag()
+    let toReturn = substitute(toReturn, '[\[\]]', ' ', 'g')
+    return toReturn
+  else
+    return ''
+  end
 endfunction
 
 let rails_statusline = 0
-set statusline=%!Status()
+
+let stl = "%<"
+
+
+let stl .= "%#DiffChange#"
+let stl .= "%-20.40f "
+
+let stl .= "%#DiffAdd#"
+let stl .= " %{&filetype} "
+
+let stl .= "%#DiffText#"
+let stl .= "%.30{GitStatus()}"
+
+let stl .= "%#ErrorMsg#"
+let stl .= "%{&modified > 0 ? ' + ' : ''}"
+let stl .= "%{&modifiable > 0 ? '' : ' - '}"
+let stl .= "%{SyntaxStatus()}"
+
+let stl .= "%#LineNr# "
+let stl .= "%{&paste > 0 ? 'paste':''}"
+let stl .= "%{&paste + &spell > 1 ? ' ':''}"
+let stl .= "%{&spell > 0 ? 'spell':''}"
+
+let stl .= "%*"
+
+let stl .= "%="
+let stl .= "%-14.(%l,%c%V%)"
+let stl .= " %P"
+
+set statusline=%!stl
 
