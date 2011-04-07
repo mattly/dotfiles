@@ -9,7 +9,7 @@ filetype plugin on
 
 " Display
 set t_Co=256
-set background=dark
+let g:solarized_style="dark"
 let g:solarized_contrast="high"
 if has('gui_running')
   function! ToggleBackground()
@@ -22,12 +22,13 @@ if has('gui_running')
     end
     colorscheme solarized
   endfunction
+  silent! inoremap <F5> :call ToggleBackground()<CR>
   silent! nnoremap <F5> :call ToggleBackground()<CR>
+  silent! vnoremap <F5> :call ToggleBackground()<CR>gv
 else
   let g:solarized_termcolors=16
 endif
 colorscheme solarized
-
 
 set nocompatible     " the past is better left in the past
 set modelines=0      " workaround for vulnerability with spell files
