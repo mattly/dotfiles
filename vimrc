@@ -69,6 +69,8 @@ set cursorline
 set wildmenu
 set wildmode=list:longest,full
 
+" set mouse=a
+
 nnoremap ; :
 
 " formatting options:
@@ -154,8 +156,11 @@ set grepprg=ack
 " --- spelling -------------------------------------------------------
 if v:version >= 700
   setlocal spell spelllang=en
-  nmap <LocalLeader>ss :set spell!<CR>
+  nnoremap <silent><Leader>ss :set spell!<CR>
 endif
+
+" --- pasting ---------------------------------------------------------
+nnoremap <silent><Leader>sp :set paste<CR>
 
 " --- quickfix --------------------------------------------------------
 autocmd QuickfixCmdPost grep copen
@@ -283,11 +288,11 @@ endif
 function! ErrGroup()
   let err = "%-12.("
   let err .= "%#ErrorMsg#"
-  let err .= "%R" " read-only
-  let err .= "%M"
-  " modified
+  let err .= "%M" " modified
   let err .= exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''
   let err .= "%*"
+  let err .= &paste > 0 ? "▲" : ""
+  let err .= &spell > 0 ? "❖" : ""
   let err .= "%)"
   return err
 endfunction
@@ -297,12 +302,12 @@ function! Status()
   let status .= ErrGroup()
 
   let status .= "%f" " filename
-  let status .= " (%{&fileformat})"
+  let status .= " (%{&filetype})"
 
   " let status .= exists('*rails#statusline')?rails#statusline():''
 
   if exists('*fugitive#statusline')
-    let git = substitute(fugitive#statusline(), '[Git(', ' ± ', '')
+    let git = substitute(fugitive#statusline(), '[Git(', ' ±', '')
     let git = substitute(git, ')]$', '', '')
     let status .= git
   endif
