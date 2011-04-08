@@ -145,7 +145,8 @@ if v:version >= 700
 endif
 
 " --- pasting ---------------------------------------------------------
-nnoremap <silent><Leader>sp :set paste<CR>
+nnoremap <silent><Leader>sp :set paste!<CR>
+nnoremap <silent><Leader>sl :set list!<CR>
 
 " --- quickfix --------------------------------------------------------
 autocmd QuickfixCmdPost grep copen
