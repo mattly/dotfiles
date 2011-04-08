@@ -3,6 +3,7 @@
   name=Matthew Lyon
 [github]
   user = mattly
+  token = !sh -c 'echo $GITHUB_TOKEN'
 
 [core]
   excludesfile=~/.gitignore
@@ -14,7 +15,6 @@
   branch=auto
 
 [merge]
-  log=true
   tool=vimdiff
 [merge "gemfilelock"]
   name = relocks the gemfile.lock
