@@ -287,10 +287,26 @@ endif
 
 function! GitStatus()
   if exists('*fugitive#statusline')
-    let git = substitute(fugitive#statusline(), '[Git(', ' ±', '')
-    let git = substitute(git, ')]$', ' ', '')
+    let branchname = substitute(fugitive#statusline(), '[Git(', '', '')
+    let branchname = substitute(branchname, ')]$', ' ', '')
+
+    let branchname = substitute(branchname, '^feature/', 'ƒ ', '')
+    let branchname = substitute(branchname, '^bug/', 'β ', '')
+    let branchname = substitute(branchname, '^hotfix/', 'λ ', '')
+
+    let maxlen = 50
+    if strlen(branchname) > maxlen
+      let branchname = strpart(branchname, 0, maxlen)
+      let branchname .= "…"
+    end
+    if strlen(branchname) > 0
+      let git = ' ± '
+    else
+      let git = ''
+    end
+    let git .= branchname
   else
-    let git=''
+    let git = ''
   endif
   return git
 endfunction
@@ -309,19 +325,22 @@ let rails_statusline = 0
 
 let stl = "%<"
 
-
 let stl .= "%#DiffChange#"
-let stl .= "%-20.40f "
+let stl .= "%-.40f "
 
 let stl .= "%#DiffAdd#"
 let stl .= " %{&filetype} "
 
-let stl .= "%#DiffText#"
-let stl .= "%.30{GitStatus()}"
+let stl .= "%*"
+let stl .= "%{GitStatus()}"
+
+let stl .= "%="
 
 let stl .= "%#ErrorMsg#"
-let stl .= "%{&modified > 0 ? ' + ' : ''}"
-let stl .= "%{&modifiable > 0 ? '' : ' - '}"
+let stl .= "%{&modified > 0 ? 'dirty' : ''}"
+let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
+let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
+
 let stl .= "%{SyntaxStatus()}"
 
 let stl .= "%#LineNr# "
@@ -331,8 +350,7 @@ let stl .= "%{&spell > 0 ? 'spell':''}"
 
 let stl .= "%*"
 
-let stl .= "%="
-let stl .= "%-14.(%l,%c%V%)"
+let stl .= " %-14.(%l,%c%V%)"
 let stl .= " %P"
 
 set statusline=%!stl
