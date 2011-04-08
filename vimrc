@@ -9,24 +9,9 @@ filetype plugin on
 
 " Display
 set t_Co=256
-let g:solarized_style="dark"
 let g:solarized_contrast="high"
 if has('gui_running')
-  function! ToggleBackground()
-    if (g:solarized_style=="dark")
-      set background=light
-      let g:solarized_style="light"
-    else
-      set background=dark
-      let g:solarized_style="dark"
-    end
-    colorscheme solarized
-  endfunction
-  silent! inoremap <F5> :call ToggleBackground()<CR>
-  silent! nnoremap <F5> :call ToggleBackground()<CR>
-  silent! vnoremap <F5> :call ToggleBackground()<CR>gv
-else
-  let g:solarized_termcolors=16
+  set background=dark
 endif
 colorscheme solarized
 
@@ -342,15 +327,17 @@ let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
 let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
 
 let stl .= "%{SyntaxStatus()}"
+let stl .= "%*"
 
-let stl .= "%#LineNr# "
 let stl .= "%{&paste > 0 ? 'paste':''}"
 let stl .= "%{&paste + &spell > 1 ? ' ':''}"
 let stl .= "%{&spell > 0 ? 'spell':''}"
+let stl .= "%{&spell + &list > 1 ? ' ':''}"
+let stl .= "%{&list > 0 ? 'list':''}"
 
-let stl .= "%*"
-
-let stl .= " %-14.(%l,%c%V%)"
+let stl .= " %-14.("
+let stl .= "%l,%c%V"
+let stl .= "%)"
 let stl .= " %P"
 
 set statusline=%!stl
