@@ -115,7 +115,7 @@ channels = (
   { name = "#rack"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#github"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#github"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#documentcloud"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
