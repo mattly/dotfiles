@@ -274,23 +274,23 @@ endif
 function! GitStatus()
   if exists('*fugitive#statusline')
     let branchname = substitute(fugitive#statusline(), '[Git(', '', '')
-    let branchname = substitute(branchname, ')]$', ' ', '')
+    let branchname = substitute(branchname, ')]$', '', '')
 
     let branchname = substitute(branchname, '^feature/', 'ƒ ', '')
     let branchname = substitute(branchname, '^bug/', 'β ', '')
     let branchname = substitute(branchname, '^hotfix/', 'λ ', '')
+    let branchname = substitute(branchname, '^chore/', 'ς ', '')
 
-    let maxlen = 50
+    let maxlen = 30
     if strlen(branchname) > maxlen
       let branchname = strpart(branchname, 0, maxlen)
       let branchname .= "…"
     end
     if strlen(branchname) > 0
-      let git = ' ± '
+      let git = ' ± ' . branchname . ' '
     else
       let git = ''
     end
-    let git .= branchname
   else
     let git = ''
   endif
@@ -301,7 +301,10 @@ function! SyntaxStatus()
   if exists('*SyntasticStatuslineFlag')
     let toReturn = SyntasticStatuslineFlag()
     let toReturn = substitute(toReturn, '[\[\]]', ' ', 'g')
-    return toReturn
+    if strlen(toReturn) > 0
+      return " ".toReturn
+    else
+      return ''
   else
     return ''
   end
@@ -312,31 +315,29 @@ let rails_statusline = 0
 let stl = "%<"
 
 let stl .= "%#DiffChange#"
-let stl .= "%-.40f "
+let stl .= "%-.30f "
 
 let stl .= "%#DiffAdd#"
 let stl .= " %{&filetype} "
 
 let stl .= "%*"
-let stl .= "%{GitStatus()}"
+let stl .= "%-.35{GitStatus()}"
 
 let stl .= "%="
 
 let stl .= "%#ErrorMsg#"
-let stl .= "%{&modified > 0 ? 'dirty' : ''}"
+let stl .= "%{&modified > 0 ? '-dirty-' : ''}"
 let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
 let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
 
 let stl .= "%{SyntaxStatus()}"
 let stl .= "%*"
 
-let stl .= "%{&paste > 0 ? 'paste':''}"
-let stl .= "%{&paste + &spell > 1 ? ' ':''}"
-let stl .= "%{&spell > 0 ? 'spell':''}"
-let stl .= "%{&spell + &list > 1 ? ' ':''}"
-let stl .= "%{&list > 0 ? 'list':''}"
+let stl .= "%{&paste > 0 ? 'p':''}"
+let stl .= "%{&spell > 0 ? 's':''}"
+let stl .= "%{&list > 0 ? 'l':''}"
 
-let stl .= " %-14.("
+let stl .= " %("
 let stl .= "%l,%c%V"
 let stl .= "%)"
 let stl .= " %P"
