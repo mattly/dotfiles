@@ -54,7 +54,7 @@ set cursorline
 set wildmenu
 set wildmode=list:longest,full
 
-" set mouse=a
+set mouse=a
 
 nnoremap ; :
 
@@ -102,12 +102,7 @@ nnoremap <C-k>        <C-w><Up>
 " --- Insert Mode --------------------------------------------------------
 " option-backspace over words, emacs style
 inoremap <M-Backspace> <C-[>ciw
-
-" don't use the fucking arrow keys in insert mode
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+inoremap <C-Backspace> <C-[>ciw
 
 " disable the fucking help
 inoremap <F1> <ESC>
@@ -120,6 +115,8 @@ cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
 " option-backspace over words
 cnoremap <M-Backspace> <S-Right> <C-W>
+cnoremap <C-Backspace> <S-Right> <C-W>
+
 cnoremap <M-Right>  <S-Right>
 cnoremap <M-Left>   <S-Left>
 
@@ -267,6 +264,9 @@ if has("gui_running")
   set guioptions-=TrlL
 
   set fuoptions=maxvert,maxhorz
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
 " --- statusline ----------------------------------------------------
