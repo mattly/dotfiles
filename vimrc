@@ -54,9 +54,12 @@ set cursorline
 set wildmenu
 set wildmode=list:longest,full
 
-set mouse=a
+" set mouse=a
 
 nnoremap ; :
+
+" I always hit this when I mean to hit J or I
+nnoremap K <nop>
 
 " formatting options:
 " help fo-table
