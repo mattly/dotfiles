@@ -290,7 +290,8 @@ function! GitStatus()
       let branchname .= "…"
     end
     if strlen(branchname) > 0
-      let git = ' ± ' . branchname . ' '
+      " let git = ' ± ' . branchname . ' '
+      let git = ' ± '
     else
       let git = ''
     end
