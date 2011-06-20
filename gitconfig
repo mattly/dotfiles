@@ -14,8 +14,6 @@
   status=auto
   branch=auto
 
-[merge]
-  tool=vimdiff
 [merge "gemfilelock"]
   name = relocks the gemfile.lock
   driver = bundle lock
