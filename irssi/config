@@ -291,7 +291,7 @@ settings = {
     awl_display_key = "$Q%K|%n$H$C$S";
     awl_block = "0";
   };
-  "fe-common/core" = { theme = "zng"; };
+  "fe-common/core" = { theme = "solarish"; };
 };
 windows = { 1 = { immortal = "yes"; name = "(status)"; level = "ALL"; }; };
 ignores = ( { level = "JOINS PARTS QUITS NICKS"; } );
