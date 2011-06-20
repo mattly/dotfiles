@@ -104,21 +104,11 @@ chatnets = {
 };
 
 channels = (
-  {
-    name = "#caboose";
-    chatnet = "freenode";
-    autojoin = "yes";
-    password = "$CABOOSE_PASSWORD";
-  },
   { name = "#coffeescript"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#Node.js"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#rack"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#github"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#documentcloud"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#iterm2"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#tumbolia"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#documentcloud"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
