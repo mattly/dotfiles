@@ -6,7 +6,7 @@ if [ -d "$HOME/bin" ]; then
     export PATH=$HOME/bin:$PATH
 fi
 
-export TERM=linux
+# export TERM=linux
 export EDITOR="mvim -f" 
 export CLICOLOR=YES
 export LC_CTYPE=en_US.UTF-8
