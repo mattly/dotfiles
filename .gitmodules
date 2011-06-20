@@ -70,10 +70,6 @@
 	path = vim/bundle/vim-ragtag.git
 	url = https://github.com/tpope/vim-ragtag.git
   ignore = untracked
-[submodule "vim/bundle/vim-indent-guide.git"]
-	path = vim/bundle/vim-indent-guide.git
-	url = https://github.com/mattly/vim-indent-guides.git
-  ignore = untracked
 [submodule "vim/bundle/vim-align.git"]
 	path = vim/bundle/vim-align.git
 	url = https://github.com/tsaleh/vim-align.git
