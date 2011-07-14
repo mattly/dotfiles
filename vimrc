@@ -159,6 +159,8 @@ autocmd QuickfixCmdPost grep copen
 set foldmethod=indent
 set foldlevelstart=99
 autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=/
+autocmd BufNewFile,BufRead * set foldmethod=indent
+autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
 " --- navigation ------------------------------------------------------
 " make the tab key match bracket pairs
