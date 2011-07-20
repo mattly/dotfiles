@@ -18,10 +18,6 @@
 	path = vim/bundle/vim-markdown.git
 	url = git://github.com/tpope/vim-markdown.git
   ignore = untracked
-[submodule "vim/bundle/vim-rdoc.git"]
-	path = vim/bundle/vim-rdoc.git
-	url = git://github.com/hallison/vim-rdoc.git
-  ignore = untracked
 [submodule "vim/bundle/vim-coffee-script.git"]
 	path = vim/bundle/vim-coffee-script.git
 	url = git://github.com/kchmck/vim-coffee-script.git
