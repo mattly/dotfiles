@@ -4,4 +4,4 @@
 --ignore-dir=vendor
 --type-add=ruby=haml,rake,ru
 --type-add=js=coffee
---type-add=css=less
+--type-add=css=less,sass

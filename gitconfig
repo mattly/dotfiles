@@ -1,6 +1,6 @@
 [user]
   email=matthew@lyonheart.us
-  name=Matthew Lyon
+	name = Matthew Lyon
 [github]
   user = mattly
   token = !sh -c 'echo $GITHUB_TOKEN'
@@ -14,8 +14,6 @@
   status=auto
   branch=auto
 
-[merge]
-  tool=vimdiff
 [merge "gemfilelock"]
   name = relocks the gemfile.lock
   driver = bundle lock
@@ -48,6 +46,8 @@
   cheat = !sh -c 'cheat git | less'
   # delete a remote branch
   delete = !sh -c 'git push "$0" :refs/heads/"$1"'
+  # inspired by my co-workers
+  fix = commit -am "fix"
   # merge the branch, keeping its commits in their own branch
   fold = merge --no-ff
   # set a tag

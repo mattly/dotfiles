@@ -54,6 +54,10 @@ set cursorline
 set wildmenu
 set wildmode=list:longest,full
 
+" use per-project .virmc
+set exrc
+set secure
+
 " set mouse=a
 
 nnoremap ; :
@@ -155,6 +159,8 @@ autocmd QuickfixCmdPost grep copen
 set foldmethod=indent
 set foldlevelstart=99
 autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=/
+autocmd BufNewFile,BufRead * set foldmethod=indent
+autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
 " --- navigation ------------------------------------------------------
 " make the tab key match bracket pairs
@@ -188,27 +194,10 @@ cnoremap <Leader>e **/
 set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
 map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
 
-
-" Rails.vim custom nav
-autocmd User Rails Rnavcommand -suffix=.rb processor app/processors
-autocmd User Rails Rnavcommand -suffix=.rb ernie app/ernie
-autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
-autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
-autocmd User Rails Rnavcommand -suffix=.rb lib app/lib
-
 " --- Visual Column Stuff ---------------------------------------------
 autocmd BufNewFile,BufRead * set nocursorcolumn
 autocmd BufNewFile,BufRead *.coffee,*Cakefile set cursorcolumn
 autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
-
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_color_change_percent=5
-
-" disable IndentGuides for all filetypes except those where indent is
-" significant
-autocmd BufNewFile,BufRead * :IndentGuidesDisable
-autocmd BufNewFile,BufRead *.coffee,*Cakefile :IndentGuidesEnable
-autocmd BufNewFile,BufRead *.haml,*.sass,*.scss :IndentGuidesEnable
 
 " --- Yankring --------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
@@ -290,7 +279,8 @@ function! GitStatus()
       let branchname .= "…"
     end
     if strlen(branchname) > 0
-      let git = ' ± ' . branchname . ' '
+      " let git = ' ± ' . branchname . ' '
+      let git = ' ± '
     else
       let git = ''
     end
