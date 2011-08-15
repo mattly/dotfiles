@@ -14,7 +14,7 @@ filetype plugin on
 set t_Co=256
 let g:solarized_contrast="high"
 if has('gui_running')
-  set background=dark
+  set background=light
 endif
 colorscheme solarized
 
