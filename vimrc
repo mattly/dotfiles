@@ -173,6 +173,8 @@ vnoremap <tab> %
 " toggle between relative line numbers
 nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
 
+autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
+
 " --- Plugins ---------------------------------------------------------
 au BufRead,BufNewFile *.pp              set filetype=puppet
 

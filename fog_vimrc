@@ -1,9 +1,16 @@
 " .vimrc for my work on the appfog rails project
 "
 " Rails.vim custom nav
-autocmd User Rails Rnavcommand -suffix=.rb processor app/processors
-autocmd User Rails Rnavcommand -suffix=.rb ernie app/ernie
-autocmd User Rails Rnavcommand -suffix=.sass sass app/stylesheets
-autocmd User Rails Rnavcommand -suffix=.coffee coffee app/coffeescripts
-autocmd User Rails Rnavcommand -suffix=.rb lib app/lib
+autocmd User Rails Rnavcommand processor app/processors -suffix=_processor.rb
+autocmd User Rails Rnavcommand procspec spec/processors -suffix=_processor_spec.rb
 
+autocmd User Rails Rnavcommand rpc app/ernie -suffix=.rb
+autocmd User Rails Rnavcommand rpcspec spec/ernie -suffix=_rpc_spec.rb
+
+autocmd User Rails Rnavcommand service app/services -suffix=.rb
+autocmd User Rails Rnavcommand sspec spec/services -suffix=_spec.rb
+
+autocmd User Rails Rnavcommand lib lib -suffix=.rb
+
+autocmd User Rails Rnavcommand sass app/stylesheets -suffix=.sass
+autocmd User Rails Rnavcommand coffee app/coffeescripts -suffix=.coffee
