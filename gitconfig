@@ -44,6 +44,8 @@
   branches = branch -a --color -v
   # git cheat sheet
   cheat = !sh -c 'cheat git | less'
+  # remove all local branches included in the current branch
+  cleanup = !git branch | grep -E '^[^*]' | xargs git branch -d
   # delete a remote branch
   delete = !sh -c 'git push "$0" :refs/heads/"$1"'
   # inspired by my co-workers
