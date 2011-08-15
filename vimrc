@@ -1,6 +1,9 @@
 filetype off
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+" silent! call pathogen#runtime_append_all_bundles()
+" silent! call pathogen#helptags()
+
+source ~/.vim/bundle/vim-pathogen.git/autoload/pathogen.vim
+call pathogen#infect()
 
 syntax on
 filetype on
