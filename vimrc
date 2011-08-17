@@ -1,6 +1,9 @@
 filetype off
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+" silent! call pathogen#runtime_append_all_bundles()
+" silent! call pathogen#helptags()
+
+source ~/.vim/bundle/vim-pathogen.git/autoload/pathogen.vim
+call pathogen#infect()
 
 syntax on
 filetype on
@@ -158,7 +161,7 @@ autocmd QuickfixCmdPost grep copen
 " --- folding ---------------------------------------------------------
 set foldmethod=indent
 set foldlevelstart=99
-autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=/
+autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=
 autocmd BufNewFile,BufRead * set foldmethod=indent
 autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
@@ -169,6 +172,8 @@ vnoremap <tab> %
 
 " toggle between relative line numbers
 nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
+
+autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
 
 " --- Plugins ---------------------------------------------------------
 au BufRead,BufNewFile *.pp              set filetype=puppet
