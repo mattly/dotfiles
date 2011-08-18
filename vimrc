@@ -191,8 +191,8 @@ let g:CommandTMatchWindowAtTop=1
 silent! nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <Leader>T :CommandTFlush<CR>
 
-nnoremap <Leader>e :e **/
-cnoremap <Leader>e **/
+nnoremap <Leader>e :e %:h/**/
+cnoremap <Leader>e :e %:h/**/
 
 " tags
 set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
