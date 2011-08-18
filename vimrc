@@ -70,18 +70,17 @@ nnoremap K <nop>
 
 " formatting options:
 " help fo-table
-" t: automatically hard-wrap based on text-width
 " c: do the same for comments, but
 " r:   autoinsert comment character too
 " o: ditto, but for o/O in normal node
 " q: allow 'gq' to autowrap/format comments as well as normal text
 " 1: Don't break a line before a one-character word
 " n: recognize numbered lists
-set formatoptions+=tcroq1n
+set formatoptions+=croq1n
 set wrap
 set linebreak
 set textwidth=79
-" set colorcolumn=85
+set colorcolumn=80
 set formatprg="par -qe"
 
 let mapleader = ','
@@ -270,19 +269,20 @@ endif
 
 function! GitStatus()
   if exists('*fugitive#statusline')
-    let branchname = substitute(fugitive#statusline(), '[Git(', '', '')
-    let branchname = substitute(branchname, ')]$', '', '')
+    let branchname = fugitive#statusline()
+    " let branchname = substitute(branchname, '[Git(]', '', '')
+    " let branchname = substitute(branchname, ')]$', '', '')
 
-    let branchname = substitute(branchname, '^feature/', 'ƒ ', '')
-    let branchname = substitute(branchname, '^bug/', 'β ', '')
-    let branchname = substitute(branchname, '^hotfix/', 'λ ', '')
-    let branchname = substitute(branchname, '^chore/', 'ς ', '')
+    " let branchname = substitute(branchname, '^feature/', 'ƒ ', '')
+    " let branchname = substitute(branchname, '^bug/', 'β ', '')
+    " let branchname = substitute(branchname, '^hotfix/', 'λ ', '')
+    " let branchname = substitute(branchname, '^chore/', 'ς ', '')
 
-    let maxlen = 30
-    if strlen(branchname) > maxlen
-      let branchname = strpart(branchname, 0, maxlen)
-      let branchname .= "…"
-    end
+    " let maxlen = 30
+    " if strlen(branchname) > maxlen
+    "   let branchname = strpart(branchname, 0, maxlen)
+    "   let branchname .= "…"
+    " end
     if strlen(branchname) > 0
       " let git = ' ± ' . branchname . ' '
       let git = ' ± '
