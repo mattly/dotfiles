@@ -331,14 +331,8 @@ let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
 let stl .= "%{SyntaxStatus()}"
 let stl .= "%*"
 
-let stl .= "%{&paste > 0 ? 'p':''}"
-let stl .= "%{&spell > 0 ? 's':''}"
-let stl .= "%{&list > 0 ? 'l':''}"
-
-let stl .= " %("
-let stl .= "%l,%c%V"
-let stl .= "%)"
-let stl .= " %P"
+let stl .= " %c:"
+let stl .= "%l/%L %P"
 
 set statusline=%!stl
 
