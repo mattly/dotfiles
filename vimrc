@@ -35,12 +35,15 @@ set nobackup
 set nowb
 set noswapfile
 
+set lazyredraw
+
 set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set smarttab
 set autoindent
+set shiftround
 
 set list
 " eol:¬
@@ -50,8 +53,8 @@ set backspace=indent,eol,start     " backspace over anything
 
 set guifont=Menlo:h14
 set ttyfast
-set scrolloff=3                    " minimum lines to show around cursor
-set sidescrolloff=4                " min characters to show
+set scrolloff=5                    " minimum lines to show around cursor
+set sidescrolloff=5                " min characters to show
 set cursorline
 
 set wildmenu
@@ -97,16 +100,24 @@ set laststatus=2 " always show the status line
 set splitbelow
 set splitright
 
-" Window movement, cmd-opt-shift-(move)
-nnoremap <D-M-down>   <C-w><Down>
-nnoremap <D-M-up>     <C-w><Up>
-nnoremap <D-M-left>   <C-w><Left>
-nnoremap <D-M-right>  <C-w><Right>
-
-nnoremap <C-h>        <C-w><Left>
-nnoremap <C-l>        <C-w><Right>
+" Window and buffer movement
+" cmd-opt-shift-(move) is similar to iterm
+" Ctrl-(move) is easier in iterm
+nnoremap <D-M-down>   <C-w><Down>   " window down
 nnoremap <C-j>        <C-w><Down>
+
+nnoremap <D-M-up>     <C-w><Up>     " window up
 nnoremap <C-k>        <C-w><Up>
+
+nnoremap <D-M-left>   <C-w><Left>   " window left
+nnoremap <C-h>        <C-w><Left>
+
+nnoremap <D-M-right>  <C-w><Right>  " window right
+nnoremap <C-l>        <C-w><Right>
+
+nnoremap <C-n>        :bnext<CR>       " buffer next
+nnoremap <C-p>        :bprev<CR>       " buffer previous
+
 
 " --- Insert Mode --------------------------------------------------------
 " option-backspace over words, emacs style
@@ -173,6 +184,10 @@ vnoremap <tab> %
 nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
 
 autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
+
+# --- substitution ------------------------------------------------------------
+iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
+
 
 " --- Plugins ---------------------------------------------------------
 au BufRead,BufNewFile *.pp              set filetype=puppet
