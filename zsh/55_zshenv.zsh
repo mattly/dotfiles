@@ -11,7 +11,7 @@ export EDITOR="mvim -f"
 export CLICOLOR=YES
 export LC_CTYPE=en_US.UTF-8
 export DISPLAY=":0.0"
-export PAGER=less
+export PAGER=vimpager
 export LESS='-FMRQr-z-4'
 export GREP_OPTIONS='--color=auto' 
 export GREP_COLOR='1;36'
