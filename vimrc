@@ -13,9 +13,7 @@ filetype plugin on
 " Display
 set t_Co=256
 let g:solarized_contrast="high"
-if has('gui_running')
-  set background=light
-endif
+set background=light
 colorscheme solarized
 
 set nocompatible     " the past is better left in the past
