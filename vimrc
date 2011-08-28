@@ -182,9 +182,6 @@ nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar
 
 autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
 
-# --- substitution ------------------------------------------------------------
-iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
-
 
 " --- Plugins ---------------------------------------------------------
 au BufRead,BufNewFile *.pp              set filetype=puppet
