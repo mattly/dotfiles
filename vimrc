@@ -81,7 +81,6 @@ set formatoptions+=croq1n
 set wrap
 set linebreak
 set textwidth=79
-set colorcolumn=80
 set formatprg="par -qe"
 
 let mapleader = ','
