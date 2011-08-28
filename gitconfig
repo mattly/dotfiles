@@ -42,8 +42,6 @@
   axe = !sh -c 'git log -S"$0"'
   # show all branches, even across remotes
   branches = branch -a --color -v
-  # git cheat sheet
-  cheat = !sh -c 'cheat git | less'
   # remove all local branches included in the current branch
   cleanup = !git branch | grep -E '^[^*]' | xargs git branch -d
   # delete a remote branch
@@ -77,7 +75,4 @@
   up = !sh -c 'git pull "$0" HEAD && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
   # update all remotes, pruning removed tracking branches
   update-remotes = remote update --prune
-
-  # yeah I went there. And I came back. I have a time-share there.
-  x = !sh -c 'gitx'
 
