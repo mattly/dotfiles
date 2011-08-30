@@ -50,6 +50,8 @@
   fix = commit -am "fix"
   # merge the branch, keeping its commits in their own branch
   fold = merge --no-ff
+  # put this branch at a particular ref
+  goto = reset --hard
   # set an ignore pattern
   ignore = !"f () { local ignore_file=$( git rev-parse --show-cdup ).gitignore arg; for arg in $*; do echo $arg >> $ignore_file; done; sort -u -o $ignore_file $ignore_file; }; f"
   # set a tag

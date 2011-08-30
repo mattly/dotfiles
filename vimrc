@@ -322,7 +322,7 @@ let rails_statusline = 0
 let stl = "%<"
 
 let stl .= "%#DiffChange#"
-let stl .= "%-.30f "
+let stl .= "%-.60f "
 
 let stl .= "%#DiffAdd#"
 let stl .= " %{&filetype} "

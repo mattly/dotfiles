@@ -7,16 +7,17 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # export TERM=linux
-export EDITOR="mvim -f" 
+export EDITOR="mvim -f"
 export CLICOLOR=YES
 export LC_CTYPE=en_US.UTF-8
 export DISPLAY=":0.0"
 export PAGER=vimpager
-export LESS='-FMRQr-z-4'
-export GREP_OPTIONS='--color=auto' 
+# export PAGER=less
+export LESS='-MRQ-z-4'
+export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;36'
 
-# set word boundries to include puncutation
+# set word boundaries to include punctuation
 export WORDCHARS=''
 
 source ~/.env
