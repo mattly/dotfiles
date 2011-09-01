@@ -1,7 +1,4 @@
 filetype off
-" silent! call pathogen#runtime_append_all_bundles()
-" silent! call pathogen#helptags()
-
 source ~/.vim/bundle/vim-pathogen.git/autoload/pathogen.vim
 call pathogen#infect()
 
@@ -114,7 +111,6 @@ nnoremap <C-l>        <C-w><Right>
 
 nnoremap <C-n>        :bnext<CR>       " buffer next
 nnoremap <C-p>        :bprev<CR>       " buffer previous
-
 
 " --- Insert Mode --------------------------------------------------------
 " option-backspace over words, emacs style
