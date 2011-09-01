@@ -59,7 +59,7 @@ set wildmode=list:longest,full
 set exrc
 set secure
 
-" set mouse=a
+set mouse=a
 
 nnoremap ; :
 
