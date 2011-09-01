@@ -144,7 +144,7 @@ set wrapscan
 set incsearch
 set hlsearch
 " remove the highlight
-nnoremap <silent> <Esc> :noh<cr>
+nnoremap <silent><Leader>, :noh<cr>
 
 " make search use real regexes
 nnoremap / /\v
