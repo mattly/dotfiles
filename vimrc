@@ -98,14 +98,14 @@ set formatprg="par -qe"
 
 let mapleader = ','
 
-" --- Gui Window Tabs ----------------------------------------------------
+" --- Gui Window Tabs ---------------------------------------------------------
 " tab movement, cmd-shift-(move)
 nnoremap <D-S-right>  :tabnext<CR>
 nnoremap <D-S-l>      :tabnext<CR>
 nnoremap <D-S-left>   :tabprevious<CR>
 nnoremap <D-S-h>      :tabprevious<CR>
 
-" --- Vim Windows ---------------------------------------------------------
+" --- Vim Windows -------------------------------------------------------------
 set laststatus=2 " always show the status line
 set splitbelow
 set splitright
@@ -128,7 +128,7 @@ nnoremap <C-l>        <C-w><Right>
 nnoremap <C-n>        :bnext<CR>       " buffer next
 nnoremap <C-p>        :bprev<CR>       " buffer previous
 
-" --- Insert Mode --------------------------------------------------------
+" --- Insert Mode -------------------------------------------------------------
 " option-backspace over words, emacs style
 inoremap <M-Backspace> <C-[>ciw
 inoremap <C-Backspace> <C-[>ciw
@@ -138,7 +138,7 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" --- Ex Mode ------------------------------------------------------------
+" --- Ex Mode -----------------------------------------------------------------
 cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
@@ -164,27 +164,27 @@ vnoremap / /\v
 
 set grepprg=ack
 
-" --- spelling -------------------------------------------------------
+" --- spelling ----------------------------------------------------------------
 if v:version >= 700
   setlocal spell spelllang=en
   nnoremap <silent><Leader>ss :set spell!<CR>
 endif
 
-" --- pasting ---------------------------------------------------------
+" --- pasting -----------------------------------------------------------------
 nnoremap <silent><Leader>sp :set paste!<CR>
 nnoremap <silent><Leader>sl :set list!<CR>
 
-" --- quickfix --------------------------------------------------------
+" --- quickfix ----------------------------------------------------------------
 autocmd QuickfixCmdPost grep copen
 
-" --- folding ---------------------------------------------------------
+" --- folding -----------------------------------------------------------------
 set foldmethod=indent
 set foldlevelstart=99
 autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=
 autocmd BufNewFile,BufRead * set foldmethod=indent
 autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
-" --- navigation ------------------------------------------------------
+" --- navigation --------------------------------------------------------------
 " make the tab key match bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
@@ -192,22 +192,19 @@ vnoremap <tab> %
 " toggle between relative line numbers
 nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
 
-autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
-
-
-" --- Plugins ---------------------------------------------------------
+" --- Plugins -----------------------------------------------------------------
 au BufRead,BufNewFile *.pp              set filetype=puppet
 
-" --- RagTag ----------------------------------------------------------
+" --- RagTag ------------------------------------------------------------------
 let g:ragtag_global_maps = 1
 
-" --- Git / Fugitive --------------------------------------------------
+" --- Git / Fugitive ----------------------------------------------------------
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gw :Gw<CR>
 
-" --- File Navigation -------------------------------------------------
+" --- File Navigation ---------------------------------------------------------
 let g:CommandTMatchWindowAtTop=1
 silent! nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <Leader>T :CommandTFlush<CR>
@@ -219,15 +216,15 @@ cnoremap <Leader>e :e %:h/**/
 set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
 map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
 
-" --- Visual Column Stuff ---------------------------------------------
+" --- Visual Column Stuff -----------------------------------------------------
 autocmd BufNewFile,BufRead * set nocursorcolumn
 autocmd BufNewFile,BufRead *.coffee,*Cakefile set cursorcolumn
 autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
 
-" --- Yankring --------------------------------------------------------
+" --- Yankring ----------------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
 
-" === Custom Shit =====================================================
+" === Custom Shit =============================================================
 " DiffOrig() will do a diff with of the buffer vs. its unsaved state.
 " This is handy for seeing what you've changed and accepting/reverting
 " changes before writing
@@ -263,7 +260,7 @@ cmap w!! %!sudo tee > /dev/null %
 
 let html_use_css=1
 
-" --- gui stuff -------------------------------------------------------
+" --- gui stuff ---------------------------------------------------------------
 if has("gui_running")
   " a: visual-mode autoselect (takes over the OS selection process)
   " A: autoselect for modeless selection
@@ -288,7 +285,7 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" --- statusline ----------------------------------------------------
+" --- statusline --------------------------------------------------------------
 
 function! GitStatus()
   if exists('*fugitive#statusline')
