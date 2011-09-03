@@ -1,3 +1,2 @@
-let vimpager_use_gvim = 1
 set nolist
 syntax on
