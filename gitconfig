@@ -47,6 +47,8 @@
   branches = branch -a --color -v
   # remove all local branches included in the current branch
   cleanup = !git branch --merged | grep -E '^[^*]' | xargs git branch -d
+  # shallow clone a repository, because we don't care about history
+  clone-shallow = clone --depth 1
   # delete a remote branch
   delete = !sh -c 'git push "$0" :refs/heads/"$1"'
   # inspired by my co-workers
