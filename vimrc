@@ -188,6 +188,7 @@ autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 " make the tab key match bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
+autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
 
 " toggle between relative line numbers
 nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
