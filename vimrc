@@ -266,7 +266,9 @@ if has("gui_running")
 
   set fuoptions=maxvert,maxhorz
 else
+  " bar cursor in insert mode
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  " block cursor in normal mode
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
