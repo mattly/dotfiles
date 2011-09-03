@@ -51,6 +51,22 @@ set ttyfast
 set scrolloff=5                    " minimum lines to show around cursor
 set sidescrolloff=5                " min characters to show
 set cursorline
+set colorcolumn=80
+let s:colorcolumn_old=0
+highlight OverLength ctermbg=red ctermfg=white
+match OverLength /\%81v.\+/
+
+function! s:ToggleColorColumn()
+  if s:colorcolumn_old == 0
+    let s:colorcolumn_old = &colorcolumn
+    windo let &colorcolumn = 0
+  else
+    windo let &colorcolumn = s:colorcolumn_old
+    let s:colorcolumn_old = 0
+  endif
+endfunction
+
+nnoremap <Leader>8 :call <SID>ToggleColorColumn()<cr>
 
 set wildmenu
 set wildmode=list:longest,full
