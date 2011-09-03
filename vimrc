@@ -162,7 +162,7 @@ nnoremap <silent><Leader>, :noh<cr>
 nnoremap / /\v
 vnoremap / /\v
 
-set grepprg=ack
+set grepprg=ack\ -aH
 
 " --- spelling ----------------------------------------------------------------
 if v:version >= 700
