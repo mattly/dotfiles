@@ -46,7 +46,7 @@ set listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 set backspace=indent,eol,start     " backspace over anything
 
-set guifont=Menlo:h14
+set guifont=Menlo:h12
 set ttyfast
 set scrolloff=5                    " minimum lines to show around cursor
 set sidescrolloff=5                " min characters to show
@@ -162,7 +162,7 @@ nnoremap <silent><Leader>, :noh<cr>
 nnoremap / /\v
 vnoremap / /\v
 
-set grepprg=ack\ -aH
+set grepprg=ack\ -aH\ --nocolor
 
 " --- spelling ----------------------------------------------------------------
 if v:version >= 700
@@ -188,22 +188,13 @@ autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 " make the tab key match bracket pairs
 nnoremap <tab> %
 vnoremap <tab> %
+
+" rails vim shortcut
 autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
 
 " toggle between relative line numbers
 nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
 
-" --- Plugins -----------------------------------------------------------------
-au BufRead,BufNewFile *.pp              set filetype=puppet
-
-" --- RagTag ------------------------------------------------------------------
-let g:ragtag_global_maps = 1
-
-" --- Git / Fugitive ----------------------------------------------------------
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gw :Gw<CR>
 
 " --- File Navigation ---------------------------------------------------------
 let g:CommandTMatchWindowAtTop=1
@@ -213,9 +204,24 @@ nnoremap <Leader>T :CommandTFlush<CR>
 nnoremap <Leader>e :e %:h/**/
 cnoremap <Leader>e :e %:h/**/
 
+let g:netrw_liststyle=4
+
 " tags
 set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
 map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
+
+
+" --- RagTag ------------------------------------------------------------------
+let g:ragtag_global_maps = 1
+
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
+
+" --- Git / Fugitive ----------------------------------------------------------
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gw :Gw<CR>
 
 " --- Visual Column Stuff -----------------------------------------------------
 autocmd BufNewFile,BufRead * set nocursorcolumn
