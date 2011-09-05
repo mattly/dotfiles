@@ -95,3 +95,6 @@
 [submodule "vim/bundle/vim-extradite.git"]
 	path = vim/bundle/vim-extradite.git
 	url = https://github.com/int3/vim-extradite
+[submodule "vim/bundle/vim-stylus.git"]
+	path = vim/bundle/vim-stylus.git
+	url = https://github.com/wavded/vim-stylus.git
