@@ -2,6 +2,8 @@
 --smart-case
 --ignore-dir=log
 --ignore-dir=vendor
---type-add=ruby=haml,rake,ru
---type-add=js=coffee
---type-add=css=less,sass
+--type-add=ruby=ru
+--type-add=js=coffee,json
+--type-add=css=less,sass,scss,styl
+--type-add=html=jade,haml
+--color
