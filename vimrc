@@ -211,7 +211,7 @@ set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
 map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
 
 
-" --- RagTag ------------------------------------------------------------------
+" --- Text Manipulation
 let g:ragtag_global_maps = 1
 
 let g:surround_45 = "<% \r %>"
