@@ -46,7 +46,7 @@
   # show all branches, even across remotes
   branches = branch -a --color -v
   # remove all local branches included in the current branch
-  cleanup = !git branch --merged | grep -E '^[^*]' | xargs git branch -d
+  cleanup = !git branch --merged | grep -E '^[^*]' | grep -E '^\\s*master' | xargs git branch -d
   # shallow clone a repository, because we don't care about history
   clone-shallow = clone --depth 1
   # delete a remote branch
