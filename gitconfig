@@ -46,7 +46,7 @@
   # show all branches, even across remotes
   branches = branch -a --color -v
   # remove all local branches included in the current branch
-  cleanup = !git branch --merged | grep -E '^[^*]' | xargs git branch -d
+  cleanup = !git branch --merged | grep -E '^[^*]' | grep -E '^\\s*master' | xargs git branch -d
   # shallow clone a repository, because we don't care about history
   clone-shallow = clone --depth 1
   # delete a remote branch
@@ -62,7 +62,7 @@
   # set a tag
   label = tag -a
   # show commits that haven't been pushed to the remote yet
-  pending = !git --no-pager log "$0"/HEAD..HEAD && echo
+  pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
   # push HEAD to origin HEAD
   put = !sh -c 'git push "$0" HEAD'
   put-force = !sh -c 'git push -f "$0" HEAD'
