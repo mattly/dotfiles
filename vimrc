@@ -228,6 +228,11 @@ autocmd BufNewFile,BufRead * set nocursorcolumn
 autocmd BufNewFile,BufRead *.coffee,*Cakefile set cursorcolumn
 autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
 
+" --- Language-Specific Settings ----------------------------------------------
+
+autocmd BufNewFile,BufRead *.py set tabstop=4
+autocmd BufNewFile,BufRead *.py set shiftwidth=4
+
 " --- Yankring ----------------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
 

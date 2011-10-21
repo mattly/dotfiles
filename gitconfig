@@ -10,6 +10,7 @@
 
 [core]
   excludesfile=~/.gitignore
+  pager=cat
 
 [color]
   ui = auto
@@ -46,7 +47,7 @@
   # show all branches, even across remotes
   branches = branch -a --color -v
   # remove all local branches included in the current branch
-  cleanup = !git branch --merged | grep -E '^[^*]' | grep -E '^\\s*master' | xargs git branch -d
+  cleanup = !sh -c 'git branch --merged | grep -E "^[^*]" --exclude "^\\s*master" | xargs -n1 git branch -d'
   # shallow clone a repository, because we don't care about history
   clone-shallow = clone --depth 1
   # delete a remote branch
@@ -64,8 +65,8 @@
   # show commits that haven't been pushed to the remote yet
   pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
   # push HEAD to origin HEAD
-  put = !sh -c 'git push "$0" HEAD'
-  put-force = !sh -c 'git push -f "$0" HEAD'
+  put = !sh -c 'git push --tags "$0" HEAD'
+  put-force = !sh -c 'git push --tags -f "$0" HEAD'
   # interactive rebase
   ri = rebase --interactive --autosquash
   # diff the index against the previous commit
@@ -74,6 +75,8 @@
   stat = status -sb
   # update all submodules
   submodule-pull = submodule foreach "git checkout master && git pull origin master"
+  # tags a release with 'release/YYYY-MM-DD-HH-MM-SS'
+  tag-release = !sh -c 'git tag release/`date +%Y-%m-%d-%H-%M`'
   # track a remote branch
   track = checkout -t
   # remove a file from the index

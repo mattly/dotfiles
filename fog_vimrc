@@ -8,12 +8,14 @@ autocmd User Rails Rnavcommand service    app/services        -suffix=.rb
 autocmd User Rails Rnavcommand sspec      spec/services       -suffix=_spec.rb
 autocmd User Rails Rnavcommand rpc        app/ernie           -suffix=.rb
 autocmd User Rails Rnavcommand rpcspec    spec/ernie          -suffix=_rpc_spec.rb
-
-autocmd User Rails Rnavcommand domain     app/domain_models   -suffix=_meta.rb
-autocmd User Rails Rnavcommand dspec      spec/domain_models  -suffix=_meta_spec.rb
-
 autocmd User Rails Rnavcommand processor  app/processors      -suffix=.rb
 autocmd User Rails Rnavcommand pspec      spec/processors     -suffix=_processor_spec.rb
+
+autocmd User Rails Rnavcommand dmodel     app/domain_models   -suffix=_meta.rb
+autocmd User Rails Rnavcommand dmspec     spec/domain_models  -suffix=_meta_spec.rb
+
+autocmd User Rails Rnavcommand lscontroller lib/lifecycle/controller  -suffix=.rb
+autocmd User Rails Rnavcommand lsmodel      lib/lifecycle/model       -suffix=.rb
 
 autocmd User Rails Rnavcommand lib        lib                 -suffix=.rb
 
