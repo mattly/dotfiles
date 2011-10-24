@@ -79,7 +79,7 @@
   # update all submodules
   submodule-pull = submodule foreach "git checkout master && git pull origin master"
   # tags a release with 'release/YYYY-MM-DD-HH-MM-SS'
-  tag-release = !sh -c 'git tag release/`date +%Y-%m-%d-%H-%M`'
+  tag-release = !sh -c 'git tag release/`date +%Y/%m/%d/%H%M`'
   # track a remote branch
   track = checkout -t
   # remove a file from the index
