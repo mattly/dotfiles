@@ -65,6 +65,7 @@
   # mirror branches (including deletions) and tags
   mirror = push --mirror
   # show commits that haven't been pushed to the remote yet
+  new-pull-request = !open \"https://github.com/$(git config remote.$(git config github.user).url |sed s/git@github.com:// |sed s/.git//)/pull/new/$(git name-rev --name-only HEAD)\"
   pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
   # push HEAD to origin HEAD
   put = !sh -c 'git push "$0" HEAD'
