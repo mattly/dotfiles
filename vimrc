@@ -75,7 +75,10 @@ set wildmode=list:longest,full
 set exrc
 set secure
 
-set mouse=a
+if has("mouse")
+  set mouse=a
+  set mousefocus
+endif
 
 nnoremap ; :
 
