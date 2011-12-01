@@ -54,7 +54,7 @@ set cursorline
 set colorcolumn=80
 let s:colorcolumn_old=0
 highlight OverLength ctermbg=red ctermfg=white
-match OverLength /\%81v.\+/
+autocmd BufNewFile,BufRead * match OverLength /\%81v.\+/
 
 function! s:ToggleColorColumn()
   if s:colorcolumn_old == 0
