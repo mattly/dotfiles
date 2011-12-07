@@ -46,7 +46,6 @@ set listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 set backspace=indent,eol,start     " backspace over anything
 
-set guifont=Menlo:h12
 set ttyfast
 set scrolloff=5                    " minimum lines to show around cursor
 set sidescrolloff=5                " min characters to show
@@ -100,7 +99,7 @@ set formatprg="par -qe"
 
 let mapleader = ','
 
-" --- Gui Window Tabs ---------------------------------------------------------
+" --- Window Tabs ---------------------------------------------------------
 " tab movement, cmd-shift-(move), Command-Shift(h,l), Shift-(j,k)
 nnoremap <D-S-right>  :tabnext<CR>
 nnoremap <D-S-l>      :tabnext<CR>
@@ -277,6 +276,8 @@ let html_use_css=1
 
 " --- gui stuff ---------------------------------------------------------------
 if has("gui_running")
+  set guifont=Menlo:h12
+
   " a: visual-mode autoselect (takes over the OS selection process)
   " A: autoselect for modeless selection
   " c: use console dialogs for simple choices
@@ -298,6 +299,9 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   " block cursor in normal mode
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+  " vim 7.3+ makes this use the system clipboard
+  set clipboard=unnamed
 endif
 
 " --- statusline --------------------------------------------------------------
