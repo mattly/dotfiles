@@ -104,11 +104,9 @@ let mapleader = ','
 " tab movement, cmd-shift-(move), Command-Shift(h,l), Shift-(j,k)
 nnoremap <D-S-right>  :tabnext<CR>
 nnoremap <D-S-l>      :tabnext<CR>
-nnoremap <S-k>        :tabnext<CR>
 
 nnoremap <D-S-left>   :tabprevious<CR>
 nnoremap <D-S-h>      :tabprevious<CR>
-nnoremap <S-j>        :tabprevious<CR>
 
 " --- Vim Windows -------------------------------------------------------------
 set laststatus=2 " always show the status line
