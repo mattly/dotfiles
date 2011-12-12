@@ -20,8 +20,8 @@ autocmd User Rails Rnavcommand lsmodel    lib/lifecycle/model       -suffix=.rb
 autocmd User Rails Rnavcommand job        lib/lifecycle/job         -suffix=.rb
 
 " - keep going forward
-autocmd User Rails Rnavcommand task       app/tasks                   -suffix=.rb
-autocmd User Rails Rnavcommand taskspec   spec/tasks                  -suffix=.rb
+autocmd User Rails Rnavcommand misson     app/missions        -suffix=.rb
+autocmd User Rails Rnavcommand mspec      spec/missions       -suffix=.rb
 
 autocmd User Rails Rnavcommand rpc        app/ernie           -suffix=.rb
 autocmd User Rails Rnavcommand rpcspec    spec/ernie          -suffix=_rpc_spec.rb
