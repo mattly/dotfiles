@@ -77,7 +77,6 @@ set secure
 
 if has("mouse")
   set mouse=a
-  set mousefocus
 endif
 
 nnoremap ; :
@@ -104,9 +103,10 @@ let mapleader = ','
 " --- Gui Window Tabs ---------------------------------------------------------
 " tab movement, cmd-shift-(move)
 nnoremap <D-S-right>  :tabnext<CR>
-nnoremap <D-S-l>      :tabnext<CR>
+nnoremap <C-S-right>  :tabnext<CR>
+
 nnoremap <D-S-left>   :tabprevious<CR>
-nnoremap <D-S-h>      :tabprevious<CR>
+nnoremap <C-S-left>   :tabprevious<CR>
 
 " --- Vim Windows -------------------------------------------------------------
 set laststatus=2 " always show the status line
@@ -128,8 +128,8 @@ nnoremap <C-h>        <C-w><Left>
 nnoremap <D-M-right>  <C-w><Right>  " window right
 nnoremap <C-l>        <C-w><Right>
 
-nnoremap <C-n>        :bnext<CR>       " buffer next
-nnoremap <C-p>        :bprev<CR>       " buffer previous
+nnoremap <C-S-up>     :bnext<CR>    " buffer next
+nnoremap <C-S-down>   :bprev<CR>    " buffer previous
 
 " --- Insert Mode -------------------------------------------------------------
 " option-backspace over words, emacs style
