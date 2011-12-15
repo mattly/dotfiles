@@ -4,20 +4,30 @@
 
 " going away soon
 autocmd User Rails Rnavcommand lifecycle  app/lifecycle       -suffix=.rb
+autocmd User Rails Rnavcommand lspec      spec/lifecycle      -suffix=.rb
+
 autocmd User Rails Rnavcommand service    app/services        -suffix=.rb
 autocmd User Rails Rnavcommand sspec      spec/services       -suffix=_spec.rb
-autocmd User Rails Rnavcommand rpc        app/ernie           -suffix=.rb
-autocmd User Rails Rnavcommand rpcspec    spec/ernie          -suffix=_rpc_spec.rb
+
 autocmd User Rails Rnavcommand processor  app/processors      -suffix=.rb
 autocmd User Rails Rnavcommand pspec      spec/processors     -suffix=_processor_spec.rb
 
 autocmd User Rails Rnavcommand dmodel     app/domain_models   -suffix=_meta.rb
 autocmd User Rails Rnavcommand dmspec     spec/domain_models  -suffix=_meta_spec.rb
 
-autocmd User Rails Rnavcommand lscontroller lib/lifecycle/controller  -suffix=.rb
-autocmd User Rails Rnavcommand lsmodel      lib/lifecycle/model       -suffix=.rb
+autocmd User Rails Rnavcommand lscontrol  lib/lifecycle/controller  -suffix=.rb
+autocmd User Rails Rnavcommand lsmodel    lib/lifecycle/model       -suffix=.rb
+autocmd User Rails Rnavcommand job        lib/lifecycle/job         -suffix=.rb
+
+" - keep going forward
+autocmd User Rails Rnavcommand misson     app/missions        -suffix=.rb
+autocmd User Rails Rnavcommand mspec      spec/missions       -suffix=.rb
+
+autocmd User Rails Rnavcommand rpc        app/ernie           -suffix=.rb
+autocmd User Rails Rnavcommand rpcspec    spec/ernie          -suffix=_rpc_spec.rb
 
 autocmd User Rails Rnavcommand lib        lib                 -suffix=.rb
+autocmd User Rails Rnavcommand config     config              -suffix=.rb
 
 autocmd User Rails Rnavcommand sass       app/stylesheets     -suffix=.sass
 autocmd User Rails Rnavcommand coffee     app/coffeescripts   -suffix=.coffee
