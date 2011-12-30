@@ -66,6 +66,7 @@ git_prompt() {
 }
 # %B%n@%m%b 
 setopt prompt_subst
-PROMPT=$'%3~$(git_prompt) > '
+PROMPT=$'
+%n@%m:%3~$(git_prompt) > '
 
 
