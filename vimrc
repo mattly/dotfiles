@@ -10,7 +10,7 @@ filetype plugin on
 " Display
 set t_Co=256
 let g:solarized_contrast="high"
-set background=light
+" set background=light
 colorscheme solarized
 
 set nocompatible     " the past is better left in the past
