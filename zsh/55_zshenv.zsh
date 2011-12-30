@@ -7,7 +7,7 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # export TERM=linux
-export EDITOR="mvim -f"
+export EDITOR="vim"
 export CLICOLOR=YES
 export LC_CTYPE=en_US.UTF-8
 export DISPLAY=":0.0"
