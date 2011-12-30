@@ -301,8 +301,13 @@ else
   " block cursor in normal mode
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+  " '"' is the sytem clipboard
+  inoremap <C-v> "*p
+  nnoremap <C-c> "*yy
+  vnoremap <C-c> "*y
+
   " vim 7.3+ makes this use the system clipboard
-  set clipboard=unnamed
+  " set clipboard=unnamed
 endif
 
 " --- statusline --------------------------------------------------------------
