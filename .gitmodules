@@ -104,3 +104,6 @@
 [submodule "vim/bundle/zencoding-vim.git"]
 	path = vim/bundle/zencoding-vim.git
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "vim/bundle/mustache.vim.git"]
+	path = vim/bundle/mustache.vim.git
+	url = https://github.com/juvenn/mustache.vim
