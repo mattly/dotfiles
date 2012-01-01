@@ -10,7 +10,7 @@ filetype plugin on
 " Display
 set t_Co=256
 let g:solarized_contrast="high"
-" set background=light
+ set background&
 colorscheme solarized
 
 set nocompatible     " the past is better left in the past
@@ -41,7 +41,6 @@ set autoindent
 set shiftround
 
 set list
-" eol:¬
 set listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 set backspace=indent,eol,start     " backspace over anything
@@ -51,21 +50,8 @@ set scrolloff=5                    " minimum lines to show around cursor
 set sidescrolloff=5                " min characters to show
 set cursorline
 set colorcolumn=80
-let s:colorcolumn_old=0
 highlight OverLength ctermbg=red ctermfg=white
 autocmd BufNewFile,BufRead * match OverLength /\%81v.\+/
-
-function! s:ToggleColorColumn()
-  if s:colorcolumn_old == 0
-    let s:colorcolumn_old = &colorcolumn
-    windo let &colorcolumn = 0
-  else
-    windo let &colorcolumn = s:colorcolumn_old
-    let s:colorcolumn_old = 0
-  endif
-endfunction
-
-nnoremap <Leader>8 :call <SID>ToggleColorColumn()<cr>
 
 set wildmenu
 set wildmode=list:longest,full
