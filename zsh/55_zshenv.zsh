@@ -20,4 +20,3 @@ export GREP_COLOR='1;36'
 # set word boundaries to include punctuation
 export WORDCHARS=''
 
-source ~/.env
