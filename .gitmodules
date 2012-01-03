@@ -42,10 +42,6 @@
 	path = vim/bundle/vim-autoclose.git
 	url = https://github.com/Townk/vim-autoclose.git
   ignore = untracked
-[submodule "vim/bundle/command-t.git"]
-	path = vim/bundle/command-t.git
-	url = git://git.wincent.com/command-t.git
-  ignore = untracked
 [submodule "vim/bundle/vim-rails.git"]
 	path = vim/bundle/vim-rails.git
 	url = git://github.com/tpope/vim-rails.git
@@ -74,10 +70,6 @@
 	path = vim/bundle/vim-javascript.git
 	url = https://github.com/pangloss/vim-javascript.git
   ignore = untracked
-[submodule "vim/bundle/nerdcommenter.git"]
-	path = vim/bundle/nerdcommenter.git
-	url = https://github.com/scrooloose/nerdcommenter.git
-  ignore = untracked
 [submodule "vim/bundle/tcomment_vim.git"]
 	path = vim/bundle/tcomment_vim.git
 	url = https://github.com/tomtom/tcomment_vim.git
@@ -92,15 +84,9 @@
 [submodule "vim/bundle/vim-jade.git"]
 	path = vim/bundle/vim-jade.git
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule "vim/bundle/vim-extradite.git"]
-	path = vim/bundle/vim-extradite.git
-	url = https://github.com/int3/vim-extradite
 [submodule "vim/bundle/vim-stylus.git"]
 	path = vim/bundle/vim-stylus.git
 	url = https://github.com/wavded/vim-stylus.git
-[submodule "vim/bundle/gitv.git"]
-	path = vim/bundle/gitv.git
-	url = https://github.com/gregsexton/gitv.git
 [submodule "vim/bundle/zencoding-vim.git"]
 	path = vim/bundle/zencoding-vim.git
 	url = https://github.com/mattn/zencoding-vim.git
