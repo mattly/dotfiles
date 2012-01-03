@@ -92,9 +92,6 @@
 [submodule "vim/bundle/vim-rvm.git"]
 	path = vim/bundle/vim-rvm.git
 	url = https://github.com/tpope/vim-rvm.git
-[submodule "vim/bundle/vim-rdoc.git"]
-  path = vim/bundle/vim-rdoc.git
-  url = git://github.com/hallison/vim-rdoc.git
 [submodule "vim/bundle/syntastic.git"]
 	path = vim/bundle/syntastic.git
 	url = https://github.com/scrooloose/syntastic.git
