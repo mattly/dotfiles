@@ -336,9 +336,10 @@ function! SyntaxStatus()
       return " ".toReturn
     else
       return ''
+    endif
   else
     return ''
-  end
+  endif
 endfunction
 
 let rails_statusline = 0
