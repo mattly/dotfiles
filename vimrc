@@ -225,6 +225,10 @@ autocmd BufNewFile,BufRead *.py set shiftwidth=4
 " --- Yankring ----------------------------------------------------------------
 nnoremap <silent> <Leader>y :YRShow<CR>
 
+
+" syntastic
+let g:syntastic_check_on_open=1
+
 " === Custom Shit =============================================================
 " DiffOrig() will do a diff with of the buffer vs. its unsaved state.
 " This is handy for seeing what you've changed and accepting/reverting
