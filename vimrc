@@ -7,6 +7,8 @@ filetype on
 filetype indent on
 filetype plugin on
 
+set shell=/bin/sh
+
 " Display
 set t_Co=256
 let g:solarized_contrast="high"
@@ -338,9 +340,10 @@ function! SyntaxStatus()
       return " ".toReturn
     else
       return ''
+    endif
   else
     return ''
-  end
+  endif
 endfunction
 
 let rails_statusline = 0
