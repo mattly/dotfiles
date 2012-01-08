@@ -1,376 +1,373 @@
-filetype off
-source ~/.vim/bundle/vim-pathogen.git/autoload/pathogen.vim
-call pathogen#infect()
+" Pathogen
+" =============================================================================
+  runtime bundle/vim-pathogen.git/autoload/pathogen.vim
+  call pathogen#infect()
 
-syntax on
-filetype on
-filetype indent on
-filetype plugin on
+" General
+" =============================================================================
+  set nocompatible                      " why is this not the default?
+  set fileformats=unix,dos,mac          " line endings are still a thing?
+  set modelines=0                       " avoid spell files vulnerability
+  set autoread                          " auto-reload files from local changes
+  set shell=/bin/sh                     " so that our ENV is available to vim
+  filetype plugin indent on
+  set encoding=utf-8 nobomb             " People still use latin1?
+  set exrc                              " use per-project .virmc
+  set secure                            " but disallow autocmd, shell and write
 
-set shell=/bin/sh
-
-" Display
-set t_Co=256
-let g:solarized_contrast="high"
-set background&
-colorscheme solarized
-
-set nocompatible     " the past is better left in the past
-set modelines=0      " workaround for vulnerability with spell files
-set encoding=utf-8 nobomb
-set spell spelllang=en_us
-
-set noerrorbells
-set visualbell
-
-set showcmd
-set ruler
-set nu
-set autoread
-set hidden
-set nobackup
-set nowb
-set noswapfile
-
-set lazyredraw
-
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-set smarttab
-set autoindent
-set shiftround
-
-set list
-set listchars=tab:»\ ,trail:·,precedes:<,extends:>
-
-set backspace=indent,eol,start     " backspace over anything
-
-set ttyfast
-set scrolloff=5                    " minimum lines to show around cursor
-set sidescrolloff=5                " min characters to show
-set cursorline
-set colorcolumn=80
-highlight OverLength ctermbg=red ctermfg=white
-autocmd BufNewFile,BufRead * match OverLength /\%81v.\+/
-
-set wildmenu
-set wildmode=list:longest,full
-
-" use per-project .virmc
-set exrc
-set secure
-
-if has("mouse")
-  set mouse=a
-endif
-
-nnoremap ; :
-" I always hit this when I mean to hit J or I
-nnoremap K <nop>
-
-" formatting options:
-" help fo-table
-" c: do the same for comments, but
-" r:   autoinsert comment character too
-" o: ditto, but for o/O in normal node
-" q: allow 'gq' to autowrap/format comments as well as normal text
-" 1: Don't break a line before a one-character word
-" n: recognize numbered lists
-set formatoptions+=croq1n
-set wrap
-set linebreak
-set textwidth=79
-set formatprg="par -qe"
-
-let mapleader = ','
-
-" --- Window Tabs ---------------------------------------------------------
-" tab movement, cmd-shift-(move), Command-Shift(h,l), Shift-(j,k)
-nnoremap <D-S-right>  :tabnext<CR>
-nnoremap <C-S-right>  :tabnext<CR>
-nnoremap <D-S-l>      :tabnext<CR>
-
-nnoremap <D-S-left>   :tabprevious<CR>
-nnoremap <C-S-left>   :tabprevious<CR>
-nnoremap <D-S-h>      :tabprevious<CR>
-
-" --- Vim Windows -------------------------------------------------------------
-set laststatus=2 " always show the status line
-set splitbelow
-set splitright
-
-" Window and buffer movement
-" cmd-opt-shift-(move) is similar to iterm
-" Ctrl-(move) is easier in iterm
-nnoremap <D-M-down>   <C-w><Down>   " window down
-nnoremap <C-j>        <C-w><Down>
-
-nnoremap <D-M-up>     <C-w><Up>     " window up
-nnoremap <C-k>        <C-w><Up>
-
-nnoremap <D-M-left>   <C-w><Left>   " window left
-nnoremap <C-h>        <C-w><Left>
-
-nnoremap <D-M-right>  <C-w><Right>  " window right
-nnoremap <C-l>        <C-w><Right>
-
-nnoremap <C-S-up>     :bnext<CR>    " buffer next
-nnoremap <C-S-down>   :bprev<CR>    " buffer previous
-
-" --- Insert Mode -------------------------------------------------------------
-" option-backspace over words, emacs style
-inoremap <M-Backspace> <C-[>ciw
-inoremap <C-Backspace> <C-[>ciw
-
-" disable the fucking help
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" --- Ex Mode -----------------------------------------------------------------
-cnoremap <C-A>      <Home>
-cnoremap <C-E>      <End>
-cnoremap <C-K>      <C-U>
-" option-backspace over words
-cnoremap <M-Backspace> <S-Right> <C-W>
-cnoremap <C-Backspace> <S-Right> <C-W>
-
-cnoremap <M-Right>  <S-Right>
-cnoremap <M-Left>   <S-Left>
-
-" --- searching --------------------------------------------------------
-set ignorecase
-set smartcase
-set wrapscan
-set incsearch
-set hlsearch
-" remove the highlight
-nnoremap <silent><Leader>, :noh<cr>
-
-" make search use real regexes
-nnoremap / /\v
-vnoremap / /\v
-
-set grepprg=ack\ -aH\ --nocolor
-
-" --- spelling ----------------------------------------------------------------
-if v:version >= 700
-  setlocal spell spelllang=en
-  nnoremap <silent><Leader>ss :set spell!<CR>
-endif
-
-" --- pasting -----------------------------------------------------------------
-nnoremap <silent><Leader>sp :set paste!<CR>
-nnoremap <silent><Leader>sl :set list!<CR>
-
-" --- quickfix ----------------------------------------------------------------
-autocmd QuickfixCmdPost grep copen
-
-" --- folding -----------------------------------------------------------------
-set foldmethod=indent
-set foldlevelstart=99
-autocmd BufNewFile,BufRead *.haml,*sass,*.scss set foldignore=
-autocmd BufNewFile,BufRead * set foldmethod=indent
-autocmd BufNewFile,BufRead *.diff set foldmethod=diff
-
-" --- navigation --------------------------------------------------------------
-" make the tab key match bracket pairs
-nnoremap <tab> %
-vnoremap <tab> %
-
-" rails vim shortcut
-autocmd User Rails Rnavcommand config config -glob=*.* -suffix= -default=routes.rb
-
-" toggle between relative line numbers
-nnoremap <Leader>n :if &nu <bar> set nonu rnu <bar> else <bar> set nu nornu <bar> endif<CR>
-
-
-" --- File Navigation ---------------------------------------------------------
-let g:CommandTMatchWindowAtTop=1
-silent! nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <Leader>T :CommandTFlush<CR>
-
-nnoremap <Leader>e :e %:h/**/
-cnoremap <Leader>e :e %:h/**/
-
-let g:netrw_liststyle=4
-
-" tags
-set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
-map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
-
-
-" --- Text Manipulation
-let g:ragtag_global_maps = 1
-
-let g:surround_45 = "<% \r %>"
-let g:surround_61 = "<%= \r %>"
-
-" --- Git / Fugitive ----------------------------------------------------------
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gw :Gw<CR>
-
-" --- Visual Column Stuff -----------------------------------------------------
-autocmd BufNewFile,BufRead * set nocursorcolumn
-autocmd BufNewFile,BufRead *.coffee,*Cakefile set cursorcolumn
-autocmd BufNewFile,BufRead *.haml,*.sass,*.scss set cursorcolumn
-
-" --- Language-Specific Settings ----------------------------------------------
-
-autocmd BufNewFile,BufRead *.py set tabstop=4
-autocmd BufNewFile,BufRead *.py set shiftwidth=4
-
-" --- Yankring ----------------------------------------------------------------
-nnoremap <silent> <Leader>y :YRShow<CR>
-
-
-" syntastic
-let g:syntastic_check_on_open=1
-
-" === Custom Shit =============================================================
-" DiffOrig() will do a diff with of the buffer vs. its unsaved state.
-" This is handy for seeing what you've changed and accepting/reverting
-" changes before writing
-nnoremap <Leader>d :call DiffOrig()<cr>
-function! DiffOrig()
-  if &diff
-    wincmd p | bdel | diffoff
-  else
-    vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+" Colors and Theme
+" =============================================================================
+  if &t_Co > 2 || has("gui_running")
+    syntax on
+    set hlsearch
+    colorscheme solarized
+    let g:solarized_contrast="high"
+    set background&
   endif
-endfunction
+  if has("gui_running")
+    set guifont=Menlo:h12
 
-" UPPER CASE -> lower case -> Title Case
-" from http://vim.wikia.com/wiki/Switching_case_of_characters
-function! TwiddleCase(str)
-  if a:str ==# toupper(a:str)
-    let result = tolower(a:str)
-  elseif a:str ==# tolower(a:str)
-    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+    " a: visual-mode autoselect (takes over the OS selection process)
+    " A: autoselect for modeless selection
+    " c: use console dialogs for simple choices
+    " e: use the gui's tabs -- not using for now, prevent macvim from resizing
+    "    window on tabs
+    " g: grey-out non-active menu items
+    " m: show system menu bars
+    " t: include tear-off menu items
+    set guioptions=aAcgmt
+    " T: system toolbar
+    " r: right-hand scrollbar
+    " l: left-hand scrollbar
+    " L: left-hand scrollbar when vertically-split window
+    set guioptions-=TrlL
+    set fuoptions=maxvert,maxhorz
   else
-    let result = toupper(a:str)
+    set t_Co=256
+    " bar cursor in insert mode
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    " block cursor in normal mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
-  return result
-endfunction
-vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
+" Highlighting
+" =============================================================================
+  " Highlight parts of lines longer than 85 characters
+  highlight OverLength ctermbg=red ctermfg=white
+  autocmd BufNewFile,BufRead * match OverLength /\%86v.\+/
 
-" change directory to that of current file
-nmap <Leader>cd :cd%:p:h<cr>
+  " Whitespace Highlighting
+  set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
-" just sudo it
-cmap w!! %!sudo tee > /dev/null %
+" Backups
+" =============================================================================
+  set nobackup                          " do not keep backups after close
+  set nowritebackup                     " do not keep backups while working
+  set noswapfile                        " don't keep swap files either
 
-let html_use_css=1
+" UI
+" =============================================================================
+  set ruler                             " show the cursor position
+  set showcmd                           " show incomplete commands
+  set lazyredraw                        " speeds up certain macros and such
+  set number                            " show line numbers
+  set wildmenu                          " wildmenu is awesome
+  set wildmode=list:longest,full
+  set backspace=indent,eol,start        " backspace over anything
+  set shortmess=filtIoOA
+  set report=0                          " always notify us about changes
+  set nostartofline                     " don't jump to line start on scroll
+  set ttyfast                           " we're local 99% of the time
+  set scrolloff=5                       " minimum lines to show around cursor
+  set sidescrolloff=5                   " min characters to show sideways
+  set cursorline                        " highlight the current cursor line
+  set colorcolumn=80                    " highlight the 80-character mark
+  set laststatus=2                      " always show the status line
+  set noerrorbells                      " shut up already
+  set visualbell                        " SHUT UP ALREADY
 
-" --- gui stuff ---------------------------------------------------------------
-if has("gui_running")
-  set guifont=Menlo:h12
+  " toggle line number modes with <leader>n
+  nnoremap <Leader>n :call LineNumbers()<CR>
+  function! LineNumbers()
+    if &nu
+      set nonu rnu
+    elseif &rnu
+      set nonu nornu
+    else
+      set nornu nu
+    endif
+  endfunction
 
-  " a: visual-mode autoselect (takes over the OS selection process)
-  " A: autoselect for modeless selection
-  " c: use console dialogs for simple choices
-  " e: use the gui's tabs -- not using for now, prevent macvim from resizing
-  "    window on tabs
-  " g: grey-out non-active menu items
-  " m: show system menu bars
-  " t: include tear-off menu items
-  set guioptions=aAcgmt
-  " T: system toolbar
-  " r: right-hand scrollbar
-  " l: left-hand scrollbar
-  " L: left-hand scrollbar when vertically-split window
-  set guioptions-=TrlL
+" Text Formatting
+" =============================================================================
+  set autoindent                        " auto-indent new lines
+  set smartindent                       " but not blindly
+  set nowrap                            " Text wrapping should be done manually
+  set softtabstop=2                     " because fuck you, 8-space tabs
+  set shiftwidth=2
+  set tabstop=4
+  set expandtab                         " turns lead to gold. Er, tabs to spaces
+  set nosmarttab                        " go away, tabs. don't come back
+  set shiftround                        " round shifts to multiple of indent
+  set textwidth=80                      " wrap at 80 characters
 
-  set fuoptions=maxvert,maxhorz
-else
-  " bar cursor in insert mode
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  " block cursor in normal mode
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  set formatoptions+=n1                 " help fo-table
+                                        " defaults: tcq
+                                        " t: auto-wrap text using text-width
+                                        " c: auto-wrap comments also
+                                        " q: auto-format comments with 'gq'
+                                        " n: recognize numbered lists
+                                        " 1: don't break after 1-char word
 
-  " '"' is the sytem clipboard
-  inoremap <C-v> "*p
-  nnoremap <C-c> "*yy
-  vnoremap <C-c> "*y
+  set formatprg="par -qe"               " use par for 'gq':
+                                        " http://www.nicemice.net/par/par-doc.var
+                                        " e: superfluous lines removed
+                                        " q: separate quote levels with newlines
 
-  " vim 7.3+ makes this use the system clipboard
-  " set clipboard=unnamed
-endif
+" Folding
+" =============================================================================
+  set foldmethod=indent                 " really the only way that makes sense
+  set foldlevelstart=99                 " open all folds by default
+  set foldignore=                       " don't try to be clever
 
-" --- statusline --------------------------------------------------------------
+" Mappings
+" =============================================================================
+  let mapleader = ','                   " because fuck you
 
-function! GitStatus()
-  if exists('*fugitive#statusline')
-    let branchname = fugitive#statusline()
-    " let branchname = substitute(branchname, '[Git(]', '', '')
-    " let branchname = substitute(branchname, ')]$', '', '')
+  " I always hit this when I mean I, O or J
+  nnoremap K <Nop>
 
-    " let branchname = substitute(branchname, '^feature/', 'ƒ ', '')
-    " let branchname = substitute(branchname, '^bug/', 'β ', '')
-    " let branchname = substitute(branchname, '^hotfix/', 'λ ', '')
-    " let branchname = substitute(branchname, '^chore/', 'ς ', '')
+  " disable the fucking help
+  inoremap <F1> <ESC>
+  nnoremap <F1> <ESC>
+  vnoremap <F1> <ESC>
 
-    " let maxlen = 30
-    " if strlen(branchname) > maxlen
-    "   let branchname = strpart(branchname, 0, maxlen)
-    "   let branchname .= "…"
-    " end
-    if strlen(branchname) > 0
-      " let git = ' ± ' . branchname . ' '
-      let git = ' ± '
+  " --- Stealing a few things from emacs
+  " nav bindings
+  inoremap <C-a> <C-o>0
+  cnoremap <C-a> <Home>
+  nnoremap <C-a> 0
+  inoremap <C-e> <C-o>$
+  cnoremap <C-e> <End>
+  nnoremap <C-e> $
+
+  " option-backspace over words
+  " this does NOT work in terminal vim, only macvim
+  inoremap <M-Backspace> <M-[>ciw
+  cnoremap <M-Backspace> <S-Right> <C-W>
+
+  cnoremap <M-Right>  <S-Right>
+  cnoremap <M-Left>   <S-Left>
+
+" Searching
+" =============================================================================
+  set ignorecase                        " ignore case in searches
+  set smartcase                         " unless there is a capital letter
+  set wrapscan                          " searches wrap EOF
+  set incsearch                         " show incremental seraches
+  " remove the highlight with ,,
+  nnoremap <silent><Leader>, :noh<cr>
+
+  " make search use real regexes
+  nnoremap / /\v
+  vnoremap / /\v
+
+  " use ack. No, not the vim-ack plugin. Ack. Instead of grep.
+  set grepprg=ack\ -aH\ --nocolor       " --no-color because that fucks us up
+                                        " -a: search all types, except ignored
+                                        " -H: prints the filename
+
+" Spelling
+" =============================================================================
+  set spell spelllang=en_us             " When you need it, you need it.
+  " toggle spelling
+  nnoremap <Leader>ss :setlocal spell!<CR>
+  " n: next, p: previous, a: add, ?: suggest
+  nnoremap <Leader>sn ]s
+  nnoremap <Leader>sp ]p
+  nnoremap <Leader>sa zg
+  nnoremap <Leader>s? z=
+
+" Auto Commands
+" =============================================================================
+  autocmd QuickfixCmdPost grep copen    " open the quickfix list automatically
+
+  " set folding automatically to indent, fuck you, except for diffs
+  autocmd BufNewFile,BufRead * set foldmethod=indent
+  autocmd BufNewFile,BufRead *.diff set foldmethod=diff
+
+" File Formats
+" =============================================================================
+  au BufRead,BufNewFile gitconfig                         setf gitconfig
+  au BufRead,BufNewFile *.less                            setf less
+  au BufRead,BufNewFile *.mustache                        setf mustache
+  au BufRead,BufNewFile nginx/*.conf                      setf nginx
+  au BufRead,BufNewFile *.ru,*.rake                       setf ruby
+  au BufRead,BufNewFile Capfile,GemFile,Isolate,Rakefile  setf ruby
+  au BufRead,BufNewFile *vimrc                            setf vim
+
+  " use cursorcolumn in whitespace-sensitive file formats
+  au Filetype coffee,python,haml,sass set cursorcolumn
+
+  " The python way... yuk.
+  au Filetype python set tabstop=4 shiftwidth=4
+
+" Buffers
+" =============================================================================
+  " switch between recent buffers
+  nnoremap <C-S-up>     :bnext<CR>
+  nnoremap <C-S-down>   :bprev<CR>
+
+  nnoremap <Leader>o :TMiniBufExplorer<CR>
+
+" Splits
+" =============================================================================
+  set splitbelow                        " open new horiz splits below current
+  set splitright                        " open new vert splits to the right
+
+  " in MacVim, this is like switching splits in iTerm
+  nnoremap <D-M-down>   <C-w><Down>
+  nnoremap <D-M-up>     <C-w><Up>
+  nnoremap <D-M-left>   <C-w><Left>
+  nnoremap <D-M-right>  <C-w><Right>
+
+  " in iTerm, this feels more natural
+  nnoremap <C-j>        <C-w><Down>
+  nnoremap <C-k>        <C-w><Up>
+  nnoremap <C-h>        <C-w><Left>
+  nnoremap <C-l>        <C-w><Right>
+
+" Tabs
+" =============================================================================
+  nnoremap <D-S-right> :tabnext<CR>
+  nnoremap <D-S-left> :tabprevious<CR>
+
+  nnoremap <C-right> :tabnext<CR>
+  nnoremap <C-left> :tabprevious<CR>
+
+" File Navigation
+" =============================================================================
+  let g:netrw_liststyle=4
+
+  " change directory to that of current file
+  nmap <Leader>cd :cd%:p:h<cr>
+
+  " ctags-related
+  set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
+  map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
+
+" Fugitive and Vim
+" =============================================================================
+  nnoremap <Leader>gs :Gstatus<CR>
+  nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
+  nnoremap <Leader>gb :Gblame<CR>
+  nnoremap <Leader>gw :Gw<CR>
+
+" Utilities
+" =============================================================================
+  " just sudo it
+  cnoremap w!! %!sudo tee > /dev/null %
+
+  " Stoner Coder Bro says:
+  "   whoa, i totally changed this file brah! Like, what happened?
+  " Now you can help stoner coder bro figure out what he did
+  nnoremap <Leader>d :call DiffOrig()<CR>
+  function! DiffOrig()
+    if &diff
+      wincmd p | bdel | diffoff
+    else
+      vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+    endif
+  endfunction
+
+  " UPPER CASE -> lower case -> Title Case
+  " from http://vim.wikia.com/wiki/Switching_case_of_characters
+  function! TwiddleCase(str)
+    if a:str ==# toupper(a:str)
+      let result = tolower(a:str)
+    elseif a:str ==# tolower(a:str)
+      let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+    else
+      let result = toupper(a:str)
+    endif
+    return result
+  endfunction
+  vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+
+" Pasteboard
+" =============================================================================
+  " For yanking to / pasting from system clipboard
+  nnoremap <Leader>y "*y
+  vnoremap <Leader>y "*y
+  nnoremap <Leader>p "*p
+
+" Mouse
+" =============================================================================
+  if has("mouse")
+    set mouse=a
+  endif
+
+" Miscellaneous Plugins
+" =============================================================================
+  let g:ragtag_global_maps = 1
+  let g:syntastic_check_on_open=1
+
+" Status Line
+" =============================================================================
+  function! GitStatus()
+    if exists('*fugitive#statusline')
+      let branchname = fugitive#statusline()
+      if strlen(branchname) > 0
+        let git = ' ± '
+      else
+        let git = ''
+      end
     else
       let git = ''
-    end
-  else
-    let git = ''
-  endif
-  return git
-endfunction
+    endif
+    return git
+  endfunction
 
-function! SyntaxStatus()
-  if exists('*SyntasticStatuslineFlag')
-    let toReturn = SyntasticStatuslineFlag()
-    let toReturn = substitute(toReturn, '[\[\]]', ' ', 'g')
-    if strlen(toReturn) > 0
-      return " ".toReturn
+  function! SyntaxStatus()
+    if exists('*SyntasticStatuslineFlag')
+      let toReturn = SyntasticStatuslineFlag()
+      let toReturn = substitute(toReturn, '[\[\]]', ' ', 'g')
+      if strlen(toReturn) > 0
+        return " ".toReturn
+      else
+        return ''
+      endif
     else
       return ''
     endif
-  else
-    return ''
-  endif
-endfunction
+  endfunction
 
-let rails_statusline = 0
+  let rails_statusline = 0
 
-let stl = "%<"
+  let stl = "%<"
 
-let stl .= "%#DiffChange#"
-let stl .= "%-.60f "
+  let stl .= "%#DiffAdd#"
+  let stl .= "%n "
 
-let stl .= "%#DiffAdd#"
-let stl .= " %{&filetype} "
+  let stl .= "%#DiffChange#"
+  let stl .= "%-.60f "
 
-let stl .= "%*"
-let stl .= "%-.35{GitStatus()}"
+  let stl .= "%#DiffAdd#"
+  let stl .= "%{&filetype} "
 
-let stl .= "%="
+  let stl .= "%*"
+  let stl .= "%-.35{GitStatus()}"
 
-let stl .= "%#ErrorMsg#"
-let stl .= "%{&modified > 0 ? '-dirty-' : ''}"
-let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
-let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
+  let stl .= "%="
+  let stl .= "%#ErrorMsg#"
+  let stl .= "%{&modified > 0 ? '-dirty-' : ''}"
+  let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
+  let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
+  let stl .= "%{SyntaxStatus()}"
+  let stl .= "%*"
 
-let stl .= "%{SyntaxStatus()}"
-let stl .= "%*"
+  let stl .= " %c:"
+  let stl .= "%l/%L %P"
 
-let stl .= " %c:"
-let stl .= "%l/%L %P"
-
-set statusline=%!stl
+  set statusline=%!stl
 
