@@ -25,6 +25,9 @@
   name = recompile the sass files
   driver = rake compass
 
+[diff]
+  renames = copies
+
 [diff "ruby"]
   funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
 
@@ -36,6 +39,9 @@
 
 [log]
   date=short
+
+[push]
+  default=current
 
 [alias]
   # amend to the last commit
@@ -67,10 +73,6 @@
   # show commits that haven't been pushed to the remote yet
   new-pull-request = !open \"https://github.com/$(git config remote.$(git config github.user).url |sed s/git@github.com:// |sed s/.git//)/pull/new/$(git name-rev --name-only HEAD)\"
   pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
-  # push HEAD to origin HEAD
-  put = !sh -c 'git push "$0" HEAD'
-  put-force = !sh -c 'git push -f "$0" HEAD'
-  put-tags = !sh -c 'git push --tags "$0" HEAD'
   # interactive rebase
   ri = rebase --interactive --autosquash
   # diff the index against the previous commit
