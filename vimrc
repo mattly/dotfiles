@@ -332,6 +332,12 @@
   let g:ragtag_global_maps = 1
   let g:syntastic_check_on_open=1
 
+" Sessions
+" =============================================================================
+  set sessionoptions=buffers,folds,curdir,tabpages
+  nnoremap SS :wa<CR>:mksession! ~/.vim/session/
+  nnoremap SO :so ~/.vim/session/
+
 " Status Line
 " =============================================================================
   function! GitStatus()
