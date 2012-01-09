@@ -276,6 +276,9 @@
   set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
   map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
 
+  " for the ctrlp plugin
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
 " Fugitive and Vim
 " =============================================================================
   nnoremap <Leader>gs :Gstatus<CR>
