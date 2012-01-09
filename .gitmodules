@@ -100,3 +100,6 @@
 [submodule "vim/bundle/vim-slim.git"]
 	path = vim/bundle/vim-slim.git
 	url = https://github.com/bbommarito/vim-slim.git
+[submodule "vim/bundle/ctrlp.vim.git"]
+	path = vim/bundle/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
