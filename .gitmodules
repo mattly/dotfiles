@@ -58,10 +58,6 @@
 	path = vim/bundle/vim-ragtag.git
 	url = https://github.com/tpope/vim-ragtag.git
   ignore = untracked
-[submodule "vim/bundle/vim-align.git"]
-	path = vim/bundle/vim-align.git
-	url = https://github.com/tsaleh/vim-align.git
-  ignore = untracked
 [submodule "vim/bundle/vim-javascript.git"]
 	path = vim/bundle/vim-javascript.git
 	url = https://github.com/pangloss/vim-javascript.git
@@ -101,3 +97,9 @@
 [submodule "vim/bundle/minibufexpl.git"]
 	path = vim/bundle/minibufexpl.git
 	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "vim/bundle/vim-abolish.git"]
+	path = vim/bundle/vim-abolish.git
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/vim-eunuch.git"]
+	path = vim/bundle/vim-eunuch.git
+	url = https://github.com/tpope/vim-eunuch.git

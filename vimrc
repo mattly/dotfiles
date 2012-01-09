@@ -133,6 +133,27 @@
 " Mappings
 " =============================================================================
   let mapleader = ','                   " because fuck you
+  " leader mappings:
+  "   cd  change directory to that of current file
+  "   d   diff current buffer with written file
+  "   gb  - git blame
+  "   gd  - write, diff against HEAD
+  "   gs  - git status
+  "   gw  - write, add to index
+  "   n   line number toggling
+  "   o   toggle MiniBufExplorer
+  "   p   paste from system clipboard
+  "   r   regen ctags
+  "   s   spelling:
+  "   sa  - add word to dictionary
+  "   sn  - next misspelling
+  "   sp  - previous mispelling
+  "   ss  - toggle spelling
+  "   s?  - suggestions
+  "   x   PLUGIN: open molly
+  "   y   yank to system clipboard, follow with normal yank operations
+  "   ,   turn off search highlighting
+  "   _   PLUGIN: intro to tcomment commands, see 'help tcomment-maps'
 
   " I always hit this when I mean I, O or J
   nnoremap K <Nop>
@@ -200,7 +221,6 @@
 " =============================================================================
   au BufRead,BufNewFile gitconfig                         setf gitconfig
   au BufRead,BufNewFile *.less                            setf less
-  au BufRead,BufNewFile *.mustache                        setf mustache
   au BufRead,BufNewFile nginx/*.conf                      setf nginx
   au BufRead,BufNewFile *.ru,*.rake                       setf ruby
   au BufRead,BufNewFile Capfile,GemFile,Isolate,Rakefile  setf ruby
