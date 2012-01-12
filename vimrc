@@ -150,6 +150,7 @@
   "   sp  - previous mispelling
   "   ss  - toggle spelling
   "   s?  - suggestions
+  "   t   NERDTree
   "   x   PLUGIN: open molly
   "   y   yank to system clipboard, follow with normal yank operations
   "   ,   turn off search highlighting
@@ -278,6 +279,9 @@
 
   " for the ctrlp plugin
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
+  " for NERDTree
+  nnoremap <Leader>t :NERDTree<CR>
 
 " Fugitive and Vim
 " =============================================================================
