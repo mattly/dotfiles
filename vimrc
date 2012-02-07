@@ -53,6 +53,7 @@
     hi Comment        guifg=#aaaa88
     hi FoldColumn     guifg=#aaaa88 guibg=#212118
     hi Folded         guifg=#aaaa88 guibg=#212118 gui=italic
+    hi VertSplit      guifg=#212118 guibg=#212118
   end
   if g:colors == 'solarized'
     colorscheme solarized
