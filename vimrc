@@ -97,21 +97,8 @@
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
 
-  " toggle line number modes with <leader>n
-  nnoremap <Leader>n :call LineNumbers()<CR>
-  function! LineNumbers()
-    if &nu
-      set nonu rnu
-    elseif &rnu
-      set nonu nornu
-    else
-      set nornu nu
-    endif
-  endfunction
-
   " Highlight parts of lines longer than 85 characters
   autocmd BufNewFile,BufRead * match OverLength /\%86v.\+/
-
 
 " Text Formatting
 " =============================================================================
@@ -158,14 +145,14 @@
   "   gd  - write, diff against HEAD
   "   gs  - git status
   "   gw  - write, add to index
+  "   m   open in Marked.app
   "   n   line number toggling
-  "   o   toggle MiniBufExplorer
   "   p   paste from system clipboard
   "   r   regen ctags
   "   s   spelling:
   "   sa  - add word to dictionary
   "   sn  - next misspelling
-  "   sp  - previous mispelling
+  "   sp  - previous misspelling
   "   ss  - toggle spelling
   "   s?  - suggestions
   "   t   NERDTree
@@ -200,6 +187,8 @@
 
   cnoremap <M-Right>  <S-Right>
   cnoremap <M-Left>   <S-Left>
+
+  nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 " Searching
 " =============================================================================
@@ -259,8 +248,6 @@
   nnoremap <C-S-up>     :bnext<CR>
   nnoremap <C-S-down>   :bprev<CR>
 
-  nnoremap <Leader>o :TMiniBufExplorer<CR>
-
 " Splits
 " =============================================================================
   set splitbelow                        " open new horiz splits below current
@@ -302,6 +289,8 @@
 
   " for NERDTree
   nnoremap <Leader>t :NERDTree<CR>
+  let g:NERDTreeMapJumpNextSibling="S-j"
+  let g:NERDTreeMapJumpPrevSibling="S-k"
 
 " Fugitive and Vim
 " =============================================================================
@@ -314,6 +303,18 @@
 " =============================================================================
   " just sudo it
   cnoremap w!! %!sudo tee > /dev/null %
+
+  " toggle line number modes with <leader>n
+  nnoremap <Leader>n :call LineNumbers()<CR>
+  function! LineNumbers()
+    if &nu
+      set nonu rnu
+    elseif &rnu
+      set nonu nornu
+    else
+      set nornu nu
+    endif
+  endfunction
 
   " Stoner Coder Bro says:
   "   whoa, i totally changed this file brah! Like, what happened?
