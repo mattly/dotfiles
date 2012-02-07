@@ -17,13 +17,9 @@
 
 " Colors and Theme
 " =============================================================================
-  if &t_Co > 2 || has("gui_running")
-    syntax on
-    set hlsearch
-    colorscheme solarized
-    let g:solarized_contrast="high"
-    set background&
-  endif
+  syntax on
+  set hlsearch
+  set background&
   if has("gui_running")
     set guifont=Menlo:h12
 
@@ -49,6 +45,20 @@
     " block cursor in normal mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
+
+  let colors='molokai'
+  if g:colors == 'molokai'
+    let g:molokai_original=1
+    colorscheme molokai
+    hi Comment        guifg=#aaaa88
+    hi FoldColumn     guifg=#aaaa88 guibg=#212118
+    hi Folded         guifg=#aaaa88 guibg=#212118 gui=italic
+  end
+  if g:colors == 'solarized'
+    colorscheme solarized
+    let g:solarized_contrast="high"
+  end
+
 
 " Highlighting
 " =============================================================================
@@ -151,13 +161,15 @@
   "   ss  - toggle spelling
   "   s?  - suggestions
   "   t   NERDTree
-  "   x   PLUGIN: open molly
   "   y   yank to system clipboard, follow with normal yank operations
   "   ,   turn off search highlighting
   "   _   PLUGIN: intro to tcomment commands, see 'help tcomment-maps'
 
   " I always hit this when I mean I, O or J
   nnoremap K <Nop>
+
+  " quick escape out of insert mode
+  inoremap jj <Esc>
 
   " disable the fucking help
   inoremap <F1> <ESC>
@@ -379,13 +391,13 @@
 
   let stl = "%<"
 
-  let stl .= "%#DiffAdd#"
+  " let stl .= "%#DiffAdd#"
   let stl .= "%n "
 
-  let stl .= "%#DiffChange#"
+  " let stl .= "%#DiffChange#"
   let stl .= "%-.60f "
 
-  let stl .= "%#DiffAdd#"
+  " let stl .= "%#DiffAdd#"
   let stl .= "%{&filetype} "
 
   let stl .= "%*"
