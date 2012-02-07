@@ -17,10 +17,14 @@
 
 " Colors and Theme
 " =============================================================================
-  syntax on
-  set hlsearch
-  set background&
-  if has("gui_running")
+  if &t_Co >= 2 || has("gui_running")
+    syntax on
+    set background&
+  endif
+  if &t_Co >= 256 || has("gui_running")
+    set hlsearch
+  endif
+  if &t_has("gui_running")
     set guifont=Menlo:h12
 
     " a: visual-mode autoselect (takes over the OS selection process)
@@ -54,21 +58,17 @@
     hi FoldColumn     guifg=#aaaa88 guibg=#212118
     hi Folded         guifg=#aaaa88 guibg=#212118 gui=italic
     hi VertSplit      guifg=#212118 guibg=#212118
-  end
-  if g:colors == 'solarized'
-    colorscheme solarized
+    hi ColorColumn                  guibg=#851336
+    hi OverLength     guifg=#eeeeee guibg=#F92672
+  elseif g:colors == 'solarized'
     let g:solarized_contrast="high"
+    colorscheme solarized
+    hi OverLength     guifg=#586e75 guibg=#073642
+    hi OverLength     ctermfg=240   ctermbg=235
+  else
+    hi OverLength guifg=#ffffff guibg=#ff0000
+    hi OverLength ctermbg=red ctermfg=white
   end
-
-
-" Highlighting
-" =============================================================================
-  " Highlight parts of lines longer than 85 characters
-  highlight OverLength ctermbg=red ctermfg=white
-  autocmd BufNewFile,BufRead * match OverLength /\%86v.\+/
-
-  " Whitespace Highlighting
-  set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 " Backups
 " =============================================================================
@@ -92,7 +92,7 @@
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=5                   " min characters to show sideways
   set cursorline                        " highlight the current cursor line
-  set colorcolumn=80                    " highlight the 80-character mark
+  set colorcolumn=+1,120                " highlight at 81 characters and 120
   set laststatus=2                      " always show the status line
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
@@ -108,6 +108,10 @@
       set nornu nu
     endif
   endfunction
+
+  " Highlight parts of lines longer than 85 characters
+  autocmd BufNewFile,BufRead * match OverLength /\%86v.\+/
+
 
 " Text Formatting
 " =============================================================================
@@ -134,6 +138,9 @@
                                         " http://www.nicemice.net/par/par-doc.var
                                         " e: superfluous lines removed
                                         " q: separate quote levels with newlines
+
+  " Whitespace Highlighting
+  set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 " Folding
 " =============================================================================
@@ -243,7 +250,7 @@
   " use cursorcolumn in whitespace-sensitive file formats
   au Filetype coffee,python,haml,sass set cursorcolumn
 
-  " The python way... yuk.
+  " The python way... yuk, but I can deal
   au Filetype python set tabstop=4 shiftwidth=4
 
 " Buffers
@@ -337,6 +344,7 @@
 " Pasteboard
 " =============================================================================
   " For yanking to / pasting from system clipboard
+  " for terminal vim, requires the one included with MacVim
   nnoremap <Leader>y "*y
   vnoremap <Leader>y "*y
   nnoremap <Leader>p "*p
