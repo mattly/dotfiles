@@ -24,7 +24,7 @@
   if &t_Co >= 256 || has("gui_running")
     set hlsearch
   endif
-  if &t_has("gui_running")
+  if has("gui_running")
     set guifont=Menlo:h12
 
     " a: visual-mode autoselect (takes over the OS selection process)
