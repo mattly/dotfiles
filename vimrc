@@ -92,13 +92,10 @@
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=5                   " min characters to show sideways
   set cursorline                        " highlight the current cursor line
-  set colorcolumn=+1,120                " highlight at 81 characters and 120
+  set colorcolumn=+1                    " highlight at 1 past textwidth
   set laststatus=2                      " always show the status line
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
-
-  " Highlight parts of lines longer than 85 characters
-  autocmd BufNewFile,BufRead * match OverLength /\%86v.\+/
 
 " Text Formatting
 " =============================================================================
@@ -166,6 +163,9 @@
   " quick escape out of insert mode
   inoremap jj <Esc>
 
+  " repeat moves the cursor back to where it was
+  nnoremap . .`[
+
   " disable the fucking help
   inoremap <F1> <ESC>
   nnoremap <F1> <ESC>
@@ -188,6 +188,7 @@
   cnoremap <M-Right>  <S-Right>
   cnoremap <M-Left>   <S-Left>
 
+  " open this in Marked
   nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 " Searching
@@ -300,7 +301,7 @@
   nnoremap <Leader>gw :Gw<CR>
 
 " Utilities
-" =============================================================================
+" ==========================================================================================
   " just sudo it
   cnoremap w!! %!sudo tee > /dev/null %
 
@@ -315,6 +316,21 @@
       set nornu nu
     endif
   endfunction
+
+  " Highlight parts of lines longer than 85 characters
+  " autocmd BufNewFile,BufRead * match OverLength /\%86v.\+/
+  let longlines=0
+  nnoremap <Leader>8 :call LongLines()<CR>
+  function! LongLines()
+    if g:longlines==0
+      match OverLength /\%82v.\+/
+      let g:longlines=1
+    else
+      match OverLength //
+      let g:longlines=0
+    endif
+  endfunction
+  call LongLines()
 
   " Stoner Coder Bro says:
   "   whoa, i totally changed this file brah! Like, what happened?
