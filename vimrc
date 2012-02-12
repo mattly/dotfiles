@@ -166,6 +166,10 @@
   " repeat moves the cursor back to where it was
   nnoremap . .`[
 
+  " keep selections when indenting in visual mode
+  vnoremap > >gv
+  vnoremap < <gv
+
   " disable the fucking help
   inoremap <F1> <ESC>
   nnoremap <F1> <ESC>
@@ -431,9 +435,12 @@
 
   let stl .= "%="
   let stl .= "%#ErrorMsg#"
+
   let stl .= "%{&modified > 0 ? '-dirty-' : ''}"
   let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
+
   let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
+
   let stl .= "%{SyntaxStatus()}"
   let stl .= "%*"
 
