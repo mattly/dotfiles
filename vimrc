@@ -238,7 +238,7 @@
   au BufRead,BufNewFile *vimrc                            setf vim
 
   " use cursorcolumn in whitespace-sensitive file formats
-  au Filetype coffee,python,haml,sass set cursorcolumn
+  au Filetype coffee,python,haml,sass,slim set cursorcolumn
 
   " The python way... yuk, but I can deal
   au Filetype python set tabstop=4 shiftwidth=4
