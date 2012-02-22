@@ -26,21 +26,30 @@
   endif
   if has("gui_running")
     set guifont=Menlo:h12
+    set background=dark
 
     " a: visual-mode autoselect (takes over the OS selection process)
+    set guioptions+=a
     " A: autoselect for modeless selection
+    set guioptions+=A
     " c: use console dialogs for simple choices
-    " e: use the gui's tabs -- not using for now, prevent macvim from resizing
-    "    window on tabs
+    set guioptions+=c
     " g: grey-out non-active menu items
+    set guioptions+=g
     " m: show system menu bars
+    set guioptions+=m
     " t: include tear-off menu items
-    set guioptions=aAcgmt
+    set guioptions+=t
+
     " T: system toolbar
+    set guioptions-=T
     " r: right-hand scrollbar
+    set guioptions-=r
     " l: left-hand scrollbar
+    set guioptions-=l
     " L: left-hand scrollbar when vertically-split window
-    set guioptions-=TrlL
+    set guioptions-=L
+
     set fuoptions=maxvert,maxhorz
   else
     set t_Co=256
@@ -232,13 +241,17 @@
   autocmd BufNewFile,BufRead * set foldmethod=indent
   autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
+  " window switching niceties
+  autocmd WinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+
 " File Formats
 " =============================================================================
   au BufRead,BufNewFile gitconfig                         setf gitconfig
   au BufRead,BufNewFile *.less                            setf less
   au BufRead,BufNewFile nginx/*.conf                      setf nginx
   au BufRead,BufNewFile *.ru,*.rake                       setf ruby
-  au BufRead,BufNewFile Capfile,GemFile,Isolate,Rakefile  setf ruby
+  au BufRead,BufNewFile Capfile,Gemfile,Isolate,Rakefile  setf ruby
   au BufRead,BufNewFile *vimrc                            setf vim
 
   " use cursorcolumn in whitespace-sensitive file formats
