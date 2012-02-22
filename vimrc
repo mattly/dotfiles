@@ -70,7 +70,7 @@
     hi OverLength ctermbg=red ctermfg=white
   end
 
-" Backups
+" Backups (or lack thereof)
 " =============================================================================
   set nobackup                          " do not keep backups after close
   set nowritebackup                     " do not keep backups while working
