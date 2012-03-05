@@ -70,6 +70,7 @@
     hi FoldColumn     guifg=#aaaa88 guibg=#212118
     hi Folded         guifg=#aaaa88 guibg=#212118 gui=italic
     hi VertSplit      guifg=#212118 guibg=#212118
+    hi VertSplit      ctermfg=232   ctermbg=232
     hi ColorColumn                  guibg=#851336
     hi OverLength     guifg=#eeeeee guibg=#F92672
   elseif g:colors == 'solarized'
