@@ -41,6 +41,8 @@
     " t: include tear-off menu items
     set guioptions+=t
 
+    " e: don't use gui tabs, they change the height of the window
+    set guioptions-=e
     " T: system toolbar
     set guioptions-=T
     " r: right-hand scrollbar
@@ -53,13 +55,14 @@
     set fuoptions=maxvert,maxhorz
   else
     set t_Co=256
+    set background=dark
     " bar cursor in insert mode
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     " block cursor in normal mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
 
-  let colors='molokai'
+  let colors='solarized'
   if g:colors == 'molokai'
     let g:molokai_original=1
     colorscheme molokai
@@ -192,6 +195,16 @@
   inoremap <C-e> <C-o>$
   cnoremap <C-e> <End>
   nnoremap <C-e> $
+
+  " make the arrow keys work (I know, I know)
+  nnoremap <Esc>A <up>
+  nnoremap <Esc>B <down>
+  nnoremap <Esc>C <right>
+  nnoremap <Esc>D <left>
+  inoremap <Esc>A <up>
+  inoremap <Esc>B <down>
+  inoremap <Esc>C <right>
+  inoremap <Esc>D <left>
 
   " option-backspace over words
   " this does NOT work in terminal vim, only macvim
