@@ -215,6 +215,10 @@
   cnoremap <M-Right>  <S-Right>
   cnoremap <M-Left>   <S-Left>
 
+  " autoclose pairs
+  let g:AutoClosePairs_add = "'"
+  let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
+
   " open this in Marked
   nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
@@ -273,6 +277,13 @@
 
   " The python way... yuk, but I can deal
   au Filetype python set tabstop=4 shiftwidth=4
+
+  " rubyisms
+  autocmd FileType ruby
+        \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("|", "")
+
+  autocmd FileType html
+        \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("<>", "")
 
 " Buffers
 " =============================================================================
