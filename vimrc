@@ -186,6 +186,13 @@
   " repeat moves the cursor back to where it was
   nnoremap . .`[
 
+  " alternate to escape
+  inoremap <C-o> <Esc>
+  " time out of insert mode after 15 seconds
+  au CursorHoldI * stopinsert
+  au InsertEnter * let udpaterestore=&updatetime | set updatetime=15000
+  au InsertLeave * let &updatetime=updaterestore
+
   " keep selections when indenting in visual mode
   vnoremap > >gv
   vnoremap < <gv
