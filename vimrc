@@ -56,10 +56,15 @@
   else
     set t_Co=256
     set background=dark
-    " bar cursor in insert mode
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    " block cursor in normal mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    if exists('$TMUX')
+      let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+      let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    else
+      " bar cursor in insert mode
+      let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+      " block cursor in normal mode
+      let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    endif
   endif
 
   let colors='solarized'
@@ -97,7 +102,6 @@
   set number                            " show line numbers
   set wildmenu                          " wildmenu is awesome
   set wildmode=list:longest,full
-  set backspace=indent,eol,start        " backspace over anything
   set shortmess=filtIoOA
   set report=0                          " always notify us about changes
   set nostartofline                     " don't jump to line start on scroll
@@ -109,6 +113,12 @@
   set laststatus=2                      " always show the status line
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
+
+" Keyboarding
+" =============================================================================
+  set backspace=indent,eol,start        " backspace over anything
+  set esckeys                           " we like our arrow keys?
+  set ttimeoutlen=10                    " but we also hate timeouts on <Esc>
 
 " Text Formatting
 " =============================================================================
@@ -173,9 +183,6 @@
   " I always hit this when I mean I, O or J
   nnoremap K <Nop>
 
-  " quick escape out of insert mode
-  inoremap jj <Esc>
-
   " repeat moves the cursor back to where it was
   nnoremap . .`[
 
@@ -196,16 +203,6 @@
   inoremap <C-e> <C-o>$
   cnoremap <C-e> <End>
   nnoremap <C-e> $
-
-  " make the arrow keys work (I know, I know)
-  nnoremap <Esc>A <up>
-  nnoremap <Esc>B <down>
-  nnoremap <Esc>C <right>
-  nnoremap <Esc>D <left>
-  inoremap <Esc>A <up>
-  inoremap <Esc>B <down>
-  inoremap <Esc>C <right>
-  inoremap <Esc>D <left>
 
   " option-backspace over words
   " this does NOT work in terminal vim, only macvim
