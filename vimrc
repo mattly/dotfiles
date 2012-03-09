@@ -463,9 +463,6 @@
 
   let stl = "%<"
 
-  " let stl .= "%#DiffAdd#"
-  let stl .= "%n "
-
   " let stl .= "%#DiffChange#"
   let stl .= "%-.60f "
 
