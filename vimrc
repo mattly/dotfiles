@@ -422,6 +422,8 @@
 " =============================================================================
   let g:ragtag_global_maps = 1
   let g:syntastic_check_on_open=1
+  " prevent autoclose from setting some Esc-leading mappings
+  let g:AutoClosePreserveDotReg=0
 
 " Sessions
 " =============================================================================
