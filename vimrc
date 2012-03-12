@@ -197,6 +197,9 @@
   vnoremap > >gv
   vnoremap < <gv
 
+  " record a quick macro in the Q slot, play back with qq
+  nnoremap Q @q
+
   " disable the fucking help
   inoremap <F1> <ESC>
   nnoremap <F1> <ESC>
@@ -289,24 +292,11 @@
   autocmd FileType html
         \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("<>", "")
 
-" Buffers
-" =============================================================================
-  " switch between recent buffers
-  nnoremap <C-S-up>     :bnext<CR>
-  nnoremap <C-S-down>   :bprev<CR>
-
 " Splits
 " =============================================================================
   set splitbelow                        " open new horiz splits below current
   set splitright                        " open new vert splits to the right
 
-  " in MacVim, this is like switching splits in iTerm
-  nnoremap <D-M-down>   <C-w><Down>
-  nnoremap <D-M-up>     <C-w><Up>
-  nnoremap <D-M-left>   <C-w><Left>
-  nnoremap <D-M-right>  <C-w><Right>
-
-  " in iTerm, this feels more natural
   nnoremap <C-j>        <C-w><Down>
   nnoremap <C-k>        <C-w><Up>
   nnoremap <C-h>        <C-w><Left>
@@ -314,11 +304,8 @@
 
 " Tabs
 " =============================================================================
-  nnoremap <D-S-right> :tabnext<CR>
-  nnoremap <D-S-left> :tabprevious<CR>
-
-  nnoremap <C-right> :tabnext<CR>
-  nnoremap <C-left> :tabprevious<CR>
+  nnoremap <S-h> :tabnext<CR>
+  nnoremap <S-l> :tabprevious<CR>
 
 " File Navigation
 " =============================================================================
