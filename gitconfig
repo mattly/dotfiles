@@ -44,6 +44,7 @@
   default=current
 
 [alias]
+  amen = !sh -c 'say can I get a hallelujah!'
   # amend to the last commit
   amend = commit --amend -C HEAD
   # add only part of the commit to index
