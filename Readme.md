@@ -21,12 +21,23 @@ makes sense when coming from the vim way.
 Hint: the vim way regards thinking about _everything_ in terms of actions and
 objects. "split Readme.txt", "delete word", "visual select inner indent".
 
-I use vim in both the terminal and macvim, and this config file reflects that.
+I use vim in macvim, the terminal, and under tmux. The config has gradually
+grown to accommodate the tmux use-case, as it emphasizes home-row keyboard
+shortcuts and less reliance on CMD-OPT-ARROW type keys.
 
 I've attempted to organize the file according to what certain directives,
 functions, etc, serve. Breaking these out into multiple files would have been
 madness, so each section is indented two characters in order to allow easy
 folding by indent level. I love folding by indent level.
+
+Note that to use vim in tmux with clipboard support for OS X you need:
+
+    brew install reattach-to-user-name --wrap-pbpaste-and-pbcopy
+
+This will allow you to use the "system clipboard" from vim and other apps under
+tmux. You then need a vim with clipboard support, which OS X's vim doesn't have:
+
+    brew install https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb
 
 ### gitconfig
 
