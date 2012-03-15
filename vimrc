@@ -175,7 +175,7 @@
   "   sp  - previous misspelling
   "   ss  - toggle spelling
   "   s?  - suggestions
-  "   t   NERDTree
+  "   tp  - toggle paste mode
   "   y   yank to system clipboard, follow with normal yank operations
   "   ,   turn off search highlighting
   "   _   PLUGIN: intro to tcomment commands, see 'help tcomment-maps'
@@ -322,7 +322,6 @@
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
   " for NERDTree
-  nnoremap <Leader>t :NERDTree<CR>
   let g:NERDTreeMapJumpNextSibling="S-j"
   let g:NERDTreeMapJumpPrevSibling="S-k"
 
@@ -398,6 +397,9 @@
   nnoremap <Leader>y "*y
   vnoremap <Leader>y "*y
   nnoremap <Leader>p "*p
+  nnoremap <Leader>P "*P
+
+  nnoremap <Leader>tp :set paste!
 
 " Mouse
 " =============================================================================
