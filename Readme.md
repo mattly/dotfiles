@@ -37,7 +37,7 @@ Note that to use vim in tmux with clipboard support for OS X you need:
 This will allow you to use the "system clipboard" from vim and other apps under
 tmux. You then need a vim with clipboard support, which OS X's vim doesn't have:
 
-    brew install https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb
+    brew install https://raw.github.com/Homebrew/homebrew-dupes/master/vim.rb
 
 ### gitconfig
 
