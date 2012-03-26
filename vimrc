@@ -67,7 +67,7 @@
     endif
   endif
 
-  let colors='solarized'
+  let colors='molokai'
   if g:colors == 'molokai'
     let g:molokai_original=1
     colorscheme molokai
