@@ -67,7 +67,7 @@
     endif
   endif
 
-  let colors='solarized'
+  let colors='molokai'
   if g:colors == 'molokai'
     let g:molokai_original=1
     colorscheme molokai
@@ -249,7 +249,7 @@
 
 " Spelling
 " =============================================================================
-  set spell spelllang=en_us             " When you need it, you need it.
+  set spelllang=en_us                   " When you need it, you need it.
   " toggle spelling
   nnoremap <Leader>ss :setlocal spell!<CR>
   " n: next, p: previous, a: add, ?: suggest

@@ -21,7 +21,6 @@ alias bzip='bzip2 -kz'
 alias bunzip='bzip2 -kd'
 
 # git
-alias git=hub
 alias tig='tig --all'
 
 # ruby
