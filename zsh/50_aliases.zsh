@@ -25,4 +25,5 @@ alias tig='tig --all'
 
 # ruby
 alias blunder='bundler'
+alias lolruby="ps | grep ruby | awk '{print $1}' | xargs kill -9"
 
