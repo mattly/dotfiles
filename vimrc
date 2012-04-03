@@ -165,6 +165,7 @@
   "   gd  - write, diff against HEAD
   "   gs  - git status
   "   gw  - write, add to index
+  "   k   fix syntax highlighting
   "   m   open in Marked.app
   "   n   line number toggling
   "   p   paste from system clipboard
@@ -226,6 +227,9 @@
 
   " open this in Marked
   nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
+  " fix syntax highlighting
+  nnoremap <leader>k :syntax sync fromstart<cr>
 
 " Searching
 " =============================================================================
@@ -393,6 +397,7 @@
   " For yanking to / pasting from system clipboard
   " for terminal vim, requires the one included with MacVim
   nnoremap <Leader>y "*y
+  nnoremap <Leader>Y "*Y
   vnoremap <Leader>y "*y
   nnoremap <Leader>p "*p
   nnoremap <Leader>P "*P

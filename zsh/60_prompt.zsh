@@ -64,9 +64,9 @@ git_prompt() {
   	printf " %s" $s
   fi
 }
-# %B%n@%m%b 
+
 setopt prompt_subst
 PROMPT=$'
-%n@%m:%3~$(git_prompt) > '
+%n@%m:%3~$(git_prompt) %(?.%{$fg[green]%}\:\).%{$fg[red]%}\:\(%?)%{$reset_color%} '
 
 
