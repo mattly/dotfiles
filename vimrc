@@ -77,7 +77,9 @@
     hi VertSplit      guifg=#212118 guibg=#212118
     hi VertSplit      ctermfg=232   ctermbg=232
     hi ColorColumn                  guibg=#851336
+    hi ColorColumn    ctermfg=white ctermbg=88
     hi OverLength     guifg=#eeeeee guibg=#F92672
+    hi OverLength     ctermfg=white ctermbg=88
   elseif g:colors == 'solarized'
     let g:solarized_contrast="high"
     colorscheme solarized
