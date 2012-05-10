@@ -110,7 +110,7 @@
   set ttyfast                           " we're local 99% of the time
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=5                   " min characters to show sideways
-  set cursorline                        " highlight the current cursor line
+  " set cursorline                        " highlight the current cursor line
   set colorcolumn=+1                    " highlight at 1 past textwidth
   set laststatus=2                      " always show the status line
   set noerrorbells                      " shut up already
@@ -279,7 +279,7 @@
   au BufRead,BufNewFile *vimrc                            setf vim
 
   " use cursorcolumn in whitespace-sensitive file formats
-  au Filetype coffee,python,haml,sass,slim set cursorcolumn
+  " au Filetype coffee,python,haml,sass,slim set cursorcolumn
 
   " The python way... yuk, but I can deal
   au Filetype python set tabstop=4 shiftwidth=4
@@ -388,6 +388,17 @@
     return result
   endfunction
   vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+
+  " :( http://briancarper.net/blog/590/cursorcolumn--cursorline-slowdown
+  function! CursorTrack()
+    if &cursorline
+      set nocursorline nocursorcolumn
+    else
+      set cursorline cursorcolumn
+    endif
+    redraw
+  endfunction
+  nnoremap <C-Space> :call CursorTrack()<CR>
 
 " Pasteboard
 " =============================================================================
