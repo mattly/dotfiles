@@ -55,7 +55,7 @@
     set fuoptions=maxvert,maxhorz
   else
     set t_Co=256
-    set background=dark
+    set background=light
     if exists('$TMUX')
       let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
       let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -67,7 +67,7 @@
     endif
   endif
 
-  let colors='molokai'
+  let colors='solarized'
   if g:colors == 'molokai'
     let g:molokai_original=1
     colorscheme molokai
