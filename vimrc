@@ -265,10 +265,6 @@
   autocmd BufNewFile,BufRead * set foldmethod=indent
   autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
-  " window switching niceties
-  autocmd WinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
-
 " File Formats
 " =============================================================================
   au BufRead,BufNewFile gitconfig                         setf gitconfig
