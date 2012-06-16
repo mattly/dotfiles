@@ -1,3 +1,5 @@
+config/fish/fish_history
+config/fish/fishd*
 vim/session
 vim/.netrwhist
 vim/bundle/*/doc/*
