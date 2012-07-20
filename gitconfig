@@ -71,7 +71,6 @@
   # mirror branches (including deletions) and tags
   mirror = push --mirror
   # show commits that haven't been pushed to the remote yet
-  new-pull-request = !open \"https://github.com/$(git config remote.$(git config github.user).url |sed s/git@github.com:// |sed s/.git//)/pull/new/$(git name-rev --name-only HEAD)\"
   pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
   # interactive rebase
   ri = rebase --interactive --autosquash
@@ -85,6 +84,8 @@
   tag-release = !sh -c 'git tag release/`date +%Y/%m/%d/%H%M`'
   # track a remote branch
   track = checkout -t
+  # retains a commit as staged
+  undo = reset --soft HEAD^
   # remove a file from the index
   unstage = reset HEAD --
   # pull changes, show commits since last pull/push
