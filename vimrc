@@ -189,6 +189,7 @@
   "   sp  - previous misspelling
   "   ss  - toggle spelling
   "   s?  - suggestions
+  "   tc  - toggle cursor tracking
   "   tp  - toggle paste mode
   "   y   yank to system clipboard, follow with normal yank operations
   "   ,   turn off search highlighting
@@ -331,15 +332,20 @@
   let g:NERDTreeMapJumpNextSibling="S-j"
   let g:NERDTreeMapJumpPrevSibling="S-k"
 
-" Fugitive and Vim
+" Fugitive and GitV
 " =============================================================================
   nnoremap <Leader>gs :Gstatus<CR>
   nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
   nnoremap <Leader>gb :Gblame<CR>
   nnoremap <Leader>gw :Gw<CR>
 
+  nnoremap <Leader>gv :Gitv --all<CR>
+  nnoremap <Leader>gV :Gitv! --all<CR>
+  let g:Gitv_DoNotMapCtrlKey = 1
+
+
 " Utilities
-" ==========================================================================================
+" =============================================================================
   " just sudo it
   cnoremap w!! %!sudo tee > /dev/null %
 
@@ -405,7 +411,7 @@
     endif
     redraw
   endfunction
-  nnoremap <C-Space> :call CursorTrack()<CR>
+  nnoremap <Leader>tc :call CursorTrack()<CR>
 
 " Pasteboard
 " =============================================================================
