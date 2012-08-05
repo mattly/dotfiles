@@ -92,7 +92,7 @@
     hi OverLength guifg=#ffffff guibg=#ff0000
     hi OverLength ctermbg=red ctermfg=white
   elseif g:colors == 'tomorrow-night-bright'
-    colorscheme "Tomorrow-Night-Bright"
+    colorscheme Tomorrow-Night-Bright
     hi OverLength ctermbg=red ctermfg=white
     hi StatusLine ctermbg=234 ctermfg=253
     hi StatusWarning ctermbg=160 ctermfg=white
