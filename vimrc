@@ -67,7 +67,9 @@
     endif
   endif
 
-  let colors='solarized'
+  " let colors='solarized'
+  " let colors='heimsu'
+  let colors='tomorrow-night-bright'
   if g:colors == 'molokai'
     let g:molokai_original=1
     colorscheme molokai
@@ -85,6 +87,15 @@
     colorscheme solarized
     hi OverLength     guifg=#586e75 guibg=#073642
     hi OverLength     ctermfg=240   ctermbg=235
+  elseif g:colors == 'heimsu'
+    colorscheme "heimsu"
+    hi OverLength guifg=#ffffff guibg=#ff0000
+    hi OverLength ctermbg=red ctermfg=white
+  elseif g:colors == 'tomorrow-night-bright'
+    colorscheme "Tomorrow-Night-Bright"
+    hi OverLength ctermbg=red ctermfg=white
+    hi StatusLine ctermbg=234 ctermfg=253
+    hi StatusWarning ctermbg=160 ctermfg=white
   else
     hi OverLength guifg=#ffffff guibg=#ff0000
     hi OverLength ctermbg=red ctermfg=white
@@ -461,22 +472,20 @@
 
   let stl = "%<"
 
-  " let stl .= "%#DiffChange#"
   let stl .= "%-.60f "
 
-  " let stl .= "%#DiffAdd#"
   let stl .= "%{&filetype} "
 
   let stl .= "%*"
   let stl .= "%-.35{GitStatus()}"
 
   let stl .= "%="
-  let stl .= "%#ErrorMsg#"
+  let stl .= "%#StatusWarning#"
 
   let stl .= "%{&modified > 0 ? '-dirty-' : ''}"
   let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
 
-  let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
+  let stl .= "%{&modifiable == 0 ? '-readonly-' : ''}"
 
   let stl .= "%{SyntaxStatus()}"
   let stl .= "%*"
