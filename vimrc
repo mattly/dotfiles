@@ -89,13 +89,15 @@
     hi OverLength     ctermfg=240   ctermbg=235
   elseif g:colors == 'heimsu'
     colorscheme "heimsu"
-    hi OverLength guifg=#ffffff guibg=#ff0000
-    hi OverLength ctermbg=red ctermfg=white
+    hi OverLength     guifg=#ffffff guibg=#ff0000
+    hi OverLength     ctermbg=red ctermfg=white
   elseif g:colors == 'tomorrow-night-bright'
     colorscheme Tomorrow-Night-Bright
-    hi OverLength ctermbg=red ctermfg=white
-    hi StatusLine ctermbg=234 ctermfg=253
-    hi StatusWarning ctermbg=160 ctermfg=white
+    hi OverLength     ctermbg=red ctermfg=white
+    hi StatusLine     ctermbg=68 ctermfg=234
+    hi StatusLineNC   ctermbg=248 ctermfg=233
+    hi VertSplit      ctermbg=250 ctermbg=250
+    hi StatusWarning  ctermbg=160 ctermfg=white
   else
     hi OverLength guifg=#ffffff guibg=#ff0000
     hi OverLength ctermbg=red ctermfg=white
@@ -115,6 +117,7 @@
   set number                            " show line numbers
   set wildmenu                          " wildmenu is awesome
   set wildmode=list:longest,full
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
   set shortmess=filtIoOA
   set report=0                          " always notify us about changes
   set nostartofline                     " don't jump to line start on scroll
@@ -324,13 +327,6 @@
   " ctags-related
   set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
   map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
-
-  " for the ctrlp plugin
-  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-
-  " for NERDTree
-  let g:NERDTreeMapJumpNextSibling="S-j"
-  let g:NERDTreeMapJumpPrevSibling="S-k"
 
 " Fugitive and GitV
 " =============================================================================
