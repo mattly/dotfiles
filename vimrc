@@ -67,37 +67,26 @@
     endif
   endif
 
-  " let colors='solarized'
-  " let colors='heimsu'
-  let colors='tomorrow-night-bright'
-  if g:colors == 'molokai'
-    let g:molokai_original=1
-    colorscheme molokai
-    hi Comment        guifg=#aaaa88
-    hi FoldColumn     guifg=#aaaa88 guibg=#212118
-    hi Folded         guifg=#aaaa88 guibg=#212118 gui=italic
-    hi VertSplit      guifg=#212118 guibg=#212118
-    hi VertSplit      ctermfg=232   ctermbg=232
-    hi ColorColumn                  guibg=#851336
-    hi ColorColumn    ctermfg=white ctermbg=88
-    hi OverLength     guifg=#eeeeee guibg=#F92672
-    hi OverLength     ctermfg=white ctermbg=88
-  elseif g:colors == 'solarized'
+  let colors='tomorrow-night'
+  if g:colors == 'solarized'
     let g:solarized_contrast="high"
     colorscheme solarized
     hi OverLength     guifg=#586e75 guibg=#073642
     hi OverLength     ctermfg=240   ctermbg=235
-  elseif g:colors == 'heimsu'
-    colorscheme "heimsu"
-    hi OverLength     guifg=#ffffff guibg=#ff0000
-    hi OverLength     ctermbg=red ctermfg=white
   elseif g:colors == 'tomorrow-night-bright'
     colorscheme Tomorrow-Night-Bright
-    hi OverLength     ctermbg=red ctermfg=white
-    hi StatusLine     ctermbg=68 ctermfg=234
-    hi StatusLineNC   ctermbg=248 ctermfg=233
-    hi VertSplit      ctermbg=250 ctermbg=250
-    hi StatusWarning  ctermbg=160 ctermfg=white
+    hi OverLength     ctermbg=160   ctermfg=254
+    hi StatusLine     ctermbg=68    ctermfg=234
+    hi StatusLineNC   ctermbg=248   ctermfg=233
+    hi VertSplit      ctermbg=250   ctermfg=250
+    hi StatusWarning  ctermbg=160   ctermfg=white
+  elseif g:colors == 'tomorrow-night'
+    colorscheme Tomorrow-Night
+    hi OverLength     ctermbg=160   ctermfg=254
+    hi StatusLine     ctermbg=68    ctermfg=234
+    hi StatusLineNC   ctermbg=248   ctermfg=233
+    hi VertSplit      ctermbg=248   ctermfg=248
+    hi StatusWarning  ctermbg=160   ctermfg=254
   else
     hi OverLength guifg=#ffffff guibg=#ff0000
     hi OverLength ctermbg=red ctermfg=white
