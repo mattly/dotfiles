@@ -67,7 +67,7 @@
     endif
   endif
 
-  let colors='tomorrow-night'
+  let colors='tomorrownight'
   if g:colors == 'solarized'
     let g:solarized_contrast="high"
     colorscheme solarized
@@ -87,6 +87,8 @@
     hi StatusLineNC   ctermbg=248   ctermfg=233
     hi VertSplit      ctermbg=248   ctermfg=248
     hi StatusWarning  ctermbg=160   ctermfg=254
+  elseif g:colors == 'tomorrow'
+    colorscheme Tomorrow
   else
     hi OverLength guifg=#ffffff guibg=#ff0000
     hi OverLength ctermbg=red ctermfg=white
