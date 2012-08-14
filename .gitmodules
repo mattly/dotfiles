@@ -62,10 +62,6 @@
 	path = vim/bundle/vim-javascript.git
 	url = https://github.com/pangloss/vim-javascript.git
   ignore = untracked
-[submodule "vim/bundle/tcomment_vim.git"]
-	path = vim/bundle/tcomment_vim.git
-	url = https://github.com/tomtom/tcomment_vim.git
-  ignore = untracked
 [submodule "vim/bundle/colors-solarized.git"]
 	path = vim/bundle/colors-solarized.git
 	url = https://github.com/altercation/vim-colors-solarized.git
@@ -100,9 +96,6 @@
 [submodule "vim/bundle/ctrlp.vim.git"]
 	path = vim/bundle/ctrlp.vim.git
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/nerdtree.git"]
-	path = vim/bundle/nerdtree.git
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-les.git"]
 	path = vim/bundle/vim-les.git
 	url = https://github.com/groenewege/vim-less.git
@@ -112,3 +105,6 @@
 [submodule "vim/bundle/gitv.git"]
 	path = vim/bundle/gitv.git
 	url = https://github.com/gregsexton/gitv.git
+[submodule "vim/bundle/vim-commentary.git"]
+	path = vim/bundle/vim-commentary.git
+	url = https://github.com/tpope/vim-commentary.git
