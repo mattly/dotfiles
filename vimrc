@@ -67,7 +67,7 @@
     endif
   endif
 
-  let colors='tomorrownight'
+  let colors='tomorrow'
   if g:colors == 'solarized'
     let g:solarized_contrast="high"
     colorscheme solarized
