@@ -92,7 +92,7 @@
     colorscheme Tomorrow
   end
 
-  set fillchars=vert:\ fold:\ 
+  set fillchars=vert:\ 
 
 " Backups (or lack thereof)
 " =============================================================================
