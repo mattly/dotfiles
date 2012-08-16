@@ -81,18 +81,18 @@
     hi OverLength     ctermbg=160   ctermfg=254
     hi StatusLine     ctermbg=68    ctermfg=234
     hi StatusLineNC   ctermbg=248   ctermfg=233
-    hi VertSplit      ctermbg=250   ctermfg=250
     hi StatusWarning  ctermbg=160   ctermfg=white
   elseif g:colors == 'tomorrow-night'
     colorscheme Tomorrow-Night
     hi OverLength     ctermbg=160   ctermfg=254
     hi StatusLine     ctermbg=68    ctermfg=234
     hi StatusLineNC   ctermbg=248   ctermfg=233
-    hi VertSplit      ctermbg=248   ctermfg=248
     hi StatusWarning  ctermbg=160   ctermfg=254
   elseif g:colors == 'tomorrow'
     colorscheme Tomorrow
   end
+
+  set fillchars=vert:\ fold:\ 
 
 " Backups (or lack thereof)
 " =============================================================================
