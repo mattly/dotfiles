@@ -56,18 +56,21 @@
   else
     set t_Co=256
     set background=light
+    " bar cursor in insert mode, block cursor in normal node
     if exists('$TMUX')
       let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
       let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
     else
-      " bar cursor in insert mode
       let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-      " block cursor in normal mode
       let &t_EI = "\<Esc>]50;CursorShape=0\x7"
     endif
   endif
 
   let colors='tomorrow'
+
+  hi OverLength guifg=#ffffff guibg=#ff0000
+  hi OverLength ctermbg=red ctermfg=white
+
   if g:colors == 'solarized'
     let g:solarized_contrast="high"
     colorscheme solarized
@@ -89,9 +92,6 @@
     hi StatusWarning  ctermbg=160   ctermfg=254
   elseif g:colors == 'tomorrow'
     colorscheme Tomorrow
-  else
-    hi OverLength guifg=#ffffff guibg=#ff0000
-    hi OverLength ctermbg=red ctermfg=white
   end
 
 " Backups (or lack thereof)
@@ -105,7 +105,7 @@
   set ruler                             " show the cursor position
   set showcmd                           " show incomplete commands
   set lazyredraw                        " speeds up certain macros and such
-  set number                            " show line numbers
+  set nonumber                          " hide line numbers by default
   set wildmenu                          " wildmenu is awesome
   set wildmode=list:longest,full
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
@@ -347,21 +347,6 @@
       set nornu nu
     endif
   endfunction
-
-  " Highlight parts of lines longer than 85 characters
-  " autocmd BufNewFile,BufRead * match OverLength /\%86v.\+/
-  let longlines=0
-  nnoremap <Leader>8 :call LongLines()<CR>
-  function! LongLines()
-    if g:longlines==0
-      match OverLength /\%82v.\+/
-      let g:longlines=1
-    else
-      match OverLength //
-      let g:longlines=0
-    endif
-  endfunction
-  call LongLines()
 
   " Stoner Coder Bro says:
   "   whoa, i totally changed this file brah! Like, what happened?
