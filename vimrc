@@ -66,31 +66,10 @@
     endif
   endif
 
-  let colors='tomorrow'
-
-  hi OverLength guifg=#ffffff guibg=#ff0000
-  hi OverLength ctermbg=red ctermfg=white
-
-  if g:colors == 'solarized'
-    let g:solarized_contrast="high"
-    colorscheme solarized
-    hi OverLength     guifg=#586e75 guibg=#073642
-    hi OverLength     ctermfg=240   ctermbg=235
-  elseif g:colors == 'tomorrow-night-bright'
-    colorscheme Tomorrow-Night-Bright
-    hi OverLength     ctermbg=160   ctermfg=254
-    hi StatusLine     ctermbg=68    ctermfg=234
-    hi StatusLineNC   ctermbg=248   ctermfg=233
-    hi StatusWarning  ctermbg=160   ctermfg=white
-  elseif g:colors == 'tomorrow-night'
-    colorscheme Tomorrow-Night
-    hi OverLength     ctermbg=160   ctermfg=254
-    hi StatusLine     ctermbg=68    ctermfg=234
-    hi StatusLineNC   ctermbg=248   ctermfg=233
-    hi StatusWarning  ctermbg=160   ctermfg=254
-  elseif g:colors == 'tomorrow'
-    colorscheme Tomorrow
-  end
+  let g:solarized_contrast="high"
+  colorscheme solarized
+  hi OverLength     guifg=#586e75 guibg=#073642
+  hi OverLength     ctermfg=240   ctermbg=235
 
   set fillchars=vert:\ 
 
