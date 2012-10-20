@@ -305,10 +305,6 @@
   " The python way... yuk, but I can deal
   au Filetype python set tabstop=4 shiftwidth=4
 
-  " rubyisms
-  " autocmd FileType ruby
-  "       \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("")
-
   autocmd FileType html
         \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("<>", "")
 
