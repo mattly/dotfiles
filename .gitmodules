@@ -66,9 +66,6 @@
 	path = vim/bundle/colors-solarized.git
 	url = https://github.com/altercation/vim-colors-solarized.git
   ignore = untracked
-[submodule "vim/bundle/vim-pathogen.git"]
-	path = vim/bundle/vim-pathogen.git
-	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/vim-jade.git"]
 	path = vim/bundle/vim-jade.git
 	url = https://github.com/digitaltoad/vim-jade.git

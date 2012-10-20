@@ -1,7 +1,5 @@
-" Pathogen
+" Packages
 " =============================================================================
-  runtime bundle/vim-pathogen.git/autoload/pathogen.vim
-  call pathogen#infect()
 
 " General
 " =============================================================================
