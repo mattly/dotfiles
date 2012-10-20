@@ -1,14 +1,56 @@
+" Head
+" =============================================================================
+  set nocompatible                      " why is this not the default?
+  filetype off
+
 " Packages
 " =============================================================================
+  set rtp+=~/.vim/bundle/vundle
+  call vundle#rc()
+
+  Bundle 'gmarik/vundle'
+
+  Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-git'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-surround'
+  Bundle 'tpope/vim-unimpaired'
+  Bundle 'tpope/vim-abolish'
+  Bundle 'tpope/vim-eunuch'
+  Bundle 'tpope/vim-commentary'
+
+  Bundle 'ervandew/supertab'
+  Bundle 'michaeljsmith/vim-indent-object'
+  Bundle 'Townk/vim-autoclose'
+  Bundle 'scrooloose/syntastic'
+  " Bundle 'troydm/easytree.vim'
+
+  " css
+  Bundle 'wavded/vim-stylus'
+  Bundle 'groenewege/vim-less'
+  " html
+  Bundle 'tpope/vim-ragtag'
+  Bundle 'digitaltoad/vim-jade'
+  Bundle 'juvenn/mustache'
+  Bundle 'tpope/vim-markdown'
+  " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+  " javascript
+  Bundle "pangloss/vim-javascript"
+  Bundle 'kchmck/vim-coffee-script'
+  " ruby
+  Bundle 'tpope/vim-rake'
+
+  " colors
+  Bundle 'altercation/vim-colors-solarized'
 
 " General
 " =============================================================================
-  set nocompatible                      " why is this not the default?
+  filetype plugin indent on
   set fileformats=unix,dos,mac          " line endings are still a thing?
   set modelines=0                       " avoid spell files vulnerability
   set autoread                          " auto-reload files from local changes
   set shell=/bin/sh                     " so that our ENV is available to vim
-  filetype plugin indent on
   set encoding=utf-8 nobomb             " People still use latin1?
   set exrc                              " use per-project .virmc
   set secure                            " but disallow autocmd, shell and write
