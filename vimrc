@@ -410,7 +410,7 @@
   nnoremap <Leader>p "*p
   nnoremap <Leader>P "*P
 
-  nnoremap <Leader>tp :set paste!
+  nnoremap <Leader>tp :set paste!<CR>
 
 " Mouse
 " =============================================================================
