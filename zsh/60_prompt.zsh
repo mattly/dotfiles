@@ -53,7 +53,7 @@ git_prompt() {
   		;;
   	esac
   	if [ -n "$current_git_branch_is_dirty" ]; then
-  		s+="%{$fg[red]%}⚡%{$reset_color%}"
+  		s+="%{$fg[red]%}✦%{$reset_color%}"
   	fi
   	if [ "$current_git_stash_count" -eq "0" ]; then
 	  else
@@ -67,6 +67,6 @@ git_prompt() {
 
 setopt prompt_subst
 PROMPT=$'
-%n@%m:%3~$(git_prompt) %(?.%{$fg[green]%}\:\).%{$fg[red]%}\:\(%?)%{$reset_color%} '
+%n@%m:%3~$(git_prompt) %(?.%{$fg[green]%}\:\).%{$fg[red]%}\:\(%?)%{$reset_color%} > '
 
 
