@@ -95,7 +95,7 @@
     set fuoptions=maxvert,maxhorz
   else
     set t_Co=256
-    set background=light
+    " set background=light
     " bar cursor in insert mode, block cursor in normal node
     if exists('$TMUX')
       let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -187,25 +187,22 @@
   "   cd  change directory to that of current file
   "   d   diff current buffer with written file
   "   gb  - git blame
-  "   gd  - write, diff against HEAD
+  "   gd  - write, git diff HEAD
   "   gs  - git status
-  "   gw  - write, add to index
+  "   gw  - write, git add
   "   k   fix syntax highlighting
-  "   m   open in Marked.app
   "   n   line number toggling
   "   p   paste from system clipboard
   "   r   regen ctags
-  "   s   spelling:
   "   sa  - add word to dictionary
   "   sn  - next misspelling
   "   sp  - previous misspelling
   "   ss  - toggle spelling
-  "   s?  - suggestions
-  "   tc  - toggle cursor tracking
+  "   s?  - spelling suggestions
   "   tp  - toggle paste mode
   "   y   yank to system clipboard, follow with normal yank operations
+  "   Y   yank to system clipboard, current line
   "   ,   turn off search highlighting
-  "   _   PLUGIN: intro to tcomment commands, see 'help tcomment-maps'
 
   " I always hit this when I mean I, O or J
   nnoremap K <Nop>
@@ -234,20 +231,10 @@
   cnoremap <C-e> <End>
   nnoremap <C-e> $
 
-  " option-backspace over words
-  " this does NOT work in terminal vim, only macvim
-  inoremap <M-Backspace> <M-[>ciw
-  cnoremap <M-Backspace> <S-Right> <C-W>
-
-  cnoremap <M-Right>  <S-Right>
-  cnoremap <M-Left>   <S-Left>
-
   " autoclose pairs
   let g:AutoClosePairs_add = "'"
   let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
 
-  " open this in Marked
-  nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
   " fix syntax highlighting
   nnoremap <leader>k :syntax sync fromstart<cr>
@@ -317,11 +304,6 @@
   nnoremap <C-h>        <C-w><Left>
   nnoremap <C-l>        <C-w><Right>
 
-" Tabs
-" =============================================================================
-  nnoremap <S-h> :tabnext<CR>
-  nnoremap <S-l> :tabprevious<CR>
-
 " File Navigation
 " =============================================================================
   let g:netrw_liststyle=4
@@ -340,11 +322,6 @@
   nnoremap <Leader>gb :Gblame<CR>
   nnoremap <Leader>gw :Gw<CR>
 
-  nnoremap <Leader>gv :Gitv --all<CR>
-  nnoremap <Leader>gV :Gitv! --all<CR>
-  let g:Gitv_DoNotMapCtrlKey = 1
-
-
 " Utilities
 " =============================================================================
   " just sudo it
@@ -362,18 +339,6 @@
     endif
   endfunction
 
-  " Stoner Coder Bro says:
-  "   whoa, i totally changed this file brah! Like, what happened?
-  " Now you can help stoner coder bro figure out what he did
-  nnoremap <Leader>d :call DiffOrig()<CR>
-  function! DiffOrig()
-    if &diff
-      wincmd p | bdel | diffoff
-    else
-      vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
-    endif
-  endfunction
-
   " UPPER CASE -> lower case -> Title Case
   " from http://vim.wikia.com/wiki/Switching_case_of_characters
   function! TwiddleCase(str)
@@ -387,17 +352,6 @@
     return result
   endfunction
   vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
-
-  " :( http://briancarper.net/blog/590/cursorcolumn--cursorline-slowdown
-  function! CursorTrack()
-    if &cursorline
-      set nocursorline nocursorcolumn
-    else
-      set cursorline cursorcolumn
-    endif
-    redraw
-  endfunction
-  nnoremap <Leader>tc :call CursorTrack()<CR>
 
 " Pasteboard
 " =============================================================================
