@@ -106,10 +106,9 @@
     endif
   endif
 
-  let g:solarized_contrast="high"
+  " let g:solarized_contrast="high"
+  set background=dark
   colorscheme solarized
-  hi OverLength     guifg=#586e75 guibg=#073642
-  hi OverLength     ctermfg=240   ctermbg=235
 
   set fillchars=vert:\ 
 
