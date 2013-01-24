@@ -29,7 +29,7 @@ update_git_vars() {
   	fi
   	stash=$(git stash list | wc -l | sed 's/^[ \t]*//')
     current_git_stash_count="$stash"
-  	if echo $st | grep "nothing to commit (working directory clean)" >/dev/null; then
+  	if echo $st | grep "working directory clean" >/dev/null; then
   	else
   		current_git_branch_is_dirty='1'
   	fi
