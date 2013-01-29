@@ -4,7 +4,7 @@ EMPTIES = env
 
 install:
 	@$(foreach FILE, $(FILES), \
-		ln -s $(FILE) ~/.$(FILE) ;\
+		ln -sf $(shell pwd)/$(FILE) ~/.$(FILE) ;\
 	 )
 	@$(foreach FILE, $(EMPTIES), \
 		touch ~/.$(FILE) ;\
