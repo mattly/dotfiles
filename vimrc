@@ -24,7 +24,6 @@
   Bundle 'michaeljsmith/vim-indent-object'
   Bundle 'Townk/vim-autoclose'
   Bundle 'scrooloose/syntastic'
-  " Bundle 'troydm/easytree.vim'
 
   " css
   Bundle 'wavded/vim-stylus'
@@ -108,6 +107,8 @@
   hi Folded ctermbg=233
   hi StatusLine cterm=none ctermbg=233 ctermfg=39
   hi StatusLineNC cterm=none ctermbg=233 ctermfg=237
+  hi VertSplit cterm=none ctermbg=233
+  hi Visual cterm=none ctermbg=black ctermfg=white
 
 " Backups (or lack thereof)
 " =============================================================================
