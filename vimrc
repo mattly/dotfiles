@@ -41,9 +41,6 @@
   " ruby
   Bundle 'tpope/vim-rake'
 
-  " colors
-  Bundle 'altercation/vim-colors-solarized'
-
 " General
 " =============================================================================
   filetype plugin indent on
@@ -106,11 +103,11 @@
     endif
   endif
 
-  " let g:solarized_contrast="high"
-  set background=dark
-  colorscheme solarized
-
   set fillchars=vert:\ 
+
+  hi Folded ctermbg=233
+  hi StatusLine cterm=none ctermbg=233 ctermfg=39
+  hi StatusLineNC cterm=none ctermbg=233 ctermfg=237
 
 " Backups (or lack thereof)
 " =============================================================================
@@ -413,8 +410,6 @@
       return ''
     endif
   endfunction
-
-  let rails_statusline = 0
 
   let stl = "%<"
 
