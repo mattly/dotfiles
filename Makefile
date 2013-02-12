@@ -1,23 +1,33 @@
 IGNORE = Readme.md Makefile .git .gitignore install
 FILES = $(filter-out $(IGNORE), $(wildcard *))
 EMPTIES = env
-HOMEBREW = ack bcrypt curl hub nmap node postgresql python rbenv readline \
-		   reattach-to-user-namespace redis ruby-build tig tmux vim
 
-install: install_dotfiles install_brew_packs
+install: install_dotfiles install_env
 
 install_dotfiles:
-	@$(foreach FILE, $(FILES), \
-		ln -sf $(shell pwd)/$(FILE) ~/.$(FILE) ;\
-	 )
-	@$(foreach FILE, $(EMPTIES), \
-		touch ~/.$(FILE) ;\
-	 )
+	@$(foreach FILE, $(FILES), ln -sf $(shell pwd)/$(FILE) ~/.$(FILE) ;)
+	@$(foreach FILE, $(EMPTIES), touch ~/.$(FILE) ;)
 	@mkdir -p ~/.zsh_cache
 
-install_brew_packs:
-	@$(foreach PKG, $(HOMEBREW), \
-		brew install $(PKG) ;\
-	 )
+HOMEBREW = readline bcrypt \
+		   ack curl nmap \
+		   node python pypy rbenv ruby-build \
+		   postgresql redis \
+		   hub tig \
+		   tmux reattach-to-user-namespace \
+		   mercurial vim
 
-.PHONY: install
+#GEMS =
+# other gems should be installed via Gemfile
+
+NPM_PKGS = coffee-script jwalk
+
+install_env:
+	@brew update
+	@$(foreach PKG, $(HOMEBREW), brew install $(PKG) ;)
+	@rbenv install 1.9.3-p194
+	@rbenv default 1.9.3-p194
+	#@$(foreach GEM, $(GEMS), gem install $(GEM); )
+	@$(foreach NM, $(NPM_PGKS), npm install $(NM) ;)
+
+.PHONY: install install_dotfiles install_brew_packs install_lang
