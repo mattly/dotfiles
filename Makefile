@@ -16,6 +16,7 @@ HOMEBREW = readline bcrypt \
 		   hub tig \
 		   tmux reattach-to-user-namespace \
 		   mercurial vim
+HB_TO_INSTALL = $(filter-out $(shell brew list), $(HOMEBREW))
 
 #GEMS =
 # other gems should be installed via Gemfile
@@ -24,7 +25,7 @@ NPM_PKGS = coffee-script jwalk
 
 install_env:
 	@brew update
-	@$(foreach PKG, $(HOMEBREW), brew install $(PKG) ;)
+	@$(foreach PKG, $(HB_TO_INSTALL), brew install $(PKG) ;)
 	@rbenv install 1.9.3-p194
 	@rbenv default 1.9.3-p194
 	#@$(foreach GEM, $(GEMS), gem install $(GEM); )
