@@ -31,4 +31,7 @@ install_env:
 	#@$(foreach GEM, $(GEMS), gem install $(GEM); )
 	@$(foreach NM, $(NPM_PGKS), npm install $(NM) ;)
 
-.PHONY: install install_dotfiles install_brew_packs install_lang
+apps:
+	@open https://code.google.com/p/iterm2/downloads/list
+
+.PHONY: install install_dotfiles install_brew_packs install_env
