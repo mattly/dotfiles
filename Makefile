@@ -41,4 +41,7 @@ install_env:
 	#@$(foreach GEM, $(GEMS), gem install $(GEM); )
 	@$(foreach NM, $(NPM_PGKS), npm install $(NM) ;)
 
+install_apps:
+	@source install/osx.sh
+
 .PHONY: install install_dotfiles install_brew_packs install_env ready
