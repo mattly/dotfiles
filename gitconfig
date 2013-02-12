@@ -1,6 +1,6 @@
 [user]
   email=matthew@lyonheart.us
-  name = Matthew Lyon
+	name = Matthew Lyon
 [github]
   user = mattly
   ; the 'hub' command pulls from $GITHUB_TOKEN
@@ -93,3 +93,5 @@
   # update all remotes, pruning removed tracking branches
   update-remotes = remote update --prune
 
+[credential]
+	helper = osxkeychain
