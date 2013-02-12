@@ -25,6 +25,8 @@
   Bundle 'Townk/vim-autoclose'
   Bundle 'scrooloose/syntastic'
 
+  Bundle 'chriskempson/base16-vim'
+
   " css
   Bundle 'wavded/vim-stylus'
   Bundle 'groenewege/vim-less'
@@ -104,12 +106,14 @@
 
   set fillchars=vert:\ 
 
+  colors base16-monokai
   hi Folded ctermbg=233
   hi StatusLine cterm=none ctermbg=233 ctermfg=39
   hi StatusLineNC cterm=none ctermbg=233 ctermfg=237
   hi VertSplit cterm=none ctermbg=233
-  hi Visual cterm=none ctermbg=black ctermfg=white
-  hi ColorColumn cterm=none ctermbg=black ctermfg=white
+  hi Visual cterm=none ctermbg=238 ctermfg=246
+  hi ColorColumn cterm=none ctermbg=238 ctermfg=246
+  hi Search cterm=none ctermbg=220 ctermfg=238
 
 " Backups (or lack thereof)
 " =============================================================================
@@ -155,7 +159,7 @@
   set expandtab                         " turns lead to gold. Er, tabs to spaces
   set nosmarttab                        " go away, tabs. don't come back
   set shiftround                        " round shifts to multiple of indent
-  set textwidth=80                      " wrap at 80 characters
+  set textwidth=85                      " wrap at 80 characters
 
   set formatoptions+=n1                 " help fo-table
                                         " defaults: tcq
