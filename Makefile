@@ -1,4 +1,4 @@
-IGNORE = Readme.md Makefile .git .gitignore
+IGNORE = Readme.md Makefile .git .gitignore install
 FILES = $(filter-out $(IGNORE), $(wildcard *))
 EMPTIES = env
 

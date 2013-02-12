@@ -76,20 +76,13 @@ There are some settings for `less` and the like in `zsh/55_zshenv`
 
 ### others
 
-- I don't like GNU screen and I haven't taken to tmux because it's not installed
-on most of the remote servers I need. My `screenrc` has evolved to fit the needs
-of logging into remote servers to perform operations such as tailing logs,
-compiling shit, and debugging live apps. I don't really use either on my
-workstations, in favor of terminal tabs in iTerm.
 - Use ack when you're searching source code. Use grep to search anything else.
 - tig is a great git history visualizer. Not as good as the fork of gitx, but it
   does 90% of what I need it to do, and is pretty fast on large repositories.
 
 ## Getting Started
 
-If you're cloning these down to use them, put them in your projects directory
-and run `ruby install.rb`. This will symlink the files and directories herein to
-your home folder.
+`bash < <(curl -s https://raw.github.com/mattly/dotfiles/master/install/bs)`
 
 You should only be doing that if you are me. If you are not me, go make your
 own, and let me know if there's something I can learn from you.
