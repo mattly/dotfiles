@@ -114,6 +114,9 @@
   hi Visual cterm=none ctermbg=238 ctermfg=246
   hi ColorColumn cterm=none ctermbg=238 ctermfg=246
   hi Search cterm=none ctermbg=220 ctermfg=238
+  hi TabLine cterm=none ctermbg=238 ctermfg=246
+  hi TabLineSel cterm=none ctermbg=234 ctermfg=220
+  hi TabLineFill ctermbg=238 ctermfg=246
 
 " Backups (or lack thereof)
 " =============================================================================
