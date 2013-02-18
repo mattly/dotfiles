@@ -104,20 +104,21 @@
     endif
   endif
 
-  set fillchars=vert:\ 
+  set fillchars=vert:┃
 
   colors base16-monokai
-  hi Folded ctermbg=233
+  hi Folded cterm=underline ctermbg=none
   hi Normal ctermbg=none
-  hi StatusLine cterm=none ctermbg=233 ctermfg=39
-  hi StatusLineNC cterm=none ctermbg=233 ctermfg=237
-  hi VertSplit cterm=none ctermbg=233
+  hi StatusLine cterm=underline ctermbg=none ctermfg=39
+  hi StatusLineNC cterm=underline ctermbg=none ctermfg=245
+  hi VertSplit cterm=none ctermbg=none ctermfg=233
   hi Visual cterm=none ctermbg=238 ctermfg=246
   hi ColorColumn cterm=none ctermbg=238 ctermfg=246
   hi Search cterm=none ctermbg=220 ctermfg=238
-  hi TabLine cterm=none ctermbg=238 ctermfg=246
-  hi TabLineSel cterm=none ctermbg=234 ctermfg=220
-  hi TabLineFill ctermbg=238 ctermfg=246
+  hi Todo cterm=none ctermbg=220 ctermfg=238
+  hi TabLine cterm=underline ctermbg=none ctermfg=246
+  hi TabLineSel cterm=underline ctermbg=none ctermfg=220
+  hi TabLineFill cterm=underline ctermbg=none ctermfg=246
 
 " Backups (or lack thereof)
 " =============================================================================
