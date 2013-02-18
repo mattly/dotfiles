@@ -108,6 +108,7 @@
 
   colors base16-monokai
   hi Folded ctermbg=233
+  hi Normal ctermbg=none
   hi StatusLine cterm=none ctermbg=233 ctermfg=39
   hi StatusLineNC cterm=none ctermbg=233 ctermfg=237
   hi VertSplit cterm=none ctermbg=233
@@ -140,7 +141,7 @@
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=5                   " min characters to show sideways
   " set cursorline                        " highlight the current cursor line
-  set colorcolumn=+1,+2,+3,+4,+5        " highlight at 1 past textwidth
+  " set colorcolumn=+1,+2,+3,+4,+5        " highlight at 1 past textwidth
   set laststatus=2                      " always show the status line
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
