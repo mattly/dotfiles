@@ -104,14 +104,14 @@
     endif
   endif
 
-  set fillchars=vert:┃
+  set fillchars=vert:│
 
   colors base16-monokai
   hi Folded cterm=underline ctermbg=none
   hi Normal ctermbg=none
   hi StatusLine cterm=underline ctermbg=none ctermfg=39
   hi StatusLineNC cterm=underline ctermbg=none ctermfg=245
-  hi VertSplit cterm=none ctermbg=none ctermfg=233
+  hi VertSplit cterm=none ctermbg=none ctermfg=245
   hi Visual cterm=none ctermbg=238 ctermfg=246
   hi ColorColumn cterm=none ctermbg=238 ctermfg=246
   hi Search cterm=none ctermbg=220 ctermfg=238
