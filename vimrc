@@ -108,6 +108,7 @@
 
   colors base16-monokai
   hi Folded cterm=underline ctermbg=none
+  hi FoldColumn cterm=none ctermbg=none ctermfg=246
   hi Normal ctermbg=none
   hi StatusLine cterm=underline ctermbg=none ctermfg=39
   hi StatusLineNC cterm=underline ctermbg=none ctermfg=245
@@ -119,6 +120,11 @@
   hi TabLine cterm=underline ctermbg=none ctermfg=246
   hi TabLineSel cterm=underline ctermbg=none ctermfg=220
   hi TabLineFill cterm=underline ctermbg=none ctermfg=246
+  hi PMenu cterm=none ctermbg=236 ctermfg=246
+  hi PMenuSel cterm=none ctermbg=238 ctermfg=220
+  hi LineNr ctermfg=245 ctermbg=none
+  hi CursorLine ctermbg=238
+  hi CursorLineNr
 
 " Backups (or lack thereof)
 " =============================================================================
