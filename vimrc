@@ -128,7 +128,6 @@
   hi PMenuSel cterm=none ctermbg=238 ctermfg=220
   hi LineNr ctermfg=245 ctermbg=none
   hi CursorLine ctermbg=238
-  hi CursorLineNr
 
 " Backups (or lack thereof)
 " =============================================================================
