@@ -39,8 +39,12 @@
   " javascript
   Bundle "pangloss/vim-javascript"
   Bundle 'kchmck/vim-coffee-script'
+  Bundle "mintplant/vim-literate-coffeescript"
   " ruby
   Bundle 'tpope/vim-rake'
+  " etc
+  Bundle 'vim-scripts/VimClojure'
+  Bundle 'cespare/vim-toml'
 
 " General
 " =============================================================================
