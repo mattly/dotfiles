@@ -302,14 +302,6 @@
   au BufRead,BufNewFile Capfile,Gemfile,Isolate,Rakefile  setf ruby
   au BufRead,BufNewFile *vimrc                            setf vim
 
-  " use cursorcolumn in whitespace-sensitive file formats
-  " au Filetype coffee,python,haml,sass,slim set cursorcolumn
-
-  " The python way... yuk, but I can deal
-  au Filetype python set tabstop=4 shiftwidth=4
-
-  autocmd FileType html
-        \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("<>", "")
 
 " Splits
 " =============================================================================
