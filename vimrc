@@ -34,16 +34,11 @@
   Bundle 'tpope/vim-ragtag'
   Bundle 'digitaltoad/vim-jade'
   Bundle 'juvenn/mustache'
-  Bundle 'tpope/vim-markdown'
-  " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
   " javascript
-  Bundle "pangloss/vim-javascript"
+  Bundle "pangloss/vim-javascript"              " less sucky indenting
   Bundle 'kchmck/vim-coffee-script'
   Bundle "mintplant/vim-literate-coffeescript"
-  " ruby
-  Bundle 'tpope/vim-rake'
   " etc
-  Bundle 'vim-scripts/VimClojure'
   Bundle 'cespare/vim-toml'
 
 " General
