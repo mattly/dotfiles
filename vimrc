@@ -35,7 +35,8 @@
   Bundle 'digitaltoad/vim-jade'
   Bundle 'juvenn/mustache'
   " javascript
-  Bundle "pangloss/vim-javascript"              " less sucky indenting
+  " " less sucky indenting
+  Bundle "pangloss/vim-javascript"
   Bundle 'kchmck/vim-coffee-script'
   Bundle "mintplant/vim-literate-coffeescript"
   " etc
