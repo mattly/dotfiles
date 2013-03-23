@@ -167,7 +167,7 @@
   set shiftwidth=2
   set tabstop=4
   set expandtab                         " turns lead to gold. Er, tabs to spaces
-  set nosmarttab                        " go away, tabs. don't come back
+  set smarttab                          " go away, tabs. don't come back
   set shiftround                        " round shifts to multiple of indent
   set textwidth=85                      " wrap at 80 characters
 
