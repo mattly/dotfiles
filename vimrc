@@ -169,7 +169,7 @@
   set expandtab                         " turns lead to gold. Er, tabs to spaces
   set smarttab                          " go away, tabs. don't come back
   set shiftround                        " round shifts to multiple of indent
-  set textwidth=85                      " wrap at 80 characters
+  set textwidth=80                      " wrap at 80 characters
 
   set formatoptions+=n1                 " help fo-table
                                         " defaults: tcq
