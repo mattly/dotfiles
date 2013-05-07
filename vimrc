@@ -41,6 +41,7 @@
   Bundle "mintplant/vim-literate-coffeescript"
   " etc
   Bundle 'cespare/vim-toml'
+  Bundle 'exu/pgsql.vim'
 
 " General
 " =============================================================================
@@ -383,6 +384,8 @@
   let g:syntastic_html_checkers = []
   " prevent autoclose from setting some Esc-leading mappings
   let g:AutoClosePreserveDotReg=0
+
+  let g:sql_type_default = 'pgsql'
 
 " Sessions
 " =============================================================================
