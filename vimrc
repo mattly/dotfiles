@@ -39,6 +39,8 @@
   Bundle "pangloss/vim-javascript"
   Bundle 'kchmck/vim-coffee-script'
   Bundle "mintplant/vim-literate-coffeescript"
+  " clojure
+  Bundle 'tpope/fireplace'
   " etc
   Bundle 'cespare/vim-toml'
   Bundle 'exu/pgsql.vim'
@@ -267,9 +269,9 @@
   vnoremap / /\v
 
   " use ack. No, not the vim-ack plugin. Ack. Instead of grep.
-  set grepprg=ack\ -aH\ --nocolor       " --no-color because that fucks us up
-                                        " -a: search all types, except ignored
-                                        " -H: prints the filename
+  set grepprg=ack\ -H\ --nocolor
+  " --no-color because that fucks us up
+  " -H: prints the filename
 
 " Spelling
 " =============================================================================
