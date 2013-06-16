@@ -12,6 +12,13 @@ if status --is-login
 
   unshift_path $HOME/bin
   unshift_path $HOME/.rbenv/bin
+  unshift_path $HOME/.nodenv/bin
+
+  if test -d $HOME/.rbenv
+    set -x PATH $HOME/.rbenv/bin $PATH
+    set -x PATH $HOME/.rbenv/shims $PATH
+    rbenv rehash >/dev/null ^&1
+  end
 end
 
 # -- ENV
@@ -53,14 +60,14 @@ function fish_prompt -d "Write out the prompt"
     end
     if echo $git_status | grep "nothing to commit" >/dev/null
     else
-      printf '%s⚡%s' (set_color red) (set_color normal)
+      printf '%s✦%s' (set_color red) (set_color normal)
     end
   end
 
   if test $exit_status -eq 0
-    printf ' %s:\)' (set_color green)
+    printf ' %s:)' (set_color green)
   else
-    printf ' %s:\(E%s' (set_color red) $exit_status
+    printf ' %s:(E%s' (set_color red) $exit_status
   end
 
   printf '%s ' (set_color normal)
