@@ -1,7 +1,6 @@
 # -- PATH
 if status --is-login
   function unshift_path
-    echo $argv
     for val in $argv
       if test -d $val
         set -xg PATH $val $PATH
