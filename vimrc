@@ -40,7 +40,7 @@
   Bundle 'kchmck/vim-coffee-script'
   Bundle "mintplant/vim-literate-coffeescript"
   " clojure
-  Bundle 'tpope/fireplace'
+  Bundle 'tpope/vim-fireplace'
   " etc
   Bundle 'cespare/vim-toml'
   Bundle 'exu/pgsql.vim'
