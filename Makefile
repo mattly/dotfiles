@@ -31,7 +31,7 @@ brew:
 	@$(foreach PKG, $(HB_TO_INSTALL), brew install $(PKG) ;)
 
 nodenv:
-	@git clone -b v0.2.2 https://github.com/wfarr/nodenv.git ~/.nodenv
+	@git clone -b v0.2.2 https://github.com/OiNutter/nodenv.git ~/.nodenv
 nodenv-build:
 	@git clone -b https://github.com/OiNutter/node-build.git ~/.nodenv/plugins/node-build
 
