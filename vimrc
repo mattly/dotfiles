@@ -44,6 +44,7 @@
   " etc
   Bundle 'cespare/vim-toml'
   Bundle 'exu/pgsql.vim'
+  Bundle 'aliva/vim-fish'
 
 " General
 " =============================================================================
