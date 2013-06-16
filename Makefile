@@ -32,6 +32,8 @@ brew:
 
 nodenv:
 	@git clone -b v0.2.2 https://github.com/wfarr/nodenv.git ~/.nodenv
+nodenv-build:
+	@git clone -b https://github.com/OiNutter/node-build.git ~/.nodenv/plugins/node-build
 
 shell:
 	@echo /usr/local/bin/fish >> /etc/shells
@@ -42,4 +44,4 @@ vim/bundle/vundle:
 	@git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	@vim +BundleInstall +qall
 
-.PHONY: install symlinks brew shell ready
+.PHONY: install symlinks brew shell ready nodenv nodenv-build
