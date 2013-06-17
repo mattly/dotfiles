@@ -1,10 +1,5 @@
 # Because Fork You
 
-I'm not going to suggest you're an idiot and need to keep your dotfiles in git
-and you should fork mine because obviously yours suck and mine rule. However,
-these have evolved over many years to fit a way of working that's been very
-productive for me, and I hope there's something here for you to learn.
-
 Don't fork anyone's dotfiles. Curate your own. Document what things do, why you
 prefer them to work that way, and let others learn from your choices.
 
@@ -56,33 +51,16 @@ Aliases such as "amend", "addp", "stat", "tag-release", and "unstage" are
 shorthands for common operations that I've fucked up in the past, sometimes with
 frustrating results.
 
-### zshrc
+### fish
 
-This is mostly cargo culted, but it's evolved to fit my needs over seven years.
-I don't pretend to be a shell master or know all the ins and outs of zsh, but
-I do know what works for me and this is it. It's just a tool.
+After years of using a cargo-culted zsh config, I gave up on it and went over to
+the vastly simplified Friendly Interactive Shell, aka **fish**. It's got
+a simplified scripting language, has sane defaults, and nice autocompletion
+features.
 
-Of particular note is that if an ".env" file exists it will be sourced on login.
-This file would be a good place to put anything machine-specific or private:
-
-- $PATH declarations
-- configs for your rbenv/rvm setup
-- api tokens for shell utilities (mine contains $GITHUB_TOKEN among others)
-- aliases:
-    f.e. I alias vim to the specially built console client included in MacVim at
-    /Applications/MacVim.app/Contents/MacOS/vim
-
-There are some settings for `less` and the like in `zsh/55_zshenv`
-
-### others
-
-- Use ack when you're searching source code. Use grep to search anything else.
-- tig is a great git history visualizer. Not as good as the fork of gitx, but it
-  does 90% of what I need it to do, and is pretty fast on large repositories.
-
-## Getting Started
+## Install
 
 `bash < <(curl -s https://raw.github.com/mattly/dotfiles/master/install/bs)`
 
 You should only be doing that if you are me. If you are not me, go make your
-own, and let me know if there's something I can learn from you.
+wn, and let me know if there's something I can learn from you.
