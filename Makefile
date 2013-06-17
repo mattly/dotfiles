@@ -9,7 +9,9 @@ ready:
 install: symlinks brew nodenv vim/bundle/vundle
 
 symlinks:
-	@$(foreach FILE, $(FILES), ln -sf $(shell pwd)/$(FILE) ~/.$(FILE) ;)
+	@$(foreach FILE, $(FILES), [ -h ~/.$(FILE) ] \
+		&& echo "skipping $(FILE)" \
+		|| ln -sf $(shell pwd)/$(FILE) ~/.$(FILE) ;)
 	@$(foreach FILE, $(EMPTIES), touch ~/.$(FILE) ;)
 
 HOMEBREW = \
