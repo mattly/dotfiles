@@ -12,7 +12,7 @@ if status --is-login
   unshift_path /usr/bin /usr/sbin
   unshift_path /usr/local/bin /usr/local/sbin
 
-  unshift_path $HOME/bin
+  unshift_path $HOME/.bin
 
   if test -d $HOME/.rbenv
     unshift_path $HOME/.rbenv/shims
