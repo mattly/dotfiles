@@ -1,10 +1,7 @@
 #!/bin/bash
 
-manifest=$(cat install/brews)
-
 # homebrew
 # brew update
-brews_wanted=$(echo "$manifest" | grep -e '^brew\s\+' | awk '{print $2}')
 brews_have=$(brew list)
 brews_outdated=$(brew outdated | awk '{print $1}')
 
