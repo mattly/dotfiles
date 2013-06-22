@@ -32,12 +32,12 @@ while read line; do
     "brew")
       if includes "$brews_have" $id ; then
         if includes "$brews_outdated" $id ; then
-          cmd="brew update $id"
+          cmd="brew upgrade $id"
         fi
       else
         cmd=$(replace "$line" '^brew' 'brew install')
       fi
-      $cmd
+      echo $($cmd)
       ;;
     "hub")
       repo=$(get_field "$line" 2)
@@ -49,22 +49,22 @@ while read line; do
       else
         cmd="cd $dir && git pull"
       fi
-      $cmd
+      echo $($cmd)
       ;;
     "rbenv")
       version=$(get_field "$line" 2)
       if ! includes "$(rbenv versions --bare )" $version; then
-        rbenv install $version
+        echo $(rbenv install $version)
       fi ;;
     "nodenv")
       version=$(get_field "$line" 2)
       if ! includes "$(nodenv versions --bare )" $version; then
-        nodenv install $version
+        echo $(nodenv install $version)
       fi
       ;;
     "sh")
       cmd=$(replace "$line" '^sh' '')
-      $cmd
+      echo $($cmd)
       ;;
     *)
       echo "WARN unknown directive: $line";;
