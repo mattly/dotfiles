@@ -1,0 +1,41 @@
+brew readline
+brew bcrypt
+brew openssl
+
+# git tools
+brew git
+brew hub
+brew tig
+
+# environment
+brew fish
+brew tmux
+brew reattach-to-user-namespace --wrap-pbpaste-and-pbcopy
+brew vim
+hub gmarik/vundle vim/bundle/vundle
+sh vim +BundleInsetall +qall
+
+# PL
+brew rbenv
+brew ruby-build
+
+rbenv 1.9.3-p429
+
+hub OiNutter/nodenv $HOME/.nodenv
+hub OiNutter/node-build $HOME/.nodenv/plugins/node-build
+
+nodenv 0.6.17
+nodenv 0.8.14
+nodenv 0.10.12
+
+# databases
+brew postgresql
+brew redis
+brew riak
+
+# etc tools
+brew ack
+brew curl
+brew jq
+brew nmap
+brew dnsmasq
