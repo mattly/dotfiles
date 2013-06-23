@@ -21,12 +21,16 @@ brew ruby-build
 
 rbenv 1.9.3-p429
 
-hub OiNutter/nodenv $HOME/.nodenv
-hub OiNutter/node-build $HOME/.nodenv/plugins/node-build
+github OiNutter/nodenv $HOME/.nodenv
+github OiNutter/node-build $HOME/.nodenv/plugins/node-build
 
 nodenv 0.6.17
 nodenv 0.8.14
 nodenv 0.10.11
+
+brew clojure
+brew erlang
+brew elixir
 
 # databases
 brew postgresql
