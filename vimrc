@@ -26,6 +26,7 @@
   Bundle 'scrooloose/syntastic'
 
   Bundle 'chriskempson/base16-vim'
+  Bundle 'altercation/vim-colors-solarized'
 
   " css
   Bundle 'wavded/vim-stylus'
@@ -111,24 +112,12 @@
   set fillchars=vert:\ 
   " for some reason this is making iterm2 very slow: │
 
-  colors base16-monokai
-  hi Folded cterm=underline ctermbg=none
-  hi FoldColumn cterm=none ctermbg=none ctermfg=246
-  hi Normal ctermbg=none
-  hi StatusLine cterm=underline ctermbg=none ctermfg=39
-  hi StatusLineNC cterm=underline ctermbg=none ctermfg=245
-  hi VertSplit cterm=none ctermbg=none ctermfg=245
-  hi Visual cterm=none ctermbg=238 ctermfg=246
-  hi ColorColumn cterm=none ctermbg=238 ctermfg=246
-  hi Search cterm=none ctermbg=220 ctermfg=238
-  hi Todo cterm=none ctermbg=220 ctermfg=238
-  hi TabLine cterm=underline ctermbg=none ctermfg=246
-  hi TabLineSel cterm=underline ctermbg=none ctermfg=220
-  hi TabLineFill cterm=underline ctermbg=none ctermfg=246
-  hi PMenu cterm=none ctermbg=236 ctermfg=246
-  hi PMenuSel cterm=none ctermbg=238 ctermfg=220
-  hi LineNr ctermfg=245 ctermbg=none
-  hi CursorLine ctermbg=238
+  set background=light
+  let g:solarized_termtrans=1
+  colors solarized
+  hi StatusLine cterm=underline
+  hi StatusLineNC cterm=underline
+  hi VertSplit ctermbg=none
 
 " Backups (or lack thereof)
 " =============================================================================
@@ -141,7 +130,7 @@
   set ruler                             " show the cursor position
   set showcmd                           " show incomplete commands
   set lazyredraw                        " speeds up certain macros and such
-  set nonumber                          " hide line numbers by default
+  " set nonumber                          " hide line numbers by default
   set wildmenu                          " wildmenu is awesome
   set wildmode=list:longest,full
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
@@ -151,8 +140,8 @@
   set ttyfast                           " we're local 99% of the time
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=5                   " min characters to show sideways
-  " set cursorline                        " highlight the current cursor line
-  " set colorcolumn=+1,+2,+3,+4,+5        " highlight at 1 past textwidth
+  set cursorline                        " highlight the current cursor line
+  set colorcolumn=+1                    " highlight at 1 past textwidth
   set laststatus=2                      " always show the status line
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
