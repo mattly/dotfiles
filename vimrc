@@ -108,7 +108,8 @@
     endif
   endif
 
-  set fillchars=vert:│
+  set fillchars=vert:\ 
+  " for some reason this is making iterm2 very slow: │
 
   colors base16-monokai
   hi Folded cterm=underline ctermbg=none
