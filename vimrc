@@ -102,7 +102,7 @@
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=5                   " min characters to show sideways
   set cursorline                        " highlight the current cursor line
-  set colorcolumn=+1                    " highlight at 1 past textwidth
+  set colorcolumn=81                    " we like short lines and we cannot lie
   set laststatus=2                      " always show the status line
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
@@ -124,7 +124,7 @@
   set expandtab                         " turns lead to gold. Er, tabs to spaces
   set smarttab                          " go away, tabs. don't come back
   set shiftround                        " round shifts to multiple of indent
-  set textwidth=80                      " wrap at 80 characters
+  " set textwidth=80                      " wrap at 80 characters
 
   set formatoptions+=n1                 " help fo-table
                                         " defaults: tcq
