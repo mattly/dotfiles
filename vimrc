@@ -5,47 +5,8 @@
 
 " Packages
 " =============================================================================
-  set rtp+=~/.vim/bundle/vundle
-  call vundle#rc()
-
-  Bundle 'gmarik/vundle'
-
-  Bundle 'tpope/vim-endwise'
-  Bundle 'tpope/vim-git'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-repeat'
-  Bundle 'tpope/vim-surround'
-  Bundle 'tpope/vim-unimpaired'
-  Bundle 'tpope/vim-abolish'
-  Bundle 'tpope/vim-eunuch'
-  Bundle 'tpope/vim-commentary'
-
-  Bundle 'ervandew/supertab'
-  Bundle 'michaeljsmith/vim-indent-object'
-  Bundle 'Townk/vim-autoclose'
-  Bundle 'scrooloose/syntastic'
-
-  Bundle 'chriskempson/base16-vim'
-  Bundle 'altercation/vim-colors-solarized'
-
-  " css
-  Bundle 'wavded/vim-stylus'
-  Bundle 'groenewege/vim-less'
-  " html
-  Bundle 'tpope/vim-ragtag'
-  Bundle 'digitaltoad/vim-jade'
-  Bundle 'juvenn/mustache'
-  " javascript
-  " " less sucky indenting
-  Bundle "pangloss/vim-javascript"
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle "mintplant/vim-literate-coffeescript"
-  " clojure
-  Bundle 'tpope/vim-fireplace'
-  " etc
-  Bundle 'cespare/vim-toml'
-  Bundle 'exu/pgsql.vim'
-  Bundle 'aliva/vim-fish'
+  runtime bundle/vim-pathogen/autoload/pathogen.vim
+  execute pathogen#infect()
 
 " General
 " =============================================================================
