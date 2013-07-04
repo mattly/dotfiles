@@ -148,7 +148,7 @@
   set foldlevelstart=99                 " open all folds by default
   set foldignore=                       " don't try to be clever
 
-" Mappings
+" Basic Mappings
 " =============================================================================
   let mapleader = ','                   " because fuck you
   " leader mappings:
@@ -198,11 +198,6 @@
   inoremap <C-e> <C-o>$
   cnoremap <C-e> <End>
   nnoremap <C-e> $
-
-  " autoclose pairs
-  let g:AutoClosePairs_add = "'"
-  let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
-
 
   " fix syntax highlighting
   nnoremap <leader>k :syntax sync fromstart<cr>
@@ -336,10 +331,16 @@
   let g:ragtag_global_maps = 1
   let g:syntastic_check_on_open=1
   let g:syntastic_html_checkers = []
-  " prevent autoclose from setting some Esc-leading mappings
-  let g:AutoClosePreserveDotReg=0
 
   let g:sql_type_default = 'pgsql'
+
+  " prevent autoclose from setting some Esc-leading mappings
+  let g:AutoClosePreserveDotReg=0
+  " autoclose pairs
+  let g:AutoClosePairs_add = "'"
+  let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
+
+
 
 " Sessions
 " =============================================================================
