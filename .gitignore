@@ -5,3 +5,4 @@ vim/session
 vim/.netrwhist
 vim/bundle
 tags
+config/configstore
