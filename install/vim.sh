@@ -21,20 +21,20 @@ github altercation/vim-colors-solarized
 github tpope/vim-git
 github tpope/vim-fugitive
 
-github wavded/vim-stylus          # .styl       css pre-processor
-github groenewege/vim-less        # .less       css pre-processor
-github tpope/vim-ragtag           # .html       formatting tools
-github digitaltoad/vim-jade       # .jade       html pre-processor
-github juvenn/mustache            # .mustache   general template
-github cespare/vim-toml           # .toml       :/
-
-github pangloss/vim-javascript    # .js         better indenting for js
-github vim-coffee-script          # .coffee     :)
-github mintplant/vim-literate-coffeescript
-                                  # .litcoffee  Literate coffee-script
-github tpope/vim-fireplace        # .clj
+# syntax
 github rosstimson/bats.vim        # .bats       bash unit testing
+github vim-coffee-script          # .coffee     -> .js
+github tpope/vim-fireplace        # .clj
 github aliva/vim-fish             # .fish       Fish Shell, Fish Shell...
+github tpope/vim-ragtag           # .html       formatting tools
+github digitaltoad/vim-jade       # .jade       -> .html
+github pangloss/vim-javascript    # .js         better indenting
+github groenewege/vim-less        # .less       -> .css
+github mintplant/vim-literate-coffeescript
+                                  # .litcoffee  -> .js
+github juvenn/mustache            # .mustache   general template
 github exu/pgsql.vim              # .sql        postgresql 4 life
+github wavded/vim-stylus          # .styl       -> .css
+github cespare/vim-toml           # .toml       :/
 
 unset_dir
