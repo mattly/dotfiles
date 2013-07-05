@@ -1,4 +1,4 @@
-brew macvim
+brew vim
 
 set_dir $vim
 github tpope/vim-pathogen
@@ -22,19 +22,22 @@ github tpope/vim-git
 github tpope/vim-fugitive
 
 # syntax
-github rosstimson/bats.vim        # .bats       bash unit testing
-github vim-coffee-script          # .coffee     -> .js
-github tpope/vim-fireplace        # .clj
-github aliva/vim-fish             # .fish       Fish Shell, Fish Shell...
-github tpope/vim-ragtag           # .html       formatting tools
-github digitaltoad/vim-jade       # .jade       -> .html
-github pangloss/vim-javascript    # .js         better indenting
-github groenewege/vim-less        # .less       -> .css
+github rosstimson/bats.vim          # .bats       bash unit testing
+github vim-coffee-script            # .coffee     -> .js
+github guns/vim-clojure-static      # .clj        clojure syntax
+github tpope/vim-fireplace          # .clj        clojure repl
+github reinh/vim-elixir             # .ex
+github aliva/vim-fish               # .fish
+github jnwhiteh/vim-golang          # .go
+github tpope/vim-ragtag             # .html       formatting tools
+github digitaltoad/vim-jade         # .jade       -> .html
+github pangloss/vim-javascript      # .js         better indenting
+github groenewege/vim-less          # .less       -> .css
 github mintplant/vim-literate-coffeescript
-                                  # .litcoffee  -> .js
-github juvenn/mustache            # .mustache   general template
-github exu/pgsql.vim              # .sql        postgresql 4 life
-github wavded/vim-stylus          # .styl       -> .css
-github cespare/vim-toml           # .toml       :/
+                                    # .litcoffee  -> .js
+github juvenn/mustache              # .mustache   :{
+github exu/pgsql.vim                # .sql        postgresql 4 life
+github wavded/vim-stylus            # .styl       -> .css
+github cespare/vim-toml             # .toml       :/
 
 unset_dir

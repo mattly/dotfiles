@@ -30,7 +30,8 @@
   include node.sh
 
   brew clojure
-  brew erlang
+  brew_tap homebrew/versions
+  brew erlang-r16
   brew elixir
   brew bats
 
