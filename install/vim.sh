@@ -26,7 +26,7 @@ github rosstimson/bats.vim          # .bats       bash unit testing
 github vim-coffee-script            # .coffee     -> .js
 github guns/vim-clojure-static      # .clj        clojure syntax
 github tpope/vim-fireplace          # .clj        clojure repl
-github reinh/vim-elixir             # .ex
+github elixir-lang/vim-elixir       # .ex
 github aliva/vim-fish               # .fish
 github jnwhiteh/vim-golang          # .go
 github tpope/vim-ragtag             # .html       formatting tools
