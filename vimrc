@@ -1,13 +1,16 @@
+" =============================================================================
 " Head
 " =============================================================================
   set nocompatible                      " why is this not the default?
   filetype off
 
+" =============================================================================
 " Packages
 " =============================================================================
   runtime bundle/vim-pathogen/autoload/pathogen.vim
   execute pathogen#infect()
 
+" =============================================================================
 " General
 " =============================================================================
   filetype plugin indent on
@@ -19,6 +22,7 @@
   set exrc                              " use per-project .virmc
   set secure                            " but disallow autocmd, shell and write
 
+" =============================================================================
 " Colors and Theme
 " =============================================================================
   if &t_Co >= 2 || has("gui_running")
@@ -80,12 +84,14 @@
   hi StatusLineNC cterm=underline
   hi VertSplit ctermbg=none
 
+" =============================================================================
 " Backups (or lack thereof)
 " =============================================================================
   set nobackup                          " do not keep backups after close
   set nowritebackup                     " do not keep backups while working
   set noswapfile                        " don't keep swap files either
 
+" =============================================================================
 " UI
 " =============================================================================
   set ruler                             " show the cursor position
@@ -107,12 +113,14 @@
   set noerrorbells                      " shut up already
   set visualbell                        " SHUT UP ALREADY
 
+" =============================================================================
 " Keyboarding
 " =============================================================================
   set backspace=indent,eol,start        " backspace over anything
   set esckeys                           " we like our arrow keys?
   set ttimeoutlen=10                    " but we also hate timeouts on <Esc>
 
+" =============================================================================
 " Text Formatting
 " =============================================================================
   set autoindent                        " auto-indent new lines
@@ -142,24 +150,30 @@
   " Whitespace Highlighting
   set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
+" =============================================================================
 " Folding
 " =============================================================================
   set foldmethod=indent                 " really the only way that makes sense
   set foldlevelstart=99                 " open all folds by default
   set foldignore=                       " don't try to be clever
 
+" =============================================================================
 " Basic Mappings
 " =============================================================================
   let mapleader = ','                   " because fuck you
   " leader mappings:
   "   cd  change directory to that of current file
   "   d   diff current buffer with written file
+  "   f   open unite in recursive file search mode
+  "   F   open unite in MRU file mode
   "   gb  - git blame
   "   gd  - write, git diff HEAD
   "   gs  - git status
   "   gw  - write, git add
+  "   h   open unite in help mode
   "   k   fix syntax highlighting
   "   n   line number toggling
+  "   o   open unite in outline mode
   "   p   paste from system clipboard
   "   r   regen ctags
   "   sa  - add word to dictionary
@@ -171,6 +185,7 @@
   "   y   yank to system clipboard, follow with normal yank operations
   "   Y   yank to system clipboard, current line
   "   ,   turn off search highlighting
+  "   .   open unite in yank history
 
   " I always hit this when I mean I, O or J
   nnoremap K <Nop>
@@ -199,9 +214,13 @@
   cnoremap <C-e> <End>
   nnoremap <C-e> $
 
+  cnoremap <C-h> <s-left>
+  cnoremap <C-l> <s-right>
+
   " fix syntax highlighting
   nnoremap <leader>k :syntax sync fromstart<cr>
 
+" =============================================================================
 " Searching
 " =============================================================================
   set ignorecase                        " ignore case in searches
@@ -220,6 +239,7 @@
   " --no-color because that fucks us up
   " -H: prints the filename
 
+" =============================================================================
 " Spelling
 " =============================================================================
   set spelllang=en_us                   " When you need it, you need it.
@@ -231,6 +251,7 @@
   nnoremap <Leader>sa zg
   nnoremap <Leader>s? z=
 
+" =============================================================================
 " Auto Commands
 " =============================================================================
   autocmd QuickfixCmdPost grep copen    " open the quickfix list automatically
@@ -239,6 +260,7 @@
   autocmd BufNewFile,BufRead * set foldmethod=indent
   autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
+" =============================================================================
 " File Formats
 " =============================================================================
   au BufRead,BufNewFile gitconfig                         setf gitconfig
@@ -248,7 +270,7 @@
   au BufRead,BufNewFile Capfile,Gemfile,Isolate,Rakefile  setf ruby
   au BufRead,BufNewFile *vimrc                            setf vim
 
-
+" =============================================================================
 " Splits
 " =============================================================================
   set splitbelow                        " open new horiz splits below current
@@ -259,6 +281,7 @@
   nnoremap <C-h>        <C-w><Left>
   nnoremap <C-l>        <C-w><Right>
 
+" =============================================================================
 " File Navigation
 " =============================================================================
   let g:netrw_liststyle=4
@@ -270,6 +293,23 @@
   set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
   map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
 
+" =============================================================================
+" Unite
+" =============================================================================
+  let g:unite_source_history_yank_enable = 1
+  let g:unite_winheight = 10
+  let g:unite_split_rule = 'botright'
+
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+  call unite#filters#sorter_default#use(['sorter_rank'])
+
+  nnoremap <Leader>h :<C-u>Unite -start-insert help<CR>
+  nnoremap <Leader>f :<C-u>Unite -start-insert file_rec/async:!<CR>
+  nnoremap <Leader>F :<C-u>Unite file_mru/async:!<CR>
+  nnoremap <Leader>. :<C-u>Unite -quick-match history/yank<CR>
+  nnoremap <Leader>o :<C-u>Unite outline<CR>
+
+" =============================================================================
 " Fugitive and GitV
 " =============================================================================
   nnoremap <Leader>gs :Gstatus<CR>
@@ -277,9 +317,9 @@
   nnoremap <Leader>gb :Gblame<CR>
   nnoremap <Leader>gw :Gw<CR>
 
+" =============================================================================
 " Utilities
 " =============================================================================
-  " just sudo it
   cnoremap w!! %!sudo tee > /dev/null %
 
   " toggle line number modes with <leader>n
@@ -308,10 +348,9 @@
   endfunction
   vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
+" =============================================================================
 " Pasteboard
 " =============================================================================
-  " For yanking to / pasting from system clipboard
-  " for terminal vim, requires the one included with MacVim
   nnoremap <Leader>y "*y
   nnoremap <Leader>Y "*Y
   vnoremap <Leader>y "*y
@@ -320,12 +359,14 @@
 
   nnoremap <Leader>tp :set paste!<CR>
 
+" =============================================================================
 " Mouse
 " =============================================================================
   if has("mouse")
     set mouse=a
   endif
 
+" =============================================================================
 " Miscellaneous Plugins
 " =============================================================================
   let g:ragtag_global_maps = 1
@@ -340,14 +381,14 @@
   let g:AutoClosePairs_add = "'"
   let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
 
-
-
+" =============================================================================
 " Sessions
 " =============================================================================
   set sessionoptions=buffers,folds,curdir,tabpages
   nnoremap SS :wa<CR>:mksession! ~/.vim/session/
   nnoremap SO :so ~/.vim/session/
 
+" =============================================================================
 " Status Line
 " =============================================================================
   function! GitStatus()

@@ -1,6 +1,8 @@
 brew vim
 
-set_dir $vim
+[ -z $code ] && code=$HOME/code/mattly
+set_dir $code/dotfiles/vim/bundle
+
 github tpope/vim-pathogen
 github tpope/vim-endwise
 github tpope/vim-repeat
@@ -13,6 +15,12 @@ github ervandew/supertab
 github michaeljsmith/vim-indent-object
 github Townk/vim-autoclose
 github scrooloose/syntastic
+
+github Shougo/vimproc
+# need to make after this is installed / updated
+github Shougo/unite.vim
+github Shougo/unite-help
+github h1mesuke/unite-outline
 
 #colors
 github altercation/vim-colors-solarized

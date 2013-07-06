@@ -21,7 +21,6 @@
 
 # vim
   # group vim
-  vim=$code/dotfiles/vim/bundle
   include vim.sh
   # endgroup vim
 
