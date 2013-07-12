@@ -1,8 +1,8 @@
 --smart-case
 --ignore-dir=log
 --ignore-dir=vendor
+--ignore-dir=node_modules
 --type-add=ruby=ru
 --type-add=js=coffee,json
 --type-add=css=less,sass,scss,styl
 --type-add=html=jade,haml
---color
