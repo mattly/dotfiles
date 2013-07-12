@@ -32,6 +32,7 @@
   brew_tap homebrew/versions
   brew erlang-r16
   brew elixir
+  brew go
   brew bats
 
 # databases
@@ -41,6 +42,7 @@
 
 # etc tools
   brew ack
+  brew par
   brew curl
   brew jq
   brew nmap
