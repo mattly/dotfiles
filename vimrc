@@ -1,19 +1,12 @@
-" =============================================================================
-" Head
-" =============================================================================
-  set nocompatible                      " why is this not the default?
-  filetype off
-
-" =============================================================================
-" Packages
-" =============================================================================
-  runtime bundle/vim-pathogen/autoload/pathogen.vim
-  execute pathogen#infect()
+set nocompatible
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
 
 " =============================================================================
 " General
 " =============================================================================
   filetype plugin indent on
+  syntax on
   set fileformats=unix,dos,mac          " line endings are still a thing?
   set modelines=0                       " avoid spell files vulnerability
   set autoread                          " auto-reload files from local changes
@@ -21,62 +14,15 @@
   set encoding=utf-8 nobomb             " People still use latin1?
   set exrc                              " use per-project .virmc
   set secure                            " but disallow autocmd, shell and write
+  set nobackup                          " do not keep backups after close
+  set nowritebackup                     " do not keep backups while working
+  set noswapfile                        " don't keep swap files either
+  set spelllang=en_us                   " When you need it, you need it.
+  set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
 
 " =============================================================================
 " Colors and Theme
 " =============================================================================
-  if &t_Co >= 2 || has("gui_running")
-    syntax on
-    set background&
-  endif
-  if &t_Co >= 256 || has("gui_running")
-    set hlsearch
-  endif
-  if has("gui_running")
-    set guifont=Menlo:h12
-    set background=dark
-
-    " a: visual-mode autoselect (takes over the OS selection process)
-    set guioptions+=a
-    " A: autoselect for modeless selection
-    set guioptions+=A
-    " c: use console dialogs for simple choices
-    set guioptions+=c
-    " g: grey-out non-active menu items
-    set guioptions+=g
-    " m: show system menu bars
-    set guioptions+=m
-    " t: include tear-off menu items
-    set guioptions+=t
-
-    " e: don't use gui tabs, they change the height of the window
-    set guioptions-=e
-    " T: system toolbar
-    set guioptions-=T
-    " r: right-hand scrollbar
-    set guioptions-=r
-    " l: left-hand scrollbar
-    set guioptions-=l
-    " L: left-hand scrollbar when vertically-split window
-    set guioptions-=L
-
-    set fuoptions=maxvert,maxhorz
-  else
-    set t_Co=256
-    " set background=light
-    " bar cursor in insert mode, block cursor in normal node
-    if exists('$TMUX')
-      let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-      let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    else
-      let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-      let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    endif
-  endif
-
-  set fillchars=vert:\ 
-  " for some reason this is making iterm2 very slow: │
-
   set background=light
   let g:solarized_termtrans=1
   colors solarized
@@ -85,23 +31,13 @@
   hi VertSplit ctermbg=none
 
 " =============================================================================
-" Backups (or lack thereof)
-" =============================================================================
-  set nobackup                          " do not keep backups after close
-  set nowritebackup                     " do not keep backups while working
-  set noswapfile                        " don't keep swap files either
-
-" =============================================================================
 " UI
 " =============================================================================
   set ruler                             " show the cursor position
   set showcmd                           " show incomplete commands
   set lazyredraw                        " speeds up certain macros and such
   " set nonumber                          " hide line numbers by default
-  set wildmenu                          " wildmenu is awesome
-  set wildmode=list:longest,full
-  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-  set shortmess=filtIoOA
+  set shortmess=a                       " abbreviate!
   set report=0                          " always notify us about changes
   set nostartofline                     " don't jump to line start on scroll
   set ttyfast                           " we're local 99% of the time
@@ -110,15 +46,104 @@
   set cursorline                        " highlight the current cursor line
   set colorcolumn=81                    " we like short lines and we cannot lie
   set laststatus=2                      " always show the status line
-  set noerrorbells                      " shut up already
-  set visualbell                        " SHUT UP ALREADY
+
+  " Alerts
+    set noerrorbells                      " shut up already
+    set visualbell                        " SHUT UP ALREADY
+
+  " Splits
+    set splitbelow                        " open new horiz splits below current
+    set splitright                        " open new vert splits to the right
+    set fillchars=vert:\ 
+    " for some reason this is making iterm2 very slow: │
+
+  " Keyboarding
+    set backspace=indent,eol,start        " backspace over anything
+    set esckeys                           " we like our arrow keys?
+    set ttimeoutlen=10                    " but we also hate timeouts on <Esc>
+
+  " Folding
+    set foldmethod=indent                 " really the only way that makes sense
+    set foldlevelstart=99                 " open all folds by default
+    set foldignore=                       " don't try to be clever
+
+  " Wildmenu
+    set wildmenu                          " wildmenu is awesome
+    set wildmode=list:longest,full
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
+  " Searching
+    " use ack. No, not the vim-ack plugin. Ack. Instead of grep.
+    set grepprg=ack
+    set hlsearch                          " because awesome
+    set ignorecase                        " ignore case in searches
+    set smartcase                         " unless there is a capital letter
+    set wrapscan                          " searches wrap EOF
+    set incsearch                         " show incremental seraches
+
+  " Net-RW
+    let g:netrw_liststyle=4
+
+  " Mouse
+    if has("mouse")
+      set mouse=a
+    endif
+
+  " Unite Plugin
+    let g:unite_source_history_yank_enable = 1
+    let g:unite_winheight = 10
+    let g:unite_split_rule = 'botright'
+    call unite#filters#matcher_default#use(['matcher_fuzzy'])
+    call unite#filters#sorter_default#use(['sorter_rank'])
+
+  " RagTag
+    let g:ragtag_global_maps = 1
+
+  " Syntastic
+    let g:syntastic_check_on_open=1
+    let g:syntastic_html_checkers = []
+
+  " Autoclose
+    let g:AutoClosePreserveDotReg=0
+    let g:AutoClosePairs_add = "'"
+    let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
+
+  " pg-sql
+    let g:sql_type_default = 'pgsql'
 
 " =============================================================================
-" Keyboarding
+" Terminal
 " =============================================================================
-  set backspace=indent,eol,start        " backspace over anything
-  set esckeys                           " we like our arrow keys?
-  set ttimeoutlen=10                    " but we also hate timeouts on <Esc>
+  if exists('$ITERM_PROFILE')
+    " iterm2 cursor shape for insert mode
+    if exists('$TMUX')
+      let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+      let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+    else
+      let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+      let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    endif
+  end
+
+" =============================================================================
+" GUI options
+" =============================================================================
+  if has("gui_running")
+    set guifont="Source Code Pro":h13
+    " A: autoselect for modeless selection
+    " L: left-hand scrollbar when vertically-split window
+    " T: system toolbar
+    " a: visual-mode autoselect (takes over the OS selection process)
+    " c: use console dialogs for simple choices
+    " e: don't use gui tabs, they change the height of the window
+    " g: grey-out non-active menu items
+    " l: left-hand scrollbar
+    " m: show system menu bars
+    " r: right-hand scrollbar
+    " t: include tear-off menu items
+    set guioptions+=ALTaceglmt
+    set fuoptions=maxvert,maxhorz
+  endif
 
 " =============================================================================
 " Text Formatting
@@ -132,9 +157,9 @@
   set expandtab                         " turns lead to gold. Er, tabs to spaces
   set smarttab                          " go away, tabs. don't come back
   set shiftround                        " round shifts to multiple of indent
-  " set textwidth=80                      " wrap at 80 characters
+  set textwidth=80                      " wrap at 80 characters
 
-  set formatoptions+=n1                 " help fo-table
+  set formatoptions=cqn1                " help fo-table
                                         " defaults: tcq
                                         " t: auto-wrap text using text-width
                                         " c: auto-wrap comments also
@@ -151,105 +176,282 @@
   set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
 " =============================================================================
-" Folding
+" Insert Mode Mappings
 " =============================================================================
-  set foldmethod=indent                 " really the only way that makes sense
-  set foldlevelstart=99                 " open all folds by default
-  set foldignore=                       " don't try to be clever
+  inoremap <F1> <ESC>
+  " C-q: ???
+  " C-w: delete word backward
+  " C-e: Go to EOL
+  inoremap <C-e> <C-o>$
+  " C-r: Insert Register
+  " C-t: Indent Shiftwidth
+  " C-y: Insert char above cursor
+  " C-u: Delete to beginning of line
+  " C-i: <Tab> (literally, will do tab completion)
+  " C-o: execute one normal mode command
+  " C-p: invoke "tab completion"
+  " C-[: <esc>
+  " C-]: ???
+  " C-a: Go to beginning of line
+  inoremap <C-a> <C-o>0
+  " C-s: ???
+  " C-d: Unindent Shiftwidth
+  " C-f: ???
+  " C-g: <tmux leader> ???
+  " C-h: (unix) delete backwards
+  " C-j: ???
+  " C-k: insert control character
+  " C-l: insert Control-L
+  " C-z: insert Control-Z
+  " C-x: ???
+  " C-c: Go to Normal Mode
+  " C-v: Insert Control/Arrow character
+  " C-b: insert Control-B
+  " C-n: Autocomplete next
+  " C-m: <enter>
+  " C-,: <can't map>
+  " C-.: <can't map>
+  " C-/: Insert C-_
+  " C-<space>: insert register
 
 " =============================================================================
-" Basic Mappings
+" Normal Mode Lower / Upper Mappings
 " =============================================================================
-  let mapleader = ','                   " because fuck you
+  nnoremap <F1> <ESC>
+  " !: Filter motion through external program
+  " !!: Filter lines through external program
+  " @: Play macro
+  " @@: Repeat previous macro
+  " #: Search backward ------------------------- same as N
+  " $: Go to End of Line
+  " %: Matching Motion (ie, (), [], etc)
+  " ^: Go to Start of Line
+  " &: Synonym for :s, repeat last substitute -- never use
+  " *: Search Forward -------------------------- same as n
+  " (: Move Sentence Backwards ----------------- never use
+  " ): Move Sentence Forward ------------------- never use
+  " - (orig): Go to Start of Previous Line
+  " -: Decrement number
+  nnoremap - <c-x>
+  " _: Go to Start of This Line ---------------- same as ^
+  " =: Indent Accordingly
+  " +(orig): Go to Start of Next Line
+  " +: Increment number
+  nnoremap + <c-a>
+  " q: Record macro
+  " Q (orig): Switch to "Ex" mode
+  " Q: Play back macro in q slot, record it with 'qq'
+  nnoremap Q @q
+  " w: Move word forward
+  " W: Move word forward ----------------------- same as w
+  " e: Move to end of word forward
+  " E: Move to end of forward word ------------- same as e
+  " r: Replace character ----------------------- never use
+  " R: Replace mode   -------------------------- never use
+  " t: Find till fowards
+  " T: Find till backwards
+  " y: yank leader
+  " Y: Yank line
+  " u: Undo
+  " U (orig): Undo all changes on last modified line
+  " U: Redo
+  nnoremap U <C-r>
+  " i: Insert Mode
+  " I: Insert Mode, Start of Line
+  " o: Insert Line Below
+  " O: Insert Line Above
+  " p: Paste
+  " P: Paste Before
+  " [: Navigation Backwards Leader ------------- never use
+  " {: Beginning of Paragraph ------------------ never use
+  " ]: Navigation Forwards Leader -------------- never use
+  " }: End of Paragraph ------------------------ never use
+  " \: Vim-commentary Leader
+  " a: insert after character
+  " A: insert at end of line
+  " s: replace character ----------------------- never use
+  " S: Replace line ---------------------------- never use
+  " d: Delete leader
+  " D: Delete till end of line
+  " f: Find fowards
+  " F: Find backwards
+  " g: Goto leader
+  " G: Goto EOF
+  " h: Go one character left ------------------- never use ?
+  " H: Goto top of window ---------------------- never use
+  " j: Go one line down
+  " J: Join lines
+  " k: Go one line up
+  " K (orig): Lookup word under cursor with keywordprg
+  " K: I always hit this when I mean I, O or J
+  nnoremap K <Nop>
+  " l: Go one character right ------------------ never use ?
+  " L: Goto bottom of window ------------------- never use
+  " ;: Command Mode
+  nnoremap ; :
+  " :: Goto Command Mode
+  " ': Go to Mark
+  " ": Register Leader
+  " z: fold leader
+  " ZZ: write and quit (:x) -------------------- never use
+  " ZQ: quit without writing (:q!) ------------- never use
+  " x: Delete one character
+  " X: Delete Character backwards -------------- never use
+  " c: Change text
+  " C: Change rest of line
+  " v: Visual mode
+  " V: Visual line mode
+  " b: Move word backward
+  " B: Move word backward ---------------------- same as b
+  " n: Find next occurence
+  " N: Find next occurence backward
+  " m: Set Mark
+  " M: Move cursor to mid-screen --------------- never use
+  " ,: Leader
+  " <: Indent Left
+  " .: Repeat (and move cursor back to start)
+  nnoremap . .`[
+  " >: Indent Right
+  " /: Search (and use real regexes)
+  nnoremap / /\v
+  " ?: Search Backwards
+
+" =============================================================================
+" Normal Mode Control Mappings
+" =============================================================================
+
+  " C-q: <intercepted by terminal ?>
+  " C-w: Window leader
+  " C-e: goto EOL
+  nnoremap <C-e> $
+  " C-r: Redo
+  " C-t: Go Backwards in the Tag Stack
+  " C-t*: Tab operation leader
+  " C-y: Scroll window one line up ------------- never use
+  " C-u: Scroll half screen up
+  " C-i: Go forward in Jump List
+  " C-o: Go back in the Jump List
+  " C-p: Previous Cursor (or, go up one line?)
+  " C-[: <esc>
+  " C-]: Go foward in the Tag Stack
+  " C-a: Go to beginning of Line
+  nnoremap <C-a> 0
+  " C-s: ??? -----------------------------------
+  " C-d: Scroll half screen down
+  " C-f: Scroll full screen down
+  " C-g: <tmux leader>, vim: Prints current file name
+  " C-h: Go split left
+  nnoremap <C-h>        <C-w><Left>
+  " C-j: Go split down
+  nnoremap <C-j>        <C-w><Down>
+  " C-k: Go split up
+  nnoremap <C-k>        <C-w><Up>
+  " C-l: Go split right
+  nnoremap <C-l>        <C-w><Right>
+  " C-:: <can't map>
+  " C-': <can't map>
+  " C-z: <unix> Suspend process
+  " C-x: ??? ------------------------------------
+  " C-c: Cycle through Splits
+  nnoremap <c-c> <c-w>w
+  " C-v: ??? ------------------------------------
+  " C-b: Scroll full screen backward
+  " C-n: ??? ------------------------------------
+  " C-m: <Enter>
+  " C-,: <can't map>
+  " C-.: <can't map>
+  " C-/: ??? ------------------------------------
+
+" =============================================================================
+" Normal Mode Leader Mappings
+" =============================================================================
+  let mapleader = ','                   " backslash doesn't make sense to me.
   " leader mappings:
   "   cd  change directory to that of current file
+  nnoremap <Leader>cd :cd%:p:h<cr>
   "   d   diff current buffer with written file
-  "   f   open unite in recursive file search mode
-  "   F   open unite in MRU file mode
+  "
+  " - g - Git
   "   gb  - git blame
+  nnoremap <Leader>gb :Gblame<CR>
   "   gd  - write, git diff HEAD
+  nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
   "   gs  - git status
+  nnoremap <Leader>gs :Gstatus<CR>
   "   gw  - write, git add
-  "   h   open unite in help mode
+  nnoremap <Leader>gw :Gw<CR>
+  "
   "   k   fix syntax highlighting
+  nnoremap <leader>k :syntax sync fromstart<cr>
   "   n   line number toggling
-  "   o   open unite in outline mode
+  nnoremap <Leader>n :call LineNumbers()<CR>
   "   p   paste from system clipboard
+  "   P   paste from system clipboard
+  nnoremap <Leader>p "*p
+  nnoremap <Leader>P "*P
   "   r   regen ctags
+  nnoremap <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
+  "
+  " - s - Spelling
   "   sa  - add word to dictionary
   "   sn  - next misspelling
   "   sp  - previous misspelling
   "   ss  - toggle spelling
   "   s?  - spelling suggestions
-  "   tp  - toggle paste mode
-  "   y   yank to system clipboard, follow with normal yank operations
-  "   Y   yank to system clipboard, current line
-  "   ,   turn off search highlighting
-  "   .   open unite in yank history
-
-  " I always hit this when I mean I, O or J
-  nnoremap K <Nop>
-
-  " repeat moves the cursor back to where it was
-  nnoremap . .`[
-
-  " keep selections when indenting in visual mode
-  vnoremap > >gv
-  vnoremap < <gv
-
-  " record a quick macro in the Q slot, play back with qq
-  nnoremap Q @q
-
-  " disable the fucking help
-  inoremap <F1> <ESC>
-  nnoremap <F1> <ESC>
-  vnoremap <F1> <ESC>
-
-  " --- Stealing a few things from emacs
-  " nav bindings
-  inoremap <C-a> <C-o>0
-  cnoremap <C-a> <Home>
-  nnoremap <C-a> 0
-  inoremap <C-e> <C-o>$
-  cnoremap <C-e> <End>
-  nnoremap <C-e> $
-
-  cnoremap <C-h> <s-left>
-  cnoremap <C-l> <s-right>
-
-  " fix syntax highlighting
-  nnoremap <leader>k :syntax sync fromstart<cr>
-
-" =============================================================================
-" Searching
-" =============================================================================
-  set ignorecase                        " ignore case in searches
-  set smartcase                         " unless there is a capital letter
-  set wrapscan                          " searches wrap EOF
-  set incsearch                         " show incremental seraches
-  " remove the highlight with ,,
-  nnoremap <silent><Leader>, :noh<cr>
-
-  " make search use real regexes
-  nnoremap / /\v
-  vnoremap / /\v
-
-  " use ack. No, not the vim-ack plugin. Ack. Instead of grep.
-  set grepprg=ack\ -H\ --nocolor
-  " --no-color because that fucks us up
-  " -H: prints the filename
-
-" =============================================================================
-" Spelling
-" =============================================================================
-  set spelllang=en_us                   " When you need it, you need it.
-  " toggle spelling
   nnoremap <Leader>ss :setlocal spell!<CR>
-  " n: next, p: previous, a: add, ?: suggest
   nnoremap <Leader>sn ]s
   nnoremap <Leader>sp ]p
   nnoremap <Leader>sa zg
   nnoremap <Leader>s? z=
+  "
+  "   tp  - toggle paste mode
+  nnoremap <Leader>tp :set paste!<CR>
+  "
+  " - u - Unite
+  "   uf  open unite in recursive file search mode
+  nnoremap <Leader>uf :<C-u>Unite -start-insert file_rec/async:!<CR>
+  "   uF  open unite in MRU file mode
+  nnoremap <Leader>uF :<C-u>Unite file_mru/async:!<CR>
+  "   uh  open unite in help mode
+  nnoremap <Leader>uh :<C-u>Unite -start-insert help<CR>
+  "   uo  open unite in outline mode
+  nnoremap <Leader>uo :<C-u>Unite outline<CR>
+  "   uy   open unite in yank history
+  nnoremap <Leader>uy :<C-u>Unite -quick-match history/yank<CR>
+  "
+  "   y   yank to system clipboard, follow with normal yank operations
+  "   Y   yank to system clipboard, current line
+  nnoremap <Leader>y "*y
+  nnoremap <Leader>Y "*Y
+  "   ,   turn off search highlighting
+  nnoremap <silent><Leader>, :noh<cr>
+
+" =============================================================================
+" Visual Mode Mappings
+" =============================================================================
+  vnoremap <F1> <ESC>
+  " help visual-operators
+  " keep selections when indenting in visual mode
+  vnoremap > >gv
+  vnoremap < <gv
+  " make search use real regexes
+  vnoremap / /\v
+  " call twiddlecase
+  vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+
+  " yank to system clipboard
+  vnoremap <Leader>y "*y
+
+
+" =============================================================================
+" Command Mode Mappings
+" =============================================================================
+  cnoremap w!! %!sudo tee > /dev/null %
+  cnoremap <C-h> <s-left>
+  cnoremap <C-l> <s-right>
+  " emacs customs
+  cnoremap <C-a> <Home>
+  cnoremap <C-e> <End>
 
 " =============================================================================
 " Auto Commands
@@ -265,65 +467,16 @@
 " =============================================================================
   au BufRead,BufNewFile gitconfig                         setf gitconfig
   au BufRead,BufNewFile *.less                            setf less
+  au BufRead,BufNewFile *.md                              setf markdown
   au BufRead,BufNewFile nginx/*.conf                      setf nginx
   au BufRead,BufNewFile *.ru,*.rake                       setf ruby
   au BufRead,BufNewFile Capfile,Gemfile,Isolate,Rakefile  setf ruby
   au BufRead,BufNewFile *vimrc                            setf vim
 
 " =============================================================================
-" Splits
-" =============================================================================
-  set splitbelow                        " open new horiz splits below current
-  set splitright                        " open new vert splits to the right
-
-  nnoremap <C-j>        <C-w><Down>
-  nnoremap <C-k>        <C-w><Up>
-  nnoremap <C-h>        <C-w><Left>
-  nnoremap <C-l>        <C-w><Right>
-
-" =============================================================================
-" File Navigation
-" =============================================================================
-  let g:netrw_liststyle=4
-
-  " change directory to that of current file
-  nmap <Leader>cd :cd%:p:h<cr>
-
-  " ctags-related
-  set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
-  map <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
-
-" =============================================================================
-" Unite
-" =============================================================================
-  let g:unite_source_history_yank_enable = 1
-  let g:unite_winheight = 10
-  let g:unite_split_rule = 'botright'
-
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
-  call unite#filters#sorter_default#use(['sorter_rank'])
-
-  nnoremap <Leader>h :<C-u>Unite -start-insert help<CR>
-  nnoremap <Leader>f :<C-u>Unite -start-insert file_rec/async:!<CR>
-  nnoremap <Leader>F :<C-u>Unite file_mru/async:!<CR>
-  nnoremap <Leader>. :<C-u>Unite -quick-match history/yank<CR>
-  nnoremap <Leader>o :<C-u>Unite outline<CR>
-
-" =============================================================================
-" Fugitive and GitV
-" =============================================================================
-  nnoremap <Leader>gs :Gstatus<CR>
-  nnoremap <silent> <Leader>gd :w<CR>:Gdiff<CR><CR>
-  nnoremap <Leader>gb :Gblame<CR>
-  nnoremap <Leader>gw :Gw<CR>
-
-" =============================================================================
 " Utilities
 " =============================================================================
-  cnoremap w!! %!sudo tee > /dev/null %
 
-  " toggle line number modes with <leader>n
-  nnoremap <Leader>n :call LineNumbers()<CR>
   function! LineNumbers()
     if &nu
       set nonu rnu
@@ -346,47 +499,6 @@
     endif
     return result
   endfunction
-  vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
-
-" =============================================================================
-" Pasteboard
-" =============================================================================
-  nnoremap <Leader>y "*y
-  nnoremap <Leader>Y "*Y
-  vnoremap <Leader>y "*y
-  nnoremap <Leader>p "*p
-  nnoremap <Leader>P "*P
-
-  nnoremap <Leader>tp :set paste!<CR>
-
-" =============================================================================
-" Mouse
-" =============================================================================
-  if has("mouse")
-    set mouse=a
-  endif
-
-" =============================================================================
-" Miscellaneous Plugins
-" =============================================================================
-  let g:ragtag_global_maps = 1
-  let g:syntastic_check_on_open=1
-  let g:syntastic_html_checkers = []
-
-  let g:sql_type_default = 'pgsql'
-
-  " prevent autoclose from setting some Esc-leading mappings
-  let g:AutoClosePreserveDotReg=0
-  " autoclose pairs
-  let g:AutoClosePairs_add = "'"
-  let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
-
-" =============================================================================
-" Sessions
-" =============================================================================
-  set sessionoptions=buffers,folds,curdir,tabpages
-  nnoremap SS :wa<CR>:mksession! ~/.vim/session/
-  nnoremap SO :so ~/.vim/session/
 
 " =============================================================================
 " Status Line
