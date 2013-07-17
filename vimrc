@@ -465,6 +465,7 @@ execute pathogen#infect()
 " =============================================================================
 " File Formats
 " =============================================================================
+  au BufRead,BufNewFile Emakefile                         setf erlang
   au BufRead,BufNewFile gitconfig                         setf gitconfig
   au BufRead,BufNewFile *.less                            setf less
   au BufRead,BufNewFile *.md                              setf markdown
