@@ -28,7 +28,7 @@ execute pathogen#infect()
   colors solarized
   hi StatusLine cterm=underline
   hi StatusLineNC cterm=underline
-  hi VertSplit ctermbg=none
+  hi VertSplit ctermbg=7 ctermfg=7
 
 " =============================================================================
 " UI
