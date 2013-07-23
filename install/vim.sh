@@ -16,6 +16,8 @@ github michaeljsmith/vim-indent-object
 github Townk/vim-autoclose
 github scrooloose/syntastic
 
+github mhinz/vim-startify
+
 github Shougo/vimproc
 # need to make after this is installed / updated
 github Shougo/unite.vim
