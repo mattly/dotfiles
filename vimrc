@@ -25,12 +25,6 @@ execute pathogen#infect()
 " =============================================================================
   set background&
   function! SetColor()
-    let bg = string(substitute($COLORFGBG, '.*;', '', ''))
-    if bg == "15"
-      set background="dark"
-    else
-      set background="light"
-    endif
     let g:solarized_termtrans=1
     colors solarized
     hi StatusLine cterm=underline
@@ -128,6 +122,20 @@ execute pathogen#infect()
 
   " pg-sql
     let g:sql_type_default = 'pgsql'
+
+  " startify
+  let g:startify_show_dir = 1
+  let g:startify_bookmarks = [ "~/.vimrc", "~/.gitconfig" ]
+  let g:startify_custom_header = [
+        \ '                    / |_  / |_[  |                   (_)',
+        \ ' _ .--..--.   ,--. `| |-.`| |-.| |   _   __  _   __  __   _ .--..--.',
+        \ '[ `.-. .-. | `._\ : | |   | |  | |  [ \ [  ][ \ [  ][  | [ `.-. .-. |',
+        \ ' | | | | | | // | |,| |,  | |, | |   \ ./ /_ \ \/ /  | |  | | | | | |',
+        \ '[___||__||__]\.-;__/\__/  \__/[___][\_:  /(_) \__/  [___][___||__||__]',
+        \ '                                     \__..',
+        \ '',
+        \ '',
+        \ ]
 
 " =============================================================================
 " Terminal
@@ -385,6 +393,10 @@ execute pathogen#infect()
 " =============================================================================
   let mapleader = ','                   " backslash doesn't make sense to me.
   " leader mappings:
+  "   bd  - background dark
+  nnoremap <Leader>bd :set background=dark<CR>tc :call SetColor()<CR>
+  "   bl  - background light
+  nnoremap <Leader>bl :set background=light<CR>tc :call SetColor()<CR>
   "   cd  change directory to that of current file
   nnoremap <Leader>cd :cd%:p:h<cr>
   "   d   diff current buffer with written file
@@ -422,8 +434,6 @@ execute pathogen#infect()
   nnoremap <Leader>sa zg
   nnoremap <Leader>s? z=
   "
-  "   tc  - toggle color mode
-  nnoremap <Leader>tc :call SetColor()<CR>
   "   tp  - toggle paste mode
   nnoremap <Leader>tp :set paste!<CR>
   "
