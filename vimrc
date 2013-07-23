@@ -56,9 +56,14 @@ execute pathogen#infect()
   set ttyfast                           " we're local 99% of the time
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=5                   " min characters to show sideways
-  set cursorline                        " highlight the current cursor line
   set colorcolumn=81                    " we like short lines and we cannot lie
   set laststatus=2                      " always show the status line
+  " highlight the cursor line for the current window only
+  augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+  augroup END
 
   " Alerts
     set noerrorbells                      " shut up already
