@@ -23,12 +23,25 @@ execute pathogen#infect()
 " =============================================================================
 " Colors and Theme
 " =============================================================================
-  set background=light
-  let g:solarized_termtrans=1
-  colors solarized
-  hi StatusLine cterm=underline
-  hi StatusLineNC cterm=underline
-  hi VertSplit ctermbg=7 ctermfg=7
+  set background&
+  function! SetColor()
+    let bg = string(substitute($COLORFGBG, '.*;', '', ''))
+    if bg == "15"
+      set background="dark"
+    else
+      set background="light"
+    endif
+    let g:solarized_termtrans=1
+    colors solarized
+    hi StatusLine cterm=underline
+    hi StatusLineNC cterm=underline
+    if &background == "light"
+      hi VertSplit ctermbg=7 ctermfg=7
+    else
+      hi VertSplit ctermbg=8 ctermfg=8
+    end
+  endfunction
+  call SetColor()
 
 " =============================================================================
 " UI
@@ -404,6 +417,8 @@ execute pathogen#infect()
   nnoremap <Leader>sa zg
   nnoremap <Leader>s? z=
   "
+  "   tc  - toggle color mode
+  nnoremap <Leader>tc :call SetColor()<CR>
   "   tp  - toggle paste mode
   nnoremap <Leader>tp :set paste!<CR>
   "
