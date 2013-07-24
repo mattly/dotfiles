@@ -462,15 +462,15 @@ execute pathogen#infect()
   vnoremap <F1> <ESC>
   " help visual-operators
   " keep selections when indenting in visual mode
-  vnoremap > >gv
-  vnoremap < <gv
+  xnoremap > >gv
+  xnoremap < <gv
   " make search use real regexes
-  vnoremap / /\v
+  xnoremap / /\v
   " call twiddlecase
-  vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+  xnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
   " yank to system clipboard
-  vnoremap <Leader>y "*y
+  xnoremap <Leader>y "*y
 
 
 " =============================================================================

@@ -49,5 +49,6 @@ github juvenn/mustache              # .mustache   :{
 github exu/pgsql.vim                # .sql        postgresql 4 life
 github wavded/vim-stylus            # .styl       -> .css
 github cespare/vim-toml             # .toml       :/
+github dbakker/vim-lint             # .vim        (linting, for syntastic)
 
 unset_dir
