@@ -126,16 +126,6 @@ execute pathogen#infect()
   " startify
   let g:startify_show_dir = 1
   let g:startify_bookmarks = [ "~/.vimrc", "~/.gitconfig" ]
-  let g:startify_custom_header = [
-        \ '                    / |_  / |_[  |                   (_)',
-        \ ' _ .--..--.   ,--. `| |-.`| |-.| |   _   __  _   __  __   _ .--..--.',
-        \ '[ `.-. .-. | `._\ : | |   | |  | |  [ \ [  ][ \ [  ][  | [ `.-. .-. |',
-        \ ' | | | | | | // | |,| |,  | |, | |   \ ./ /_ \ \/ /  | |  | | | | | |',
-        \ '[___||__||__]\.-;__/\__/  \__/[___][\_:  /(_) \__/  [___][___||__||__]',
-        \ '                                     \__..',
-        \ '',
-        \ '',
-        \ ]
 
 " =============================================================================
 " Terminal
@@ -347,7 +337,7 @@ execute pathogen#infect()
 " =============================================================================
 
   " C-q: <intercepted by terminal ?>
-  " C-w: Window leader
+  " C-w*: Window leader
   " C-e: goto EOL
   nnoremap <C-e> $
   " C-r: Redo
@@ -378,12 +368,13 @@ execute pathogen#infect()
   " C-': <can't map>
   " C-z: <unix> Suspend process
   " C-x: ??? ------------------------------------
+  nnoremap <C-x> :q<CR>
   " C-c: Cycle through Splits
   nnoremap <c-c> <c-w>w
   " C-v: ??? ------------------------------------
   " C-b: Scroll full screen backward
   " C-n: ??? ------------------------------------
-  " C-m: <Enter>
+  " C-m: <Enter, cant' map>
   " C-,: <can't map>
   " C-.: <can't map>
   " C-/: ??? ------------------------------------
