@@ -303,8 +303,7 @@ execute pathogen#infect()
   nnoremap K <Nop>
   " l: Go one character right ------------------ never use ?
   " L: Goto bottom of window ------------------- never use
-  " ;: Command Mode
-  nnoremap ; :
+  " ;: Repeat last f, t, F, or T
   " :: Goto Command Mode
   " ': Go to Mark
   " ": Register Leader
