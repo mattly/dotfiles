@@ -1,24 +1,55 @@
-#!/bin/sh
-
-# expanded mode for open/save/print dialogs
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-
-# speed up UI
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
-defaults write NSGlobalDomain NSWindowResizeTime .001
-
+# auto-expand save, print dialogs
+defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+# default to save to disk, not iCloud
+defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# speed up the UI
+defaults NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+defaults NSGlobalDomain NSWindowResizeTime .001
+# fix the UI
+defaults NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 # show all extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults NSGlobalDomain AppleShowAllExtensions -bool true
+# disable auto spelling correction
+defaults NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults com.apple.frameworks.diskimages skip-verify -bool true
+defaults com.apple.frameworks.diskimages skip-verify-remote -bool true
+defaults com.apple.frameworks.diskimages skip-verify-locked -bool true
 
-defaults write com.apple.finder EmptyTrashSecurely -bool true
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock static-only -bool TRUE
+defaults com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+defaults com.apple.dock autohide -bool true
+defaults com.apple.dock static-only -bool true
+defaults com.apple.dock workspaces-swoosh-animation-off -bool true
+defaults com.apple.dock pinning -string start
+defaults com.apple.dashboard mcx-disabled -bool true
+defaults com.apple.dock tilesize -int 36
+# dock show/hide
+defaults com.apple.dock autohide-delay -float 0
+defaults com.apple.dock autohide-time-modifier -float 0
+# don't re-order spaces in mission control
+defaults com.apple.dock mru-spaces -bool false
+# top-left corner: start screen saver
+defaults com.apple.dock wvous-tl-corner -int 5
+defaults com.apple.dock wvous-tl-modifier -int 0
+# clear the dock
+rm ~/Library/Application\ Support/Dock/*.db
+# TODO: if changed...
+killall Dock
 
-for app in Finder Dock; do
-  killall "$app" > /dev/null 2>&1
-done
+defaults com.apple.Finder FXPreferredViewStyle clmv
+defaults com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults com.apple.finder EmptyTrashSecurely -bool true
+# show ~/Library
+chflags nohidden ~/Library
+# TODO: if changed...
+killall Finder
+
+# require password immediately on sleep or screensaver
+defaults com.apple.screensaver askForPassword -int 1
+defaults com.apple.screensaver askForPasswordDelay -int 0
+
+
+

@@ -47,12 +47,6 @@
   brew jq
   brew nmap
   brew dnsmasq
+  brew mtr
 
-# prefs
-  osx dialogs.expandAll
-  osx ui.fast
-  osx showAllFiles
-  osx finder.disableNetworkDS
-  osx dock.autohide
-  osx dock.static
-  osx timeMachine.off
+include osx.sh
