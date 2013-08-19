@@ -17,6 +17,7 @@ github Townk/vim-autoclose
 github scrooloose/syntastic
 
 github mhinz/vim-startify
+github mikewest/vimroom
 
 github Shougo/vimproc
 # need to make after this is installed / updated
