@@ -330,6 +330,8 @@ execute pathogen#infect()
   " /: Search (and use real regexes)
   nnoremap / /\v
   " ?: Search Backwards
+  " save easier
+  nnoremap <CR> :w<CR>
 
 " =============================================================================
 " Normal Mode Control Mappings
