@@ -146,18 +146,13 @@ execute pathogen#infect()
 " =============================================================================
   if has("gui_running")
     set guifont="Source Code Pro":h13
-    " A: autoselect for modeless selection
-    " L: left-hand scrollbar when vertically-split window
-    " T: system toolbar
     " a: visual-mode autoselect (takes over the OS selection process)
+    " A: autoselect for modeless selection
     " c: use console dialogs for simple choices
     " e: don't use gui tabs, they change the height of the window
     " g: grey-out non-active menu items
-    " l: left-hand scrollbar
     " m: show system menu bars
-    " r: right-hand scrollbar
-    " t: include tear-off menu items
-    set guioptions+=ALTaceglmt
+    set guioptions=aAcegm
     set fuoptions=maxvert,maxhorz
   endif
 
