@@ -6,3 +6,8 @@ vim/.netrwhist
 vim/bundle
 tags
 config/configstore
+mutt/cache
+mutt/certificates
+mutt/offlineimap.pyc
+mutt/tmpdir
+mutt/mailboxes

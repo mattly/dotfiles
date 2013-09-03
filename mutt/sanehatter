@@ -1,0 +1,15 @@
+set from = "sanehatter@gmail.com"
+
+set sendmail      = "msmtp -a sanehatter"
+set spoolfile     = "+Sanehatter/--sanehatter--"
+set mbox          = "+Sanehatter/archive"
+set postponed     = "+Sanehatter/drafts"
+set record        = "+Sanehatter/sent"
+
+macro index,pager ! \
+  "<save-message>+Sanehatter/spam<enter>$" \
+  "Send to Spam"
+macro index,pager \# \
+  "<save-message>+Sanehatter/trash<enter>$" \
+  "Send to Trash"
+
