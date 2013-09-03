@@ -24,6 +24,9 @@
   include vim.sh
   # endgroup vim
 
+# email
+  include email.sh
+
 # PL
   include ruby.sh
   include node.sh
