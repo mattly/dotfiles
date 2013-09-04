@@ -130,7 +130,7 @@ set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secr
     # - index G fetch-mail # POP only
     # generic,pager \CL refresh
     macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
-    macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+    macro index o "<shell-escape>offlineimap -qf INBOX -k mbnames:enabled=no<enter>" "run offlineimap to sync inbox"
     # pager Q quit
     # . index,pager V show-version
     bind index,pager V noop
