@@ -10,6 +10,7 @@ application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
 text/html; ~/.mutt/view_attachment.sh %s html
+text/html; lynx -stdin -dump -force_html ; copiousoutput
 
 # Unidentified files
 application/octet-stream; ~/.mutt/view_attachment.sh %s "-"
