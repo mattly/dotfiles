@@ -281,7 +281,7 @@ set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secr
     # - browser o sort
     #bind index,pager,browser o noop
     # - index,pager O sort-reverse
-    bind index,pager,browser O noop
+    bind pager,browser O noop
     macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/notmuch.py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
     # generic > next-line
     bind generic > noop
