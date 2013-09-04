@@ -170,6 +170,19 @@ execute pathogen#infect()
   set shiftround                        " round shifts to multiple of indent
   set textwidth=80                      " wrap at 80 characters
 
+  set cpoptions+=J                      " help cpoptions
+                                        " defaults: aABceFs
+                                        " a/A: read/write sets window fn
+                                        " B: backslash isn't special in mapping
+                                        " c: searching continues at the end of
+                                        "    the match, not start of it
+                                        " e: append <CR> to register execution
+                                        " F: write sets fn for buffer
+                                        " s: sets buffer options when entering
+                                        "    buffer for the first time
+                                        " ==========
+                                        " J: sentences are two-spaced
+
   set formatoptions=cqn1                " help fo-table
                                         " defaults: tcq
                                         " t: auto-wrap text using text-width
