@@ -81,7 +81,9 @@ set edit_headers                        # show headers when composing
 # set autoedit                            # skip straight to compose
 set fast_reply                          # skip to compose when replying
 unset askcc                             # don't ask for cc:
-unset mime_forward                      # forward attachments as body
+# unset mime_forward                      # inline message in forward
+set mime_forward
+set mime_forward_rest=yes               # forward attachments from message
 set forward_format = "Fwd: %s"          # format of subject when forwarding
 set forward_decode                      # decode when forwarding
 set attribution = "On %d, %n wrote:"    # quote header
