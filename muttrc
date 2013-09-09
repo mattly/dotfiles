@@ -98,6 +98,8 @@ set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
 # == PGP
 set pgp_good_sign = "^gpg: Good signature from"
 set pgp_sign_as = 3351BD75
+set my_hdr = "X-PGP-Key: http://lyonheart.us/matthew_lyon_gpg.txt"
+
 set pgp_timeout=1800
 set pgp_use_gpg_agent
 set pgp_verify_sig
