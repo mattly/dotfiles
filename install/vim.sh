@@ -40,6 +40,7 @@ github tpope/vim-fireplace          # .clj        clojure repl
 github elixir-lang/vim-elixir       # .ex
 github aliva/vim-fish               # .fish
 github jnwhiteh/vim-golang          # .go
+github wannesm/wmgraphviz.vim       # .gv         graphviz
 github tpope/vim-ragtag             # .html       formatting tools
 github digitaltoad/vim-jade         # .jade       -> .html
 github pangloss/vim-javascript      # .js         better indenting

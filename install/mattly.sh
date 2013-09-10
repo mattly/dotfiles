@@ -51,5 +51,6 @@
   brew nmap
   brew dnsmasq
   brew mtr
+  brew graphviz
 
 include osx.sh
