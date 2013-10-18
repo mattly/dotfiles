@@ -31,7 +31,7 @@
 
   #brew clojure
   brew_tap homebrew/versions
-  brew erlang-r16
+  brew erlang
   brew elixir
   brew go
   brew bats
