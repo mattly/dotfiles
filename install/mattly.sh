@@ -24,8 +24,6 @@
   include vim.sh
   # endgroup vim
 
-# email
-  include email.sh
 
 # PL
   include ruby.sh
@@ -53,4 +51,9 @@
   brew mtr
   brew graphviz
 
+  brew apple-gcc42
+
 include osx.sh
+
+# email
+  include email.sh
