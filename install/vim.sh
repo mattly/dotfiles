@@ -34,7 +34,7 @@ github tpope/vim-fugitive
 
 # syntax
 github rosstimson/bats.vim          # .bats       bash unit testing
-github vim-coffee-script            # .coffee     -> .js
+github kchmck/vim-coffee-script     # .coffee     -> .js
 github guns/vim-clojure-static      # .clj        clojure syntax
 github tpope/vim-fireplace          # .clj        clojure repl
 github elixir-lang/vim-elixir       # .ex
