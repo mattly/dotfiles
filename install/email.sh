@@ -6,4 +6,5 @@ brew urlview
 brew msmtp
 brew notmuch
 brew lynx
+brew gpg
 
