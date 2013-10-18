@@ -27,7 +27,7 @@
 
 # PL
   include ruby.sh
-  include node.sh
+  # include node.sh
 
   brew clojure
   brew_tap homebrew/versions
