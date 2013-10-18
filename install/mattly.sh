@@ -29,7 +29,7 @@
   include ruby.sh
   # include node.sh
 
-  brew clojure
+  #brew clojure
   brew_tap homebrew/versions
   brew erlang-r16
   brew elixir
