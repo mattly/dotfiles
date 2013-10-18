@@ -1,3 +1,7 @@
+IGNORE = Readme.md Makefile .git .gitignore install
+FILES = $(filter-out $(IGNORE), $(wildcard *))
+EMPTIES = env
+
 ready:
 	@open https://github.com/kennethreitz/osx-gcc-installer
 	@open https://code.google.com/p/iterm2/downloads/list
@@ -5,9 +9,6 @@ ready:
 install: symlinks ware vim/bundle/vundle
 
 symlinks:
-	IGNORE = Readme.md Makefile .git .gitignore install
-	FILES = $(filter-out $(IGNORE), $(wildcard *))
-	EMPTIES = env
 	@$(foreach FILE, $(FILES), [ -h ~/.$(FILE) ] \
 		&& echo "skipping $(FILE)" \
 		|| ln -sf $(shell pwd)/$(FILE) ~/.$(FILE) ;)
