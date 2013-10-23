@@ -29,7 +29,7 @@ set thorough_search                 # strip headers and eval mimes for searching
 
 # == Status Bar
 set status_chars  = " *%A"
-set status_format = "--[Folder: %f ]--[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]---%>-%?p?( %p postponed )?--"
+set status_format = "Folder: %f    %r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? %> %?p?( %p postponed )?"
 
 # == Account Settings
 folder-hook Lyonheart/* source ~/.mutt/lyonheart
@@ -54,7 +54,7 @@ hdr_order from: to: cc: date: subject:
 
 # == Index
 set date_format = "%m/%d/%y %H:%M"
-set index_format = "%4c %Z  %D  %-20.20F  %s"
+set index_format = "%4c %Z  %D  %-25.25F  %s"
 set sort = threads
 set sort_aux = 'reverse-last-date-received'
 set uncollapse_jump
