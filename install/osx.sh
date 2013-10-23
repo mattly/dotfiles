@@ -23,7 +23,6 @@ defaults com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 defaults com.apple.dock autohide -bool true
 defaults com.apple.dock static-only -bool true
 defaults com.apple.dock workspaces-swoosh-animation-off -bool true
-defaults com.apple.dock pinning -string start
 defaults com.apple.dashboard mcx-disabled -bool true
 defaults com.apple.dock tilesize -int 36
 # dock show/hide
@@ -34,8 +33,14 @@ defaults com.apple.dock mru-spaces -bool false
 # top-left corner: start screen saver
 defaults com.apple.dock wvous-tl-corner -int 5
 defaults com.apple.dock wvous-tl-modifier -int 0
+# Put it on the left
+defaults com.apple.dock orientation -string left
 # clear the dock
 rm ~/Library/Application\ Support/Dock/*.db
+
+# DIE DASHBOARD DIE
+defaults com.apple.dashboard mcx-disabled -boolean YES
+
 # TODO: if changed...
 killall Dock
 
