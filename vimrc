@@ -25,15 +25,16 @@ execute pathogen#infect()
 " =============================================================================
   set background&
   function! SetColor()
-    let g:solarized_termtrans=1
-    colors solarized
-    hi StatusLine cterm=underline
-    hi StatusLineNC cterm=underline
-    if &background == "light"
-      hi VertSplit ctermbg=7 ctermfg=7
-    else
-      hi VertSplit ctermbg=8 ctermfg=8
-    end
+    " let g:solarized_termtrans=1
+    " colors solarized
+    colors base16-default
+    hi StatusLine cterm=underline ctermbg=none
+    hi StatusLineNC cterm=underline ctermbg=none
+    " if &background == "light"
+    "   hi VertSplit ctermbg=7 ctermfg=7
+    " else
+    "   hi VertSplit ctermbg=8 ctermfg=8
+    " end
   endfunction
   call SetColor()
 

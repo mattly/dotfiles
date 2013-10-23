@@ -27,6 +27,7 @@ github h1mesuke/unite-outline
 
 #colors
 github altercation/vim-colors-solarized
+github chriskempson/base16-vim
 
 # git
 github tpope/vim-git
