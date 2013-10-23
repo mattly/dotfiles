@@ -562,4 +562,51 @@ bind index \' change-folder
 
 # === Editing
 
-source ~/.mutt/solarized-light-16.muttrc
+# mutt color scheme
+
+color	normal      default     default                 # default colours
+
+# index
+color   index       magenta     default       ~Q        # replied to
+color   index       yellow      default       ~U        # unread messages
+color   index       red         default       ~F        # flagged messages
+color   index       blue        default       "~v~(!~N)"  # collapsed messagse with no unread
+color   index       cyan        default       "~v~(~N)"   # collapsed messagse with some unread
+color   index       white       red           ~D        # deleted messages
+color   index       white       green         ~T        # tagged messages
+
+# viewer
+color	hdrdefault	white       default                 # default headers
+color   header      blue        default       "^From:"
+color   header      blue        default       "^Subject:"
+
+color	quoted      cyan        default                 # quote colours
+color   quoted1     blue        default
+color   quoted2     green       default
+color   quoted3     yellow      default
+color   quoted4     red         default
+
+color	body		yellow      default       (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color	body		green       default       [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+
+color	signature	blue        default                 # sigs
+color   search      red         black                   # highlight results
+
+color	indicator	black       brightblue              # currently highlighted message
+color	error		red         default                 # error messages
+color	status		cyan        default                 # status line
+color	tree		yellow      default                 # thread tree
+color   tilde       black       default                 # blank line padding
+
+
+
+color	body	    green default           "^gpg: Good signature from"
+color	body	    brightred default		"^gpg: Bad signature from"
+color	body	    brightred default		"^gpg: BAD signature from"
+color	body	    brightred default		"^gpg: Note: This key has expired!"
+color	body	    brightyellow default	"^gpg: WARNING: This key is not certified with a trusted signature!"
+color	body	    brightyellow default	"^gpg:          There is no indication that the signature belongs to the owner."
+color	body	    brightyellow default	"^gpg: can't handle these multiple signatures"
+color	body	    brightyellow default	"^gpg: signature verification suppressed"
+color	body	    brightyellow default	"^gpg: invalid node with packet of type"
+
