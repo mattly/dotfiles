@@ -573,7 +573,7 @@ color   index       red         default       ~F        # flagged messages
 color   index       blue        default       "~v~(!~N)"  # collapsed messagse with no unread
 color   index       cyan        default       "~v~(~N)"   # collapsed messagse with some unread
 color   index       white       red           ~D        # deleted messages
-color   index       white       green         ~T        # tagged messages
+color   index       black       green         ~T        # tagged messages
 
 # viewer
 color	hdrdefault	white       default                 # default headers
