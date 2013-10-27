@@ -355,6 +355,8 @@ execute pathogen#infect()
   " ?: Search Backwards
   " save easier
   nnoremap <CR> :w<CR>
+  " toggle current fold easier
+  nnoremap <Space> za
 
 " =============================================================================
 " Normal Mode Control Mappings
