@@ -317,6 +317,20 @@ execute pathogen#infect()
   " ': Go to Mark
   " ": Register Leader
   " z: fold leader
+  " za: toggle current fold
+  " zA: recursively open/close current fold
+  " zc: close current fold
+  " zC: recursively close current fold
+  " zi: switch folding on or off
+  " zj: move down to top of next fold
+  " zk: move up to bottom of previous fold
+  " zm: reduce `foldlevel` by one
+  " zM: close all folds
+  " zo: open current fold
+  " zO: recursively open current fold
+  " zr: increase `foldlevel` by one
+  " zR: open all folds
+  " zv: expand folds to reveal cursor
   " ZZ: write and quit (:x) -------------------- never use
   " ZQ: quit without writing (:q!) ------------- never use
   " x: Delete one character
