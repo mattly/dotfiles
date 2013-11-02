@@ -49,6 +49,7 @@ github groenewege/vim-less          # .less       -> .css
 github mintplant/vim-literate-coffeescript
                                     # .litcoffee  -> .js
 github juvenn/mustache              # .mustache   :{
+github vimoutliner/vimoutliner      # .otl        vim outliner
 github exu/pgsql.vim                # .sql        postgresql 4 life
 github wavded/vim-stylus            # .styl       -> .css
 github cespare/vim-toml             # .toml       :/
