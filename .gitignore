@@ -11,3 +11,4 @@ mutt/certificates
 mutt/offlineimap.pyc
 mutt/tmpdir
 mutt/mailboxes
+config/fish/generated_completions
