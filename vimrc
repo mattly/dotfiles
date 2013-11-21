@@ -521,6 +521,12 @@ execute pathogen#infect()
   au BufRead,BufNewFile Capfile,Gemfile,Isolate,Rakefile  setf ruby
   au BufRead,BufNewFile *vimrc                            setf vim
 
+  au BufRead,BufNewFile mail                              set fo+=awt
+  " help fo-table
+  " a: Auto-format paragraphs every time text is inserted or deleted.
+  " w: Trailing white space indicates the paragraph continues.
+  " t: Auto-wrap text using textwidth
+
 " =============================================================================
 " Utilities
 " =============================================================================
