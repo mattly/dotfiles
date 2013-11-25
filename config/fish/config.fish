@@ -24,6 +24,10 @@ if status --is-login
     unshift_path $HOME/.nodenv/shims
     nodenv rehash 2>/dev/null
   end
+
+  if test -d $HOME/.cabal
+    unshift_path $HOME/.cabal/bin
+  end
 end
 
 # -- ENV
