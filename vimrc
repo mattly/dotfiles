@@ -162,6 +162,12 @@ execute pathogen#infect()
   autocmd BufNewFile,BufRead * set foldmethod=indent
   autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
+  augroup Tmux
+    au!
+    autocmd VimEnter,BufNewFile,BufReadPost * call system('tmux rename-window "vim - ' . split(substitute(getcwd(), $HOME, '~', ''), '/')[-1] . '"')
+    autocmd VimLeave * call system('tmux rename-window ' . split(substitute(getcwd(), $HOME, '~', ''), '/')[-1])
+  augroup end
+
 source ~/.vim/functions.vim
 source ~/.vim/theme.vim
 source ~/.vim/status.vim
