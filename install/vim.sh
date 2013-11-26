@@ -1,7 +1,9 @@
 brew vim
 
+# TODO: keep track of 'any' changes
+
 [ -z $code ] && code=$HOME/code/mattly
-set_dir $code/dotfiles/vim/bundle
+cd $code/dotfiles/vim/bundle
 
 github tpope/vim-pathogen
 github tpope/vim-endwise
@@ -20,13 +22,16 @@ github mhinz/vim-startify
 github mikewest/vimroom
 
 github Shougo/vimproc
-# need to make after this is installed / updated
+if did_update; then
+  pushd vimproc > /dev/null
+  make clean && make
+  popd > /dev/null
+fi
 github Shougo/unite.vim
 github Shougo/unite-help
 github h1mesuke/unite-outline
 
 #colors
-github altercation/vim-colors-solarized
 github chriskempson/base16-vim
 
 # git
@@ -55,4 +60,4 @@ github wavded/vim-stylus            # .styl       -> .css
 github cespare/vim-toml             # .toml       :/
 github dbakker/vim-lint             # .vim        (linting, for syntastic)
 
-unset_dir
+# TODO if "any" changes, vim ':Helptags'
