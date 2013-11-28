@@ -28,7 +28,7 @@ execute pathogen#infect()
   set showcmd                           " show incomplete commands
   set lazyredraw                        " speeds up certain macros and such
   " set nonumber                          " hide line numbers by default
-  set shortmess=a                       " abbreviate!
+  set shortmess=aot                     " abbreviate!
   set report=0                          " always notify us about changes
   set nostartofline                     " don't jump to line start on scroll
   set ttyfast                           " we're local 99% of the time
