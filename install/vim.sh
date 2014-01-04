@@ -13,10 +13,10 @@ github tpope/vim-unimpaired
 github tpope/vim-abolish
 github tpope/vim-eunuch
 github tpope/vim-commentary
+github tpope/vim-vinegar
 github ervandew/supertab
 github michaeljsmith/vim-indent-object
 github Townk/vim-autoclose
-github scrooloose/syntastic
 
 github mhinz/vim-startify
 github mikewest/vimroom
