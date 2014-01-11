@@ -23,6 +23,7 @@
 
   " yank to system clipboard
   xnoremap <Leader>y "*y
+  vnoremap <Leader>y "*y
 
 " =============================================================================
 " Insert Mode Mappings
