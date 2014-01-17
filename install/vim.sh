@@ -21,6 +21,9 @@ github Townk/vim-autoclose
 github mhinz/vim-startify
 github mikewest/vimroom
 
+github rizzatti/funcoo.vim
+github rizzatti/dash.vim
+
 github Shougo/vimproc
 if did_update; then
   pushd vimproc > /dev/null
