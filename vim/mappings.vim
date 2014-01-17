@@ -82,12 +82,12 @@
   " ): Move Sentence Forward ------------------- never use
   " - (orig): Go to Start of Previous Line
   " -: Decrement number
-  nnoremap - <c-x>
+  " nnoremap - <c-x>
   " _: Go to Start of This Line ---------------- same as ^
   " =: Indent Accordingly
   " +(orig): Go to Start of Next Line
   " +: Increment number
-  nnoremap + <c-a>
+  " nnoremap + <c-a>
   " q: Record macro
   " Q (orig): Switch to "Ex" mode
   " Q: Play back macro in q slot, record it with 'qq'
