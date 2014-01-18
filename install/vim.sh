@@ -35,7 +35,7 @@ github Shougo/unite-help
 github h1mesuke/unite-outline
 
 #colors
-github chriskempson/base16-vim
+github mattly/vim-colors-pencil
 
 # git
 github tpope/vim-git
