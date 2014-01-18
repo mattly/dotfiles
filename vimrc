@@ -50,8 +50,7 @@ execute pathogen#infect()
   " Splits
     set splitbelow                        " open new horiz splits below current
     set splitright                        " open new vert splits to the right
-    set fillchars=vert:\ 
-    " for some reason this is making iterm2 very slow: │
+    set fillchars=vert:\│,stl:\ 
 
   " Keyboarding
     set backspace=indent,eol,start        " backspace over anything
