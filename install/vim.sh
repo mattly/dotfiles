@@ -20,11 +20,18 @@ github michaeljsmith/vim-indent-object
 github Townk/vim-autoclose
 
 github mhinz/vim-startify
-github mikewest/vimroom
 
+# writing tools
+github mikewest/vimroom
+github reedes/vim-wordy
+github reedes/vim-pencil
+github nelstrom/vim-markdown-folding
+
+# dash integration
 github rizzatti/funcoo.vim
 github rizzatti/dash.vim
 
+# Unite
 github Shougo/vimproc
 if did_update; then
   pushd vimproc > /dev/null
