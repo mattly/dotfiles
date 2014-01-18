@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 brew vim
 
 # TODO: keep track of 'any' changes
