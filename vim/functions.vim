@@ -22,3 +22,10 @@ function! TwiddleCase(str)
   endif
   return result
 endfunction
+
+" see ftplugins/markdown.vim for source
+function! MatchTechWordsToAvoid()
+  match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
+endfunction
+
+
