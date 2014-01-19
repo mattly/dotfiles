@@ -23,7 +23,8 @@ function! TwiddleCase(str)
   return result
 endfunction
 
-" see ftplugins/markdown.vim for source
+" via http://usevim.com/2014/01/17/words-to-avoid/
+highlight TechWordsToAvoid ctermbg=red ctermfg=white
 function! MatchTechWordsToAvoid()
   match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction

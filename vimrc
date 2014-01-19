@@ -152,21 +152,8 @@ execute pathogen#infect()
   " Whitespace Highlighting
   set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
-" =============================================================================
-" Auto Commands
-" =============================================================================
-  autocmd QuickfixCmdPost grep copen    " open the quickfix list automatically
 
-  " set folding automatically to indent, fuck you, except for diffs
-  autocmd BufNewFile,BufRead * set foldmethod=indent
-  autocmd BufNewFile,BufRead *.diff set foldmethod=diff
-
-  augroup Tmux
-    au!
-    autocmd VimEnter,BufNewFile,BufReadPost * call system('tmux rename-window "vim - ' . split(substitute(getcwd(), $HOME, '~', ''), '/')[-1] . '"')
-    autocmd VimLeave * call system('tmux rename-window ' . split(substitute(getcwd(), $HOME, '~', ''), '/')[-1])
-  augroup end
-
+source ~/.vim/aucmd.vim
 source ~/.vim/functions.vim
 source ~/.vim/theme.vim
 source ~/.vim/status.vim
