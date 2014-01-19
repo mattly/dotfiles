@@ -28,7 +28,7 @@ if( $ARGV[0] eq "-w" || $ARGV[1] eq "-w" || $ARGV[2] eq "-w" ) {
     push(@arr, [(  "[38;5;0m  0:  black   ",     "[38;5;1m  1:  red     ",     "[38;5;2m  2:  green   ")] );
     push(@arr, [(  "[38;5;3m  3:  yellow  ",     "[38;5;4m  4:  blue    ",     "[38;5;5m  5:  magenta ")] );
     push(@arr, [(  "[38;5;6m  6:  cyan    ",     "[38;5;7m  7:  grey    ",     "[38;5;8m  8:  brblack ")] );
-    push(@arr, [(  "[38;5;9m  9:  brred   ",     "[38;5;16m 10:  brgreen ",     "[38;5;11m 11:  bryellow")] );
+    push(@arr, [(  "[38;5;9m  9:  brred   ",     "[38;5;10m 10:  brgreen ",     "[38;5;11m 11:  bryellow")] );
     push(@arr, [(  "[38;5;12m 12:  brblue  ",     "[38;5;13m 13:  bmagenta",     "[38;5;14m 14:  brcyan  ")] );
     push(@arr, [(  "[38;5;15m 15:  white",        "", "")] );  
     push(@arr, [(  "[38;5;16m 16:  00/00/00",     "[38;5;17m 17:  00/00/5f",     "[38;5;18m 18:  00/00/87",     "[38;5;19m 19:  00/00/af",     "[38;5;20m 20:  00/00/d7",     "[38;5;21m 21:  00/00/ff")] );  
