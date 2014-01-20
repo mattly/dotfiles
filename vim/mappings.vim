@@ -1,3 +1,5 @@
+let mapleader = ','                     " backslash doesn't make sense to me.
+
 " =============================================================================
 " Command Mode Mappings
 " =============================================================================
@@ -23,7 +25,6 @@
 
   " yank to system clipboard
   xnoremap <Leader>y "*y
-  vnoremap <Leader>y "*y
 
 " =============================================================================
 " Insert Mode Mappings
@@ -233,7 +234,6 @@
 " =============================================================================
 " Normal Mode Leader Mappings
 " =============================================================================
-  let mapleader = ','                   " backslash doesn't make sense to me.
   " leader mappings:
   "   bd  - background dark
   nnoremap <Leader>bd :set background=dark<CR>tc :call SetColor()<CR>
