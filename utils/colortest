@@ -120,7 +120,6 @@ if( $ARGV[0] eq "-w" || $ARGV[1] eq "-w" || $ARGV[2] eq "-w" ) {
         }
     }
     print "\n";
-    print "\n";
 
 }
 else {
