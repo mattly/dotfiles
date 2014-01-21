@@ -2,11 +2,11 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-" =============================================================================
 " General
 " =============================================================================
   filetype plugin indent on
   syntax on
+  set hidden                            " use buffers, not windows
   set fileformats=unix,dos,mac          " line endings are still a thing?
   set modelines=0                       " avoid spell files vulnerability
   set autoread                          " auto-reload files from local changes
@@ -21,21 +21,17 @@ execute pathogen#infect()
   set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
 
 
-" =============================================================================
-" UI
+" UI Chrome
 " =============================================================================
   set ruler                             " show the cursor position
   set showcmd                           " show incomplete commands
   set lazyredraw                        " speeds up certain macros and such
-  " set nonumber                          " hide line numbers by default
-  set shortmess=aot                     " abbreviate!
+  set shortmess=aot                     " abbreviate the messages
   set report=0                          " always notify us about changes
   set nostartofline                     " don't jump to line start on scroll
   set ttyfast                           " we're local 99% of the time
   set scrolloff=5                       " minimum lines to show around cursor
-  set sidescrolloff=5                   " min characters to show sideways
-  set colorcolumn=81                    " we like short lines and we cannot lie
-  set laststatus=2                      " always show the status line
+  set sidescrolloff=15                  " min characters to show sideways
   " highlight the cursor line for the current window only
   augroup CursorLine
     au!
@@ -50,7 +46,9 @@ execute pathogen#infect()
   " Splits
     set splitbelow                        " open new horiz splits below current
     set splitright                        " open new vert splits to the right
+
     set fillchars=vert:\│,stl:\ 
+    set showbreak=↪
 
   " Keyboarding
     set backspace=indent,eol,start        " backspace over anything
@@ -68,8 +66,7 @@ execute pathogen#infect()
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
   " Searching
-    " use ack. No, not the vim-ack plugin. Ack. Instead of grep.
-    set grepprg=ack
+    set grepprg="ag --nocolor --nogroup --column"
     set hlsearch                          " because awesome
     set ignorecase                        " ignore case in searches
     set smartcase                         " unless there is a capital letter
@@ -84,49 +81,20 @@ execute pathogen#infect()
       set mouse=a
     endif
 
-
-" =============================================================================
-" Terminal
-" =============================================================================
-  if exists('$ITERM_PROFILE')
-    " iterm2 cursor shape for insert mode
-    if exists('$TMUX')
-      let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-      let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    else
-      let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-      let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    endif
-  end
-
-" =============================================================================
-" GUI options
-" =============================================================================
-  if has("gui_running")
-    set guifont="Source Code Pro":h13
-    " a: visual-mode autoselect (takes over the OS selection process)
-    " A: autoselect for modeless selection
-    " c: use console dialogs for simple choices
-    " e: don't use gui tabs, they change the height of the window
-    " g: grey-out non-active menu items
-    " m: show system menu bars
-    set guioptions=aAcegm
-    set fuoptions=maxvert,maxhorz
-  endif
-
-" =============================================================================
 " Text Formatting
 " =============================================================================
   set autoindent                        " auto-indent new lines
   set smartindent                       " but not blindly
-  set nowrap                            " Text wrapping should be done manually
   set softtabstop=2                     " because fuck you, 8-space tabs
   set shiftwidth=2
   set tabstop=4
   set expandtab                         " turns lead to gold. Er, tabs to spaces
   set smarttab                          " go away, tabs. don't come back
   set shiftround                        " round shifts to multiple of indent
-  set textwidth=80                      " wrap at 80 characters
+                                        " Whitespace Highlighting
+  set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
+
+  set nowrap                            " Text wrapping should be done manually
 
   set cpoptions+=J                      " help cpoptions
                                         " defaults: aABceFs
@@ -149,13 +117,8 @@ execute pathogen#infect()
                                         " n: recognize numbered lists
                                         " 1: don't break after 1-char word
 
-  " Whitespace Highlighting
-  set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
+for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
+  exe 'source' fpath
+endfor
 
 
-source ~/.vim/aucmd.vim
-source ~/.vim/functions.vim
-source ~/.vim/theme.vim
-source ~/.vim/status.vim
-source ~/.vim/mappings.vim
-source ~/.vim/plugins.vim

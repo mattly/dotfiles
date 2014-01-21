@@ -1,15 +1,9 @@
-" Unite Plugin
-let g:unite_source_history_yank_enable = 1
-let g:unite_winheight = 10
-let g:unite_split_rule = 'botright'
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-
 " RagTag
 let g:ragtag_global_maps = 1
 
 " Syntastic
 let g:syntastic_check_on_open=1
+let g:syntastic_auto_loc_list=1
 let g:syntastic_html_checkers = []
 
 " Autoclose

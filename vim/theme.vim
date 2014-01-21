@@ -1,2 +1,0 @@
-set background&
-colors pencil

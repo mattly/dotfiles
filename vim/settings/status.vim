@@ -1,8 +1,12 @@
+set laststatus=2                      " always show the status line
+
 function! GitStatus()
   if exists('*fugitive#statusline')
     let branchname = fugitive#statusline()
+    let branchname = substitute(branchname, '[\[\]\(\)]', '', 'g')
+    let branchname = substitute(branchname, '^Git', '', '')
     if strlen(branchname) > 0
-      let git = ' ± '
+      let git = '±' . branchname
     else
       let git = ''
     end

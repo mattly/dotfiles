@@ -31,16 +31,7 @@ github nelstrom/vim-markdown-folding
 github rizzatti/funcoo.vim
 github rizzatti/dash.vim
 
-# Unite
-github Shougo/vimproc
-if did_update; then
-  pushd vimproc > /dev/null
-  make clean && make
-  popd > /dev/null
-fi
-github Shougo/unite.vim
-github Shougo/unite-help
-github h1mesuke/unite-outline
+github kien/ctrlp.vim
 
 #colors
 github mattly/vim-colors-pencil

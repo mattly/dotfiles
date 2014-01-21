@@ -82,13 +82,12 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " (: Move Sentence Backwards ----------------- never use
   " ): Move Sentence Forward ------------------- never use
   " - (orig): Go to Start of Previous Line
-  " -: Decrement number
-  " nnoremap - <c-x>
-  " _: Go to Start of This Line ---------------- same as ^
+  " -: <vinegar> go to directory listing
+  " _: (orig) Go to Start of This Line
+  " _: Create new split
+  nnoremap _ <C-w>s
   " =: Indent Accordingly
-  " +(orig): Go to Start of Next Line
-  " +: Increment number
-  " nnoremap + <c-a>
+  " +: Go to Start of Next Line
   " q: Record macro
   " Q (orig): Switch to "Ex" mode
   " Q: Play back macro in q slot, record it with 'qq'
@@ -118,15 +117,19 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " ]: Navigation Forwards Leader -------------- never use
   " }: End of Paragraph ------------------------ never use
   " \: Vim-commentary Leader
+  " |: create vertical split
+  nnoremap \| <C-w>v
   " a: insert after character
   " A: insert at end of line
   " s: replace character ----------------------- never use
-  " S: Replace line ---------------------------- never use
+  " S: (orig) Replace line
+  " S: Write the current buffer
+  nnoremap S :w<CR>
   " d: Delete leader
   " D: Delete till end of line
   " f: Find fowards
   " F: Find backwards
-  " g: Goto leader
+  " g: Goto leader ( :help g )
   " G: Goto EOF
   " h: Go one character left ------------------- never use ?
   " H: Goto top of window ---------------------- never use
@@ -134,8 +137,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " J: Join lines
   " k: Go one line up
   " K (orig): Lookup word under cursor with keywordprg
-  " K: I always hit this when I mean I, O or J
-  nnoremap K <Nop>
+  nnoremap K :grep
   " l: Go one character right ------------------ never use ?
   " L: Goto bottom of window ------------------- never use
   " ;: Repeat last f, t, F, or T
@@ -160,7 +162,9 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " ZZ: write and quit (:x) -------------------- never use
   " ZQ: quit without writing (:q!) ------------- never use
   " x: Delete one character
-  " X: Delete Character backwards -------------- never use
+  " X: (orig) Delete Character backwards
+  " X: Close window or buffer intelligently
+  nnoremap X :call CloseWindowOrKillBuffer()<CR>
   " c: Change text
   " C: Change rest of line
   " v: Visual mode
@@ -178,6 +182,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " >: Indent Right
   " /: Search (and use real regexes)
   nnoremap / /\v
+  " //: Clear search highlighting
+  nnoremap // :nohlsearch<CR>
   " ?: Search Backwards
   " save easier
   nnoremap <CR> :w<CR>
@@ -188,8 +194,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
 " Normal Mode Control Mappings
 " =============================================================================
 
-  " C-q: <intercepted by terminal ?>
-  " C-w*: Window leader
+  " C-q: (used for terminal flow control)
+  " C-w*: Window leader   :help CTRL-W
   " C-e: goto EOL
   nnoremap <C-e> $
   " C-r: Redo
@@ -199,12 +205,14 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " C-u: Scroll half screen up
   " C-i: Go forward in Jump List
   " C-o: Go back in the Jump List
-  " C-p: Previous Cursor (or, go up one line?)
+  " C-p: (orig) Previous Cursor (or, go up one line?)
+  " C-p: <Plugin> Invoke Ctrl-p in file mode
   " C-[: <esc>
   " C-]: Go foward in the Tag Stack
   " C-a: Go to beginning of Line
   nnoremap <C-a> 0
-  " C-s: ??? -----------------------------------
+  " C-s: Save
+  nnoremap <C-s> :w<CR>
   " C-d: Scroll half screen down
   " C-f: Scroll full screen down
   " C-g: <tmux leader>, vim: Prints current file name
@@ -219,8 +227,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " C-:: <can't map>
   " C-': <can't map>
   " C-z: <unix> Suspend process
-  " C-x: ??? ------------------------------------
-  nnoremap <C-x> :q<CR>
+  " C-x: Quit All
+  nnoremap <C-x> :qa<CR>
   " C-c: Cycle through Splits
   nnoremap <c-c> <c-w>w
   " C-v: ??? ------------------------------------
@@ -235,14 +243,11 @@ let mapleader = ','                     " backslash doesn't make sense to me.
 " Normal Mode Leader Mappings
 " =============================================================================
   " leader mappings:
-  "   bd  - background dark
-  nnoremap <Leader>bd :set background=dark<CR>tc :call SetColor()<CR>
-  "   bl  - background light
-  nnoremap <Leader>bl :set background=light<CR>tc :call SetColor()<CR>
-  "   cd  change directory to that of current file
-  nnoremap <Leader>cd :cd%:p:h<cr>
-  "   d   diff current buffer with written file
-  "
+  "   b   CTRL-p Buffer mode
+  nnoremap <Leader>b :CtrlPBuffer<CR>
+  "   f   CTRL-p File mode
+  nnoremap <Leader>b :CtrlP<CR>
+
   " - g - Git
   "   gb  - git blame
   nnoremap <Leader>gb :Gblame<CR>
@@ -252,17 +257,19 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <Leader>gs :Gstatus<CR>
   "   gw  - write, git add
   nnoremap <Leader>gw :Gw<CR>
+
   "
   "   k   fix syntax highlighting
   nnoremap <leader>k :syntax sync fromstart<cr>
+
   "   n   line number toggling
   nnoremap <Leader>n :call LineNumbers()<CR>
   "   p   paste from system clipboard
   "   P   paste from system clipboard
   nnoremap <Leader>p "*p
   nnoremap <Leader>P "*P
-  "   r   regen ctags
-  nnoremap <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
+  "   r   CTRL-p in MRU file mode
+  nnoremap <Leader>r :CtrlPMRU<CR>
   "
   " - s - Spelling
   "   sa  - add word to dictionary
@@ -276,25 +283,15 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <Leader>sa zg
   nnoremap <Leader>s? z=
   "
-  "   tp  - toggle paste mode
-  nnoremap <Leader>tp :set paste!<CR>
-  "
-  " - u - Unite
-  "   uf  open unite in recursive file search mode
-  nnoremap <Leader>uf :<C-u>Unite -start-insert file_rec/async:!<CR>
-  "   uF  open unite in MRU file mode
-  nnoremap <Leader>uF :<C-u>Unite file_mru/async:!<CR>
-  "   uh  open unite in help mode
-  nnoremap <Leader>uh :<C-u>Unite -start-insert help<CR>
-  "   uo  open unite in outline mode
-  nnoremap <Leader>uo :<C-u>Unite outline<CR>
-  "   uy   open unite in yank history
-  nnoremap <Leader>uy :<C-u>Unite -quick-match history/yank<CR>
-  "
+  "   w   strip trailing whitespace
+  nnoremap <leader>w :StripTrailingWhitespaces<CR>
+
+  "   x   next buffer
+  nnoremap <silent><Leader>x :bn<CR>
   "   y   yank to system clipboard, follow with normal yank operations
   "   Y   yank to system clipboard, current line
   nnoremap <Leader>y "*y
   nnoremap <Leader>Y "*Y
-  "   ,   turn off search highlighting
-  nnoremap <silent><Leader>, :noh<cr>
+  "   z   previous buffer
+  nnoremap <silent><Leader>z :bp<CR>
 
