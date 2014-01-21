@@ -18,3 +18,14 @@ let g:sql_type_default = 'pgsql'
 let g:startify_show_dir = 1
 let g:startify_bookmarks = [ "~/.vimrc", "~/.gitconfig" ]
 
+" signify
+let g:signify_vcs_list = ['git', 'hg']
+
+" pencil
+let g:pencil#autoformat = 0
+augroup pencil
+  autocmd!
+  autocmd FileType markdown call pencil#init()
+  autocmd FileType text call pencil#init({'wrap': 'hard'})
+augroup END
+

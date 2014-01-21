@@ -10,12 +10,6 @@ autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 autocmd FileType markdown call MatchTechWordsToAvoid()
 
 
-augroup pencil
-  autocmd!
-  autocmd FileType markdown call pencil#init()
-  autocmd FileType text call pencil#init({'wrap': 'hard'})
-augroup END
-
 if exists('$TMUX')
   augroup Tmux
     au!
