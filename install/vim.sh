@@ -18,6 +18,7 @@ github tpope/vim-vinegar
 github ervandew/supertab
 github michaeljsmith/vim-indent-object
 github Townk/vim-autoclose
+github junegunn/vim-easy-align
 
 github mhinz/vim-startify
 
@@ -36,9 +37,14 @@ github kien/ctrlp.vim
 #colors
 github mattly/vim-colors-pencil
 
-# git
+# git & scm
 github tpope/vim-git
 github tpope/vim-fugitive
+github mhinz/vim-signify
+
+# vim
+github tpope/vim-scriptease
+github dbakker/vim-lint
 
 # syntax
 github rosstimson/bats.vim          # .bats       bash unit testing
@@ -61,6 +67,5 @@ github cakebaker/scss-syntax.vim    # .scss       -> .css
 github exu/pgsql.vim                # .sql        postgresql 4 life
 github wavded/vim-stylus            # .styl       -> .css
 github cespare/vim-toml             # .toml       :/
-github dbakker/vim-lint             # .vim        (linting, for syntastic)
 
 # TODO if "any" changes, vim ':Helptags'
