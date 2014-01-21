@@ -42,7 +42,7 @@
   brew riak
 
 # etc tools
-  brew ack
+  brew ag
   brew par
   brew curl
   brew jq
