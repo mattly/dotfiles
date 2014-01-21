@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # auto-expand save, print dialogs
 defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
