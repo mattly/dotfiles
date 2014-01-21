@@ -28,11 +28,16 @@ github reedes/vim-wordy
 github reedes/vim-pencil
 github nelstrom/vim-markdown-folding
 
+# outlining
+github vimoutliner/vimoutliner      # .otl        vim outliner
+
 # dash integration
 github rizzatti/funcoo.vim
 github rizzatti/dash.vim
 
+# navigation
 github kien/ctrlp.vim
+github majutsushi/tagbar
 
 #colors
 github mattly/vim-colors-pencil
@@ -62,7 +67,6 @@ github groenewege/vim-less          # .less       -> .css
 github mintplant/vim-literate-coffeescript
                                     # .litcoffee  -> .js
 github juvenn/mustache              # .mustache   :{
-github vimoutliner/vimoutliner      # .otl        vim outliner
 github cakebaker/scss-syntax.vim    # .scss       -> .css
 github exu/pgsql.vim                # .sql        postgresql 4 life
 github wavded/vim-stylus            # .styl       -> .css

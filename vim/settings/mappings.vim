@@ -23,6 +23,9 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " call twiddlecase
   xnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
+  " Easy Align
+  xmap <CR> <Plug>(EasyAlign)
+
   " yank to system clipboard
   xnoremap <Leader>y "*y
 
