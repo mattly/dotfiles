@@ -1,5 +1,8 @@
 function mutt
+    set window_name (tmux list-windows | grep '(active)$' | awk '{print $2}' | sed -E 's|\*$||')
     tmux rename-window "mutt"
-    bash --login -c "cd ~/Desktop; /usr/local/bin/mutt $argv";
-    tmux rename-window (echo $PWD | sed -e "s|$HOME|~|")
+    pushd ~/Desktop
+    /usr/local/bin/mutt $argv
+    popd
+    tmux rename-window $window_name
 end
