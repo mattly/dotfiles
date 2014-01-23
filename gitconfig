@@ -3,10 +3,6 @@
   name = Matthew Lyon
 [github]
   user = mattly
-  ; the 'hub' command pulls from $GITHUB_TOKEN
-  ; don't set it here, break anything that requires it to here
-  ; and the complain to the maker of said thing that they suck
-  ; token = !sh -c 'echo $GITHUB_TOKEN'
 [hub]
   protocol=https
 
