@@ -31,7 +31,7 @@ execute pathogen#infect()
   set nostartofline                     " don't jump to line start on scroll
   set ttyfast                           " we're local 99% of the time
   set scrolloff=5                       " minimum lines to show around cursor
-  set sidescrolloff=15                  " min characters to show sideways
+  set sidescrolloff=3                   " min characters to show sideways
   " highlight the cursor line for the current window only
   augroup CursorLine
     au!
