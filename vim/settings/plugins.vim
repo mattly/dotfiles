@@ -3,7 +3,6 @@ let g:ragtag_global_maps = 1
 
 " Syntastic
 let g:syntastic_check_on_open=1
-let g:syntastic_auto_loc_list=1
 let g:syntastic_html_checkers = []
 
 " Autoclose
