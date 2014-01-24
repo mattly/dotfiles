@@ -54,4 +54,11 @@ function! MatchTechWordsToAvoid()
   match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
 endfunction
 
+function! ToggleBackground()
+  if &background == 'light'
+    set background=dark
+  else
+    set background=light
+  end
+endfunction
 

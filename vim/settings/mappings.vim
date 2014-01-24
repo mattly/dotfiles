@@ -248,8 +248,12 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " leader mappings:
   "   b   CTRL-p Buffer mode
   nnoremap <Leader>b :CtrlPBuffer<CR>
+  "   c   Regen ctags
+  nnoremap <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
+  "   d   Toggle Dark / Light
+  nnoremap <Leader>d :call ToggleBackground()<CR>
   "   f   CTRL-p File mode
-  nnoremap <Leader>b :CtrlP<CR>
+  nnoremap <Leader>f :CtrlP<CR>
 
   " - g - Git
   "   gb  - git blame
@@ -265,6 +269,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   "   k   fix syntax highlighting
   nnoremap <leader>k :syntax sync fromstart<cr>
 
+  "   m   Open in Marked.app
+  nnoremap <leader>m :!open -a Marked.app %<CR><CR>
   "   n   line number toggling
   nnoremap <Leader>n :call LineNumbers()<CR>
   "   p   paste from system clipboard
@@ -286,6 +292,9 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <Leader>sa zg
   nnoremap <Leader>s? z=
   "
+  nnoremap <Leader>u :!open -g <cWORD><CR><CR>
+  "   v   reload Vim config
+  nnoremap <Leader>v :so ~/.vimrc<CR>
   "   w   strip trailing whitespace
   nnoremap <leader>w :StripTrailingWhitespaces<CR>
 
