@@ -140,7 +140,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " J: Join lines
   " k: Go one line up
   " K (orig): Lookup word under cursor with keywordprg
-  nnoremap K :grep
+  " K: Grep word under cursor
+  nnoremap <silent> K :grep! <cword><CR><CR>
   " l: Go one character right ------------------ never use ?
   " L: Goto bottom of window ------------------- never use
   " ;: Repeat last f, t, F, or T
@@ -188,8 +189,6 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " //: Clear search highlighting
   nnoremap // :nohlsearch<CR>
   " ?: Search Backwards
-  " save easier
-  nnoremap <CR> :w<CR>
   " toggle current fold easier
   nnoremap <Space> za
 
@@ -246,12 +245,12 @@ let mapleader = ','                     " backslash doesn't make sense to me.
 " Normal Mode Leader Mappings
 " =============================================================================
   " leader mappings:
+  "   a   Toggle Autoformat mode
+  " nnoremap <Leader>a
   "   b   CTRL-p Buffer mode
   nnoremap <Leader>b :CtrlPBuffer<CR>
   "   c   Regen ctags
   nnoremap <silent> <Leader>r :!/usr/local/bin/ctags -f tags -R *<CR><CR>
-  "   d   Toggle Dark / Light
-  nnoremap <Leader>d :call ToggleBackground()<CR>
   "   f   CTRL-p File mode
   nnoremap <Leader>f :CtrlP<CR>
 
@@ -267,18 +266,18 @@ let mapleader = ','                     " backslash doesn't make sense to me.
 
   "
   "   k   fix syntax highlighting
-  nnoremap <leader>k :syntax sync fromstart<cr>
+  "       haven't needed this in a while
+  " nnoremap <leader>k :syntax sync fromstart<cr>
+  nnoremap <leader>k :Ag<space>
 
   "   m   Open in Marked.app
   nnoremap <leader>m :!open -a Marked.app %<CR><CR>
-  "   n   line number toggling
-  nnoremap <Leader>n :call LineNumbers()<CR>
   "   p   paste from system clipboard
   "   P   paste from system clipboard
   nnoremap <Leader>p "*p
   nnoremap <Leader>P "*P
   "   r   CTRL-p in MRU file mode
-  nnoremap <Leader>r :CtrlPMRU<CR>
+  nnoremap <silent><Leader>r :CtrlPMRU<CR>
   "
   " - s - Spelling
   "   sa  - add word to dictionary
@@ -286,15 +285,20 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   "   sp  - previous misspelling
   "   ss  - toggle spelling
   "   s?  - spelling suggestions
-  nnoremap <Leader>ss :setlocal spell!<CR>
-  nnoremap <Leader>sn ]s
-  nnoremap <Leader>sp ]p
-  nnoremap <Leader>sa zg
-  nnoremap <Leader>s? z=
+  " nnoremap <Leader>ss :setlocal spell!<CR>
+  " nnoremap <Leader>sn ]s
+  " nnoremap <Leader>sp ]p
+  " nnoremap <Leader>sa zg
+  " nnoremap <Leader>s? z=
+  "   s   Lexical spelling suggestion     defined in plugins.vim
+  "   t   Lexical thesaurus suggestion    defined in plugins.vim
   "
-  nnoremap <Leader>u :!open -g <cWORD><CR><CR>
+  "   S   Source current buffer
+  nnoremap <silent><Leader>S :source %<CR>
+  "   u   Open this url
+  nnoremap <silent><Leader>u :!open -g <cWORD><CR><CR>
   "   v   reload Vim config
-  nnoremap <Leader>v :so ~/.vimrc<CR>
+  nnoremap <silent><Leader>v :so ~/.vimrc<CR>
   "   w   strip trailing whitespace
   nnoremap <leader>w :StripTrailingWhitespaces<CR>
 
@@ -306,4 +310,25 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <Leader>Y "*Y
   "   z   previous buffer
   nnoremap <silent><Leader>z :bp<CR>
+
+
+" Function Mappings
+" =============================================================================
+  " these are mostly for toggles
+  nnoremap <silent><F1> :call ToggleBackground()<CR>
+  nnoremap <silent><F2> :setlocal spell!<CR>
+  nnoremap <silent><F3> :VoomToggle pandoc<CR>
+  nnoremap <silent><F4> :VimroomToggle<CR>
+
+  nnoremap <silent><F5> :setlocal nu!<CR>:SignifyToggle<CR>
+  function! ToggleFoldColumn()
+    if &foldcolumn == 0
+      set foldcolumn=2
+    else
+      set foldcolumn=0
+    endif
+  endfunction
+  nnoremap <silent><F6> :call ToggleFoldColumn()<CR>
+  nnoremap <silent><F7> :setlocal cursorline!<CR>
+  nnoremap <silent><F8> :setlocal cursorcolumn!<CR>
 

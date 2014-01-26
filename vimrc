@@ -18,6 +18,7 @@ execute pathogen#infect()
   set nowritebackup                     " do not keep backups while working
   set noswapfile                        " don't keep swap files either
   set spelllang=en_us                   " When you need it, you need it.
+  set thesaurus='~/.vim/thesaurus/mthesaur.txt'
   set tags+=../tags,../../tags,../../../tags,../../../../tags,tmp/tags
 
 
@@ -32,12 +33,8 @@ execute pathogen#infect()
   set ttyfast                           " we're local 99% of the time
   set scrolloff=5                       " minimum lines to show around cursor
   set sidescrolloff=3                   " min characters to show sideways
-  " highlight the cursor line for the current window only
-  augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-  augroup END
+  " set nocursorline                      " turn this on manually if you wan it
+  set nocursorcolumn
 
   " Alerts
     set noerrorbells                      " shut up already
@@ -48,7 +45,6 @@ execute pathogen#infect()
     set splitright                        " open new vert splits to the right
 
     set fillchars=vert:\│,stl:\ 
-    set showbreak=↪
 
   " Keyboarding
     set backspace=indent,eol,start        " backspace over anything
@@ -66,7 +62,7 @@ execute pathogen#infect()
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
   " Searching
-    set grepprg="ag --nocolor --nogroup --column"
+    set grepprg=ag\ --nogroup\ --nocolor
     set hlsearch                          " because awesome
     set ignorecase                        " ignore case in searches
     set smartcase                         " unless there is a capital letter
@@ -95,6 +91,7 @@ execute pathogen#infect()
   set list listchars=tab:»\ ,trail:·,precedes:<,extends:>
 
   set nowrap                            " Text wrapping should be done manually
+  set linebreak                         " break on words
 
   set cpoptions+=J                      " help cpoptions
                                         " defaults: aABceFs

@@ -13,3 +13,4 @@ mutt/tmpdir
 mutt/mailboxes
 config/fish/generated_completions
 vim/view
+vim/thesaurus

@@ -6,50 +6,60 @@ brew vim
 [ -z $code ] && code=$HOME/code/mattly
 cd $code/dotfiles/vim/bundle
 
-github tpope/vim-pathogen
-github tpope/vim-endwise
-github tpope/vim-repeat
-github tpope/vim-surround
-github tpope/vim-unimpaired
-github tpope/vim-abolish
-github tpope/vim-eunuch
-github tpope/vim-commentary
-github tpope/vim-vinegar
-github ervandew/supertab
-github michaeljsmith/vim-indent-object
-github Townk/vim-autoclose
-github junegunn/vim-easy-align
+# plugin helpers
+  github tpope/vim-pathogen
+  github tpope/vim-repeat
 
-github mhinz/vim-startify
+# file helpers
+  github tpope/vim-eunuch
+
+# insert-mode helpers
+  github Townk/vim-autoclose
+  github ervandew/supertab
+  github tpope/vim-endwise
+  github tpope/vim-surround
+
+# text manipulation
+  github tpope/vim-commentary
+  github junegunn/vim-easy-align
+  github tpope/vim-abolish
+  github terryma/vim-multiple-cursors
+
+# text-objects
+  github michaeljsmith/vim-indent-object
 
 # writing tools
-github mikewest/vimroom
-github reedes/vim-wordy
-github reedes/vim-pencil
-github nelstrom/vim-markdown-folding
+  github mikewest/vimroom
+  github reedes/vim-pencil
+  github reedes/vim-lexical
+  github reedes/vim-wordy
+  github nelstrom/vim-markdown-folding
 
 # outlining
-github vimoutliner/vimoutliner      # .otl        vim outliner
+  github vim-voom/VOoM
 
 # dash integration
-github rizzatti/funcoo.vim
-github rizzatti/dash.vim
+  github rizzatti/funcoo.vim
+  github rizzatti/dash.vim
 
 # navigation
-github kien/ctrlp.vim
-github majutsushi/tagbar
+  github kien/ctrlp.vim
+  github majutsushi/tagbar
+  github rking/ag.vim
+  github tpope/vim-vinegar
 
-#colors
-github mattly/vim-colors-pencil
+# UI and colors
+  github mattly/vim-colors-pencil
 
 # git & scm
-github tpope/vim-git
-github tpope/vim-fugitive
-github mhinz/vim-signify
+  github tpope/vim-git
+  github tpope/vim-fugitive
+  github mhinz/vim-signify
 
+# Language-Specific
 # vim
-github tpope/vim-scriptease
-github dbakker/vim-lint
+  github tpope/vim-scriptease
+  github dbakker/vim-lint
 
 # syntax
 github rosstimson/bats.vim          # .bats       bash unit testing
