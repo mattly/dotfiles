@@ -40,6 +40,5 @@ if test -e "$HOME/.env"
 end
 
 # -- DISH THE FISH
-set fish_greeting ""
 set -x CLICOLOR 1
 
