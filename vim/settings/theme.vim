@@ -1,5 +1,4 @@
 set background&
-let g:pencil_higher_contrast_ui=1
 colors pencil
 
 function! ToggleBackground()
