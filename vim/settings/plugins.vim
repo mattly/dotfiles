@@ -34,6 +34,7 @@ augroup pencil
   autocmd FileType markdown call pencil#init()
   autocmd FileType text call pencil#init({'wrap': 'hard'})
   autocmd FileType mail call pencil#init({'wrap': 'hard'})
+  autocmd FileType gitcommit call pencil#init({'wrap': 'hard', 'autoformat': 1})
 augroup END
 
 " lexical
@@ -44,6 +45,8 @@ augroup lexical
   autocmd!
   autocmd FileType markdown call lexical#init()
   autocmd FileType text call lexical#init()
+  autocmd FileType mail call lexical#init()
+  autocmd FileType gitcommit call lexical#init()
 augroup END
 
 " vimroom
