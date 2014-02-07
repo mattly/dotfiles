@@ -274,6 +274,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
 
   "   m   Open in Marked.app
   nnoremap <leader>m :!open -a Marked.app %<CR><CR>
+  "   o   Open this cWORD
+  nnoremap <silent><Leader>o :!open -g <cWORD><CR><CR>
   "   p   paste from system clipboard
   "   P   paste from system clipboard
   nnoremap <Leader>p "*p
@@ -297,8 +299,6 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   "
   "   S   Source current buffer
   nnoremap <silent><Leader>S :source %<CR>
-  "   u   Open this url
-  nnoremap <silent><Leader>u :!open -g <cWORD><CR><CR>
   "   v   reload Vim config
   nnoremap <silent><Leader>v :so ~/.vimrc<CR>
   "   w   strip trailing whitespace
