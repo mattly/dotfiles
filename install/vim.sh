@@ -27,6 +27,8 @@ cd $code/dotfiles/vim/bundle
 
 # text-objects
   github michaeljsmith/vim-indent-object
+  github gcmt/wildfire.vim
+  github tpope/vim-jdaddy
 
 # writing tools
   github mikewest/vimroom

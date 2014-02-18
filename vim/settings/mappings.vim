@@ -191,6 +191,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " ?: Search Backwards
   " toggle current fold easier
   nnoremap <Space> za
+  " Enter: mapped by wildfire
+  " Backspace: mapped by wildfire
 
 " =============================================================================
 " Normal Mode Control Mappings
