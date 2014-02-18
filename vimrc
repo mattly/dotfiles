@@ -106,12 +106,13 @@ execute pathogen#infect()
                                         " ==========
                                         " J: sentences are two-spaced
 
+  set formatlistpat="^\s*\d+[\]:.)}]\s+"
+                                        " guidance for 'n' in formatoptions
   set formatoptions=cqn1                " help fo-table
                                         " defaults: tcq
                                         " t: auto-wrap text using text-width
                                         " c: auto-wrap comments
                                         " q: auto-format comments with 'gq'
-                                        " n: recognize numbered lists
                                         " 1: don't break after 1-char word
 
 for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
