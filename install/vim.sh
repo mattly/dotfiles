@@ -29,6 +29,7 @@ cd $code/dotfiles/vim/bundle
   github michaeljsmith/vim-indent-object
   github gcmt/wildfire.vim
   github tpope/vim-jdaddy
+  github wellle/targets.vim
 
 # writing tools
   github mikewest/vimroom
