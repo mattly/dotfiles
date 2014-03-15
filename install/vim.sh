@@ -52,7 +52,7 @@ cd $code/dotfiles/vim/bundle
   github tpope/vim-vinegar
 
 # UI and colors
-  github mattly/vim-colors-pencil
+  github reedes/vim-colors-pencil
   github kien/rainbow_parentheses.vim
 
 # git & scm
