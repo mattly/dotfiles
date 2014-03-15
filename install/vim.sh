@@ -53,36 +53,50 @@ cd $code/dotfiles/vim/bundle
 
 # UI and colors
   github mattly/vim-colors-pencil
+  github kien/rainbow_parentheses.vim
 
 # git & scm
   github tpope/vim-git
   github tpope/vim-fugitive
   github mhinz/vim-signify
 
-# Language-Specific
-# vim
+# Environment-Specific
+
+# Clojure
+  github guns/vim-clojure-static      # .clj        clojure syntax
+  github guns/vim-sexp.git
+  github tpope/vim-sexp-mappings-for-regular-people
+  github tpope/vim-fireplace
+
+# CSS
+  github cakebaker/scss-syntax.vim    # .scss       -> .css
+  github groenewege/vim-less          # .less       -> .css
+  github wavded/vim-stylus            # .styl       -> .css
+
+# Javascript
+  github pangloss/vim-javascript      # .js         better indenting
+  github kchmck/vim-coffee-script     # .coffee     -> .js
+  github mintplant/vim-literate-coffeescript
+                                      # .litcoffee  -> .js
+  github digitaltoad/vim-jade         # .jade       -> .html
+
+# Markup / Templates
+  github tpope/vim-ragtag             # .html       formatting tools
+  github juvenn/mustache              # .mustache   :{
+  github cespare/vim-toml             # .toml       :/
+
+# Shell
+  github rosstimson/bats.vim          # .bats       bash unit testing
+  github aliva/vim-fish               # .fish
+
+# Viml
   github tpope/vim-scriptease
   github dbakker/vim-lint
 
-# syntax
-github rosstimson/bats.vim          # .bats       bash unit testing
-github kchmck/vim-coffee-script     # .coffee     -> .js
-github guns/vim-clojure-static      # .clj        clojure syntax
-github tpope/vim-fireplace          # .clj        clojure repl
-github elixir-lang/vim-elixir       # .ex
-github aliva/vim-fish               # .fish
-github jnwhiteh/vim-golang          # .go
-github wannesm/wmgraphviz.vim       # .gv         graphviz
-github tpope/vim-ragtag             # .html       formatting tools
-github digitaltoad/vim-jade         # .jade       -> .html
-github pangloss/vim-javascript      # .js         better indenting
-github groenewege/vim-less          # .less       -> .css
-github mintplant/vim-literate-coffeescript
-                                    # .litcoffee  -> .js
-github juvenn/mustache              # .mustache   :{
-github cakebaker/scss-syntax.vim    # .scss       -> .css
-github exu/pgsql.vim                # .sql        postgresql 4 life
-github wavded/vim-stylus            # .styl       -> .css
-github cespare/vim-toml             # .toml       :/
+# Miscellaneous
+  github elixir-lang/vim-elixir       # .ex
+  github jnwhiteh/vim-golang          # .go
+  github wannesm/wmgraphviz.vim       # .gv         graphviz
+  github exu/pgsql.vim                # .sql        postgresql 4 life
 
 # TODO if "any" changes, vim ':Helptags'
