@@ -11,10 +11,10 @@ function fish_prompt -d "Write out the prompt"
     if echo $git_status[1] | grep "Not currently on any branch." >/dev/null
       printf 'no-branch'
     else
-      printf '%s' (echo $git_status[1] | awk ' { print $4 } ')
+      printf '%s' (echo $git_status[1] | awk ' { print $3 } ')
     end
     if echo $git_status[2] | grep "Your branch is" >/dev/null
-      switch (echo $git_status[2] | awk ' { print $5 } ')
+      switch (echo $git_status[2] | awk ' { print $4 } ')
         case 'ahead'
           printf "%s↑%s" (set_color cyan) (set_color normal)
         case 'diverged'
@@ -22,7 +22,7 @@ function fish_prompt -d "Write out the prompt"
         case 'behind'
           printf "%s↓%s" (set_color green) (set_color normal)
         case '*'
-          printf '::%s' (echo $git_status[2] | awk ' { print $5 } ' )
+          printf '::%s' (echo $git_status[2] | awk ' { print $4 } ' )
       end
     end
     if echo $git_status | grep "nothing to commit" >/dev/null
