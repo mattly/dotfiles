@@ -64,7 +64,7 @@ cd $code/dotfiles/vim/bundle
 
 # Clojure
   github guns/vim-clojure-static      # .clj        clojure syntax
-  github guns/vim-sexp.git
+  github guns/vim-sexp
   github tpope/vim-sexp-mappings-for-regular-people
   github tpope/vim-fireplace
 

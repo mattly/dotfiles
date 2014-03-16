@@ -1,3 +1,4 @@
+pkg brew
 # basics
   brew readline
   brew bcrypt
@@ -11,6 +12,7 @@
 # environment
   brew fish
   # on_install "set_shell fish"
+
   brew tmux
   brew reattach-to-user-namespace --wrap-pbpaste-and-pbcopy
 
@@ -24,23 +26,6 @@
   include vim.sh
   # endgroup vim
 
-
-# PL
-  include ruby.sh
-  # include node.sh
-
-  #brew clojure
-  brew_tap homebrew/versions
-  brew erlang
-  brew elixir
-  brew go
-  brew bats
-
-# databases
-  brew postgresql
-  brew redis
-  brew riak
-
 # etc tools
   brew ag
   brew par
@@ -53,7 +38,5 @@
 
   brew apple-gcc42
 
-include osx.sh
 
-# email
-  include email.sh
+# include osx.sh
