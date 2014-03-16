@@ -27,7 +27,7 @@ pkg brew
   # endgroup vim
 
 # etc tools
-  brew ag
+  brew the_silver_searcher
   brew par
   brew curl
   brew jq
