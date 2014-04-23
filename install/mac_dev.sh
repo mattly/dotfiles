@@ -1,42 +1,41 @@
-pkg brew
+ok brew
+
+destination push $HOME/code/mattly
+  # github mattly/dotfiles
+  # symlink --tmpl=".\$f" dotfiles/configs/*
+destination pop
+
 # basics
-  brew readline
-  brew bcrypt
-  brew openssl
+ok brew readline
+ok brew bcrypt
+ok brew openssl
 
 # git tools
-  brew git
-  brew hub
-  brew tig
+ok brew git
+ok brew hub
+ok brew tig
 
 # environment
-  brew fish
+ok brew fish
   # on_install "set_shell fish"
 
-  brew tmux
-  brew reattach-to-user-namespace --wrap-pbpaste-and-pbcopy
+ok brew tmux
+ok brew reattach-to-user-namespace --wrap-pbpaste-and-pbcopy
 
-# personal
-  code=$HOME/code/mattly
-  github mattly/dotfiles $code/dotfiles
-  # on_install_or_update "cd $lastdir && make symlink"
 
-# vim
-  # group vim
-  include vim.sh
-  # endgroup vim
+include vim.sh
 
 # etc tools
-  brew the_silver_searcher
-  brew par
-  brew curl
-  brew jq
-  brew nmap
-  brew dnsmasq
-  brew mtr
-  brew graphviz
+ok brew the_silver_searcher
+ok brew par
+ok brew curl
+ok brew jq
+ok brew nmap
+ok brew dnsmasq
+ok brew mtr
+ok brew graphviz
 
-  brew apple-gcc42
+ok brew apple-gcc42
 
 
 # include osx.sh
