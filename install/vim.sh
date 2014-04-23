@@ -85,7 +85,6 @@ ok github digitaltoad/vim-jade         # .jade       -> .html
 # Markup / Templates
 ok github tpope/vim-ragtag             # .html       formatting tools
 ok github juvenn/mustache              # .mustache   :{
-ok github cespare/vim-toml             # .toml       :/
 
 # Shell
 ok github rosstimson/bats.vim          # .bats       bash unit testing
