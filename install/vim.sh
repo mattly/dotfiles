@@ -1,102 +1,106 @@
 #!/usr/bin/env bash
-brew vim
+ok brew vim
 
 # TODO: keep track of 'any' changes
 
 [ -z $code ] && code=$HOME/code/mattly
-cd $code/dotfiles/vim/bundle
+destination push $code/dotfiles/vim/bundle
+
+#group start --dir=$code/dotfiles/vim/bundle
 
 # plugin helpers
-  github tpope/vim-pathogen
-  github tpope/vim-repeat
+ok github tpope/vim-pathogen
+ok github tpope/vim-repeat
 
 # file helpers
-  github tpope/vim-eunuch
+ok github tpope/vim-eunuch
 
 # insert-mode helpers
-  github Townk/vim-autoclose
-  github ervandew/supertab
-  github tpope/vim-endwise
-  github tpope/vim-surround
+ok github Townk/vim-autoclose
+ok github ervandew/supertab
+ok github tpope/vim-endwise
+ok github tpope/vim-surround
 
 # text manipulation
-  github tpope/vim-commentary
-  github junegunn/vim-easy-align
-  github tpope/vim-abolish
-  github terryma/vim-multiple-cursors
+ok github tpope/vim-commentary
+ok github junegunn/vim-easy-align
+ok github tpope/vim-abolish
+ok github terryma/vim-multiple-cursors
 
 # text-objects
-  github michaeljsmith/vim-indent-object
-  github gcmt/wildfire.vim
-  github tpope/vim-jdaddy
-  github wellle/targets.vim
+ok github michaeljsmith/vim-indent-object
+ok github gcmt/wildfire.vim
+ok github tpope/vim-jdaddy
+ok github wellle/targets.vim
 
 # writing tools
-  github mikewest/vimroom
-  github reedes/vim-pencil
-  github reedes/vim-lexical
-  github reedes/vim-wordy
-  github nelstrom/vim-markdown-folding
+ok github mikewest/vimroom
+ok github reedes/vim-pencil
+ok github reedes/vim-lexical
+ok github reedes/vim-wordy
+ok github nelstrom/vim-markdown-folding
 
 # outlining
-  github vim-voom/VOoM
+ok github vim-voom/VOoM
 
 # dash integration
-  github rizzatti/funcoo.vim
-  github rizzatti/dash.vim
+ok github rizzatti/funcoo.vim
+ok github rizzatti/dash.vim
 
 # navigation
-  github kien/ctrlp.vim
-  github majutsushi/tagbar
-  github rking/ag.vim
-  github tpope/vim-vinegar
+ok github kien/ctrlp.vim
+ok github majutsushi/tagbar
+ok github rking/ag.vim
+ok github tpope/vim-vinegar
 
 # UI and colors
-  github reedes/vim-colors-pencil
-  github kien/rainbow_parentheses.vim
+ok github reedes/vim-colors-pencil
+ok github kien/rainbow_parentheses.vim
 
 # git & scm
-  github tpope/vim-git
-  github tpope/vim-fugitive
-  github mhinz/vim-signify
+ok github tpope/vim-git
+ok github tpope/vim-fugitive
+ok github mhinz/vim-signify
 
 # Environment-Specific
 
 # Clojure
-  github guns/vim-clojure-static      # .clj        clojure syntax
-  github guns/vim-sexp
-  github tpope/vim-sexp-mappings-for-regular-people
-  github tpope/vim-fireplace
+ok github guns/vim-clojure-static      # .clj        clojure syntax
+ok github guns/vim-sexp
+ok github tpope/vim-sexp-mappings-for-regular-people
+ok github tpope/vim-fireplace
 
 # CSS
-  github cakebaker/scss-syntax.vim    # .scss       -> .css
-  github groenewege/vim-less          # .less       -> .css
-  github wavded/vim-stylus            # .styl       -> .css
+ok github cakebaker/scss-syntax.vim    # .scss       -> .css
+ok github groenewege/vim-less          # .less       -> .css
+ok github wavded/vim-stylus            # .styl       -> .css
 
 # Javascript
-  github pangloss/vim-javascript      # .js         better indenting
-  github kchmck/vim-coffee-script     # .coffee     -> .js
-  github mintplant/vim-literate-coffeescript
+ok github pangloss/vim-javascript      # .js         better indenting
+ok github kchmck/vim-coffee-script     # .coffee     -> .js
+ok github mintplant/vim-literate-coffeescript
                                       # .litcoffee  -> .js
-  github digitaltoad/vim-jade         # .jade       -> .html
+ok github digitaltoad/vim-jade         # .jade       -> .html
 
 # Markup / Templates
-  github tpope/vim-ragtag             # .html       formatting tools
-  github juvenn/mustache              # .mustache   :{
-  github cespare/vim-toml             # .toml       :/
+ok github tpope/vim-ragtag             # .html       formatting tools
+ok github juvenn/mustache              # .mustache   :{
+ok github cespare/vim-toml             # .toml       :/
 
 # Shell
-  github rosstimson/bats.vim          # .bats       bash unit testing
-  github aliva/vim-fish               # .fish
+ok github rosstimson/bats.vim          # .bats       bash unit testing
+ok github aliva/vim-fish               # .fish
 
 # Viml
-  github tpope/vim-scriptease
-  github dbakker/vim-lint
+ok github tpope/vim-scriptease
+ok github dbakker/vim-lint
 
 # Miscellaneous
-  github elixir-lang/vim-elixir       # .ex
-  github jnwhiteh/vim-golang          # .go
-  github wannesm/wmgraphviz.vim       # .gv         graphviz
-  github exu/pgsql.vim                # .sql        postgresql 4 life
+ok github elixir-lang/vim-elixir       # .ex
+ok github jnwhiteh/vim-golang          # .go
+ok github wannesm/wmgraphviz.vim       # .gv         graphviz
+ok github exu/pgsql.vim                # .sql        postgresql 4 life
 
 # TODO if "any" changes, vim ':Helptags'
+
+#group end
