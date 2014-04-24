@@ -13,6 +13,7 @@ augroup filetypedetect
 
   au! BufRead,BufNewFile *.ru,*.rake                       setf ruby
   au! BufRead,BufNewFile Capfile,Gemfile,Isolate,Rakefile  setf ruby
+  au! BufRead,BufNewFile Vagrantfile                       setf ruby
 
   au! BufRead,BufNewFile *vimrc                            setf vim
 augroup END
