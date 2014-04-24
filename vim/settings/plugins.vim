@@ -4,6 +4,8 @@ let g:ragtag_global_maps = 1
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_html_checkers = []
+" workaround for syntastic/sh.vim, its shebang reader, and fish
+autocmd FileType sh let b:shell='bash'
 
 " Autoclose
 let g:AutoClosePreserveDotReg=0
