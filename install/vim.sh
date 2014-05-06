@@ -95,6 +95,7 @@ ok github tpope/vim-scriptease
 ok github dbakker/vim-lint
 
 # Miscellaneous
+ok github vim-scripts/csv.vim          # .csv
 ok github elixir-lang/vim-elixir       # .ex
 ok github jnwhiteh/vim-golang          # .go
 ok github wannesm/wmgraphviz.vim       # .gv         graphviz
