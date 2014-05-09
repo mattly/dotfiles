@@ -37,5 +37,6 @@ ok brew graphviz
 
 ok brew apple-gcc42
 
+ok brew ansible
 
 # include osx.sh
