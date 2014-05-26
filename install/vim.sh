@@ -35,7 +35,8 @@ ok github tpope/vim-jdaddy
 ok github wellle/targets.vim
 
 # writing tools
-ok github mikewest/vimroom
+ok github junegunn/goyo.vim
+
 ok github reedes/vim-pencil
 ok github reedes/vim-lexical
 ok github reedes/vim-wordy

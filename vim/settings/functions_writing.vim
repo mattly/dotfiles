@@ -1,34 +1,42 @@
 let g:writing = 0
+
 let g:old_wrap=&wrap
 function! WriteMode()
   if g:writing == 0
+    let t:writing_revert = {
+          \ 'wrap': &wrap,
+          \ 'colorcolumn': &colorcolumn,
+          \ 'cursorline': &cursorline,
+          \ 'cursorcolumn': &cursorcolumn,
+          \ 'list': &list,
+          \ 'number': &number
+          \}
     let g:writing = 1
-    " set columns=80
     set shortmess+=W
-    let g:old_wrap = &wrap
     set wrap
     set colorcolumn=0
-    set noruler
     set linebreak
     set nocursorline
     set nocursorcolumn
     set nolist
     set nonumber
     set noshowmode
-    set laststatus=0
     hi NonText guifg=bg
     if has("gui_running")
       let g:transparency = &transparency
       set transparency=0
-      let g:vimroom_guibackground=synIDattr(hlID('Normal'), 'bg#')
     endif
-    :VimroomToggle
+    silent !tmux set status off
+    :Goyo
   else
-    :VimroomToggle
+    :Goyo
+    silent !tmux set status on
     let g:writing = 0
     set showmode
     set shortmess-=W
-    set wrap=g:old_wrap
+    for [k,v] in items(t:writing_revert)
+      execute printf("let &%s = %s", k, string(v))
+    endfor
     hi clear
     if has("gui_running")
       set transparency=g:transparency
