@@ -40,3 +40,5 @@ ok brew apple-gcc42
 ok brew ansible
 
 # include osx.sh
+
+include sketch.sh
