@@ -26,6 +26,7 @@ ok github tpope/vim-commentary
 ok github junegunn/vim-easy-align
 ok github tpope/vim-abolish
 ok github terryma/vim-multiple-cursors
+ok github tpope/vim-characterize
 
 # text-objects
 ok github michaeljsmith/vim-indent-object
@@ -97,6 +98,7 @@ ok github dbakker/vim-lint
 # Miscellaneous
 ok github vim-scripts/csv.vim          # .csv
 ok github elixir-lang/vim-elixir       # .ex
+ok github jimenezrick/vimerl           # .erl
 ok github jnwhiteh/vim-golang          # .go
 ok github wannesm/wmgraphviz.vim       # .gv         graphviz
 ok github exu/pgsql.vim                # .sql        postgresql 4 life
