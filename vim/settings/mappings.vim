@@ -322,7 +322,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <silent><F1> :call ToggleBackground()<CR>
   nnoremap <silent><F2> :setlocal spell!<CR>
   nnoremap <silent><F3> :VoomToggle pandoc<CR>
-  nnoremap <silent><F4> :VimroomToggle<CR>
+  nnoremap <silent><F4> :call WriteMode()<CR>
 
   nnoremap <silent><F5> :setlocal nu!<CR>:SignifyToggle<CR>
   function! ToggleFoldColumn()
