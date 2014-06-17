@@ -72,6 +72,8 @@
   pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
   # creates a remote branch
   push-remote = !sh -c 'git push "$0" HEAD'
+  # current lines by last committer
+  rank = !sh -c 'for file in $(git ls-files); do git blame $file | sed -e 's/^[^(]*(//' | awk '{print $1 $2}'; done | sort | uniq -ic | sort -nr'
   # interactive rebase
   ri = rebase --interactive --autosquash
   # diff the index against the previous commit
