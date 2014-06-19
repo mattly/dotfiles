@@ -60,49 +60,56 @@ ok github reedes/vim-colors-pencil
 ok github kien/rainbow_parentheses.vim
 
 # git & scm
-ok github tpope/vim-git
+ok github tpope/vim-git                 # .gitcommit
 ok github tpope/vim-fugitive
 ok github mhinz/vim-signify
+ok github idanarye/vim-merginal
 
 # Environment-Specific
 
 # Clojure
-ok github guns/vim-clojure-static      # .clj        clojure syntax
+ok github guns/vim-clojure-static       # .clj        clojure syntax
 ok github guns/vim-sexp
 ok github tpope/vim-sexp-mappings-for-regular-people
 ok github tpope/vim-fireplace
 
 # CSS
-ok github cakebaker/scss-syntax.vim    # .scss       -> .css
-ok github groenewege/vim-less          # .less       -> .css
-ok github wavded/vim-stylus            # .styl       -> .css
+ok github cakebaker/scss-syntax.vim     # .scss       -> .css
+ok github groenewege/vim-less           # .less       -> .css
+ok github wavded/vim-stylus             # .styl       -> .css
 
 # Javascript
-ok github pangloss/vim-javascript      # .js         better indenting
-ok github kchmck/vim-coffee-script     # .coffee     -> .js
+ok github pangloss/vim-javascript       # .js         better indenting
+ok github kchmck/vim-coffee-script      # .coffee     -> .js
 ok github mintplant/vim-literate-coffeescript
-                                      # .litcoffee  -> .js
-ok github digitaltoad/vim-jade         # .jade       -> .html
+                                        # .litcoffee  -> .js
+ok github digitaltoad/vim-jade          # .jade       -> .html
 
 # Markup / Templates
-ok github tpope/vim-ragtag             # .html       formatting tools
-ok github juvenn/mustache              # .mustache   :{
+ok github tpope/vim-ragtag              # .html       formatting tools
+ok github juvenn/mustache               # .mustache   :{
+ok github Glench/Vim-Jinja2-Syntax      # .html       jinja/nunjukcs/swig
 
 # Shell
-ok github rosstimson/bats.vim          # .bats       bash unit testing
-ok github aliva/vim-fish               # .fish
+ok github rosstimson/bats.vim           # .bats       bash unit testing
+ok github aliva/vim-fish                # .fish
 
 # Viml
 ok github tpope/vim-scriptease
 ok github dbakker/vim-lint
 
 # Miscellaneous
-ok github vim-scripts/csv.vim          # .csv
-ok github elixir-lang/vim-elixir       # .ex
-ok github jimenezrick/vimerl           # .erl
-ok github jnwhiteh/vim-golang          # .go
-ok github wannesm/wmgraphviz.vim       # .gv         graphviz
-ok github exu/pgsql.vim                # .sql        postgresql 4 life
+ok github vim-scripts/csv.vim           # .csv
+ok github ekalinin/Dockerfile.vim       # Dockerfile
+ok github elixir-lang/vim-elixir        # .ex
+ok github jimenezrick/vimerl            # .erl
+ok github jnwhiteh/vim-golang           # .go
+ok github wannesm/wmgraphviz.vim        # .gv         graphviz
+ok github travitch/hasksyn              # .hs
+ok github wting/rust.vim                # .rust
+ok github exu/pgsql.vim                 # .sql        postgresql 4 life
+ok github andersoncustodio/vim-tmux     # tmux.config
+ok github sheerun/vim-yardoc            # yard inside .rb
 
 # TODO if "any" changes, vim ':Helptags'
 
