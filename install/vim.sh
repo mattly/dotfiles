@@ -107,6 +107,7 @@ ok github jnwhiteh/vim-golang           # .go
 ok github wannesm/wmgraphviz.vim        # .gv         graphviz
 ok github travitch/hasksyn              # .hs
 ok github wting/rust.vim                # .rust
+ok github toyamarinyon/vim-swift
 ok github exu/pgsql.vim                 # .sql        postgresql 4 life
 ok github andersoncustodio/vim-tmux     # tmux.config
 ok github sheerun/vim-yardoc            # yard inside .rb
