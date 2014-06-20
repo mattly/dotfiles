@@ -19,10 +19,7 @@ ok brew tig
 ok brew fish
   # on_install "set_shell fish"
 
-ok brew tmux
-ok brew reattach-to-user-namespace --wrap-pbpaste-and-pbcopy
-
-
+include tmux.sh
 include vim.sh
 
 # etc tools
