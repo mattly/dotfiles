@@ -65,6 +65,12 @@ destination push $code/dotfiles/vim/bundle
   ok github mhinz/vim-signify
   ok github idanarye/vim-merginal
 
+# snip!
+  ok github tomtom/tlib_vim
+  ok github MarcWeber/vim-addon-mw-utils
+  ok github garbas/vim-snipmate
+  ok github honza/vim-snippets
+
 # Language/Environment-Specific
 
   # Clojure
