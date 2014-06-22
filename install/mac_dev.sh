@@ -31,6 +31,7 @@ ok brew nmap
 ok brew dnsmasq
 ok brew mtr
 ok brew graphviz
+ok pip httpie
 
 ok brew apple-gcc42
 
