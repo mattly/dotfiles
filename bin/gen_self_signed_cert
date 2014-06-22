@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "usage: gen_self_signed_cert certname"
+  exit 1
+fi
+
+key=$1".key"
+csr=$1".csr"
+crt=$1".crt"
+
+openssl genrsa -des3 -out $key 2048
+openssl req -new -key $key -out $csr
+openssl rsa -in $key -out $key
+openssl x509 -req -days 365 -in $csr -signkey $key -out $crt
+rm $csr
