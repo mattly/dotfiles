@@ -4,7 +4,7 @@ ok brew vim
 # TODO: keep track of 'any' changes
 
 [ -z $code ] && code=$HOME/code/mattly
-destination push $code/dotfiles/vim/bundle
+destination $code/dotfiles/vim/bundle
 
 #group start --dir=$code/dotfiles/vim/bundle
 
