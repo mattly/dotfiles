@@ -3,7 +3,11 @@ ok brew
 ok directory $HOME/code/mattly
 destination $HOME/code/mattly
 ok github mattly/dotfiles
-  # symlink --tmpl=".\$f" dotfiles/configs/*
+
+destination $HOME
+for config in code/mattly/dotfiles/configs/*; do
+  ok symlink ".$(basename $config) $config"
+done
 
 # basics
 ok brew readline
