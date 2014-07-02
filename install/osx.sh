@@ -1,10 +1,17 @@
-#!/usr/bin/env sh
+# TODO: perhaps pull inspiration from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
 # auto-expand save, print dialogs
 ok defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode bool true
+ok defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 bool true
 ok defaults NSGlobalDomain PMPrintingExpandedStateForPrint bool true
+ok defaults NSGlobalDomain PMPrintingExpandedStateForPrint2 bool true
+
 # default to save to disk, not iCloud
 ok defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud bool false
+
+# disable gatekeeper
+ok defaults com.apple.LaunchServices LSQuarantine bool false
+
 # speed up the UI
 ok defaults NSGlobalDomain NSAutomaticWindowAnimationsEnabled bool false
 ok defaults NSGlobalDomain NSWindowResizeTime string .001
@@ -12,6 +19,9 @@ ok defaults NSGlobalDomain NSWindowResizeTime string .001
 ok defaults NSGlobalDomain AppleEnableMenuBarTransparency bool false
 # show all extensions
 ok defaults NSGlobalDomain AppleShowAllExtensions bool true
+# help viewer to regular window
+ok defaults com.apple.helpviewer DevMode bool true
+
 # disable auto spelling correction
 ok defaults NSGlobalDomain NSAutomaticSpellingCorrectionEnabled bool false
 
@@ -20,8 +30,10 @@ ok defaults com.apple.frameworks.diskimages skip-verify bool true
 ok defaults com.apple.frameworks.diskimages skip-verify-remote bool true
 ok defaults com.apple.frameworks.diskimages skip-verify-locked bool true
 
+# don't prompt time machine on new disks
 ok defaults com.apple.TimeMachine DoNotOfferNewDisksForBackup bool true
 
+# --- dock
 ok defaults com.apple.dock autohide bool true
 ok defaults com.apple.dock static-only bool true
 ok defaults com.apple.dock workspaces-swoosh-animation-off bool true

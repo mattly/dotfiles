@@ -1,9 +1,9 @@
 ok brew
 
-destination push $HOME/code/mattly
-  # github mattly/dotfiles
+ok directory $HOME/code/mattly
+destination $HOME/code/mattly
+ok github mattly/dotfiles
   # symlink --tmpl=".\$f" dotfiles/configs/*
-destination pop
 
 # basics
 ok brew readline
@@ -17,7 +17,11 @@ ok brew tig
 
 # environment
 ok brew fish
-  # on_install "set_shell fish"
+if did_install; then
+  echo "changing shell to fish, you will need to enter your password"
+  sudo echo /usr/local/bin/fish >> /etc/shells
+  chsh -s /usr/local/bin/fish
+fi
 
 include tmux.sh
 include vim.sh
@@ -37,6 +41,6 @@ ok brew apple-gcc42
 
 ok brew ansible
 
-# include osx.sh
+include osx.sh
 
 include sketch.sh
