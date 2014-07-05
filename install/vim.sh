@@ -4,7 +4,7 @@ ok brew vim
 # TODO: keep track of 'any' changes
 
 [ -z $code ] && code=$HOME/code/mattly
-destination $code/dotfiles/vim/bundle
+destination $code/dotfiles/configs/vim/bundle
 
 #group start --dir=$code/dotfiles/vim/bundle
 
@@ -36,6 +36,7 @@ destination $code/dotfiles/vim/bundle
 
 # writing tools
   ok github junegunn/goyo.vim
+  ok github junegunn/limelight.vim
 
   ok github reedes/vim-pencil
   ok github reedes/vim-lexical
@@ -50,8 +51,6 @@ destination $code/dotfiles/vim/bundle
   ok github rizzatti/dash.vim
 
 # navigation
-  ok github kien/ctrlp.vim
-  ok github majutsushi/tagbar
   ok github rking/ag.vim
   ok github tpope/vim-vinegar
 
