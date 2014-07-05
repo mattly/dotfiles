@@ -7,5 +7,8 @@ autocmd QuickfixCmdPost grep copen    " open the quickfix list automatically
 autocmd BufNewFile,BufRead * set foldmethod=indent
 autocmd BufNewFile,BufRead *.diff set foldmethod=diff
 
+" trigger autoread when idle
+autocmd CursorHold,CursorHoldI * checktime
+
 
 
