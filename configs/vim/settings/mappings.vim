@@ -92,6 +92,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " =: Indent Accordingly
   " +: Go to Start of Next Line
   " q: Record macro
+  nnoremap q: <nop>
   " Q (orig): Switch to "Ex" mode
   " Q: Play back macro in q slot, record it with 'qq'
   nnoremap Q @q
