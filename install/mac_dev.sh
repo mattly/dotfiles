@@ -41,6 +41,8 @@ ok brew mtr
 ok brew graphviz
 ok pip httpie
 
+ok brew direnv
+
 ok brew apple-gcc42
 
 ok brew ansible

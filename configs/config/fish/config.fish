@@ -42,3 +42,4 @@ end
 # -- DISH THE FISH
 set -x CLICOLOR 1
 
+eval (direnv hook fish)

@@ -1,4 +1,5 @@
 configs/config/configstore
+configs/config/direnv/allow
 configs/config/fish/fish_history
 configs/config/fish/fishd*
 configs/config/fish/generated_completions
