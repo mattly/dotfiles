@@ -40,6 +40,7 @@ ok brew dnsmasq
 ok brew mtr
 ok brew graphviz
 ok pip httpie
+ok pip virtualenv
 
 ok brew direnv
 
