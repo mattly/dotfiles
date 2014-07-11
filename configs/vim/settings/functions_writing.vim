@@ -26,11 +26,11 @@ function! WriteMode()
       let g:transparency = &transparency
       set transparency=0
     endif
-    silent !tmux set status off
+    " silent !tmux set status off
     :Goyo
   else
     :Goyo
-    silent !tmux set status on
+    " silent !tmux set status on
     let g:writing = 0
     set showmode
     set shortmess-=W
