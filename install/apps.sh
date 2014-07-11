@@ -28,7 +28,7 @@ ok cask fontprep
 
 # ok cask albeton-live
 ok cask fission
-# ok cask max-msp
+ok cask cycling74-max
 
 # ok cask calca
 ok cask marked
