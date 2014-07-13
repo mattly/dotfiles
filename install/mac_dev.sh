@@ -1,13 +1,6 @@
+include dotfiles.sh
+
 ok brew
-
-ok directory $HOME/code/mattly
-destination $HOME/code/mattly
-ok github mattly/dotfiles
-
-destination $HOME
-for config in code/mattly/dotfiles/configs/*; do
-  ok symlink ".$(basename $config) $config"
-done
 
 # basics
 ok brew readline
@@ -49,5 +42,4 @@ ok brew apple-gcc42
 ok brew ansible
 
 include osx.sh
-
 include sketch.sh
