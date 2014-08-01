@@ -10,13 +10,16 @@ ok defaults NSGlobalDomain PMPrintingExpandedStateForPrint2 bool true
 ok defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud bool false
 
 # disable gatekeeper
-ok defaults com.apple.LaunchServices LSQuarantine bool false
+# ok defaults com.apple.LaunchServices LSQuarantine bool false
 
 # speed up the UI
 ok defaults NSGlobalDomain NSAutomaticWindowAnimationsEnabled bool false
 ok defaults NSGlobalDomain NSWindowResizeTime string .001
+
 # fix the UI
 ok defaults NSGlobalDomain AppleEnableMenuBarTransparency bool false
+ok defaults NSGlobalDomain NSTableViewDefaultSizeMode int 2
+
 # show all extensions
 ok defaults NSGlobalDomain AppleShowAllExtensions bool true
 # help viewer to regular window
@@ -48,7 +51,7 @@ ok defaults com.apple.dock mru-spaces bool false
 ok defaults com.apple.dock wvous-tl-corner integer 5
 ok defaults com.apple.dock wvous-tl-modifier integer 0
 # Put it on the left
-ok defaults com.apple.dock orientation string left
+ok defaults com.apple.dock orientation string bottom
 # clear the dock
 # ok rm ~/Library/Application\ Support/Dock/*.db
 
@@ -67,8 +70,9 @@ ok defaults com.apple.finder FXEnableExtensionChangeWarning bool false
 # killall Finder
 
 # require password immediately on sleep or screensaver
-ok defaults com.apple.screensaver askForPassword integer 1
+ok defaults com.apple.screensaver askForPassword bool true
 ok defaults com.apple.screensaver askForPasswordDelay integer 0
 
 
-
+# show ascii-control characters using caret notation in text views
+ok defaults NSGlobalDomain NSTextShowsControlCharacters bool true
