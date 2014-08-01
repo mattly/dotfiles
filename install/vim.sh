@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 ok brew vim
 
-# TODO: keep track of 'any' changes
-
 [ -z $code ] && code=$HOME/code/mattly
+ok directory $code/dotfiles/configs/vim/bundle
 destination $code/dotfiles/configs/vim/bundle
 
 #group start --dir=$code/dotfiles/vim/bundle
@@ -64,12 +63,6 @@ destination $code/dotfiles/configs/vim/bundle
   ok github mhinz/vim-signify
   ok github idanarye/vim-merginal
 
-# snip!
-  ok github tomtom/tlib_vim
-  ok github MarcWeber/vim-addon-mw-utils
-  ok github garbas/vim-snipmate
-  ok github honza/vim-snippets
-
 # Language/Environment-Specific
 
   # Clojure
@@ -117,6 +110,6 @@ destination $code/dotfiles/configs/vim/bundle
     ok github andersoncustodio/vim-tmux     # tmux.config
     ok github sheerun/vim-yardoc            # yard inside .rb
 
-# TODO if "any" changes, vim ':Helptags'
-
-#group end
+if any_updated; then
+  vim -c ':Helptags'
+fi
