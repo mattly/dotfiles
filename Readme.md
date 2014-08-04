@@ -1,4 +1,4 @@
-Don't fork anyone's dotfiles.  Curate your own. 
+Don't fork anyone's dotfiles.  Curate your own.
 
 Document your settings, what they do and why you chose them, and help
 others learn how they can work better.  When you copy someone else's
@@ -44,7 +44,7 @@ X's vim doesn't ship with:
 
 ### gitconfig
 
-I like to create new git commands to semantically map to common 
+I like to create new git commands to semantically map to common
 operations.  Some of them, in detail:
 
 - **`amend`**: `commit --amend` after an accidental `commit -amend` and
@@ -84,11 +84,10 @@ because [fish doesn't believe in configurability][fish-evil].
 
 ## Install
 
-I am in the process of  migrating the automated install of this to
+I am in the process of migrating the automated install of this to
 [bork][] and their configurations are in the install directory.
 Eventually there will be a compiled borkfile when I get around to writing
 that feature of Bork, and then a command to copy & paste and run, letting
 the computer work while you get coffee.
 
 [bork]: https://github.com/mattly/bork
-
