@@ -276,7 +276,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <leader>k :Ag<space>
 
   "   m   Open in Marked.app
-  nnoremap <leader>m :!open -a Marked.app %<CR><CR>
+  nnoremap <leader>m :!open -a "Marked 2.app" %<CR><CR>
   "   o   Open this cWORD
   nnoremap <silent><Leader>o :!open -g <cWORD><CR><CR>
   "   p   paste from system clipboard
