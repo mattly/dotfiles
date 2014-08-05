@@ -1,17 +1,9 @@
-# PL
-  include ruby.sh
-  # include node.sh
+# wcm
+ok brew python
+ok pip virtualenv
+ok brew mariadb
+ok brew node
+ok npm grunt-cli
+ok brew redis
 
-  #brew clojure
-  brew_tap homebrew/versions
-  brew erlang
-  brew elixir
-  brew go
-  brew bats
-
-# databases
-  brew postgresql
-  brew redis
-  brew riak
-
-
+ok brew haskell-platform
