@@ -81,6 +81,7 @@ destination $code/dotfiles/configs/vim/bundle
     ok github kchmck/vim-coffee-script      # .coffee     -> .js
     ok github mintplant/vim-literate-coffeescript
                                         # .litcoffee  -> .js
+    ok github lambdatoast/elm.vim           # .elm
 
   # Markup / Templates
     ok github tpope/vim-ragtag              # .html       formatting tools
