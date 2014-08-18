@@ -5,5 +5,5 @@ ok brew mariadb
 ok brew node
 ok npm grunt-cli
 ok brew redis
+ok brew awscli
 
-ok brew haskell-platform
