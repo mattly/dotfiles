@@ -12,6 +12,9 @@ let g:AutoClosePreserveDotReg=0
 let g:AutoClosePairs_add = "'"
 let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
 
+" Javascript
+let g:javascript_conceal = 1
+
 " pg-sql
 let g:sql_type_default = 'pgsql'
 
