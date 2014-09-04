@@ -44,7 +44,7 @@ execute pathogen#infect()
     set splitbelow                        " open new horiz splits below current
     set splitright                        " open new vert splits to the right
 
-    set fillchars=vert:\│,stl:\ 
+    set fillchars=vert:\ ,stl:\ 
 
   " Keyboarding
     set backspace=indent,eol,start        " backspace over anything
