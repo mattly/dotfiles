@@ -216,8 +216,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " C-]: Go foward in the Tag Stack
   " C-a: Go to beginning of Line
   nnoremap <C-a> 0
-  " C-s: Save
-  nnoremap <C-s> :w<CR>
+  " C-s: <noop>
   " C-d: Scroll half screen down
   " C-f: Scroll full screen down
   " C-g: <tmux leader>, vim: Prints current file name
