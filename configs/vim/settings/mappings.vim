@@ -219,7 +219,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " C-s: <noop>
   " C-d: Scroll half screen down
   " C-f: Scroll full screen down
-  " C-g: <tmux leader>, vim: Prints current file name
+  " C-g: Prints current file name
   " C-h: Go split left
   nnoremap <C-h>        <C-w><Left>
   " C-j: Go split down
