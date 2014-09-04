@@ -18,18 +18,9 @@ let g:javascript_conceal = 1
 " pg-sql
 let g:sql_type_default = 'pgsql'
 
-" startify
-let g:startify_show_dir = 1
-let g:startify_bookmarks = [ "~/.vimrc", "~/.gitconfig" ]
-
 " signify
 let g:signify_vcs_list = ['git', 'hg']
 let g:signify_disable_by_default = 1
-
-" ctrl-p
-let g:ctrlp_map = ''
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
 
 " pencil
 let g:pencil#autoformat = 0
@@ -54,6 +45,3 @@ augroup lexical
   autocmd FileType gitcommit call lexical#init()
 augroup END
 
-" vimroom
-let g:vimroom_sidebar_height=1
-let g:vimroom_width=74
