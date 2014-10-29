@@ -62,7 +62,7 @@ execute pathogen#infect()
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
   " Searching
-    set grepprg=ag\ --nogroup\ --nocolor
+    set grepprg=pt\ --nogroup\ --nocolor
     set hlsearch                          " because awesome
     set ignorecase                        " ignore case in searches
     set smartcase                         " unless there is a capital letter
