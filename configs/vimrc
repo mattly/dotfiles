@@ -114,8 +114,6 @@ execute pathogen#infect()
                                         " c: auto-wrap comments
                                         " q: auto-format comments with 'gq'
                                         " 1: don't break after 1-char word
-  set conceallevel=2
-  set concealcursor=nc                  " enable conceal, even for cursor line in normal/command modes
 
 for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
   exe 'source' fpath
