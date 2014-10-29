@@ -1,4 +1,6 @@
 augroup filetypedetect
+  au! BufRead,BufNewFile *.iced                            setf coffee
+
   au! BufRead,BufNewFile Emakefile                         setf erlang
 
   au! BufRead,BufNewFile gitconfig                         setf gitconfig
