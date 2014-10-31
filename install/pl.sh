@@ -1,9 +1,15 @@
+
 # wcm
 ok brew python
 ok pip virtualenv
-ok brew mariadb
 ok brew node
+
+ok npm gulp
 ok npm grunt-cli
-ok brew redis
+ok npm bower
 ok brew awscli
+
+ok brew mariadb
+ok brew redis
+ok brew mongodb
 
