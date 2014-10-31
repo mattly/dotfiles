@@ -6,6 +6,5 @@ ok directories $HOME/.tmux
 destination $HOME/.tmux
 
 ok github bruno-/tmux_goto_session
-ok github bruno-/tmux_battery_osx
 
 
