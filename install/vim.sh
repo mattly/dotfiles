@@ -71,6 +71,9 @@ destination $code/dotfiles/configs/vim/bundle
   ok github tpope/vim-sexp-mappings-for-regular-people
   ok github tpope/vim-fireplace
 
+# Scala
+  ok github derekwyatt/vim-scala
+
 # CSS
   ok github cakebaker/scss-syntax.vim     # .scss       -> .css
   ok github groenewege/vim-less           # .less       -> .css
