@@ -59,7 +59,8 @@ execute pathogen#infect()
   " Wildmenu
     set wildmenu                          " wildmenu is awesome
     set wildmode=list:longest,full
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+    " set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+    set wildignore+=*/.hg/*,*/.svn/*
 
   " Searching
     set grepprg=pt\ --nogroup\ --nocolor
