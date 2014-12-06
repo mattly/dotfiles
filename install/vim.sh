@@ -86,6 +86,7 @@ destination $code/dotfiles/configs/vim/bundle
                                           # .litcoffee  -> .js
   ok github lambdatoast/elm.vim           # .elm
   ok github mxw/vim-jsx                   # React's JSX, uses .js with a pragma
+  ok github mtscout6/vim-cjsx             # JSX embedded in CoffeeScript.  Don't ask why this is a thing, you don't want to know.
 
 # Markup / Templates
   ok github tpope/vim-ragtag              # .html       formatting tools
