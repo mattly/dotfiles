@@ -110,6 +110,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github jnwhiteh/vim-golang           # .go
   ok github wannesm/wmgraphviz.vim        # .gv         graphviz
   ok github travitch/hasksyn              # .hs
+  ok github JuliaLang/julia-vim           # .jl
   ok github wting/rust.vim                # .rust
   ok github toyamarinyon/vim-swift
   ok github exu/pgsql.vim                 # .sql        postgresql 4 life
