@@ -40,7 +40,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github reedes/vim-pencil
   ok github reedes/vim-lexical
   ok github reedes/vim-wordy
-  ok github gabrielelana/vim-markdown
+  ok github nelstrom/vim-markdown-folding
 
 # outlining
   ok github vim-voom/VOoM
