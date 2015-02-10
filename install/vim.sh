@@ -15,10 +15,17 @@ destination $code/dotfiles/configs/vim/bundle
   ok github tpope/vim-eunuch
 
 # insert-mode helpers
-  ok github Townk/vim-autoclose
-  ok github ervandew/supertab
   ok github tpope/vim-endwise
   ok github tpope/vim-surround
+  ok github raimondi/delimitMate
+  ok github Valloric/YouCompleteMe
+  if did_update; then
+    cd YouCompleteMe
+    git submodule update --init --recursive
+    ./install.sh
+  fi
+  ok github sirver/ultisnips
+  ok github honza/vim-snippets
 
 # text manipulation
   ok github tpope/vim-commentary
@@ -35,7 +42,6 @@ destination $code/dotfiles/configs/vim/bundle
 
 # writing tools
   ok github junegunn/goyo.vim
-  ok github junegunn/limelight.vim
 
   ok github reedes/vim-pencil
   ok github reedes/vim-lexical
@@ -50,8 +56,10 @@ destination $code/dotfiles/configs/vim/bundle
   ok github rizzatti/dash.vim
 
 # navigation
-  ok github rking/ag.vim
   ok github tpope/vim-vinegar
+  ok github haya14busa/incsearch.vim
+  ok github ctrlpvim/ctrlp.vim
+  ok github ap/vim-buftabline
 
 # UI and colors
   ok github reedes/vim-colors-pencil
@@ -62,6 +70,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github tpope/vim-fugitive
   ok github mhinz/vim-signify
   ok github idanarye/vim-merginal
+  ok github takahirojin/gbr.vim
 
 # Language/Environment-Specific
 
@@ -114,6 +123,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github wting/rust.vim                # .rust
   ok github toyamarinyon/vim-swift
   ok github exu/pgsql.vim                 # .sql        postgresql 4 life
+  ok github davidoc/taskpaper.vim         # .taskpaper
   ok github andersoncustodio/vim-tmux     # tmux.config
   ok github sheerun/vim-yardoc            # yard inside .rb
 

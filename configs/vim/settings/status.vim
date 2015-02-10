@@ -30,8 +30,15 @@ function! SyntaxStatus()
   endif
 endfunction
 
-let stl = "%<"
 
+let stl = ""
+let stl .="%n"
+let stl .="%M"
+let stl .="%R"
+let stl .="%W"
+let stl .=" "
+
+let stl .= "%<"
 let stl .= "%-.60f "
 
 let stl .= "%{&filetype} "
@@ -42,16 +49,11 @@ let stl .= "%-.35{GitStatus()}"
 let stl .= "%="
 let stl .= "%#StatusWarning#"
 
-let stl .= "%{&modified > 0 ? '-dirty-' : ''}"
-let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
-
-let stl .= "%{&modifiable == 0 ? '-readonly-' : ''}"
-
 let stl .= "%{SyntaxStatus()}"
 let stl .= "%*"
 
-let stl .= " %c:"
-let stl .= "%l/%L %P"
+let stl .= "%{PencilMode()}"
+let stl .= "%l:%c/%L %P"
 
 set statusline=%!stl
 

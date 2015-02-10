@@ -97,9 +97,13 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " Q: Play back macro in q slot, record it with 'qq'
   nnoremap Q @q
   " w: Move word forward
-  " W: Move word forward ----------------------- same as w
+  " W (orig) Move word forward ----------------- same as w
+  " W Previous Buffer
+  nnoremap W :bp<CR>
   " e: Move to end of word forward
-  " E: Move to end of forward word ------------- same as e
+  " E (orig) Move to end of forward word ------- same as e
+  " E Next Buffer
+  nnoremap E :bn<CR>
   " r: Replace character ----------------------- never use
   " R: Replace mode   -------------------------- never use
   " t: Find till fowards
@@ -186,10 +190,12 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap . .`[
   " >: Indent Right
   " /: Search (and use real regexes)
-  nnoremap / /\v
+  " nnoremap / /\v
+  map / <Plug>(incsearch-forward)
   " //: Clear search highlighting
-  nnoremap // :nohlsearch<CR>
+  " nnoremap // :nohlsearch<CR>
   " ?: Search Backwards
+  map ? <Plug>(incsearch-backward)
   " toggle current fold easier
   nnoremap <Space> za
   " Enter: mapped by wildfire
@@ -251,6 +257,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " nnoremap <Leader>a
   "   b   CTRL-p Buffer mode
   nnoremap <Leader>b :CtrlPBuffer<CR>
+
   "   c   Regen ctags
   nnoremap <silent> <Leader>c :!/usr/local/bin/ctags -f tags -R *<CR><CR>
   "   d   open current word in dictionary.app
@@ -274,8 +281,9 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " nnoremap <leader>k :syntax sync fromstart<cr>
   nnoremap <leader>k :Ag<space>
 
-  "   m   Open in Marked.app
-  nnoremap <leader>m :!open -a "Marked 2.app" %<CR><CR>
+  " - m - Markdown Tools
+  "   mp  Open in Marked.app
+  nnoremap <leader>mp :!open -a "Marked 2.app" %<CR><CR>
   "   o   Open this cWORD
   nnoremap <silent><Leader>o :!open -g <cWORD><CR><CR>
   "   p   paste from system clipboard
@@ -322,7 +330,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <silent><F1> :call ToggleBackground()<CR>
   nnoremap <silent><F2> :setlocal spell!<CR>
   nnoremap <silent><F3> :VoomToggle pandoc<CR>
-  nnoremap <silent><F4> :call WriteMode()<CR>
+  nnoremap <silent><F4> :Goyo<CR>
 
   nnoremap <silent><F5> :setlocal nu!<CR>:SignifyToggle<CR>
   function! ToggleFoldColumn()

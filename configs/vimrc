@@ -63,7 +63,7 @@ execute pathogen#infect()
     set wildignore+=*/.hg/*,*/.svn/*
 
   " Searching
-    set grepprg=pt\ --nogroup\ --nocolor
+    set grepprg=ag\ --vimgrep
     set hlsearch                          " because awesome
     set ignorecase                        " ignore case in searches
     set smartcase                         " unless there is a capital letter
@@ -113,6 +113,7 @@ execute pathogen#infect()
                                         " defaults: tcq
                                         " t: auto-wrap text using text-width
                                         " c: auto-wrap comments
+                                        " n: recognize numberded lists
                                         " q: auto-format comments with 'gq'
                                         " 1: don't break after 1-char word
 
