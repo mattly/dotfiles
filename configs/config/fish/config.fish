@@ -28,6 +28,10 @@ if status --is-login
   if test -d $HOME/.cabal
     unshift_path $HOME/.cabal/bin
   end
+
+  if test -d $HOME/.bin
+    unshift_path $HOME/.bin
+  end
 end
 
 # -- ENV
