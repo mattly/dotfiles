@@ -97,13 +97,9 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " Q: Play back macro in q slot, record it with 'qq'
   nnoremap Q @q
   " w: Move word forward
-  " W (orig) Move word forward ----------------- same as w
-  " W Previous Buffer
-  nnoremap W :bp<CR>
+  " W  Move WORD forward
   " e: Move to end of word forward
-  " E (orig) Move to end of forward word ------- same as e
-  " E Next Buffer
-  nnoremap E :bn<CR>
+  " E  Move to end of forward WORD
   " r: Replace character ----------------------- never use
   " R: Replace mode   -------------------------- never use
   " t: Find till fowards
@@ -179,7 +175,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " v: Visual mode
   " V: Visual line mode
   " b: Move word backward
-  " B: Move word backward ---------------------- same as b
+  " B: Move WORD backward
   " n: Find next occurence
   " N: Find next occurence backward
   " m: Set Mark
