@@ -1,7 +1,0 @@
-mark pattern ^00\d
-mark ^00\dd
-mark ^00\d
-unmark *
-set show_hidden true
-delete
-edit
