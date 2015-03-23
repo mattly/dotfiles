@@ -86,6 +86,8 @@
   tag-release = !sh -c 'git tag release/`date +%Y/%m/%d/%H%M`'
   # track a remote branch
   track = checkout -t
+  # push --force without clobber
+  triforce = push --force-with-lease
   # retains a commit as staged
   undo = reset --soft HEAD^
   # remove a file from the index
@@ -100,3 +102,7 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
