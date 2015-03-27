@@ -255,7 +255,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <Leader>b :CtrlPBuffer<CR>
 
   "   c   Regen ctags
-  nnoremap <silent> <Leader>c :!/usr/local/bin/ctags -f tags -R *<CR><CR>
+  nnoremap <silent> <Leader>c :!/usr/local/bin/ctags -f tags *<CR><CR>
   "   d   open current word in dictionary.app
   nnoremap <silent> <Leader>d :!open dict://<cword><CR><CR>
   "   f   CTRL-p File mode
