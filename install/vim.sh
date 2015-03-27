@@ -49,7 +49,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github nelstrom/vim-markdown-folding
 
 # outlining
-  ok github vim-voom/VOoM
+  ok github vimwiki/vimwiki
 
 # dash integration
   ok github rizzatti/funcoo.vim
@@ -60,6 +60,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github haya14busa/incsearch.vim
   ok github ctrlpvim/ctrlp.vim
   ok github ap/vim-buftabline
+  ok github tpope/vim-dispatch
 
 # UI and colors
   ok github reedes/vim-colors-pencil
@@ -79,6 +80,8 @@ destination $code/dotfiles/configs/vim/bundle
   ok github guns/vim-sexp
   ok github tpope/vim-sexp-mappings-for-regular-people
   ok github tpope/vim-fireplace
+  ok github vim-scripts/paredit.vim
+  ok github venantius/vim-cljfmt
 
 # Scala
   ok github derekwyatt/vim-scala
@@ -96,6 +99,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github lambdatoast/elm.vim           # .elm
   ok github mxw/vim-jsx                   # React's JSX, uses .js with a pragma
   ok github mtscout6/vim-cjsx             # JSX embedded in CoffeeScript.  Don't ask why this is a thing, you don't want to know.
+  ok github raichoo/purescript-vim        # .purs       Because I'm apparently not enough of a masochist.
 
 # Markup / Templates
   ok github tpope/vim-ragtag              # .html       formatting tools
