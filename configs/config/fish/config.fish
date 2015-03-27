@@ -19,10 +19,8 @@ if status --is-login
     rbenv rehash >/dev/null ^&1
   end
 
-  if test -d $HOME/.nodenv
-    unshift_path $HOME/.nodenv/bin
-    unshift_path $HOME/.nodenv/shims
-    nodenv rehash 2>/dev/null
+  if test -d $HOME/.config/fist/nvm-wrapper
+    source $HOME/.config/fish/nvm-wrapper/nvm.fish
   end
 
   if test -d $HOME/.cabal
