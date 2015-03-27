@@ -59,3 +59,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 " \ 'link': 'some_bad_symbolic_links',
 
+" vimwiki
+let wiki = {}
+let wiki.path = "~/Documents/Notes"
+let g:vimwiki_list = [wiki]
