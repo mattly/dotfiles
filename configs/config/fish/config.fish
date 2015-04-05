@@ -19,7 +19,7 @@ if status --is-login
     rbenv rehash >/dev/null ^&1
   end
 
-  if test -d $HOME/.config/fist/nvm-wrapper
+  if test -d $HOME/.config/fish/nvm-wrapper
     source $HOME/.config/fish/nvm-wrapper/nvm.fish
   end
 
