@@ -1,0 +1,168 @@
+(setq-default
+ dotspacemacs-configuration-layer-path '("~/code/mattly/emacs/config-layers/")
+ dotspacemacs-configuration-layers `(;; # syntax & languages
+                                     ;; ansible
+                                     clojure
+                                     erlang-elixir
+                                     extra-langs ; idris openscad nix qml yaml rust wolfram
+                                     ;; go
+                                     ;; haskell
+                                     html
+                                     javascript
+                                     ;; lua
+                                     markdown
+                                     python
+                                     ;; racket
+                                     ruby
+                                     scala
+                                     shell-scripts ; fish!
+
+                                     ;; # tools
+                                     (auto-completion :variables
+                                                      auto-completion-use-tab-instead-of-enter t
+                                                      auto-completion-enable-company-help-tooltip t)
+                                     dash
+                                     git
+                                     osx
+                                     ;; (perspectives :variables
+                                     ;;               perspective-enable-persp-projectile t)
+                                     ;; restclient
+                                     smex
+                                     themes-megapack
+                                     ;; vim-empty-lines
+
+                                     ;; # mine
+                                     farmhouse
+                                     prose
+                                     )
+)
+
+(defun dotspacemacs/init ()
+  "User initialization for Spacemacs."
+
+  (setq-default
+   git-enable-github-support t
+   git-magit-status-fullscreen t)
+
+  (add-to-list 'exec-path "~/.cabal/bin/")
+
+  (defun disable-all-themes ()
+    "disable all active themes."
+    (dolist (i custom-enabled-themes)
+      (disable-theme i)))
+  (defadvice load-theme (before disable-themes-first activate)
+    (disable-all-themes))
+  )
+
+(defun dotspacemacs/config ()
+  (setq powerline-default-separator 'slant)
+
+  (defun prelude-shift-left-visual ()
+    "Shift left and restore visual selection"
+    (interactive)
+    (evil-shift-left (region-beginning) (region-end))
+    (evil-normal-state)
+    (evil-visual-restore))
+  (defun prelude-shift-right-visual ()
+    "Shift right and restore visual selection"
+    (interactive)
+    (evil-shift-right (region-beginning) (region-end))
+    (evil-normal-state)
+    (evil-visual-restore))
+  (define-key evil-visual-state-map (kbd ">") 'prelude-shift-right-visual)
+  (define-key evil-visual-state-map (kbd "<") 'prelude-shift-left-visual)
+
+  (evil-global-set-key 'normal (kbd "RET") 'evil-search-highlight-persist-remove-all)
+  )
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ac-ispell-requires 4 t)
+ '(ahs-case-fold-search nil)
+ '(ahs-default-range (quote ahs-range-whole-buffer))
+ '(ahs-idle-interval 0.25)
+ '(ahs-idle-timer 0 t)
+ '(ahs-inhibit-face-list nil)
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])
+ '(compilation-message-face (quote default))
+ '(cua-global-mark-cursor-color "#2aa198")
+ '(cua-normal-cursor-color "#657b83")
+ '(cua-overwrite-cursor-color "#b58900")
+ '(cua-read-only-cursor-color "#859900")
+ '(custom-safe-themes
+   (quote
+    ("bc576827b9af9122793018a7df3be98a53dc0b762113df8369e4f4cecae8c019" "dd0debc75903ff67d45fae5a4154010c01f428e9f985fe8635b680c61c12b2bc" "470c7fbdcc0ce991a7114700c86188ca66de01e2ef35dcbe6e20fde38d131d21" "d38072499b22b42c66da4b84327309e29088eed636e30bb1b73b476ce914ad1f" "525c4eb16ac3b91698a3701ea9a0fc86c71e3c340e27e121f5c628f269ab60aa")))
+ '(fci-rule-color "#eee8d5")
+ '(highlight-changes-colors ("#FD5FF0" "#AE81FF"))
+ '(highlight-symbol-colors
+   (--map
+    (solarized-color-blend it "#fdf6e3" 0.25)
+    (quote nil)))
+ '(highlight-symbol-foreground-color "#586e75")
+ '(highlight-tail-colors
+   (quote
+    (("#eee8d5" . 0)
+     ("#B4C342" . 20)
+     ("#69CABF" . 30)
+     ("#69B7F0" . 50)
+     ("#DEB542" . 60)
+     ("#F2804F" . 70)
+     ("#F771AC" . 85)
+     ("#eee8d5" . 100))))
+ '(hl-bg-colors
+   (quote
+    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
+ '(hl-fg-colors
+   (quote
+    ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
+ '(linum-format " %5i " t)
+ '(magit-diff-use-overlays nil)
+ '(magit-use-overlays nil)
+ '(paradox-github-token t)
+ '(pos-tip-background-color "#eee8d5" t)
+ '(pos-tip-foreground-color "#586e75" t)
+ '(rainbow-identifiers-cie-l*a*b*-lightness 80)
+ '(rainbow-identifiers-cie-l*a*b*-saturation 18)
+ '(ring-bell-function (quote ignore) t)
+ '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
+ '(term-default-bg-color "#fdf6e3")
+ '(term-default-fg-color "#657b83")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dc322f")
+     (40 . "#c85d17")
+     (60 . "#be730b")
+     (80 . "#b58900")
+     (100 . "#a58e00")
+     (120 . "#9d9100")
+     (140 . "#959300")
+     (160 . "#8d9600")
+     (180 . "#859900")
+     (200 . "#669b32")
+     (220 . "#579d4c")
+     (240 . "#489e65")
+     (260 . "#399f7e")
+     (280 . "#2aa198")
+     (300 . "#2898af")
+     (320 . "#2793ba")
+     (340 . "#268fc6")
+     (360 . "#268bd2"))))
+ '(vc-annotate-very-old-color nil)
+ '(weechat-color-list
+   (quote
+    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+
