@@ -1,4 +1,4 @@
-let mapleader = ','                     " backslash doesn't make sense to me.
+let mapleader = ' '                     " backslash doesn't make sense to me.
 
 " =============================================================================
 " Command Mode Mappings
@@ -141,8 +141,8 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " J: Join lines
   " k: Go one line up
   " K (orig): Lookup word under cursor with keywordprg
-  " K: Grep word under cursor
-  nnoremap <silent> K :grep! <cword><CR><CR>
+  " K: noop
+  nnoremap <nop>
   " l: Go one character right ------------------ never use ?
   " L: Goto bottom of window ------------------- never use
   " ;: Repeat last f, t, F, or T
@@ -167,9 +167,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " ZZ: write and quit (:x) -------------------- never use
   " ZQ: quit without writing (:q!) ------------- never use
   " x: Delete one character
-  " X: (orig) Delete Character backwards
-  " X: Close window or buffer intelligently
-  nnoremap X :call CloseWindowOrKillBuffer()<CR>
+  " X: Delete Character backwards
   " c: Change text
   " C: Change rest of line
   " v: Visual mode
@@ -193,7 +191,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " ?: Search Backwards
   map ? <Plug>(incsearch-backward)
   " toggle current fold easier
-  nnoremap <Space> za
+  " nnoremap <Space> za
   " Enter: mapped by wildfire
   " Backspace: mapped by wildfire
 
@@ -222,21 +220,15 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " C-d: Scroll half screen down
   " C-f: Scroll full screen down
   " C-g: Prints current file name
-  " C-h: Go split left
-  nnoremap <C-h>        <C-w><Left>
-  " C-j: Go split down
-  nnoremap <C-j>        <C-w><Down>
-  " C-k: Go split up
-  nnoremap <C-k>        <C-w><Up>
-  " C-l: Go split right
-  nnoremap <C-l>        <C-w><Right>
+  " C-h: 
+  " C-j: 
+  " C-k: 
+  " C-l: 
   " C-:: <can't map>
   " C-': <can't map>
   " C-z: <unix> Suspend process
-  " C-x: Quit All
-  nnoremap <C-x> :qa<CR>
-  " C-c: Cycle through Splits
-  nnoremap <c-c> <c-w>w
+  " C-x: 
+  " C-c: 
   " C-v: ??? ------------------------------------
   " C-b: Scroll full screen backward
   " C-n: ??? ------------------------------------
@@ -251,6 +243,7 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   " leader mappings:
   "   a   Toggle Autoformat mode
   " nnoremap <Leader>a
+  " - b - buffer
   "   b   CTRL-p Buffer mode
   nnoremap <Leader>b :CtrlPBuffer<CR>
 
@@ -305,8 +298,15 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   "
   "   S   Source current buffer
   nnoremap <silent><Leader>S :source %<CR>
+
+  " - u - Unix / Enuch
+  "   um  Move
+  nnoremap <Leader>um :Move 
+  "   ur  Rename
+  nnoremap <Leader>ur :Rename 
+
   "   v   reload Vim config
-  nnoremap <silent><Leader>v :so ~/.vimrc<CR>
+  nnoremap <silent><Leader>v :so ~/.nvimrc<CR>
   "   w   strip trailing whitespace
   nnoremap <leader>w :StripTrailingWhitespaces<CR>
 
@@ -318,6 +318,33 @@ let mapleader = ','                     " backslash doesn't make sense to me.
   nnoremap <Leader>Y "*Y
   "   z   previous buffer
   nnoremap <silent><Leader>z :bp<CR>
+
+" =============================================================================
+" Mode Alt Mappings
+" =============================================================================
+  nnoremap <a-j> <c-w>j
+  nnoremap <a-k> <c-w>k
+  nnoremap <a-h> <c-w>h
+  nnoremap <a-l> <c-w>l
+  vnoremap <a-j> <c-\><c-n><c-w>j
+  vnoremap <a-k> <c-\><c-n><c-w>k
+  vnoremap <a-h> <c-\><c-n><c-w>h
+  vnoremap <a-l> <c-\><c-n><c-w>l
+  inoremap <a-j> <c-\><c-n><c-w>j
+  inoremap <a-k> <c-\><c-n><c-w>k
+  inoremap <a-h> <c-\><c-n><c-w>h
+  inoremap <a-l> <c-\><c-n><c-w>l
+  cnoremap <a-j> <c-\><c-n><c-w>j
+  cnoremap <a-k> <c-\><c-n><c-w>k
+  cnoremap <a-h> <c-\><c-n><c-w>h
+  cnoremap <a-l> <c-\><c-n><c-w>l
+  if has('nvim')
+    tnoremap <a-j> <c-\><c-n><c-w>j
+    tnoremap <a-k> <c-\><c-n><c-w>k
+    tnoremap <a-h> <c-\><c-n><c-w>h
+    tnoremap <a-l> <c-\><c-n><c-w>l
+    au WinEnter *pid:* call feedkeys('i')
+  endif
 
 
 " Function Mappings

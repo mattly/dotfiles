@@ -43,11 +43,6 @@ augroup END
 " incsearch
 let g:incsearch#auto_nohlsearch=1
 
-" ultisnips
-let g:UltiSnipsExpandTrigger="<C-g>"
-let g:UltiSnipsJumpForwardTrigger="<C-g>"
-let g:UltiSnipsJumpBackwardTrigger="<C-n>"
-
 " ctrl-p
 if executable("ag")
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
@@ -57,7 +52,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-" \ 'link': 'some_bad_symbolic_links',
 
 " vimwiki
 let wiki = {}

@@ -1,0 +1,1 @@
+au Syntax clojure RainbowParenthesesActivate

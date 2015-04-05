@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-ok brew vim
+ok brew neovim --HEAD
 
 [ -z $code ] && code=$HOME/code/mattly
-ok directory $code/dotfiles/configs/vim/bundle
-destination $code/dotfiles/configs/vim/bundle
+vimplugins=$code/dotfiles/configs/nvim/bundle
+ok directory $vimplugins
+destination $vimplugins
 
-#group start --dir=$code/dotfiles/vim/bundle
+#group start --dir=$vimplugins
 
 # plugin helpers
   ok github tpope/vim-pathogen
@@ -24,25 +25,19 @@ destination $code/dotfiles/configs/vim/bundle
     git submodule update --init --recursive
     ./install.sh
   fi
-  ok github sirver/ultisnips
-  ok github honza/vim-snippets
 
 # text manipulation
   ok github tpope/vim-commentary
   ok github junegunn/vim-easy-align
   ok github tpope/vim-abolish
-  ok github terryma/vim-multiple-cursors
   ok github tpope/vim-characterize
 
 # text-objects
   ok github michaeljsmith/vim-indent-object
   ok github gcmt/wildfire.vim
-  ok github tpope/vim-jdaddy
   ok github wellle/targets.vim
 
 # writing tools
-  ok github junegunn/goyo.vim
-
   ok github reedes/vim-pencil
   ok github reedes/vim-lexical
   ok github reedes/vim-wordy
@@ -51,15 +46,10 @@ destination $code/dotfiles/configs/vim/bundle
 # outlining
   ok github vimwiki/vimwiki
 
-# dash integration
-  ok github rizzatti/funcoo.vim
-  ok github rizzatti/dash.vim
-
 # navigation
   ok github tpope/vim-vinegar
   ok github haya14busa/incsearch.vim
   ok github ctrlpvim/ctrlp.vim
-  ok github ap/vim-buftabline
   ok github tpope/vim-dispatch
 
 # UI and colors
@@ -71,7 +61,6 @@ destination $code/dotfiles/configs/vim/bundle
   ok github tpope/vim-fugitive
   ok github mhinz/vim-signify
   ok github idanarye/vim-merginal
-  ok github takahirojin/gbr.vim
 
 # Language/Environment-Specific
 
@@ -82,9 +71,7 @@ destination $code/dotfiles/configs/vim/bundle
   ok github tpope/vim-fireplace
   ok github vim-scripts/paredit.vim
   ok github venantius/vim-cljfmt
-
-# Scala
-  ok github derekwyatt/vim-scala
+  ok github tpope/vim-leiningen
 
 # CSS
   ok github cakebaker/scss-syntax.vim     # .scss       -> .css
@@ -93,6 +80,7 @@ destination $code/dotfiles/configs/vim/bundle
 
 # Javascript
   ok github pangloss/vim-javascript       # .js         better indenting
+  ok github tpope/vim-jdaddy              # .json       niceties, text objects
   ok github kchmck/vim-coffee-script      # .coffee     -> .js
   ok github mintplant/vim-literate-coffeescript
                                           # .litcoffee  -> .js
@@ -125,10 +113,9 @@ destination $code/dotfiles/configs/vim/bundle
   ok github travitch/hasksyn              # .hs
   ok github JuliaLang/julia-vim           # .jl
   ok github wting/rust.vim                # .rust
+  ok github derekwyatt/vim-scala
   ok github toyamarinyon/vim-swift
   ok github exu/pgsql.vim                 # .sql        postgresql 4 life
-  ok github davidoc/taskpaper.vim         # .taskpaper
-  ok github andersoncustodio/vim-tmux     # tmux.config
   ok github sheerun/vim-yardoc            # yard inside .rb
 
 if any_updated; then
