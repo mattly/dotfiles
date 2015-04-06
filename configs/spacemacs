@@ -1,50 +1,101 @@
-(setq-default
- dotspacemacs-configuration-layer-path '("~/code/mattly/emacs/config-layers/")
- dotspacemacs-configuration-layers `(;; # syntax & languages
-                                     ;; ansible
-                                     clojure
-                                     erlang-elixir
-                                     extra-langs ; idris openscad nix qml yaml rust wolfram
-                                     ;; go
-                                     ;; haskell
-                                     html
-                                     javascript
-                                     ;; lua
-                                     markdown
-                                     python
-                                     ;; racket
-                                     ruby
-                                     scala
-                                     shell-scripts ; fish!
+(defun dotspacemacs/layers ()
+  "Configures Layers Declaration"
+  (setq-default
 
-                                     ;; # tools
-                                     (auto-completion :variables
-                                                      auto-completion-use-tab-instead-of-enter t
-                                                      auto-completion-enable-company-help-tooltip t)
-                                     dash
-                                     git
-                                     osx
-                                     ;; (perspectives :variables
-                                     ;;               perspective-enable-persp-projectile t)
-                                     ;; restclient
-                                     smex
-                                     themes-megapack
-                                     ;; vim-empty-lines
+   ;; List of additional paths where to look for configuration layers.
+   ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
+   dotspacemacs-configuration-layer-path '("~/code/mattly/emacs/config-layers/")
 
-                                     ;; # mine
-                                     farmhouse
-                                     prose
-                                     )
-)
+   ;; List of configuration layers to load. If it is the symbol `all' instead
+   ;; of a list then all discovered layers will be installed.
+   dotspacemacs-configuration-layers `(
+                                       ;; # syntax & languages
+                                       ;; ansible
+                                       clojure
+                                       erlang-elixir
+                                       extra-langs ; idris openscad nix qml yaml rust wolfram
+                                       ;; go
+                                       ;; haskell
+                                       html
+                                       javascript
+                                       ;; lua
+                                       markdown
+                                       python
+                                       ;; racket
+                                       ruby
+                                       scala
+                                       shell-scripts ; fish!
+
+                                       ;; # tools
+                                       (auto-completion :variables
+                                                        auto-completion-use-tab-instead-of-enter t
+                                                        auto-completion-enable-company-help-tooltip t)
+                                       dash
+                                       git
+                                       osx
+                                       ;; (perspectives :variables
+                                       ;;               perspective-enable-persp-projectile t)
+                                       ;; restclient
+                                       smex
+                                       themes-megapack
+                                       ;; vim-empty-lines
+
+                                       ;; # mine
+                                       farmhouse
+                                       prose
+                                       )
+
+   ;; A list of packages and/or extensions that will not be install and loaded.
+   dotspacemacs-excluded-packages '()
+
+   ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
+   ;; are declared in a layer which is not a member of
+   ;; the list `dotspacemacs-configuration-layers'
+   dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
   "User initialization for Spacemacs."
 
   (setq-default
+   ;; FWIW I copied the defaults over from the template and have tweaked them to taste
+   ;; appearances
+   dotspacemacs-startup-banner 'official
+   ;; dotspacemacs-themes '(farmhouse-dark farmhouse-light)
+   dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-default-font '("InputMonoNarrow"
+                               :size 14
+                               :weight light
+                               :width normal
+                               :powerline-scale 1.1)
+   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-use-non-native nil
+   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-active-transparency 100
+   dotspacemacs-inactive-transparency 90
+   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-smooth-scrolling t
+
+
+   ;; hotkey configuration
+   dotspacemacs-leader-key "SPC"
+   dotspacemacs-major-mode-leader-key ","
+   dotspacemacs-command-key ":"
+
+   ;; etc config
+   dotspacemacs-enable-paste-micro-state t
+   dotspacemacs-guide-key-delay 0.4
+   dotspacemacs-loading-progress-bar t
+   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-persistent-server nil
+
+   ;; git layer variables
    git-enable-github-support t
    git-magit-status-fullscreen t)
 
-  (add-to-list 'exec-path "~/.cabal/bin/")
+  (add-to-list 'exec-path "~/.cabal/bin/"))
+
+(defun dotspacemacs/config ()
+  (setq powerline-default-separator 'slant)
 
   (defun disable-all-themes ()
     "disable all active themes."
@@ -52,10 +103,6 @@
       (disable-theme i)))
   (defadvice load-theme (before disable-themes-first activate)
     (disable-all-themes))
-  )
-
-(defun dotspacemacs/config ()
-  (setq powerline-default-separator 'slant)
 
   (defun prelude-shift-left-visual ()
     "Shift left and restore visual selection"
