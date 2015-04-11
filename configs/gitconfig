@@ -3,6 +3,7 @@
   name = Matthew Lyon
 [github]
   user = mattly
+	oauth-token = !security find-generic-password -a GitHub-API-Token -gs Github 2>&1 >/dev/null   | awk '/password/ {print $2}' | tr -d \\\"
 [hub]
   protocol=https
 
