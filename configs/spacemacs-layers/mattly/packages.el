@@ -3,6 +3,8 @@
                           nodejs-repl
                           om-mode
 
+                          gitconfig-mode
+
                           farmhouse-theme))
 
 (defvar mattly-excluded-packages '())
