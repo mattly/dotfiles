@@ -28,3 +28,6 @@ tags
 /log/*
 /tmp/*
 
+# scala
+.ensime
+.ensime_cache/*

@@ -1,17 +1,18 @@
+;; -*- mode: dotspacemacs -*-
 (defun dotspacemacs/layers ()
   "Configures Layers Declaration"
   (setq-default
 
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/code/mattly/emacs/config-layers/")
+   dotspacemacs-configuration-layer-path '("~/code/mattly/dotfiles/config/spacemacs-layers/")
 
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers `(
                                        ;; # syntax & languages
                                        ;; ansible
-                                       clojure
+                                       (clojure :variables clojure-enable-fancify-symbols t)
                                        erlang-elixir
                                        extra-langs ; idris openscad nix qml yaml rust wolfram
                                        ;; go
@@ -31,26 +32,28 @@
                                                         auto-completion-use-tab-instead-of-enter t
                                                         auto-completion-enable-company-help-tooltip t)
                                        dash
+                                       evil-snipe
                                        git
                                        osx
-                                       ;; (perspectives :variables
-                                       ;;               perspective-enable-persp-projectile t)
+                                       ;; perspectives
                                        ;; restclient
                                        smex
-                                       themes-megapack
+                                       ;; themes-megapack
                                        ;; vim-empty-lines
 
                                        ;; # mine
                                        farmhouse
+                                       mattly
                                        prose
+                                       purescript   ;; https://github.com/kofno/purescript-spacemacs
                                        )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
 
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
-   ;; are declared in a layer which is not a member of
-   ;; the list `dotspacemacs-configuration-layers'
+   ;; are declared in a layer which is not a member of the list
+   ;; `dotspacemacs-configuration-layers'
    dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()
@@ -60,21 +63,20 @@
    ;; FWIW I copied the defaults over from the template and have tweaked them to taste
    ;; appearances
    dotspacemacs-startup-banner 'official
-   ;; dotspacemacs-themes '(farmhouse-dark farmhouse-light)
+   dotspacemacs-themes '(zenburn farmhouse-dark farmhouse-light)
    dotspacemacs-colorize-cursor-according-to-state t
-   dotspacemacs-default-font '("InputMonoNarrow"
+   dotspacemacs-default-font '("Input Mono Narrow"
                                :size 14
                                :weight light
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.5)
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
    dotspacemacs-active-transparency 100
-   dotspacemacs-inactive-transparency 90
+   dotspacemacs-inactive-transparency 100
    dotspacemacs-mode-line-unicode-symbols t
    dotspacemacs-smooth-scrolling t
-
 
    ;; hotkey configuration
    dotspacemacs-leader-key "SPC"
@@ -88,6 +90,7 @@
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-persistent-server nil
 
+   evil-snipe-enable-alternate-f-and-t-behaviors t
    ;; git layer variables
    git-enable-github-support t
    git-magit-status-fullscreen t)
@@ -95,7 +98,29 @@
   (add-to-list 'exec-path "~/.cabal/bin/"))
 
 (defun dotspacemacs/config ()
-  (setq powerline-default-separator 'slant)
+  (setq
+   magit-repo-dirs '("~/code/mattly/" "~/code/wcm" "~/code/gemini")
+   powerline-default-separator 'slant)
+
+  (dolist (item `(("H" . sp-beginning-of-previous-sexp)
+                  ("j" . sp-down-sexp)
+                  ("k" . sp-up-sexp)
+                  ("L" . sp-beginning-of-next-sexp)))
+    (let ((key (car item))
+          (cmd (cdr item)))
+      (eval
+       `(progn
+          (define-key evil-lisp-state-map ,(kbd key) ',cmd)
+          (if evil-lisp-state-global
+              (evil-leader/set-key
+                ,(kbd (concat evil-lisp-state-leader-prefix " " key))
+                (evil-lisp-state-enter-command ,cmd))
+            (dolist (mm evil-lisp-state-major-modes)
+              (evil-leader/set-key-for-mode mm
+                ,(kbd (concat evil-lisp-state-leader-prefix " " key))
+                (evil-lisp-state-enter-command ,cmd))))))))
+
+  ;; (setq guide-key/popup-window-position 'bottom)
 
   (defun disable-all-themes ()
     "disable all active themes."
@@ -168,7 +193,7 @@
  '(hl-fg-colors
    (quote
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
- '(linum-format " %5i " t)
+ '(linum-format " %5i ")
  '(magit-diff-use-overlays nil)
  '(magit-use-overlays nil)
  '(paradox-github-token t)
@@ -204,7 +229,13 @@
  '(vc-annotate-very-old-color nil)
  '(weechat-color-list
    (quote
-    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496"))))
+    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
+ '(writeroom-fullscreen-effect (quote fullboth))
+ '(writeroom-global-effects
+   (quote
+    (writeroom-toggle-alpha writeroom-toggle-menu-bar-lines writeroom-toggle-tool-bar-lines writeroom-toggle-vertical-scroll-bars)))
+ '(writeroom-restore-window-config t)
+ '(writeroom-width 72))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
