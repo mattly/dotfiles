@@ -4,4 +4,5 @@ destination $sketch_dir
 
 ok github timuric/Content-generator-sketch-plugin
 ok github getflourish/Sketch-Color-Contrast-Analyser
+ok github utom/sketch-measure
 
