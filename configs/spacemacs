@@ -12,15 +12,19 @@
    dotspacemacs-configuration-layers `(
                                        ;; # syntax & languages
                                        ;; ansible
+                                       ;; c-c++
                                        (clojure :variables clojure-enable-fancify-symbols t)
                                        erlang-elixir
-                                       extra-langs ; idris openscad nix qml yaml rust wolfram
+                                       ;; ess
+                                       extra-langs ; idris openScad nix nim qml yaml rust wolfram
                                        ;; go
                                        ;; haskell
                                        html
                                        javascript
                                        ;; lua
                                        markdown
+                                       ;; ocaml
+                                       ;; purescript
                                        python
                                        ;; racket
                                        ruby
@@ -34,22 +38,19 @@
                                        dash
                                        evil-snipe
                                        git
+                                       org
                                        osx
-                                       ;; perspectives
                                        ;; restclient
                                        smex
-                                       ;; themes-megapack
-                                       ;; vim-empty-lines
+                                       syntax-checking
 
-                                       ;; # mine
-                                       farmhouse
+                                       ;; --- from custom config path
+                                       ;; mine
                                        mattly
-                                       prose
-                                       purescript   ;; https://github.com/kofno/purescript-spacemacs
-                                       )
+                                       prose)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(neotree)
 
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of the list
@@ -59,11 +60,14 @@
 (defun dotspacemacs/init ()
   "User initialization for Spacemacs."
 
+  ;; set farmhouse-theme to load
+  (setq spacemacs-theme-name-to-package `(,@spacemacs-theme-name-to-package (farmhouse-light . farmhouse-theme) (farmhouse-dark . farmhouse-theme)))
+
+  ;; FWIW I copied the defaults over from the template and have tweaked them to taste appearances
   (setq-default
-   ;; FWIW I copied the defaults over from the template and have tweaked them to taste
-   ;; appearances
    dotspacemacs-startup-banner 'official
-   dotspacemacs-themes '(zenburn farmhouse-dark farmhouse-light)
+
+   dotspacemacs-themes '(farmhouse-light farmhouse-dark)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Input Mono Narrow"
                                :size 14
@@ -98,10 +102,45 @@
   (add-to-list 'exec-path "~/.cabal/bin/"))
 
 (defun dotspacemacs/config ()
-  (setq
-   magit-repo-dirs '("~/code/mattly/" "~/code/wcm" "~/code/gemini")
-   powerline-default-separator 'slant)
+  ;; auto complete
+  (setq read-buffer-completion-ignore-case t
+       completion-ignore-case t
+       read-file-name-completion-ignore-case t)
 
+  ;; auto-save
+  (auto-save-mode 1)
+
+  ;; git-gutter
+  (setq git-gutter-fr:side 'left-fringe)
+
+  ;; golden-ratio
+  (setq
+   golden-ratio-exclude-modes '("ediff-mode"
+                                "gud-mode"
+                                "gdb-locals-mode"
+                                "gdb-registers-mode"
+                                "gdb-breakpoints-mode"
+                                "gdb-threads-mode"
+                                "gdb-frames-mode"
+                                "gdb-inferior-io-mode"
+                                "gud-mode"
+                                "gdb-inferior-io-mode"
+                                "gdb-disassembly-mode"
+                                "gdb-memory-mode"
+                                "magit-log-mode"
+                                "magit-reflog-mode"
+                                "magit-status-mode"
+                                "IELM"
+                                "eshell-mode"
+                                "dired-mode"
+                                "pdf-outline-buffer-mode"
+                                "speedbar-mode"
+                                "bs-mode"
+                                "calc-mode")
+   golden-ratio-exclude-buffer-names '("*swbuff*" "*Ibuffer*"))
+
+  ;; lisp-micro-state
+  ;; override the built-in evil-lisp-state commands
   (dolist (item `(("H" . sp-beginning-of-previous-sexp)
                   ("j" . sp-down-sexp)
                   ("k" . sp-up-sexp)
@@ -120,8 +159,27 @@
                 ,(kbd (concat evil-lisp-state-leader-prefix " " key))
                 (evil-lisp-state-enter-command ,cmd))))))))
 
-  ;; (setq guide-key/popup-window-position 'bottom)
+  ;; magit
+  (setq magit-repo-dirs '("~/code/mattly/" "~/code/wcm" "~/code/gemini"))
 
+  ;; org
+  (setq
+   org-capture-templates '(("j" "Journal Entry"
+                            entry (file+datetree "~/Documents/journal.org")
+                            "* %?"
+                            :empty-lines 1))
+   org-default-notes-file "~/Documents/notes.org"
+   org-return-follows-link 1)
+  (evil-declare-key 'normal evil-org-mode-map (kbd "<RET>") 'org-open-at-point)
+  (evil-declare-key 'normal evil-org-mode-map (kbd "O") 'org-insert-heading-after-current)
+  (evil-declare-key 'normal evil-org-mode-map (kbd "L") 'org-toggle-link-display)
+
+  ;; powerline
+  (setq powerline-default-separator 'slant)
+  (spacemacs|diminish visual-line-mode " vl")
+
+  ;; themes
+  ;; reset themes when loading a new one
   (defun disable-all-themes ()
     "disable all active themes."
     (dolist (i custom-enabled-themes)
@@ -129,22 +187,49 @@
   (defadvice load-theme (before disable-themes-first activate)
     (disable-all-themes))
 
-  (defun prelude-shift-left-visual ()
+  ;; tab stops
+  (setq-default indent-tabs-mode nil)
+  (setq default-tab-width 2
+        tab-width 2)
+
+  ;; keybindings
+  ;; * VISUAL
+  ;; <  retains region
+  (defun retain-shift-left-visual ()
     "Shift left and restore visual selection"
     (interactive)
     (evil-shift-left (region-beginning) (region-end))
     (evil-normal-state)
     (evil-visual-restore))
-  (defun prelude-shift-right-visual ()
+  (define-key evil-visual-state-map (kbd ">") 'retain-shift-right-visual)
+
+  ;; >  retains region
+  (defun retain-shift-right-visual ()
     "Shift right and restore visual selection"
     (interactive)
     (evil-shift-right (region-beginning) (region-end))
     (evil-normal-state)
     (evil-visual-restore))
-  (define-key evil-visual-state-map (kbd ">") 'prelude-shift-right-visual)
-  (define-key evil-visual-state-map (kbd "<") 'prelude-shift-left-visual)
+  (define-key evil-visual-state-map (kbd "<") 'retain-shift-left-visual)
 
+  ;; * NORMAL
+  ;; RET  clears highlight
   (evil-global-set-key 'normal (kbd "RET") 'evil-search-highlight-persist-remove-all)
+  ;; Y    Copies to end of line, like vim
+  (define-key evil-normal-state-map "Y" (kbd "y$"))
+
+  ;; mode hooks
+  (defun my-web-mode-hook ()
+    "Hooks for Web Mode"
+    (define-key web-mode-map (kbd "C-/") 'web-mode-element-close)
+    (setq web-mode-markup-indent-offset 2
+          web-mode-css-indent-offset 2
+          web-mode-code-indent-offset 2
+          web-mode-style-padding 1
+          web-mode-script-padding 1
+          web-mode-block-padding 0))
+  (add-hook 'web-mode-hook 'my-web-mode-hook)
+
   )
 
 (custom-set-variables
@@ -161,81 +246,49 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])
+   ["#ede9e7" "#ef001b" "#66a80e" "#d28508" "#088afb" "#af3574" "#27be72" "#272b34"])
  '(compilation-message-face (quote default))
- '(cua-global-mark-cursor-color "#2aa198")
- '(cua-normal-cursor-color "#657b83")
- '(cua-overwrite-cursor-color "#b58900")
- '(cua-read-only-cursor-color "#859900")
  '(custom-safe-themes
    (quote
-    ("bc576827b9af9122793018a7df3be98a53dc0b762113df8369e4f4cecae8c019" "dd0debc75903ff67d45fae5a4154010c01f428e9f985fe8635b680c61c12b2bc" "470c7fbdcc0ce991a7114700c86188ca66de01e2ef35dcbe6e20fde38d131d21" "d38072499b22b42c66da4b84327309e29088eed636e30bb1b73b476ce914ad1f" "525c4eb16ac3b91698a3701ea9a0fc86c71e3c340e27e121f5c628f269ab60aa")))
+    ("d3f713f94f2806cfc2ab3c165442124de0efb039522accbf23b4452b6063c80b" "f738b502ce636d7f2ae7a2abddfcb6938fe59e4393c967b2041d6c69f1ecfa3e" "f90a9724e7fa3edf9c78b483f62892c70f8e8c1f3becace87d8cc82714472ee7" "bc576827b9af9122793018a7df3be98a53dc0b762113df8369e4f4cecae8c019" "dd0debc75903ff67d45fae5a4154010c01f428e9f985fe8635b680c61c12b2bc" "470c7fbdcc0ce991a7114700c86188ca66de01e2ef35dcbe6e20fde38d131d21" "d38072499b22b42c66da4b84327309e29088eed636e30bb1b73b476ce914ad1f" "525c4eb16ac3b91698a3701ea9a0fc86c71e3c340e27e121f5c628f269ab60aa")))
  '(fci-rule-color "#eee8d5")
- '(highlight-changes-colors ("#FD5FF0" "#AE81FF"))
- '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend it "#fdf6e3" 0.25)
-    (quote nil)))
- '(highlight-symbol-foreground-color "#586e75")
- '(highlight-tail-colors
-   (quote
-    (("#eee8d5" . 0)
-     ("#B4C342" . 20)
-     ("#69CABF" . 30)
-     ("#69B7F0" . 50)
-     ("#DEB542" . 60)
-     ("#F2804F" . 70)
-     ("#F771AC" . 85)
-     ("#eee8d5" . 100))))
- '(hl-bg-colors
-   (quote
-    ("#DEB542" "#F2804F" "#FF6E64" "#F771AC" "#9EA0E5" "#69B7F0" "#69CABF" "#B4C342")))
- '(hl-fg-colors
-   (quote
-    ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
- '(linum-format " %5i ")
+ '(linum-format " %5i " t)
  '(magit-diff-use-overlays nil)
  '(magit-use-overlays nil)
  '(paradox-github-token t)
- '(pos-tip-background-color "#eee8d5" t)
- '(pos-tip-foreground-color "#586e75" t)
  '(rainbow-identifiers-cie-l*a*b*-lightness 80)
  '(rainbow-identifiers-cie-l*a*b*-saturation 18)
  '(ring-bell-function (quote ignore) t)
- '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
- '(term-default-bg-color "#fdf6e3")
- '(term-default-fg-color "#657b83")
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
-    ((20 . "#dc322f")
-     (40 . "#c85d17")
-     (60 . "#be730b")
-     (80 . "#b58900")
-     (100 . "#a58e00")
-     (120 . "#9d9100")
-     (140 . "#959300")
-     (160 . "#8d9600")
-     (180 . "#859900")
-     (200 . "#669b32")
-     (220 . "#579d4c")
-     (240 . "#489e65")
-     (260 . "#399f7e")
-     (280 . "#2aa198")
-     (300 . "#2898af")
-     (320 . "#2793ba")
-     (340 . "#268fc6")
-     (360 . "#268bd2"))))
+    ((20 . "#BC8383")
+     (40 . "#CC9393")
+     (60 . "#DFAF8F")
+     (80 . "#D0BF8F")
+     (100 . "#E0CF9F")
+     (120 . "#F0DFAF")
+     (140 . "#5F7F5F")
+     (160 . "#7F9F7F")
+     (180 . "#8FB28F")
+     (200 . "#9FC59F")
+     (220 . "#AFD8AF")
+     (240 . "#BFEBBF")
+     (260 . "#93E0E3")
+     (280 . "#6CA0A3")
+     (300 . "#7CB8BB")
+     (320 . "#8CD0D3")
+     (340 . "#94BFF3")
+     (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color nil)
- '(weechat-color-list
-   (quote
-    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
+ '(when (not (facep (aref ansi-term-color-vector 0))))
  '(writeroom-fullscreen-effect (quote fullboth))
  '(writeroom-global-effects
    (quote
     (writeroom-toggle-alpha writeroom-toggle-menu-bar-lines writeroom-toggle-tool-bar-lines writeroom-toggle-vertical-scroll-bars)))
  '(writeroom-restore-window-config t)
  '(writeroom-width 72))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

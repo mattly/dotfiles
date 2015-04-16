@@ -3,7 +3,13 @@
                           nodejs-repl
                           om-mode
 
-                          gitconfig-mode
+                          pcmpl-args
+                          pcomplete-extension
+                          pcmpl-homebrew
+                          pcmpl-git
+
+                          wordsmith-mode
+                          osx-dictionary
 
                           farmhouse-theme))
 
