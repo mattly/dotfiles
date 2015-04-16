@@ -279,8 +279,6 @@ let mapleader = ' '                     " backslash doesn't make sense to me.
   "   P   paste from system clipboard
   nnoremap <Leader>p "*p
   nnoremap <Leader>P "*P
-  "   r   open Ranger
-  nnoremap :call RangerChooser()<CR>
   "
   " - s - Spelling
   "   sa  - add word to dictionary

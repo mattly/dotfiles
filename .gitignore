@@ -7,9 +7,9 @@ configs/config/hub
 configs/config/ranger/bookmarks
 configs/config/ranger/history
 configs/config/ranger/tagged
-configs/vim/.netrwhist
-configs/vim/bundle
-configs/vim/view
-configs/vim/session
-configs/vim/thesaurus
+configs/nvim/.netrwhist
+configs/nvim/bundle
+configs/nvim/view
+configs/nvim/session
+configs/nvim/thesaurus
 tags
