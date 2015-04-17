@@ -30,6 +30,11 @@ if status --is-login
   if test -d $HOME/.bin
     unshift_path $HOME/.bin
   end
+
+  if test -d $HOME/code/GOPATH
+    set -xg GOPATH "$HOME/code/GOPATH"
+    unshift_path "$HOME/code/GOPATH/bin"
+  end
 end
 
 # -- ENV

@@ -164,15 +164,26 @@
 
   ;; org
   (setq
-   org-capture-templates '(("j" "Journal Entry"
+   org-capture-templates '(("i" "Inbox"
+                            item (file+headline "~/Documents/notes.org" "Inbox")
+                            "- %?\n")
+                           ("j" "Journal Entry"
                             entry (file+datetree "~/Documents/journal.org")
                             "* %?"
-                            :empty-lines 1))
+                            :empty-lines 1)
+                           ("t" "Todo" entry
+                            (file+headline "~/Documents/notes.org" "Inbox")
+                            "** TODO %?")
+                           )
    org-default-notes-file "~/Documents/notes.org"
-   org-return-follows-link 1)
+   org-return-follows-link 1
+   org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+                       (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)")))
   (evil-declare-key 'normal evil-org-mode-map (kbd "<RET>") 'org-open-at-point)
   (evil-declare-key 'normal evil-org-mode-map (kbd "O") 'org-insert-heading-after-current)
   (evil-declare-key 'normal evil-org-mode-map (kbd "L") 'org-toggle-link-display)
+  (evil-leader/set-key
+    "CC" 'org-capture)
 
   ;; powerline
   (setq powerline-default-separator 'slant)
