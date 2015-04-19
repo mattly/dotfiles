@@ -50,7 +50,7 @@
                                        prose)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(neotree)
+   dotspacemacs-excluded-packages '(neotree org-repo-todo)
 
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of the list
@@ -112,32 +112,6 @@
 
   ;; git-gutter
   (setq git-gutter-fr:side 'left-fringe)
-
-  ;; golden-ratio
-  (setq
-   golden-ratio-exclude-modes '("ediff-mode"
-                                "gud-mode"
-                                "gdb-locals-mode"
-                                "gdb-registers-mode"
-                                "gdb-breakpoints-mode"
-                                "gdb-threads-mode"
-                                "gdb-frames-mode"
-                                "gdb-inferior-io-mode"
-                                "gud-mode"
-                                "gdb-inferior-io-mode"
-                                "gdb-disassembly-mode"
-                                "gdb-memory-mode"
-                                "magit-log-mode"
-                                "magit-reflog-mode"
-                                "magit-status-mode"
-                                "IELM"
-                                "eshell-mode"
-                                "dired-mode"
-                                "pdf-outline-buffer-mode"
-                                "speedbar-mode"
-                                "bs-mode"
-                                "calc-mode")
-   golden-ratio-exclude-buffer-names '("*swbuff*" "*Ibuffer*"))
 
   ;; lisp-micro-state
   ;; override the built-in evil-lisp-state commands
