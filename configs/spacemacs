@@ -40,6 +40,7 @@
                                        git
                                        org
                                        osx
+                                       prodigy
                                        ;; restclient
                                        smex
                                        syntax-checking
@@ -158,6 +159,9 @@
   (evil-declare-key 'normal evil-org-mode-map (kbd "L") 'org-toggle-link-display)
   (evil-leader/set-key
     "CC" 'org-capture)
+
+  ;; prodigy
+  (load "~/code/emacs.prodigy.el" t)
 
   ;; powerline
   (setq powerline-default-separator 'slant)
