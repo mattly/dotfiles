@@ -181,26 +181,6 @@
   (setq default-tab-width 2
         tab-width 2)
 
-  ;; keybindings
-  ;; * VISUAL
-  ;; <  retains region
-  (defun retain-shift-left-visual ()
-    "Shift left and restore visual selection"
-    (interactive)
-    (evil-shift-left (region-beginning) (region-end))
-    (evil-normal-state)
-    (evil-visual-restore))
-  (define-key evil-visual-state-map (kbd ">") 'retain-shift-right-visual)
-
-  ;; >  retains region
-  (defun retain-shift-right-visual ()
-    "Shift right and restore visual selection"
-    (interactive)
-    (evil-shift-right (region-beginning) (region-end))
-    (evil-normal-state)
-    (evil-visual-restore))
-  (define-key evil-visual-state-map (kbd "<") 'retain-shift-left-visual)
-
   ;; * NORMAL
   ;; RET  clears highlight
   (evil-global-set-key 'normal (kbd "RET") 'evil-search-highlight-persist-remove-all)
