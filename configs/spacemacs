@@ -47,12 +47,24 @@
 
                                        ;; --- from custom config path
                                        ;; mine
-                                       mattly
                                        prose)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(neotree org-repo-todo)
+   dotspacemacs-excluded-packages '(neotree org-repo-todo emmet-mode)
+   ;; emmet-mode will rebind T in scss files. ick!
 
+   dotspacemacs-additional-packages '(jsx-mode
+                                      nodejs-repl
+                                      om-mode
+                                      nvm
+
+                                      pcmpl-args
+                                      pcomplete-extension
+                                      pcmpl-homebrew
+                                      pcmpl-git
+
+                                      wordsmith-mode
+                                      osx-dictionary)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of the list
    ;; `dotspacemacs-configuration-layers'
@@ -103,6 +115,8 @@
   (add-to-list 'exec-path "~/.cabal/bin/"))
 
 (defun dotspacemacs/config ()
+  (require 'nvm)
+
   ;; auto complete
   (setq read-buffer-completion-ignore-case t
        completion-ignore-case t
