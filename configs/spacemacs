@@ -30,6 +30,7 @@
                                        ruby
                                        scala
                                        shell-scripts ; fish!
+                                       sql
 
                                        ;; # tools
                                        (auto-completion :variables
