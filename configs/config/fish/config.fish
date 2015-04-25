@@ -35,6 +35,12 @@ if status --is-login
     set -xg GOPATH "$HOME/code/GOPATH"
     unshift_path "$HOME/code/GOPATH/bin"
   end
+
+  if which thefuck >/dev/null
+    function fuck
+      eval (thefuck $history[1])
+    end
+  end
 end
 
 # -- ENV
