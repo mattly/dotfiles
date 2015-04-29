@@ -37,7 +37,10 @@
                                                         auto-completion-use-tab-instead-of-enter t
                                                         auto-completion-enable-company-help-tooltip t)
                                        dash
+                                       editorconfig
                                        evil-snipe
+                                       (eyebrowse :variables
+                                                  eyebrowse-display-help nil)
                                        git
                                        org
                                        osx
@@ -194,20 +197,31 @@
   ;; tab stops
   (setq-default indent-tabs-mode nil)
   (setq default-tab-width 2
-        tab-width 2)
+        tab-width 2
+        css-indent-offset 2
+        evil-shift-width 2
+        json-encoding-default-indentation 2
+        web-mode-css-indent-offset 2
+        web-mode-markup-indent-offset 2
+        web-mode-code-indent-offset 2)
 
   ;; * NORMAL
   ;; RET  clears highlight
   (evil-global-set-key 'normal (kbd "RET") 'evil-search-highlight-persist-remove-all)
+  ;; TAB  toggle fold - stole this from org mode
+  ;; TODO why isn't this working
+  (evil-global-set-key 'normal (kbd "TAB") 'evil-toggle-fold)
   ;; Y    Copies to end of line, like vim
   (define-key evil-normal-state-map "Y" (kbd "y$"))
 
   ;; mode hooks
   (defun my-web-mode-hook ()
     "Hooks for Web Mode"
+    (message "web mode hook enabled")
     (define-key web-mode-map (kbd "C-/") 'web-mode-element-close)
     (setq web-mode-markup-indent-offset 2
           web-mode-css-indent-offset 2
+          web-mode-scss-indent-offset 2
           web-mode-code-indent-offset 2
           web-mode-style-padding 1
           web-mode-script-padding 1
