@@ -9,11 +9,7 @@
 
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers `(
-                                       ;; # syntax & languages
-                                       ;; ansible
-                                       ;; c-c++
-                                       (clojure :variables clojure-enable-fancify-symbols t)
+   dotspacemacs-configuration-layers `((clojure :variables clojure-enable-fancify-symbols t)
                                        erlang-elixir
                                        ;; ess
                                        extra-langs ; idris openScad nix nim qml yaml rust wolfram
@@ -21,7 +17,7 @@
                                        ;; haskell
                                        html
                                        javascript
-                                       ;; lua
+                                       lua
                                        markdown
                                        ;; ocaml
                                        ;; purescript
@@ -50,17 +46,17 @@
                                        syntax-checking
 
                                        ;; --- from custom config path
-                                       ;; mine
                                        prose)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(neotree org-repo-todo emmet-mode)
-   ;; emmet-mode will rebind T in scss files. ick!
+   dotspacemacs-excluded-packages '(neotree org-repo-todo)
 
    dotspacemacs-additional-packages '(jsx-mode
                                       nodejs-repl
                                       om-mode
                                       nvm
+
+                                      flycheck-package
 
                                       pcmpl-args
                                       pcomplete-extension
@@ -129,6 +125,10 @@
   ;; auto-save
   (auto-save-mode 1)
 
+  ;; flycheck
+  (eval-after-load 'flycheck
+    '(flycheck-package-setup))
+
   ;; git-gutter
   (setq git-gutter-fr:side 'left-fringe)
 
@@ -153,10 +153,12 @@
                 (evil-lisp-state-enter-command ,cmd))))))))
 
   ;; magit
-  (setq magit-repo-dirs '("~/code/mattly/" "~/code/wcm" "~/code/gemini"))
+  (setq
+   magit-repo-dirs '("~/code/mattly/" "~/code/wcm" "~/code/gemini"))
 
   ;; org
   (setq
+   org-bullets-bullet-list '("❖" "✤" "✱" "⦿" "✳︎" "▪︎" "•" "・")
    org-capture-templates '(("i" "Inbox"
                             item (file+headline "~/Documents/notes.org" "Inbox")
                             "- %?\n")
@@ -248,7 +250,7 @@
  '(compilation-message-face (quote default))
  '(custom-safe-themes
    (quote
-    ("d3f713f94f2806cfc2ab3c165442124de0efb039522accbf23b4452b6063c80b" "f738b502ce636d7f2ae7a2abddfcb6938fe59e4393c967b2041d6c69f1ecfa3e" "f90a9724e7fa3edf9c78b483f62892c70f8e8c1f3becace87d8cc82714472ee7" "bc576827b9af9122793018a7df3be98a53dc0b762113df8369e4f4cecae8c019" "dd0debc75903ff67d45fae5a4154010c01f428e9f985fe8635b680c61c12b2bc" "470c7fbdcc0ce991a7114700c86188ca66de01e2ef35dcbe6e20fde38d131d21" "d38072499b22b42c66da4b84327309e29088eed636e30bb1b73b476ce914ad1f" "525c4eb16ac3b91698a3701ea9a0fc86c71e3c340e27e121f5c628f269ab60aa")))
+    ("cdd26fa6a8c6706c9009db659d2dffd7f4b0350f9cc94e5df657fa295fffec71" "49ad7c8d458074db7392f8b8a49235496e9228eb2fa6d3ca3a7aa9d23454efc6" "2d7e4feac4eeef3f0610bf6b155f613f372b056a2caae30a361947eab5074716" "d3f713f94f2806cfc2ab3c165442124de0efb039522accbf23b4452b6063c80b" "f738b502ce636d7f2ae7a2abddfcb6938fe59e4393c967b2041d6c69f1ecfa3e" "f90a9724e7fa3edf9c78b483f62892c70f8e8c1f3becace87d8cc82714472ee7" "bc576827b9af9122793018a7df3be98a53dc0b762113df8369e4f4cecae8c019" "dd0debc75903ff67d45fae5a4154010c01f428e9f985fe8635b680c61c12b2bc" "470c7fbdcc0ce991a7114700c86188ca66de01e2ef35dcbe6e20fde38d131d21" "d38072499b22b42c66da4b84327309e29088eed636e30bb1b73b476ce914ad1f" "525c4eb16ac3b91698a3701ea9a0fc86c71e3c340e27e121f5c628f269ab60aa")))
  '(fci-rule-color "#eee8d5")
  '(linum-format " %5i " t)
  '(magit-diff-use-overlays nil)
