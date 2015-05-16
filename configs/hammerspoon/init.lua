@@ -37,21 +37,21 @@ function reloadConfig(files)
 end
 hs.pathwatcher.new(os.getenv("HOME") .. ".hammerspoon/", reloadConfig):start()
 
-function applicationWatcher(appName, eventType, appObject)
-  if (eventType == hs.application.watcher.activated) then
-    if (appName == "Emacs") then
-      local win = hs.window.focusedWindow()
-      local f = win:frame()
-      local screen = win:screen()
-      local max = screen:frame()
+-- function applicationWatcher(appName, eventType, appObject)
+--   if (eventType == hs.application.watcher.activated) then
+--     if (appName == "Emacs") then
+--       local win = hs.window.focusedWindow()
+--       local f = win:frame()
+--       local screen = win:screen()
+--       local max = screen:frame()
 
-      f.x = max.x + ( max.w * 0.66 )
-      f.y = max.y
-      f.w = max.w * 0.66
-      f.h = max.h
-      win:setFrame(h)
-    end
-  end
-end
-local appWatcher = hs.application.watcher.new(applicationWatcher)
-appWatcher:start()
+--       f.x = max.x + ( max.w * 0.66 )
+--       f.y = max.y
+--       f.w = max.w * 0.66
+--       f.h = max.h
+--       win:setFrame(h)
+--     end
+--   end
+-- end
+-- local appWatcher = hs.application.watcher.new(applicationWatcher)
+-- appWatcher:start()
