@@ -289,6 +289,9 @@ layers configuration."
   ;; Y    Copies to end of line, like vim
   (define-key evil-normal-state-map "Y" (kbd "y$"))
 
+  ;; file associatons
+  (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
+
   ;; mode hooks
   (defun my-web-mode-hook ()
     "Hooks for Web Mode"
