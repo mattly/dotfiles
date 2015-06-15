@@ -18,22 +18,22 @@ function fish_prompt -d "Write out the prompt"
   set -l git_in_worktree (git rev-parse --is-inside-work-tree ^/dev/null)
   if test $status -eq 0
     set_color cyan
-    printf ' (± '
+    printf '\n(± '
 
-    set -l branch (git symbolic-ref -q HEAD | cut -c 12-)
+    set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
     if test -n $branch
       set_color normal
       printf $branch
     else
-      set -l hash (git rev-parse --short HEAD | cut -c 2-)
+      set -l rev (git rev-parse --short HEAD | cut -c 2-)
       set_color cyan
-      printf "("
+      printf '('
       set_color -o yellow
-      printf "no-branch "
+      printf 'no-branch '
       set_color normal
-      printf $hash
+      printf $rev
       set_color cyan
-      printf ")"
+      printf ')'
     end
 
     # set -l remote_name (git config branch.$branch.remote)
@@ -111,7 +111,7 @@ function fish_prompt -d "Write out the prompt"
         if test $join -gt 0; printf " "; end
         set join 1
         set_color -o red
-        printf "✕ "
+        printf '✕ '
         set_color normal
         printf $conflicted
       end
@@ -160,15 +160,15 @@ function fish_prompt -d "Write out the prompt"
   #         printf ':%s:' (echo $git_status[2] | awk ' { print $4 } ' )
   #     end
 
-  if test $exit_status -gt 0
-    set_color cyan
-    printf ' (✕ '
-    set_color -o red
-    printf $exit_status
-    set_color normal # resets the -o brightness
-    set_color cyan
-    printf ')'
-  end
+  # if test $exit_status -gt 0
+  #   set_color cyan
+  #   printf ' (✕ '
+  #   set_color -o red
+  #   printf $exit_status
+  #   set_color normal # resets the -o brightness
+  #   set_color cyan
+  #   printf ')'
+  # end
 
   printf '%s ' (set_color normal)
 end
