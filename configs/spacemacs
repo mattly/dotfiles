@@ -32,8 +32,6 @@
      osx
      prodigy
      python
-     ruby
-     scala
      shell
      shell-scripts
      smex
@@ -222,7 +220,7 @@ layers configuration."
 
   ;; magit
   (setq
-   magit-repo-dirs '("~/code/mattly/" "~/code/wcm" "~/code/gemini"))
+   magit-repo-dirs '("~/code"))
 
   ;; org
   (setq
