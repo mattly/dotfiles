@@ -12,32 +12,52 @@
     ;; of a list then all discovered layers will be installed.
     dotspacemacs-configuration-layers
     '(
-       (auto-completion :variables
-         auto-completion-use-tab-instead-of-enter t
-         auto-completion-enable-company-help-tooltip t)
-       better-defaults
-       (clojure :variables
-         clojure-enable-fancify-symbols t)
+       ;; lang
+       (clojure :variables clojure-enable-fancify-symbols t)
+       elixir
        emacs-lisp
-       erlang-elixir
-       (eyebrowse :variables
-         eyebrowse-display-help nil)
-       (git :variables
-         git-gutter-use-fringe t)
+       erlang
+       ipython-notebook
        html
        javascript
        lua
        markdown
        org
-       osx
-       prodigy
        python
-       shell
        shell-scripts
-       smex
        sql
+
+       ;; version-control
+       git
+       github
+       version-control
+
+       ;; vim stuff
+       evil-snipe
+       vim-empty-lines
+
+       ;; window management
+       (eyebrowse :variables eyebrowse-display-help nil)
+
+       ;; base layers
+       (auto-completion :variables
+         auto-completion-return-key-behavior 'complete
+         auto-completion-tab-key-behavior 'cycle
+         auto-completion-enable-help-tooltip t)
+
+       ;; groups buffers by major-mode or project
+       (ibrowse :variables ibuffer-group-buffers-by 'projects)
+
+       ;; enables command-key bindings
+       osx
+       (shell :variables
+         shell-default-position 'bottom
+         shell-default-height 30
+         shell-default-term-shell "/usr/local/bin/fish")
+       smex
        syntax-checking
        )
+
     ;; List of additional packages that will be installed wihout being
     ;; wrapped in a layer. If you need some configuration for these
     ;; packages then consider to create a layer, you can also put the
@@ -173,7 +193,6 @@ before layers configuration."
     )
   ;; User initialization goes here
   (setq-default
-    git-enable-github-support t
     git-magit-status-fullscreen t)
   )
 
@@ -194,9 +213,6 @@ layers configuration."
   ;; flycheck
   (eval-after-load 'flycheck
     '(flycheck-package-setup))
-
-  ;; git-gutter
-  (setq git-gutter-fl:side 'left-fringe)
 
   ;; lisp-micro-state
   ;; override the built-in evil-lisp-state commands
@@ -249,9 +265,6 @@ layers configuration."
   (evil-declare-key 'normal evil-org-mode-map (kbd "L") 'org-toggle-link-display)
   (evil-leader/set-key
     "CC" 'org-capture)
-
-  ;; prodigy
-  (load "~/code/emacs.prodigy.el" t)
 
   ;; powerline
   (setq powerline-default-separator 'slant)
