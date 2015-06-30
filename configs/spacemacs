@@ -13,7 +13,7 @@
     dotspacemacs-configuration-layers
     '(
        ;; lang
-       (clojure :variables clojure-enable-fancify-symbols t)
+       clojure
        elixir
        emacs-lisp
        erlang
