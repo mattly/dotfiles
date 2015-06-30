@@ -23,15 +23,17 @@ function fish_prompt -d "Write out the prompt"
     set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
     if test -n $branch
       set_color normal
-      printf $branch
+      printf "$branch"
     else
       set -l rev (git rev-parse --short HEAD | cut -c 2-)
       set_color cyan
       printf '('
       set_color -o yellow
       printf 'no-branch '
-      set_color normal
-      printf $rev
+      if test -n $rev
+        set_color normal
+        printf $rev
+      end
       set_color cyan
       printf ')'
     end
