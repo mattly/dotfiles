@@ -213,6 +213,9 @@ layers configuration."
   (eval-after-load 'flycheck
     '(flycheck-package-setup))
 
+  ;; js2-mode
+  (setq js2-strict-missing-semi-warning nil)
+
   ;; lisp-micro-state
   ;; override the built-in evil-lisp-state commands
   (dolist (item `(("H" . sp-beginning-of-previous-sexp)
@@ -300,6 +303,7 @@ layers configuration."
 
   ;; file associatons
   (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 
   ;; mode hooks
   (defun my-web-mode-hook ()
