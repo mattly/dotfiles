@@ -34,7 +34,6 @@
 
        ;; vim stuff
        evil-snipe
-       vim-empty-lines
 
        ;; window management
        (eyebrowse :variables eyebrowse-display-help nil)
