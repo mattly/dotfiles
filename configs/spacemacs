@@ -55,6 +55,7 @@
          shell-default-term-shell "/usr/local/bin/fish")
        smex
        syntax-checking
+       vinegar
        )
 
     ;; List of additional packages that will be installed wihout being
@@ -63,7 +64,6 @@
     ;; configuration in `dotspacemacs/config'.
     dotspacemacs-additional-packages '(farmhouse-theme
 
-                                        jsx-mode
                                         nodejs-repl
                                         om-mode
                                         nvm
@@ -300,10 +300,6 @@ layers configuration."
   (evil-global-set-key 'normal (kbd "TAB") 'evil-toggle-fold)
   ;; Y    Copies to end of line, like vim
   (define-key evil-normal-state-map "Y" (kbd "y$"))
-
-  ;; file associatons
-  (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 
   ;; mode hooks
   (defun my-web-mode-hook ()
