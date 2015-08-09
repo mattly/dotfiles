@@ -49,6 +49,7 @@
 
        ;; enables command-key bindings
        osx
+       reveal-in-osx-finder
        (shell :variables
          shell-default-position 'bottom
          shell-default-height 30
