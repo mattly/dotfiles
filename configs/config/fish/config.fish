@@ -20,7 +20,9 @@ if status --is-login
   end
 
   if test -d $HOME/.config/fish/nvm-wrapper
-    source $HOME/.config/fish/nvm-wrapper/nvm.fish
+    if test -d $HOME/.config/.nvm
+      source $HOME/.config/fish/nvm-wrapper/nvm.fish
+    end
   end
 
   if test -d $HOME/.cabal
