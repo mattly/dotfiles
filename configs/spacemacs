@@ -274,7 +274,7 @@ layers configuration."
     "CC" 'org-capture)
 
   ;; powerline
-  (setq powerline-default-separator 'slant)
+  (setq powerline-default-separator 'nil)
   (spacemacs|diminish visual-line-mode " vl")
 
   ;; themes
