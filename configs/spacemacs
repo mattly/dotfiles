@@ -56,6 +56,7 @@
          shell-default-height 30
          shell-default-term-shell "/usr/local/bin/fish")
        smex
+       spell-checking
        syntax-checking
 
        ;; navigation
