@@ -162,15 +162,15 @@ function fish_prompt -d "Write out the prompt"
   #         printf ':%s:' (echo $git_status[2] | awk ' { print $4 } ' )
   #     end
 
-  # if test $exit_status -gt 0
-  #   set_color cyan
-  #   printf ' (✕ '
-  #   set_color -o red
-  #   printf $exit_status
-  #   set_color normal # resets the -o brightness
-  #   set_color cyan
-  #   printf ')'
-  # end
+  if test $exit_status -gt 0
+    set_color cyan
+    printf ' (✕ '
+    set_color -o red
+    printf $exit_status
+    set_color normal # resets the -o brightness
+    set_color cyan
+    printf ')'
+  end
 
   printf '%s ' (set_color normal)
 end
