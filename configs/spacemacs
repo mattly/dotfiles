@@ -27,6 +27,7 @@
        python
        shell-scripts
        sql
+       yaml
 
        ;; version-control
        git
