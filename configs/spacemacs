@@ -12,7 +12,7 @@
     ;; of a list then all discovered layers will be installed.
     dotspacemacs-configuration-layers
     '(
-       ;; lang
+       ;; languages and frameworks
        clojure
        elixir
        emacs-lisp
@@ -22,10 +22,11 @@
        javascript
        lua
        markdown
-       nixos
        org
        python
+       react
        shell-scripts
+       sibilant
        sql
        yaml
 
@@ -83,6 +84,7 @@
                                         pcmpl-homebrew
                                         pcmpl-git
 
+                                        olivetti
                                         wordsmith-mode
                                         osx-dictionary)
     ;; A list of packages and/or extensions that will not be install and loaded.
