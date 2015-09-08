@@ -75,6 +75,7 @@
                                         nodejs-repl
                                         om-mode
                                         nvm
+                                        graphviz-dot-mode
 
                                         flycheck-package
                                         editorconfig
