@@ -309,8 +309,6 @@ layers configuration."
   ;; TAB  toggle fold - stole this from org mode
   ;; TODO why isn't this working
   (evil-global-set-key 'normal (kbd "TAB") 'evil-toggle-fold)
-  ;; Y    Copies to end of line, like vim
-  (define-key evil-normal-state-map "Y" (kbd "y$"))
 
   ;; mode hooks
   (defun my-web-mode-hook ()
