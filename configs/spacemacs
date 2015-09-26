@@ -12,47 +12,56 @@
     ;; of a list then all discovered layers will be installed.
     dotspacemacs-configuration-layers
     '(
-       ;; languages and frameworks
+       ;; +lang | +frameworks
        clojure
        elixir
        emacs-lisp
        erlang
        ipython-notebook
+       ;; haskell
        html
+       ;; idris
        javascript
        lua
        markdown
        org
+       ;; purescript
        python
+       ;; racket
        react
        shell-scripts
        sibilant
        sql
        yaml
 
-       ;; version-control
+       ;; +fun
+       emoji
+
+       ;; +source-control
        git
        github
        version-control
 
-       ;; vim stuff
-       evil-snipe
+       ;; +tools
+       ranger
 
-       ;; window management
+       ;; +vim
+       evil-snipe
+       vim-empty-lines
+       vinegar
+
+       ;; +window-management
        (eyebrowse :variables eyebrowse-display-help nil)
 
-       ;; base layers
+       ;; etc
        (auto-completion :variables
          auto-completion-return-key-behavior 'complete
          auto-completion-tab-key-behavior 'cycle
          auto-completion-enable-help-tooltip t)
 
-       ;; groups buffers by major-mode or project
        (ibrowse :variables ibuffer-group-buffers-by 'projects)
 
-       ;; enables command-key bindings
        osx
-       reveal-in-osx-finder
        (shell :variables
          shell-default-position 'bottom
          shell-default-height 30
@@ -60,10 +69,6 @@
        smex
        spell-checking
        syntax-checking
-
-       ;; navigation
-       ranger
-       vinegar
        )
 
     ;; List of additional packages that will be installed wihout being
