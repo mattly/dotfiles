@@ -2,14 +2,14 @@
                   [refactor-nrepl "1.1.0"]]
         :dependencies [[alembic "0.3.2"]
                        [org.clojure/tools.nrepl "0.2.10"]
-                       [org.clojars.gjahad/debug-repl "0.3.3"]
-                       [org.clojure/tools.namespace "0.2.4"]
-                       [leiningen #=(leiningen.core.main/leiningen-version)]
-                       [io.aviso/pretty "0.1.8"]
-                       [im.chit/vinyasa "0.3.4"]
-                       [spyscope "0.1.5"]
-                       [difform "1.1.2"]]
-        :injections [(require 'spyscope.core)
+                       #_[org.clojars.gjahad/debug-repl "0.3.3"]
+                       #_[org.clojure/tools.namespace "0.2.4"]
+                       #_[leiningen #=(leiningen.core.main/leiningen-version)]
+                       #_[io.aviso/pretty "0.1.8"]
+                       #_[im.chit/vinyasa "0.3.4" :exclude [clj-http]]
+                       #_[spyscope "0.1.5"]
+                       #_[difform "1.1.2"]]
+        #_:injections #_[(require 'spyscope.core)
                      (require '[vinyasa.inject :as inject])
                      (require 'alex-and-georges.debug-repl)
                      (inject/in [vinyasa.inject :refer [inject [in inject-in]]]
