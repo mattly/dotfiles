@@ -38,56 +38,59 @@ function fish_prompt -d "Write out the prompt"
       printf ')'
     end
 
-    # set -l remote_name (git config branch.$branch.remote)
+    set -l remote_name (git config branch.$branch.remote)
 
-    # set -l merge_name ""
-    # if test -n $remote_name
-    #   set merge_name_long (git config branch.$branch.merge)
-    #   set merge_name (echo $merge_name_long | cut -c 12-)
-    # else
-    #   set remote_name "origin"
-    #   set merge_name_long "refs/heads/$branch"
-    #   set merge_name $branch
-    # end
-    # if [ $remote_name = '.' ]
-    #   set remote_ref $merge_name
-    # else
-    #   set remote_ref "refs/remotes/$remote_name/$merge_name"
-    # end
-    # set -l rev_git (eval "git rev-list --left-right $remote_ref...HEAD" ^/dev/null)
-    # if test $status != "0"
-    #   set rev_git (eval "git rev-list --left-right $merge_name...HEAD" ^/dev/null)
-    # end
-    # for i in $rev_git
-    #   if echo $i | grep '>' >/dev/null
-    #     set isAhead $isAhead ">"
-    #   end
-    # end
-    # set -l remote_diff (count $rev_git)
-    # set -l ahead (count $isAhead)
-    # set -l behind (math $remote_diff - $ahead)
-    # if [ (math $ahead + $behind) != 0 ]
-    #   set_color cyan
-    #   printf " {"
+    set -l merge_name ""
+    if test -n $remote_name
+      set merge_name_long (git config branch.$branch.merge)
+      set merge_name (echo $merge_name_long | cut -c 12-)
+    else
+      set remote_name "origin"
+      set merge_name_long "refs/heads/$branch"
+      set merge_name $branch
+    end
+    if [ $remote_name = '.' ]
+      set remote_ref $merge_name
+    else
+      set remote_ref "refs/remotes/$remote_name/$merge_name"
+    end
+    set -l rev_git (eval "git rev-list --left-right $remote_ref...HEAD" ^/dev/null)
+    if test $status != "0"
+      set rev_git (eval "git rev-list --left-right $merge_name...HEAD" ^/dev/null)
+    end
+    for i in $rev_git
+      if echo $i | grep '>' >/dev/null
+        set isAhead $isAhead ">"
+      end
+    end
+    set -l remote_diff (count $rev_git)
+    set -l ahead (count $isAhead)
+    set -l behind (math $remote_diff - $ahead)
+    if [ (math $ahead + $behind) != 0 ]
+      set_color cyan
+      printf " {⟳ "
+      set_color normal
+      printf $remote_name
+      set_color cyan
 
-    #   if test $ahead -gt 0
-    #     set_color -o purple
-    #     printf "▶︎ "
-    #     set_color normal
-    #     printf $ahead
-    #   end
+      if test $ahead -gt 0
+        set_color -o purple
+        printf " + "
+        set_color normal
+        printf $ahead
+      end
 
-    #   if test $behind -gt 0
-    #     if test $ahead -gt 0; printf " "; end
-    #     set_color -o blue
-    #     printf "◀︎ "
-    #     set_color normal
-    #     printf $behind
-    #   end
+      if test $behind -gt 0
+        if test $ahead -gt 0; printf " "; end
+        set_color -o blue
+        printf " - "
+        set_color normal
+        printf $behind
+      end
 
-    #   set_color cyan
-    #   printf "}"
-    # end
+      set_color cyan
+      printf "}"
+    end
 
     set -l changedFiles (git diff --name-status | cut -c 1-2)
     set -l stagedFiles (git diff --staged --name-status | cut -c 1-2)
