@@ -46,7 +46,7 @@
        ranger
 
        ;; +vim
-       evil-snipe
+       ;; evil-snipe
        vim-empty-lines
        vinegar
 
@@ -83,7 +83,7 @@
                                         graphviz-dot-mode
 
                                         flycheck-package
-                                        editorconfig
+                                        ;; editorconfig
 
                                         pcmpl-args
                                         pcomplete-extension
@@ -100,7 +100,7 @@
     ;; the list `dotspacemacs-configuration-layers'
     dotspacemacs-delete-orphan-packages t))
 
-(defun dotspacemacs/init ()
+(defun dotspacemacs/user-init ()
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
 before layers configuration."
@@ -211,7 +211,7 @@ before layers configuration."
     git-magit-status-fullscreen t)
   )
 
-(defun dotspacemacs/config ()
+(defun dotspacemacs/user-config ()
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
@@ -224,6 +224,11 @@ layers configuration."
 
   ;; auto save
   (auto-save-mode 1)
+
+  ;; Clojure
+  ;; (define-clojure-indent
+  ;;   (alet 'defun)
+  ;;   (mlet 'defun))
 
   ;; flycheck
   (eval-after-load 'flycheck
