@@ -38,10 +38,8 @@ function fish_prompt -d "Write out the prompt"
       printf ')'
     end
 
-    set -l remote_name (git config branch.$branch.remote)
-
-    set -l merge_name ""
-    if test -n $remote_name
+    set remote_name (git config branch.$branch.remote)
+    if test $status -eq 0 -a -n $remote_name
       set merge_name_long (git config branch.$branch.merge)
       set merge_name (echo $merge_name_long | cut -c 12-)
     else
@@ -49,13 +47,13 @@ function fish_prompt -d "Write out the prompt"
       set merge_name_long "refs/heads/$branch"
       set merge_name $branch
     end
-    if [ $remote_name = '.' ]
+    if test $remote_name -eq "."
       set remote_ref $merge_name
     else
       set remote_ref "refs/remotes/$remote_name/$merge_name"
     end
     set -l rev_git (eval "git rev-list --left-right $remote_ref...HEAD" ^/dev/null)
-    if test $status != "0"
+    if test $status -ne 0
       set rev_git (eval "git rev-list --left-right $merge_name...HEAD" ^/dev/null)
     end
     for i in $rev_git
