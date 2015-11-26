@@ -139,7 +139,8 @@ before layers configuration."
     dotspacemacs-colorize-cursor-according-to-state t
     ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
     ;; size to make separators look not too crappy.
-    dotspacemacs-default-font '("Input Mono Narrow"
+    dotspacemacs-default-font '( "Fira Code"
+                                ;;"Input Mono Narrow"
                                  :size 13
                                  :weight light
                                  :width normal
@@ -217,7 +218,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  ;; (require 'nvm)
+  (mac-auto-operator-composition-mode)
 
   ;; auto complete
   (setq read-buffer-completion-ignore-case t
@@ -292,8 +293,7 @@ layers configuration."
     "CC" 'org-capture)
 
   ;; powerline
-  (setq powerline-default-separator 'nil)
-  (spacemacs|diminish visual-line-mode " vl")
+  (setq powerline-default-separator 'bar)
 
   ;; themes
   ;; reset themes when loading a new one
