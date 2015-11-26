@@ -22,23 +22,13 @@ values."
      clojure
      elixir
      emacs-lisp
-     elm
      erlang
      extra-langs ;; julia
-     haskell
      html
-     idris
-     ipython-notebook
      javascript
-     lua
      markdown
      org
-     purescript
-     python
-     racket
      react
-     ruby
-     rust
      shell-scripts
      ;; sibilant
      sql
