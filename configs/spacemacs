@@ -27,7 +27,7 @@
        org
        ;; purescript
        python
-       ;; racket
+       racket
        react
        shell-scripts
        sibilant
@@ -61,6 +61,7 @@
 
        (ibrowse :variables ibuffer-group-buffers-by 'projects)
 
+       org
        osx
        (shell :variables
          shell-default-position 'bottom
@@ -76,6 +77,7 @@
     ;; packages then consider to create a layer, you can also put the
     ;; configuration in `dotspacemacs/config'.
     dotspacemacs-additional-packages '(farmhouse-theme
+                                       sibilant-mode
 
                                         nodejs-repl
                                         om-mode
@@ -192,7 +194,7 @@ before layers configuration."
     ;; point when it reaches the top or bottom of the screen.
     dotspacemacs-smooth-scrolling t
     ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
-    dotspacemacs-smartparens-strict-mode nil
+    dotspacemacs-smartparens-strict-mode t
     ;; Select a scope to highlight delimiters. Possible value is `all',
     ;; `current' or `nil'. Default is `all'
     dotspacemacs-highlight-delimiters 'all
@@ -304,14 +306,6 @@ layers configuration."
 
   ;; tab stops
   (setq-default indent-tabs-mode nil)
-  (setq default-tab-width 2
-    tab-width 2
-    css-indent-offset 2
-    evil-shift-width 2
-    json-encoding-default-indentation 2
-    web-mode-css-indent-offset 2
-    web-mode-markup-indent-offset 2
-    web-mode-code-indent-offset 2)
 
   ;; * NORMAL
   ;; RET  clears highlight
@@ -325,13 +319,7 @@ layers configuration."
     "Hooks for Web Mode"
     (message "web mode hook enabled")
     (define-key web-mode-map (kbd "C-/") 'web-mode-element-close)
-    (setq web-mode-markup-indent-offset 2
-      web-mode-css-indent-offset 2
-      web-mode-scss-indent-offset 2
-      web-mode-code-indent-offset 2
-      web-mode-style-padding 1
-      web-mode-script-padding 1
-      web-mode-block-padding 0))
+    )
   (add-hook 'web-mode-hook 'my-web-mode-hook)
   )
 
