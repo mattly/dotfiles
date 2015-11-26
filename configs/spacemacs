@@ -267,21 +267,9 @@ layers configuration."
   ;; org
   (setq
     org-bullets-bullet-list '("❖" "✤" "✱" "⦿" "✳︎" "▪︎" "•" "・")
-    org-capture-templates '(("i" "Inbox"
-                              item (file+headline "~/Documents/notes.org" "Inbox")
-                              "- %?\n")
-                             ("j" "Journal Entry"
-                               entry (file+datetree "~/Documents/journal.org")
-                               "* %?"
-                               :empty-lines 1)
-                             ("t" "Todo" entry
-                               (file+headline "~/Documents/notes.org" "Inbox")
-                               "** TODO %?")
-                             )
+    org-ellipsis "⤵"
     org-default-notes-file "~/Documents/notes.org"
-    org-return-follows-link 1
-    org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-                         (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)")))
+    org-return-follows-link 1)
   (org-babel-do-load-languages
     'org-babel-load-languages
     '((emacs-lisp . t)
