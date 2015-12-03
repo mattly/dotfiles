@@ -267,7 +267,11 @@ user code here.  The exception is org related code, which should be placed in
 layers configuration."
 
   ;; Fira Code ligatures in railswaycat emacs
-  (mac-auto-operator-composition-mode)
+  ;; (mac-auto-operator-composition-mode)
+  ;; use COMMAND as META
+  ;; and OPTION for character insertion of characters like ß√∑† etc.
+  (setq mac-option-modifier nil)
+  (setq mac-command-modifier 'meta)
 
   ;; auto complete
   (setq read-buffer-completion-ignore-case t
