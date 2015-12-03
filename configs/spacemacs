@@ -78,7 +78,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(;; sibilant-mode
+   dotspacemacs-additional-packages '(sibilant-mode
                                       graphviz-dot-mode
 
                                       flycheck-package
