@@ -18,24 +18,32 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     ;; +lang | +frameworks
+     ;; +config-files
+     ansible
+     dockerfile
+     terraform
+
+     ;; +frameworks
+     react
+
+     ;; +fun
+     emoji
+
+     ;; +lang
      clojure
      elixir
      emacs-lisp
      erlang
      extra-langs ;; julia
+     haskell
      html
      javascript
      markdown
      org
-     react
      shell-scripts
-     ;; sibilant
      sql
      yaml
 
-     ;; +fun
-     emoji
 
      ;; +source-control
      git
@@ -46,7 +54,6 @@ values."
      ranger
 
      ;; +vim
-     ;; evil-snipe
      vim-empty-lines
      vinegar
 
@@ -268,6 +275,7 @@ layers configuration."
 
   ;; Fira Code ligatures in railswaycat emacs
   ;; (mac-auto-operator-composition-mode)
+
   ;; use COMMAND as META
   ;; and OPTION for character insertion of characters like ß√∑† etc.
   (setq mac-option-modifier nil)
