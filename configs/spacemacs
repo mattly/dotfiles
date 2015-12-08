@@ -89,7 +89,7 @@ values."
                                       graphviz-dot-mode
 
                                       flycheck-package
-                                      ;; editorconfig
+                                      editorconfig
 
                                       pcmpl-args
                                       pcomplete-extension
@@ -303,23 +303,30 @@ layers configuration."
 
   ;; lisp-micro-state
   ;; override the built-in evil-lisp-state commands
-  (dolist (item `(("H" . sp-beginning-of-previous-sexp)
-                  ("j" . sp-down-sexp)
-                  ("k" . sp-up-sexp)
-                  ("L" . sp-beginning-of-next-sexp)))
-    (let ((key (car item))
-          (cmd (cdr item)))
-      (eval
-       `(progn
-          (define-key evil-lisp-state-map ,(kbd key) ',cmd)
-          (if evil-lisp-state-global
-              (evil-leader/set-key
-                ,(kbd (concat evil-lisp-state-leader-prefix " " key))
-                (evil-lisp-state-enter-command ,cmd))
-            (dolist (mm evil-lisp-state-major-modes)
-              (evil-leader/set-key-for-mode mm
-                ,(kbd (concat evil-lisp-state-leader-prefix " " key))
-                (evil-lisp-state-enter-command ,cmd))))))))
+  ;; (dolist (item `(("H" . sp-beginning-of-previous-sexp)
+  ;;                 ("j" . sp-down-sexp)
+  ;;                 ("k" . sp-up-sexp)
+  ;;                 ("L" . sp-beginning-of-next-sexp)))
+  ;;   (let ((key (car item))
+  ;;         (cmd (cdr item)))
+  ;;     (eval
+  ;;      `(progn
+  ;;         (define-key evil-lisp-state-map ,(kbd key) ',cmd)
+  ;;         (if evil-lisp-state-global
+  ;;             (evil-leader/set-key
+  ;;               ,(kbd (concat evil-lisp-state-leader-prefix " " key))
+  ;;               (evil-lisp-state-enter-command ,cmd))
+  ;;           (dolist (mm evil-lisp-state-major-modes)
+  ;;             (evil-leader/set-key-for-mode mm
+  ;;               ,(kbd (concat evil-lisp-state-leader-prefix " " key))
+  ;;               (evil-lisp-state-enter-command ,cmd))))))))
+  (spacemacs/set-leader-keys
+    "`" 'spacemacs/workspaces-micro-state
+    ;; "kH" 'sp-beginning-of-previous-sexp
+    ;; "kh" 'sp-down-sexp
+    ;; "kk" 'sp-up-sexp
+    ;; "kL" 'sp-beginning-of-next-sexp
+    )
 
   ;; magit
   (setq
