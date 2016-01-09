@@ -24,7 +24,6 @@ values."
      terraform
 
      ;; +frameworks
-     rails
      react
 
      ;; +fun
@@ -43,7 +42,6 @@ values."
      javascript
      markdown
      org
-     ruby
      purescript
      shell-scripts
      sql
