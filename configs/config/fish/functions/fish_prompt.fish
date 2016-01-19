@@ -23,59 +23,66 @@ function fish_prompt -d "Write out the prompt"
     set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
     set -l rebasing (echo $branch | grep 'no branch')
     if test $status -gt 0
-      set_color normal
-      printf $branch
-
-      set remote_name (git config branch.$branch.remote)
-      if test $status -eq 0 # -a -n $remote_name
-        set merge_name_long (git config branch.$branch.merge)
-        set merge_name (echo $merge_name_long | cut -c 12-)
-      else
-        set remote_name "origin"
-        set merge_name_long "refs/heads/$branch"
-        set merge_name $branch
-      end
-      if test $remote_name -eq "."
-        set remote_ref $merge_name
-      else
-        set remote_ref "refs/remotes/$remote_name/$merge_name"
-      end
-      set -l rev_git (eval "git rev-list --left-right $remote_ref...HEAD" ^/dev/null)
-      if test $status -ne 0
-        set rev_git (eval "git rev-list --left-right $merge_name...HEAD" ^/dev/null)
-      end
-      for i in $rev_git
-        if echo $i | grep '>' >/dev/null
-          set isAhead $isAhead ">"
-        end
-      end
-      set -l remote_diff (count $rev_git)
-      set -l ahead (count $isAhead)
-      set -l behind (math $remote_diff - $ahead)
-      if [ (math $ahead + $behind) != 0 ]
-        set_color cyan
-        printf " {⟳ "
+      set -l detached (echo $branch | grep 'detached')
+      if test $status -eq 0
+        set_color -o red
+        printf $branch
         set_color normal
-        printf $remote_name
-        set_color cyan
+      else
+        set_color -o yellow
+        printf $branch
 
-        if test $ahead -gt 0
-          set_color -o purple
-          printf " + "
-          set_color normal
-          printf $ahead
+        set remote_name (git config "branch.$branch.remote")
+        if test $status -eq 0 # -a -n $remote_name
+          set merge_name_long (git config branch.$branch.merge)
+          set merge_name (echo $merge_name_long | cut -c 12-)
+        else
+          set remote_name "origin"
+          set merge_name_long "refs/heads/$branch"
+          set merge_name $branch
         end
-
-        if test $behind -gt 0
-          if test $ahead -gt 0; printf " "; end
-          set_color -o blue
-          printf " - "
-          set_color normal
-          printf $behind
+        if test $remote_name -eq "."
+          set remote_ref $merge_name
+        else
+          set remote_ref "refs/remotes/$remote_name/$merge_name"
         end
+        set -l rev_git (eval "git rev-list --left-right $remote_ref...HEAD" ^/dev/null)
+        if test $status -ne 0
+          set rev_git (eval "git rev-list --left-right $merge_name...HEAD" ^/dev/null)
+        end
+        for i in $rev_git
+          if echo $i | grep '>' >/dev/null
+            set isAhead $isAhead ">"
+          end
+        end
+        set -l remote_diff (count $rev_git)
+        set -l ahead (count $isAhead)
+        set -l behind (math $remote_diff - $ahead)
+        if [ (math $ahead + $behind) != 0 ]
+          set_color cyan
+          printf " {⟳ "
+          set_color normal
+          printf $remote_name
+          set_color cyan
 
-        set_color cyan
-        printf "}"
+          if test $ahead -gt 0
+            set_color -o purple
+            printf " + "
+            set_color normal
+            printf $ahead
+          end
+
+          if test $behind -gt 0
+            if test $ahead -gt 0; printf " "; end
+            set_color -o blue
+            printf " - "
+            set_color normal
+            printf $behind
+          end
+
+          set_color cyan
+          printf "}"
+        end
       end
     else if test -n $branch
       set_color normal
