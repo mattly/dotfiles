@@ -31,6 +31,7 @@ function fish_prompt -d "Write out the prompt"
       else
         set_color -o yellow
         printf $branch
+        set_color normal
 
         set remote_name (git config "branch.$branch.remote")
         if test $status -eq 0 # -a -n $remote_name
