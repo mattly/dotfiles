@@ -1,3 +1,70 @@
+echo "Please enter your administrator password:"
+sudo -v
+ok check "sudo fdsetup status | grep 'On'"
+if check_failed; then
+    echo "Filevault is not setup. Please enable filevault before continuing."
+    open -a System\ Preferences.app
+    exit 1
+fi
+ok scutil ComputerName $computer_name
+ok scutil HostName $computer_name
+ok scutil LocalHostName $computer_name
+
+ok directory "$HOME/.ssh"
+ok check "[ -e $HOME/.ssh/*.pub ]"
+if check_failed && satisfying; then
+    ssh-keygen -t rsa
+fi
+
+ok brew
+ok brew git
+
+ok directory "$HOME/code/mattly"
+cd $HOME/code/mattly
+ok github mattly/dotfiles
+cd ~
+for config in $HOME/code/mattly/dotfiles/configs/*; do
+    ok symlink ".$(basename $config)" $config
+done
+
+ok brew tig
+
+ok brew fish
+register shells.sh
+ok shells /usr/local/bin/fish
+did_install && chsh -s /usr/local/bin/fish
+
+ok brew curl
+ok brew editorconfig
+ok brew jq
+ok brew the_silver_searcher
+
+ok brew-tap caskroom/cask
+ok brew brew-cask
+
+ok cask 1password
+ok cask dropbox
+ok cask google-chrome-beta
+ok cask google-drive
+ok cask the-unarchiver
+
+ok brew-tap argon/mas
+ok brew mas
+
+ok mas 477670270 2Do
+ok mas 687450044 Blind
+ok mas 458034879 Dash
+ok mas 777886035 Duo
+ok cask emacs-mac
+ok cask fantastical
+ok cask iterm2
+ok mas 540348655 Monosnap
+ok cask paw
+ok cask screenflow
+ok mas 507257563 Sip
+ok mas 803453959 Slack
+ok mas 497799835 Xcode
+
 # TODO: perhaps pull inspiration from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
 # auto-expand save, print dialogs
@@ -18,7 +85,7 @@ ok defaults NSGlobalDomain NSWindowResizeTime string .001
 
 # fix the UI
 ok defaults NSGlobalDomain AppleEnableMenuBarTransparency bool false
-ok defaults NSGlobalDomain NSTableViewDefaultSizeMode int 2
+ok defaults NSGlobalDomain NSTableViewDefaultSizeMode integer 2
 
 # show all extensions
 ok defaults NSGlobalDomain AppleShowAllExtensions bool true
@@ -41,7 +108,7 @@ ok defaults com.apple.dock autohide bool true
 ok defaults com.apple.dock static-only bool true
 ok defaults com.apple.dock workspaces-swoosh-animation-off bool true
 ok defaults com.apple.dashboard mcx-disabled bool true
-ok defaults com.apple.dock tilesize integer 36
+ok defaults com.apple.dock tilesize float 42
 # dock show/hide
 ok defaults com.apple.dock autohide-delay float 0
 ok defaults com.apple.dock autohide-time-modifier float 0
@@ -61,7 +128,7 @@ ok defaults com.apple.dashboard mcx-disabled bool true
 # TODO: if changed...
 # killall Dock
 
-ok defaults com.apple.Finder FXPreferredViewStyle string clmv
+ok defaults com.apple.Finder FXPreferredViewStyle string Nlsv
 ok defaults com.apple.finder FXEnableExtensionChangeWarning bool false
 # ok defaults com.apple.finder EmptyTrashSecurely bool true
 # show ~/Library

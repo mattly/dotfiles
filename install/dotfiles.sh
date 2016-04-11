@@ -1,9 +1,9 @@
+
 ok directory $HOME/code/mattly
-destination $HOME/code/mattly
+cd $HOME/code/mattly
 ok github mattly/dotfiles
 
-destination $HOME
+cd ~
 for config in $HOME/code/mattly/dotfiles/configs/*; do
-  ok symlink "$HOME/.$(basename $config)" $config
+  ok symlink ".$(basename $config)" $config
 done
-
