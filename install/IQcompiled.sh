@@ -456,10 +456,10 @@ type_check () {
       ;;
   esac
 }
-ok check "sudo fdsetup status | grep 'On'"
+ok check "sudo fdesetup status | grep 'On'"
 if check_failed; then
 echo "Filevault is not setup. Please enable filevault before continuing."
-open -a System Preferences.app
+open /System/Library/PreferencePanes/Security.prefpane
 exit 1
 fi
 type_scutil () {
@@ -513,6 +513,7 @@ type_directory () {
 ok directory "$HOME/.ssh"
 ok check "[ -e $HOME/.ssh/*.pub ]"
 if check_failed && satisfying; then
+echo "Generating SSH Key"
 ssh-keygen -t rsa
 fi
 
