@@ -437,9 +437,7 @@ _lookup_type () {
   fi
   return 1
 }
-computer_name="Lightbringer"
-echo "Please enter your administrator password:"
-sudo -v
+computer_name="lightbringer"
 type_check () {
   action=$1
   shift 1
@@ -456,10 +454,10 @@ type_check () {
       ;;
   esac
 }
-ok check "sudo fdesetup status | grep 'On'"
+ok check "fdesetup status | grep 'On'"
 if check_failed; then
 echo "Filevault is not setup. Please enable filevault before continuing."
-open /System/Library/PreferencePanes/Security.prefpane
+open "/System/Library/PreferencePanes/Security.prefpane"
 exit 1
 fi
 type_scutil () {
@@ -573,7 +571,6 @@ ok brew
 ok brew git
 
 ok directory "$HOME/code/mattly"
-cd $HOME/code/mattly
 type_github () {
   if [ -z "$git_call" ]; then
     git_call=". $BORK_SOURCE_DIR/types/git.sh"
@@ -688,7 +685,7 @@ type_git () {
     *) return 1 ;;
   esac
 }
-ok github mattly/dotfiles
+ok github $HOME/code/mattly/dotfiles mattly/dotfiles
 cd ~
 for config in $HOME/code/mattly/dotfiles/configs/*; do
 type_symlink () {
@@ -842,6 +839,9 @@ ok cask google-chrome-beta
 ok cask google-drive
 ok cask the-unarchiver
 
+ok brew-tap railwaycat/emacsmacport
+ok brew emacs-mac
+
 ok brew-tap argon/mas
 ok brew mas
 
@@ -875,7 +875,6 @@ ok mas 477670270 2Do
 ok mas 687450044 Blind
 ok mas 458034879 Dash
 ok mas 777886035 Duo
-ok cask emacs-mac
 ok cask fantastical
 ok cask iterm2
 ok mas 540348655 Monosnap
