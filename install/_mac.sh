@@ -4,9 +4,11 @@ if check_failed; then
     open "/System/Library/PreferencePanes/Security.prefpane"
     exit 1
 fi
+if [ -n "$computer_name" ]; then
 ok scutil ComputerName $computer_name
 ok scutil HostName $computer_name
 ok scutil LocalHostName $computer_name
+fi
 
 ok directory "$HOME/.ssh"
 ok check "[ -e $HOME/.ssh/*.pub ]"
@@ -24,6 +26,7 @@ cd ~
 for config in $HOME/code/mattly/dotfiles/configs/*; do
     ok symlink ".$(basename $config)" $config
 done
+ok github ~/.emacs.d syl20bnr/spacemacs
 
 ok brew tig
 
@@ -42,7 +45,7 @@ ok brew brew-cask
 
 ok cask 1password
 ok cask dropbox
-ok cask google-chrome-beta
+ok cask google-chrome
 ok cask google-drive
 ok cask the-unarchiver
 
@@ -63,27 +66,30 @@ ok cask paw
 ok cask screenflow
 ok mas 507257563 Sip
 ok mas 803453959 Slack
-ok mas 497799835 Xcode
 
 # TODO: perhaps pull inspiration from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
-# auto-expand save, print dialogs
+# login window security
+ok defaults com.apple.loginwindow ShutDownDisabled bool true
+ok defaults com.apple.loginwindow RestartDisabled bool true
+ok defaults com.apple.loginwindow DisableConsoleAccess bool true
+
+# auto-expand save
 ok defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode bool true
 ok defaults NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 bool true
+# save to disk
+ok defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud bool false
+
+# auto-expand print
 ok defaults NSGlobalDomain PMPrintingExpandedStateForPrint bool true
 ok defaults NSGlobalDomain PMPrintingExpandedStateForPrint2 bool true
-
-# default to save to disk, not iCloud
-ok defaults NSGlobalDomain NSDocumentSaveNewDocumentsToCloud bool false
 
 # disable gatekeeper
 # ok defaults com.apple.LaunchServices LSQuarantine bool false
 
-# speed up the UI
+# UI fixes
 ok defaults NSGlobalDomain NSAutomaticWindowAnimationsEnabled bool false
 ok defaults NSGlobalDomain NSWindowResizeTime string .001
-
-# fix the UI
 ok defaults NSGlobalDomain AppleEnableMenuBarTransparency bool false
 ok defaults NSGlobalDomain NSTableViewDefaultSizeMode integer 2
 

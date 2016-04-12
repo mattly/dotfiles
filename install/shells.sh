@@ -10,7 +10,7 @@ case $action in
     ;;
 
     install|upgrade)
-        sudo echo "$shell" >> /etc/shells
+        bake echo "$shell" | sudo tee -a /etc/shells
     ;;
 
     *) return 1 ;;
