@@ -21,7 +21,7 @@ ok brew
 ok brew git
 
 ok directory "$HOME/code/mattly"
-ok github $HOME/code/mattly/dotfiles mattly/dotfiles
+ok github $HOME/code/mattly/dotfiles mattly/dotfiles --ssh
 cd ~
 for config in $HOME/code/mattly/dotfiles/configs/*; do
     ok symlink ".$(basename $config)" $config
@@ -85,12 +85,13 @@ ok defaults NSGlobalDomain PMPrintingExpandedStateForPrint bool true
 ok defaults NSGlobalDomain PMPrintingExpandedStateForPrint2 bool true
 
 # disable gatekeeper
-# ok defaults com.apple.LaunchServices LSQuarantine bool false
+ok defaults com.apple.LaunchServices LSQuarantine bool false
 
 # UI fixes
 ok defaults NSGlobalDomain NSAutomaticWindowAnimationsEnabled bool false
 ok defaults NSGlobalDomain NSWindowResizeTime string .001
 ok defaults NSGlobalDomain AppleEnableMenuBarTransparency bool false
+ok defaults NSGlobalDomain AppleInterfaceStyle string "Dark"
 ok defaults NSGlobalDomain NSTableViewDefaultSizeMode integer 2
 
 # show all extensions
@@ -113,7 +114,6 @@ ok defaults com.apple.TimeMachine DoNotOfferNewDisksForBackup bool true
 ok defaults com.apple.dock autohide bool true
 ok defaults com.apple.dock static-only bool true
 ok defaults com.apple.dock workspaces-swoosh-animation-off bool true
-ok defaults com.apple.dashboard mcx-disabled bool true
 ok defaults com.apple.dock tilesize float 42
 # dock show/hide
 ok defaults com.apple.dock autohide-delay float 0
@@ -123,20 +123,35 @@ ok defaults com.apple.dock mru-spaces bool false
 # top-left corner: start screen saver
 ok defaults com.apple.dock wvous-tl-corner integer 5
 ok defaults com.apple.dock wvous-tl-modifier integer 0
-# Put it on the left
+# Put it on the bottom
 ok defaults com.apple.dock orientation string bottom
 # clear the dock
-# ok rm ~/Library/Application\ Support/Dock/*.db
+ok defaults com.apple.doc persistent-apps array
 
-# DIE DASHBOARD DIE
+ok defaults com.apple.dock no-bouncing int 0
+
+ok defaults com.apple.dock expose-animation-duration float 0.1
+
 ok defaults com.apple.dashboard mcx-disabled bool true
 
 # TODO: if changed...
 # killall Dock
 
-ok defaults com.apple.Finder FXPreferredViewStyle string Nlsv
+ok defaults com.apple.finder _FXShowPosixPathInTitle bool true
+ok defaults com.apple.finder AppleShowAllExtensions bool true
+ok defaults com.apple.finder AppleShowAllFiles bool true
+ok defaults com.apple.finder DSDontWriteNetworkStores bool true
+ok defaults com.apple.finder EmptyTrashSecurely bool true
+ok defaults com.apple.finder FXDefaultSearchScope string SCcf
 ok defaults com.apple.finder FXEnableExtensionChangeWarning bool false
-# ok defaults com.apple.finder EmptyTrashSecurely bool true
+ok defaults com.apple.finder FXInfoPanesExpanded dict \
+   General -bool true \
+   OpenWith -bool true \
+   Privileges -bool true
+ok defaults com.apple.Finder FXPreferredViewStyle string Nlsv
+ok defaults com.apple.finder ShowStatusBar bool true
+ok defaults com.apple.finder ShowPathbar bool true
+ok defaults com.apple.finder WarnOnEmptyTrash bool false
 # show ~/Library
 # chflags nohidden ~/Library
 # TODO: if changed...
