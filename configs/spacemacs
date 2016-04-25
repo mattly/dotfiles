@@ -123,6 +123,11 @@ before layers configuration."
    ;; environment, otherwise it is strongly recommended to let it set to t.
    ;; (default t)
    dotspacemacs-elpa-https t
+   ;; Maximum allowed time in seconds to contact an ELPA repository.
+   dotspacemacs-elpa-timeout 5
+   ;; If non nil then spacemacs will check for updates at startup
+   ;; when the current branch is not `develop'. (default t)
+   dotspacemacs-check-for-update t
    ;; Either `vim' or `emacs'. Evil is always enabled but if the variable
    ;; is `emacs' then the `holy-mode' is enabled at startup.
    dotspacemacs-editing-style 'vim
@@ -179,6 +184,9 @@ before layers configuration."
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
+   ;; By default the command key is `:' so ex-commands are executed like in Vim
+   ;; with `:' and Emacs commands are executed with `<leader> :'.
+   dotspacemacs-command-key ":"
    ;; If non nil `Y' is remapped to `y$' in Evil states. (default nil)
    dotspacemacs-remap-Y-to-y$ nil
    ;; If non nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
