@@ -152,11 +152,12 @@ before layers configuration."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '( "Operator Mono"
+   dotspacemacs-default-font '( ;;"Operator Mono"
+                                "Fira Code"
                                 :size 14
                                 :weight light
                                 :width normal
-                                :powerline-scale 1.1)
+                                :powerline-scale 1.3)
 
    ;; The leader key
    dotspacemacs-leader-key "SPC"
@@ -288,7 +289,7 @@ user code here.  The exception is org related code, which should be placed in
 layers configuration."
 
   ;; Fira Code ligatures in railswaycat emacs
-  ;; (mac-auto-operator-composition-mode)
+  (mac-auto-operator-composition-mode)
 
   ;; use COMMAND as META
   ;; and OPTION for character insertion of characters like ß√∑† etc.
