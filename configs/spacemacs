@@ -81,7 +81,6 @@ values."
      smex
      spell-checking
      syntax-checking
-     themes-megapack
      typography
      )
 
@@ -93,6 +92,8 @@ values."
                                       graphviz-dot-mode
                                       bats-mode
                                       lfe-mode
+
+                                      farmhouse-theme
 
                                       flycheck-package
                                       editorconfig
@@ -151,15 +152,12 @@ before layers configuration."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(farmhouse-light
-                         farmhouse-dark
-                         spacemacs-dark
-                         spacemacs-light)
+                         farmhouse-dark)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '( ;;"Operator Mono"
-                                "Fira Code"
+   dotspacemacs-default-font '("Fira Code"
                                 :size 14
                                 :weight light
                                 :width normal
