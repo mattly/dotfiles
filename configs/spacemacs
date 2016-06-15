@@ -325,17 +325,9 @@ layers configuration."
   ;; js2-mode
   (setq js2-strict-missing-semi-warning nil)
 
-  (spacemacs/set-leader-keys
-    "`" 'spacemacs/workspaces-micro-state
-    ;; "kH" 'sp-beginning-of-previous-sexp
-    ;; "kh" 'sp-down-sexp
-    ;; "kk" 'sp-up-sexp
-    ;; "kL" 'sp-beginning-of-next-sexp
-    )
-
   ;; magit
   (setq
-   magit-repo-dirs '("~/code"))
+   magit-repository-dirs '("~/code"))
 
   ;; org
   (setq
