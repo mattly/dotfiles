@@ -2,6 +2,14 @@ function fish_prompt -d "Write out the prompt"
   set -l exit_status $status
 
   printf "\n"
+  set_color cyan
+  printf "(☀︎ "
+  set_color normal
+  printf (date +"%T")
+  set_color cyan
+  printf ")"
+
+  printf "\n"
 
   set_color cyan
   printf '(@ '
@@ -158,34 +166,18 @@ function fish_prompt -d "Write out the prompt"
     printf ')'
   end
 
-  #     switch (echo $git_status[2] | awk ' { print $4 } ')
-  #       case 'ahead'
-  #         set -l number (echo $git_status[2] | awk ' { print $8 } ')
-  #         set_color -o yellow
-  #         printf "▲"
-  #         set_color normal
-  #         printf " $number"
-  #       case 'diverged'
-  #         set_color -o purple
-  #         printf "✱"
-  #       case 'behind'
-  #         set_color -o green
-  #         printf "▼"
-  #       case 'up-to-date'
-  #         # noop, probably dirty
-  #       case '*'
-  #         printf ':%s:' (echo $git_status[2] | awk ' { print $4 } ' )
-  #     end
-
+  printf "\n"
+  set_color cyan
+  printf '(✕ '
   if test $exit_status -gt 0
-    set_color cyan
-    printf ' (✕ '
     set_color -o red
-    printf $exit_status
-    set_color normal # resets the -o brightness
-    set_color cyan
-    printf ')'
+  else
+    set_color -o green
   end
+  printf $exit_status
+  set_color normal # resets the -o brightness
+  set_color cyan
+  printf ')'
 
   printf '%s ' (set_color normal)
 end
