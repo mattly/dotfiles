@@ -1,18 +1,23 @@
 function fish_prompt -d "Write out the prompt"
   set -l exit_status $status
 
-  printf "\n"
   set_color cyan
-  printf "(☀︎ "
+  printf "\n✕ "
+  if test $exit_status -gt 0
+    set_color -o red
+  else
+    set_color -o green
+  end
+  printf $exit_status
+  set_color normal # resets the -o brightness
+
+  set_color cyan
+  printf "\n☀︎ "
   set_color normal
   printf (date +"%T")
-  set_color cyan
-  printf ")"
-
-  printf "\n"
 
   set_color cyan
-  printf '(@ '
+  printf "\n@ "
   set_color green
   printf (hostname | cut -d . -f 1)
   printf ' '
@@ -20,13 +25,11 @@ function fish_prompt -d "Write out the prompt"
   printf ' '
   set_color normal
   printf (prompt_pwd)
-  set_color cyan
-  printf ')'
 
   set -l git_in_worktree (git rev-parse --is-inside-work-tree ^/dev/null)
   if test $status -eq 0
     set_color cyan
-    printf '\n(± '
+    printf '\n± '
 
     set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
     set -l rebasing (echo $branch | grep 'no branch')
@@ -69,7 +72,7 @@ function fish_prompt -d "Write out the prompt"
         set -l behind (math $remote_diff - $ahead)
         if [ (math $ahead + $behind) != 0 ]
           set_color cyan
-          printf " {⟳ "
+          printf " ⟳ "
           set_color normal
           printf $remote_name
           set_color cyan
@@ -88,9 +91,6 @@ function fish_prompt -d "Write out the prompt"
             set_color normal
             printf $behind
           end
-
-          set_color cyan
-          printf "}"
         end
       end
     else if test -n $branch
@@ -119,66 +119,57 @@ function fish_prompt -d "Write out the prompt"
     set -l staged (math (count $stagedFiles) - $conflicted)
     set -l untracked (count (git ls-files --others --exclude-standard))
 
-    if [ (math $changed + $conflicted + $staged + $untracked) != 0 ]
-      set_color cyan
-      printf " {"
-
-      set -l join 0
-      if test $staged -gt 0
-        set join 1
-        set_color green
-        printf "✭ "
-        set_color normal
-        printf $staged
-      end
-
-      if test $conflicted -gt 0
-        if test $join -gt 0; printf " "; end
-        set join 1
-        set_color -o red
-        printf '✕ '
-        set_color normal
-        printf $conflicted
-      end
-
-      if test $changed -gt 0
-        if test $join -gt 0; printf " "; end
-        set join 1
-        set_color -o purple
-        printf "✱ "
-        set_color normal
-        printf $changed
-      end
-
-      if test $untracked -gt 0
-        if test $join -gt 0; printf " "; end
-        set_color -o yellow
-        printf "⦰ "
-        set_color normal
-        printf $untracked
-      end
-
-      set_color cyan
-      printf "}"
+    if test $staged -gt 0
+      set join 1
+      set_color green
+      printf "✭ "
+      set_color normal
+      printf $staged
     end
 
-    set_color cyan
-    printf ')'
+    if [ (math $staged + $conflicted) != 0 ]
+      printf " "
+    end
+
+    if test $conflicted -gt 0
+      if test $join -gt 0; printf " "; end
+      set join 1
+      set_color -o red
+      printf '✕ '
+      set_color normal
+      printf $conflicted
+    end
+
+    if [ (math $conflicted + $changed) != 0 ]
+      printf " "
+    end
+
+    if test $changed -gt 0
+      if test $join -gt 0; printf " "; end
+      set join 1
+      set_color -o purple
+      printf "✱ "
+      set_color normal
+      printf $changed
+    end
+
+    if [ (math $changed + $untracked) != 0 ]
+      printf " "
+    end
+
+    if test $untracked -gt 0
+      if test $join -gt 0; printf " "; end
+      set_color -o yellow
+      printf "⦰ "
+      set_color normal
+      printf $untracked
+    end
   end
 
-  printf "\n"
-  set_color cyan
-  printf '(✕ '
-  if test $exit_status -gt 0
-    set_color -o red
-  else
-    set_color -o green
-  end
-  printf $exit_status
-  set_color normal # resets the -o brightness
-  set_color cyan
-  printf ')'
 
-  printf '%s ' (set_color normal)
+  set_color -o yellow
+  printf "\nλ "
+  set_color normal
+  # printf '%s ' (set_color normal)
 end
 
