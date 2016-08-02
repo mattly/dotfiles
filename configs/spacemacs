@@ -390,7 +390,6 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
- '(cider-boot-parameters "cider repl -s wait")
  '(paradox-github-token t)
  '(ring-bell-function (quote ignore) t))
 (custom-set-faces
