@@ -1,0 +1,5 @@
+package battery
+package docker-machine
+package thefuck
+theme bobthefish
+theme default

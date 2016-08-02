@@ -1,60 +1,10 @@
-# -- PATH
-if status --is-login
-  function unshift_path
-    for val in $argv
-      if test -d $val
-        set -xg PATH $val $PATH
-      end
-    end
-  end
+# Path to Oh My Fish install.
+set -q XDG_DATA_HOME
+  and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
+  or set -gx OMF_PATH "$HOME/.local/share/omf"
 
-  unshift_path /bin /sbin
-  unshift_path /usr/bin /usr/sbin
-  unshift_path /usr/local/bin /usr/local/sbin
+# Customize Oh My Fish configuration path.
+#set -gx OMF_CONFIG "/Users/mattly/.config/omf"
 
-  if test -d $HOME/.rbenv
-    unshift_path $HOME/.rbenv/shims
-    rbenv rehash >/dev/null ^&1
-  end
-
-  if test -d $HOME/.config/fish/nvm-wrapper
-    if test -d $HOME/.config/.nvm
-      source $HOME/.config/fish/nvm-wrapper/nvm.fish
-    end
-  end
-
-  if test -d $HOME/.cabal
-    unshift_path $HOME/.cabal/bin
-  end
-
-  if test -d $HOME/.bin
-    unshift_path $HOME/.bin
-  end
-
-  if test -d $HOME/code/GOPATH
-    set -xg GOPATH "$HOME/code/GOPATH"
-    unshift_path "$HOME/code/GOPATH/bin"
-  end
-
-  if which thefuck >/dev/null
-    function fuck
-      eval (thefuck $history[1])
-    end
-  end
-end
-
-# -- ENV
-set -xg EDITOR "vim"
-set -xg BROWSER "open"
-
-# -- HOST SPECIFIC
-if test -e "$HOME/.env"
-  . ~/.env
-end
-
-# -- DISH THE FISH
-set -x CLICOLOR 1
-
-if which direnv
-  eval (direnv hook fish)
-end
+# Load oh-my-fish configuration.
+source $OMF_PATH/init.fish
