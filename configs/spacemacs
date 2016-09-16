@@ -312,11 +312,6 @@ layers configuration."
   (auto-save-mode 1)
 
   ;; Clojure
-  ;; (define-clojure-indent
-  ;;   (alet 'defun)
-  ;;   (mlet 'defun))
-
-  (desktop-save-mode t)
 
   ;; flycheck
   (eval-after-load 'flycheck
