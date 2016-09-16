@@ -3,3 +3,4 @@ package docker-machine
 package thefuck
 theme bobthefish
 theme default
+theme pure
