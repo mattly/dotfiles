@@ -26,6 +26,7 @@
 
 [diff]
   renames = copies
+	compactionHeuristic = true
 
 [diff "ruby"]
   funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
@@ -71,6 +72,8 @@
   mirror = push --mirror
   # show commits that haven't been pushed to the remote yet
   pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
+  # pop all stashes
+  poop = !sh -c 'while [ "$?" -eq 0 ]; do git stash pop; done'
   # creates a remote branch
   push-remote = !sh -c 'git push "$0" HEAD'
   # current lines by last committer
