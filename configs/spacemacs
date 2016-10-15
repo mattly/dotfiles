@@ -18,70 +18,99 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     ;; +config-files
-     ansible
-     dockerfile
-     terraform
+     ;; Checkers
+     spell-checking
+     syntax-checking
 
-     ;; +frameworks
-     react
-
-     ;; +fun
-     emoji
-
-     ;; +lang
-     clojure
-     elixir
-     elm
-     emacs-lisp
-     erlang
-     extra-langs ;; julia
-     haskell
-     html
-     idris
-     javascript
-     markdown
-     org
-     purescript
-     ruby
-     shell-scripts
-     sql
-     yaml
-
-
-     ;; +source-control
-     git
-     github
-     version-control
-
-     ;; +tools
-     ranger
-
-     ;; +vim
-     vim-empty-lines
-     vinegar
-
-     ;; +window-management
-     (eyebrowse :variables eyebrowse-display-help nil)
-
-     ;; etc
+     ;; Completion
      (auto-completion :variables
                       auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'cycle
-                      auto-completion-enable-help-tooltip t)
+                      auto-completion-tab-key-behavior 'cycle)
 
+     ;; Emacs
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-
      org
-     osx
+     smex
+     (typography :variables typography-enable-typographic-editing t)
+
+     ;; Frameworks
+     ;; react
+
+     ;; Fun
+     emoji
+
+     ;; Languages
+     ;; asciidoc
+     ;; c-c++
+     clojure
+     ;; common-lisp
+     ;; csharp
+     ;; csv
+     ;; elixir
+     ;; elm
+     emacs-lisp
+     ;; erlang
+     ;; ess
+     ;; extra-langs ;; julia
+     ;; go
+     ;; graphviz
+     ;; haskell
+     html
+     ;; idris
+     ;; ipython-notebook
+     ;; java
+     javascript
+     ;; lua
+     markdown
+     ;; ocaml
+     ;; purescript
+     ;; python
+     ruby
+     ;; rust
+     shell-scripts
+     sql
+     ;; swift
+     ;; typescript
+     yaml
+
+     ;; Operating Systems
+     (osx :variables osx-use-option-as-meta nil)
+
+     ;; Source Control
+     git
+     ;; github ;; needs auth token in .gitconfig, which is public rn
+     version-control
+
+     ;; Themes
+     colors
+     theming
+
+     ;; Tools
+     ;; ansible
+     ;; command-log
+     dash
+     docker
+     fasd
+     geolocation
+     imenu-list
+     ;; nginx
+     ;; pandoc
+     ;; puppet
+     ranger
+     ;; restclient
+     ;; salt
      (shell :variables
             shell-default-position 'bottom
             shell-default-height 30
+            shell-default-shell 'multi-term
             shell-default-term-shell "/usr/local/bin/fish")
-     smex
-     spell-checking
-     syntax-checking
-     typography
+     ;; systemd
+     terraform
+     vagrant
+
+     ;; Vim
+     evil-cleverparens
+     vim-empty-lines
      )
 
    ;; List of additional packages that will be installed wihout being
@@ -89,19 +118,15 @@ values."
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(sibilant-mode
-                                      graphviz-dot-mode
                                       bats-mode
                                       lfe-mode
 
                                       farmhouse-theme
+                                      material-theme
+                                      all-the-icons
 
                                       flycheck-package
                                       editorconfig
-
-                                      pcmpl-args
-                                      pcomplete-extension
-                                      pcmpl-homebrew
-                                      pcmpl-git
 
                                       olivetti
                                       wordsmith-mode
@@ -187,7 +212,7 @@ before layers configuration."
    ;; with `:' and Emacs commands are executed with `<leader> :'.
    dotspacemacs-command-key ":"
    ;; If non nil `Y' is remapped to `y$' in Evil states. (default nil)
-   dotspacemacs-remap-Y-to-y$ nil
+   dotspacemacs-remap-Y-to-y$ t
    ;; If non nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
    ;; (default nil)
    dotspacemacs-ex-substitute-global nil
@@ -198,7 +223,7 @@ before layers configuration."
    dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts 'cache
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
@@ -300,7 +325,6 @@ layers configuration."
 
   ;; use COMMAND as META
   ;; and OPTION for character insertion of characters like ß√∑† etc.
-  (setq mac-option-modifier nil)
   (setq mac-command-modifier 'meta)
 
   ;; auto complete
@@ -310,8 +334,6 @@ layers configuration."
 
   ;; auto save
   (auto-save-mode 1)
-
-  ;; Clojure
 
   ;; flycheck
   (eval-after-load 'flycheck
@@ -331,7 +353,7 @@ layers configuration."
   (add-hook 'markdown-mode-hook #'flycheck-mode)
   (add-hook 'text-mode-hook #'flycheck-mode)
 
-  ;; js2-mode
+  ;; javascript
   (setq js2-strict-missing-semi-warning nil)
 
   ;; magit
@@ -353,7 +375,45 @@ layers configuration."
 
   ;; neotree
   (setq neo-vc-integration nil)
-  (setq neo-theme 'arrow)
+  (setq neo-theme 'icons)
+  (defun neo-buffer--insert-fold-symbol (name &optional file-name)
+    "Custom overriding function for the fold symbol.
+`NAME' decides what fold icon to use, while `FILE-NAME' decides
+what file icon to use."
+    (or (and (equal name 'open)  (insert (all-the-icons-icon-for-dir file-name "down")))
+        (and (equal name 'close) (insert (all-the-icons-icon-for-dir file-name "right")))
+        (and (equal name 'leaf)  (insert (format "\t\t\t%s\t" (all-the-icons-icon-for-file file-name))))))
+  (defun neo-buffer--insert-dir-entry (node depth expanded)
+    (let ((node-short-name (neo-path--file-short-name node)))
+      (insert-char ?\s (* (- depth 1) 2)) ; indent
+      (when (memq 'char neo-vc-integration)
+        (insert-char ?\s 2))
+      (neo-buffer--insert-fold-symbol
+       (if expanded 'open 'close) node)
+      (insert-button (concat node-short-name "/")
+                     'follow-link t
+                     'face neo-dir-link-face
+                     'neo-full-path node
+                     'keymap neotree-dir-button-keymap)
+      (neo-buffer--node-list-set nil node)
+      (neo-buffer--newline-and-begin)))
+  (defun neo-buffer--insert-file-entry (node depth)
+    (let ((node-short-name (neo-path--file-short-name node))
+          (vc (when neo-vc-integration (neo-vc-for-node node))))
+      (insert-char ?\s (* (- depth 1) 2)) ; indent
+      (when (memq 'char neo-vc-integration)
+        (insert-char (car vc))
+        (insert-char ?\s))
+      (neo-buffer--insert-fold-symbol 'leaf node-short-name)
+      (insert-button node-short-name
+                     'follow-link t
+                     'face (if (memq 'face neo-vc-integration)
+                               (cdr vc)
+                             neo-file-link-face)
+                     'neo-full-path node
+                     'keymap neotree-file-button-keymap)
+      (neo-buffer--node-list-set nil node)
+      (neo-buffer--newline-and-begin)))
 
   ;; powerline
   (setq powerline-default-separator 'bar)
@@ -375,14 +435,6 @@ layers configuration."
   (evil-global-set-key 'normal (kbd "RET") 'evil-search-highlight-persist-remove-all)
   ;; TAB  toggle fold - stole this from org mode
   (evil-global-set-key 'normal (kbd "TAB") 'evil-toggle-fold)
-
-  ;; mode hooks
-  (defun my-web-mode-hook ()
-    "Hooks for Web Mode"
-    (message "web mode hook enabled")
-    (define-key web-mode-map (kbd "C-/") 'web-mode-element-close)
-    )
-  (add-hook 'web-mode-hook 'my-web-mode-hook)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
