@@ -14,7 +14,7 @@ ok defaults com.apple.dock no-bouncing int 0
 ok defaults com.apple.dock launchanim bool false
 
 # minimize windows to application
-ok defaults com.apple.dock minimize-to-application bool true
+ok defaults com.apple.dock minimize-to-application bool false
 # Enable spring loading for all items
 ok defaults com.apple.dock enable-spring-load-actions-on-all-items bool true
 # Show indicatior lights for open apps
