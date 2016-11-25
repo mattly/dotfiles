@@ -327,6 +327,9 @@ user code here.  The exception is org related code, which should be placed in
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
 
+  (add-text-properties (point-min) (point-max)
+                       '(line-spacing 0.125 line-height 1.125))
+
   ;; Fira Code ligatures in railswaycat emacs
   (mac-auto-operator-composition-mode)
 
@@ -341,6 +344,10 @@ layers configuration."
 
   ;; auto save
   (auto-save-mode 1)
+
+  ;; clojure
+  (define-clojure-indent
+    (reg-sub '(1 nil (1))))
 
   ;; flycheck
   (eval-after-load 'flycheck
@@ -367,7 +374,7 @@ layers configuration."
   (setq js2-strict-missing-semi-warning nil)
 
   ;; magit
-  (setq magit-repository-directories '("~/code"))
+  (setq magit-repository-directories '("~/code" "~/projects"))
 
   ;; org
   (setq
