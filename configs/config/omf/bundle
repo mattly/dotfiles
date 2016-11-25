@@ -1,6 +1,7 @@
 package battery
 package docker-machine
 package emacs
+package fasd
 package thefuck
 theme bobthefish
 theme default
