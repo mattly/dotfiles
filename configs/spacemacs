@@ -123,13 +123,13 @@ values."
                                       bats-mode
                                       lfe-mode
 
-                                      hlinum
-
                                       farmhouse-theme
                                       material-theme
                                       tannat-theme
                                       all-the-icons
 
+                                      hlinum
+                                      parinfer
                                       flycheck-package
                                       editorconfig
 
@@ -375,6 +375,11 @@ layers configuration."
 
   ;; magit
   (setq magit-repository-directories '("~/code" "~/projects"))
+
+  ;; parinfer
+  (spacemacs/set-leader-keys "t/" 'parinfer-toggle-mode)
+  (add-hook 'clojure-mode-hook #'parinfer-mode)
+  (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
 
   ;; org
   (setq
