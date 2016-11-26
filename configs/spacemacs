@@ -112,8 +112,7 @@ values."
 
      ;; Vim
      evil-cleverparens
-     vim-empty-lines
-     )
+     vim-empty-lines)
 
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
@@ -310,8 +309,7 @@ before layers configuration."
    ;; Delete whitespace while saving buffer. Possible values are `all',
    ;; `trailing', `changed' or `nil'. Default is `changed' (cleanup whitespace
    ;; on changed lines) (default 'changed)
-   dotspacemacs-whitespace-cleanup 'nil
-   ))
+   dotspacemacs-whitespace-cleanup nil))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -319,8 +317,7 @@ It is called immediately after `dotspacemacs/init'.  You are free to put almost 
 user code here.  The exception is org related code, which should be placed in
 `dotspacemacs/user-config'."
   (setq-default
-   git-magit-status-fullscreen nil)
-  )
+   git-magit-status-fullscreen nil))
 
 (defun dotspacemacs/user-config ()
   "Configuration function.
@@ -456,8 +453,7 @@ what file icon to use."
   ;; RET  clears highlight
   (evil-global-set-key 'normal (kbd "RET") 'evil-search-highlight-persist-remove-all)
   ;; TAB  toggle fold - stole this from org mode
-  (evil-global-set-key 'normal (kbd "TAB") 'evil-toggle-fold)
-  )
+  (evil-global-set-key 'normal (kbd "TAB") 'evil-toggle-fold))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
