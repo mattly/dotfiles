@@ -398,7 +398,7 @@ layers configuration."
         '(defaults pretty-parens evil smart-yank)
         parinfer-auto-switch-indent-mode t
         parinfer-auto-switch-indent-mode-when-closing t
-        parinfer-lighters '("→" . "»"))
+        parinfer-lighters '("→" . "❪❫"))
   (spacemacs/set-leader-keys "t/" 'parinfer-toggle-mode)
   (add-hook 'clojure-mode-hook #'parinfer-mode)
   (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
