@@ -1,7 +1,10 @@
+package argu
 package battery
 package docker-machine
 package emacs
+package expand
 package fasd
+package marlin
 package thefuck
 theme bobthefish
 theme default
