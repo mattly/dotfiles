@@ -18,9 +18,9 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     elixir
      ;; Checkers
-     (spell-checking :variables
-                     enable-flyspell-auto-completion t)
+     spell-checking
      syntax-checking
 
      ;; Completion
@@ -31,7 +31,7 @@ values."
 
      ;; Emacs
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-     org
+     ;; org
      smex
      ;; (typography :variables typography-enable-typographic-editing t)
 
