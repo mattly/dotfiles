@@ -363,7 +363,9 @@ layers configuration."
   ;; clojure
   (define-clojure-indent
     (checking '(1 nil (1)))
-    (reg-sub '(1 nil (1))))
+    (reg-sub '(1 nil (1)))
+    (reg-event-fx '(1 nil (1))))
+    (reg-event-db '(1 nil (1)))
 
   ;; flycheck
   (eval-after-load 'flycheck
