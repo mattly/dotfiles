@@ -5,6 +5,7 @@ package emacs
 package expand
 package fasd
 package marlin
+package rustup
 package thefuck
 theme bobthefish
 theme default
