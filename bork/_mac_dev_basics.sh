@@ -10,5 +10,7 @@ ok brew-tap railwaycat/emacsmacport
 ok brew emacs-mac --with-spacemacs-icon
 ok github ~/.emacs.d syl20bnr/spacemacs
 
+ok defaults org.gnu.Emacs NSAppSleepDisabled bool YES
+
 ok cask iterm2
 ok cask paw
