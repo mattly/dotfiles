@@ -30,7 +30,6 @@ This function should only modify configuration layer settings."
     ;; List of configuration layers to load.
     dotspacemacs-configuration-layers
     '(
-       elixir
        ;; Checkers
        spell-checking
        syntax-checking
@@ -39,90 +38,63 @@ This function should only modify configuration layer settings."
        (auto-completion :variables
          auto-completion-return-key-behavior 'complete
          auto-completion-tab-key-behavior 'cycle
+         auto-completion-enable-snippets-in-popup t
          auto-completion-enable-help-tooltip nil
          auto-completion-enable-sort-by-usage t)
+       (ivy :variables
+         ivy-extra-directories nil)
 
        ;; Emacs
        (ibuffer :variables ibuffer-group-buffers-by 'projects)
        ;; org
-       smex
+       ;; smex
        ;; (typography :variables typography-enable-typographic-editing t)
-
-       ;; Frameworks
-       ;; react
 
        ;; Fun
        emoji
 
        ;; Languages
-       ;; asciidoc
-       ;; c-c++
        clojure
-       ;; common-lisp
-       ;; csharp
-       ;; csv
-       ;; elixir
-       ;; elm
        emacs-lisp
-       ;; erlang
-       ;; ess
-       ;; extra-langs ;; julia
-       ;; go
-       ;; graphviz
-       ;; haskell
        html
-       ;; idris
-       ;; ipython-notebook
-       ;; java
        javascript
-       ;; lua
        markdown
-       ;; ocaml
        org
-       ;; purescript
-       ;; python
        ruby
-       ;; rust
        shell-scripts
        sql
-       ;; swift
-       ;; typescript
        yaml
 
+       ;; Misc
+       nlinum
+       parinfer
+
        ;; Operating Systems
-       (osx :variables osx-use-option-as-meta nil)
+       (osx :variables
+         osx-command-as 'meta
+         osx-option-as nil
+         osx-function-as 'hyper)
+       ;;osx-use-option-as-meta nil)
 
        ;; Source Control
        git
        ;; github ;; needs auth token in .gitconfig, which is public rn
-       (version-control :variables version-control-diff-tool 'diff-hl)
+       (version-control :variables
+         version-control-diff-tool 'diff-hl
+         version-control-diff-side 'left)
 
        ;; Themes
        colors
        theming
 
        ;; Tools
-       ;; ansible
-       ;; command-log
-       ;; dash
-       ;; docker
-       ;; fasd
-       ;; geolocation
-       imenu-list
-       ;; nginx
-       ;; pandoc
-       ;; puppet
        ranger
-       ;; restclient
-       ;; salt
+       restclient
        (shell :variables
          shell-default-position 'bottom
          shell-default-height 30
          shell-default-shell 'multi-term
          shell-default-term-shell "/usr/local/bin/fish")
-       ;; systemd
-       terraform
-       vagrant
 
        ;; Vim
        evil-cleverparens
@@ -136,14 +108,19 @@ This function should only modify configuration layer settings."
                                         bats-mode
                                         lfe-mode
 
+                                        outshine  ; required for navi-mode
+                                        navi-mode ; navbar on buffer outlines
+
                                         farmhouse-theme
                                         material-theme
                                         doom-themes
                                         ;; tannat-theme
-                                        all-the-icons
 
-                                        hlinum
-                                        parinfer
+                                        all-the-icons
+                                        all-the-icons-ivy
+                                        pretty-mode
+                                        spaceline-all-the-icons
+
                                         flycheck-package
                                         editorconfig
 
@@ -211,7 +188,7 @@ It should only modify the values of Spacemacs settings."
     ;; `recents' `bookmarks' `projects' `agenda' `todos'.
     ;; List sizes may be nil, in which case
     ;; `spacemacs-buffer-startup-lists-length' takes effect.
-    dotspacemacs-startup-lists '((recents . 5)
+    dotspacemacs-startup-lists '( (recents . 5)
                                   (projects . 7))
     ;; True if the home buffer should respond to resize events.
     dotspacemacs-startup-buffer-responsive t
@@ -418,8 +395,7 @@ It should only modify the values of Spacemacs settings."
     dotspacemacs-whitespace-cleanup nil
     ;; Either nil or a number of seconds. If non-nil zone out after the specified
     ;; number of seconds. (default nil)
-    dotspacemacs-zone-out-when-idle nil
-    ))
+    dotspacemacs-zone-out-when-idle nil))
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -427,6 +403,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setq custom-file "/dev/null") ;; rids us of the verbose custom settings
   (setq-default
     git-magit-status-fullscreen t))
 
@@ -437,7 +414,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ;; Fira Code ligatures in railswaycat emacs
+  ;; ligatures in railswaycat emacs
   (mac-auto-operator-composition-mode)
 
   ;; use COMMAND as META
@@ -470,9 +447,6 @@ before packages are loaded."
   (add-hook 'markdown-mode-hook #'flycheck-mode)
   (add-hook 'text-mode-hook #'flycheck-mode)
 
-  ;; hlinum
-  (hlinum-activate)
-
   ;; javascript
   (setq js2-strict-missing-semi-warning nil)
 
@@ -485,7 +459,6 @@ before packages are loaded."
     parinfer-auto-switch-indent-mode nil
     parinfer-auto-switch-indent-mode-when-closing nil
     parinfer-lighters '("→" . "❪❫"))
-  (spacemacs/set-leader-keys "t/" 'parinfer-toggle-mode)
   (add-hook 'clojure-mode-hook #'parinfer-mode)
   (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
 
@@ -497,9 +470,9 @@ before packages are loaded."
     org-return-follows-link 1)
   (org-babel-do-load-languages
     'org-babel-load-languages
-    '((emacs-lisp . t)
+    '((emacs-lisp . t
        (ruby t)
-       (sh t)))
+       (sh t))))
   (evil-declare-key 'normal evil-org-mode-map (kbd "<RET>") 'org-open-at-point)
   (evil-declare-key 'normal evil-org-mode-map (kbd "L") 'org-toggle-link-display)
 
@@ -528,8 +501,8 @@ what file icon to use."
       (neo-buffer--node-list-set nil node)
       (neo-buffer--newline-and-begin)))
   (defun neo-buffer--insert-file-entry (node depth)
-    (let ((node-short-name (neo-path--file-short-name node))
-           (vc (when neo-vc-integration (neo-vc-for-node node))))
+    (let ((node-short-name (neo-path--file-short-name node)
+           (vc (when neo-vc-integration (neo-vc-for-node node)))))
       (insert-char ?\s (* (- depth 1) 2)) ; indent
       (when (memq 'char neo-vc-integration)
         (insert-char (car vc))
@@ -568,6 +541,13 @@ what file icon to use."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+
+
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization.")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -578,69 +558,29 @@ what file icon to use."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
- '(ansi-color-names-vector
-   ["#ede9e7" "#ef001b" "#8cc610" "#eea806" "#23cbfe" "#ec3691" "#1ee079" "#272b34"])
- '(custom-safe-themes
-   (quote
-    ("5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "a47a92a315222b32da1c4a37147df3c9077c564223dff152a494ecb2e1c34f28" "dcf3ee7a5297a79fd7d0d746d126d5e946415392e67022bd99551c0ef9d557c1" "91d515a4a38e914876134873aefd67f6bec9732adaf9832de9b1934a6aeebffb" "1025f053e23ecc782194175337cddfbf79ceb714ad54f068b9804a5c04fc6fee" "edd7df32cfba45d95c1f00b755d960f5f53a55a0eb26d2ea924e9a0a7434f6eb" default)))
+  '(ansi-color-names-vector
+     ["#ede9e7" "#ef001b" "#8cc610" "#eea806" "#23cbfe" "#ec3691" "#1ee079" "#272b34"])
+  '(custom-safe-themes
+     (quote
+       ("5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "a47a92a315222b32da1c4a37147df3c9077c564223dff152a494ecb2e1c34f28" "dcf3ee7a5297a79fd7d0d746d126d5e946415392e67022bd99551c0ef9d557c1" "91d515a4a38e914876134873aefd67f6bec9732adaf9832de9b1934a6aeebffb" "1025f053e23ecc782194175337cddfbf79ceb714ad54f068b9804a5c04fc6fee" "edd7df32cfba45d95c1f00b755d960f5f53a55a0eb26d2ea924e9a0a7434f6eb" default)))
  '(evil-want-Y-yank-to-eol t)
- '(package-selected-packages
-   (quote
-    (doom-themes log4e gntp hcl-mode pug-mode parinfer packed memoize paredit skewer-mode simple-httpd haml-mode s winum fuzzy flycheck-credo nlinum-relative nlinum flyspell-popup tannat-theme hlinum org pcache minitest insert-shebang hide-comnt flyspell-correct package-lint inflections seq spinner clojure-mode multiple-cursors iedit highlight yasnippet inf-ruby vagrant-tramp vagrant theme-changer sunshine rase rainbow-mode rainbow-identifiers osx-location material-theme imenu-list helm-dash fasd grizzl evil-cleverparens dockerfile-mode docker tablist docker-tramp dash-at-point color-identifiers-mode all-the-icons font-lock+ auto-complete git-gutter request markdown-mode alert hydra company js2-mode window-numbering which-key web-mode use-package spacemacs-theme persp-mode org-plus-contrib org-download olivetti matlab-mode magit-gitflow lfe-mode less-css-mode intero hindent helm-ag github-search git-messenger git-link exec-path-from-shell evil-unimpaired evil-matchit evil-exchange evil-ediff editorconfig dumb-jump coffee-mode bundler auto-yasnippet ace-link cider tern anzu smartparens evil flycheck haskell-mode helm helm-core avy projectile magit magit-popup git-commit with-editor f dash yaml-mode xterm-color ws-butler wordsmith-mode wolfram-mode web-beautify volatile-highlights uuidgen undo-tree typo toc-org thrift terraform-mode tagedit stan-mode sql-indent spaceline smex smeargle slim-mode sibilant-mode shell-pop scss-mode scad-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv ranger rake rainbow-delimiters queue quelpa qml-mode psci psc-ide popwin pcomplete-extension pcmpl-homebrew pcmpl-git pcmpl-args pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gh-pulls macrostep lorem-ipsum livid-mode linum-relative link-hint launchctl julia-mode json-mode js2-refactor js-doc jinja2-mode jade-mode info+ indent-guide idris-mode ido-vertical-mode ibuffer-projectile hungry-delete htmlize hlint-refactor hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet haskell-snippets graphviz-dot-mode goto-chg google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-gutter-fringe git-gutter-fringe+ gist gh-md flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-mix flycheck-haskell flycheck-elm flx-ido fish-mode fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-escape evil-args evil-anzu eshell-z eshell-prompt-extras esh-help erlang emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav diminish diff-hl define-word company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-emoji company-cabal column-enforce-mode cmm-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu chruby bind-key bats-mode auto-highlight-symbol auto-dictionary auto-compile async arduino-mode ansible-doc ansible alchemist aggressive-indent adaptive-wrap ace-window ace-jump-helm-line ac-ispell)))
+  '(package-selected-packages
+     (quote
+       (restclient-helm ob-restclient ob-http company-restclient restclient know-your-http-well doom-themes log4e gntp hcl-mode pug-mode parinfer packed memoize paredit skewer-mode simple-httpd haml-mode s winum fuzzy flycheck-credo nlinum-relative nlinum flyspell-popup tannat-theme hlinum org pcache minitest insert-shebang hide-comnt flyspell-correct package-lint inflections seq spinner clojure-mode multiple-cursors iedit highlight yasnippet inf-ruby vagrant-tramp vagrant theme-changer sunshine rase rainbow-mode rainbow-identifiers osx-location material-theme imenu-list helm-dash fasd grizzl evil-cleverparens dockerfile-mode docker tablist docker-tramp dash-at-point color-identifiers-mode all-the-icons font-lock+ auto-complete git-gutter request markdown-mode alert hydra company js2-mode window-numbering which-key web-mode use-package spacemacs-theme persp-mode org-plus-contrib org-download olivetti matlab-mode magit-gitflow lfe-mode less-css-mode intero hindent helm-ag github-search git-messenger git-link exec-path-from-shell evil-unimpaired evil-matchit evil-exchange evil-ediff editorconfig dumb-jump coffee-mode bundler auto-yasnippet ace-link cider tern anzu smartparens evil flycheck haskell-mode helm helm-core avy projectile magit magit-popup git-commit with-editor f dash yaml-mode xterm-color ws-butler wordsmith-mode wolfram-mode web-beautify volatile-highlights uuidgen undo-tree typo toc-org thrift terraform-mode tagedit stan-mode sql-indent spaceline smex smeargle slim-mode sibilant-mode shell-pop scss-mode scad-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv ranger rake rainbow-delimiters queue quelpa qml-mode psci psc-ide popwin pcomplete-extension pcmpl-homebrew pcmpl-git pcmpl-args pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gh-pulls macrostep lorem-ipsum livid-mode linum-relative link-hint launchctl julia-mode json-mode js2-refactor js-doc jinja2-mode jade-mode info+ indent-guide idris-mode ido-vertical-mode ibuffer-projectile hungry-delete htmlize hlint-refactor hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet haskell-snippets graphviz-dot-mode goto-chg google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-gutter-fringe git-gutter-fringe+ gist gh-md flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-mix flycheck-haskell flycheck-elm flx-ido fish-mode fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-escape evil-args evil-anzu eshell-z eshell-prompt-extras esh-help erlang emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav diminish diff-hl define-word company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-emoji company-cabal column-enforce-mode cmm-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu chruby bind-key bats-mode auto-highlight-symbol auto-dictionary auto-compile async arduino-mode ansible-doc ansible alchemist aggressive-indent adaptive-wrap ace-window ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t)
  '(ring-bell-function (quote ignore))
- '(when
-      (or
+  '(when
+     (or
        (not
-        (boundp
-         (quote ansi-term-color-vector)))
+         (boundp
+           (quote ansi-term-color-vector)))
        (not
-        (facep
-         (aref ansi-term-color-vector 0))))))
-(custom-set-faces
+         (facep
+           (aref ansi-term-color-vector 0))))))
+(custom-set-faces)
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ahs-case-fold-search nil t)
- '(ahs-default-range (quote ahs-range-whole-buffer) t)
- '(ahs-idle-interval 0.25 t)
- '(ahs-idle-timer 0 t)
- '(ahs-inhibit-face-list nil t)
- '(ansi-color-names-vector
-   ["#ede9e7" "#ef001b" "#8cc610" "#eea806" "#23cbfe" "#ec3691" "#1ee079" "#272b34"])
- '(custom-safe-themes
-   (quote
-    ("5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "a47a92a315222b32da1c4a37147df3c9077c564223dff152a494ecb2e1c34f28" "dcf3ee7a5297a79fd7d0d746d126d5e946415392e67022bd99551c0ef9d557c1" "91d515a4a38e914876134873aefd67f6bec9732adaf9832de9b1934a6aeebffb" "1025f053e23ecc782194175337cddfbf79ceb714ad54f068b9804a5c04fc6fee" "edd7df32cfba45d95c1f00b755d960f5f53a55a0eb26d2ea924e9a0a7434f6eb" default)))
- '(evil-want-Y-yank-to-eol t)
- '(package-selected-packages
-   (quote
-    (symon string-inflection sayid ruby-refactor password-generator org-brain impatient-mode helm-purpose window-purpose flycheck-bashate evil-org evil-lion emojify ht browse-at-remote doom-themes log4e gntp hcl-mode pug-mode parinfer packed memoize paredit skewer-mode simple-httpd haml-mode s winum fuzzy flycheck-credo nlinum-relative nlinum flyspell-popup tannat-theme hlinum org pcache minitest insert-shebang hide-comnt flyspell-correct package-lint inflections seq spinner clojure-mode multiple-cursors iedit highlight yasnippet inf-ruby vagrant-tramp vagrant theme-changer sunshine rase rainbow-mode rainbow-identifiers osx-location material-theme imenu-list helm-dash fasd grizzl evil-cleverparens dockerfile-mode docker tablist docker-tramp dash-at-point color-identifiers-mode all-the-icons font-lock+ auto-complete git-gutter request markdown-mode alert hydra company js2-mode window-numbering which-key web-mode use-package spacemacs-theme persp-mode org-plus-contrib org-download olivetti matlab-mode magit-gitflow lfe-mode less-css-mode intero hindent helm-ag github-search git-messenger git-link exec-path-from-shell evil-unimpaired evil-matchit evil-exchange evil-ediff editorconfig dumb-jump coffee-mode bundler auto-yasnippet ace-link cider tern anzu smartparens evil flycheck haskell-mode helm helm-core avy projectile magit magit-popup git-commit with-editor f dash yaml-mode xterm-color ws-butler wordsmith-mode wolfram-mode web-beautify volatile-highlights uuidgen undo-tree typo toc-org thrift terraform-mode tagedit stan-mode sql-indent spaceline smex smeargle slim-mode sibilant-mode shell-pop scss-mode scad-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv ranger rake rainbow-delimiters queue quelpa qml-mode psci psc-ide popwin pcomplete-extension pcmpl-homebrew pcmpl-git pcmpl-args pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gh-pulls macrostep lorem-ipsum livid-mode linum-relative link-hint launchctl julia-mode json-mode js2-refactor js-doc jinja2-mode jade-mode info+ indent-guide idris-mode ido-vertical-mode ibuffer-projectile hungry-delete htmlize hlint-refactor hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet haskell-snippets graphviz-dot-mode goto-chg google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-gutter-fringe git-gutter-fringe+ gist gh-md flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-mix flycheck-haskell flycheck-elm flx-ido fish-mode fill-column-indicator farmhouse-theme fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-escape evil-args evil-anzu eshell-z eshell-prompt-extras esh-help erlang emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav diminish diff-hl define-word company-web company-tern company-statistics company-shell company-quickhelp company-ghci company-ghc company-emoji company-cabal column-enforce-mode cmm-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu chruby bind-key bats-mode auto-highlight-symbol auto-dictionary auto-compile async arduino-mode ansible-doc ansible alchemist aggressive-indent adaptive-wrap ace-window ace-jump-helm-line ac-ispell)))
- '(paradox-github-token t)
- '(ring-bell-function (quote ignore))
- '(when
-      (or
-       (not
-        (boundp
-         (quote ansi-term-color-vector)))
-       (not
-        (facep
-         (aref ansi-term-color-vector 0))))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+ 
+
