@@ -506,8 +506,12 @@ before packages are loaded."
                 spaceline-all-the-icons-separator-type 'none
                 spaceline-all-the-icons-primary-separator "")))
 
-  (spacemacs|diminish company-mode " ▶ " " >")
-  (spacemacs|diminish yas-minor-mode " ✂︎ " " y")
+  (use-package company
+    :config
+    (spacemacs|diminish company-mode " ▶ " " >"))
+  (use-package yasnippet
+    :config
+    (spacemacs|diminish yas-minor-mode " ✂︎ " " y"))
   (spacemacs|diminish flyspell-mode " ❖ " " s")
   (spacemacs|diminish smartparens-mode " ⦾ " " p")
   (spacemacs|diminish which-key-mode "" "")
