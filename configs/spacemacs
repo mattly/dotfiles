@@ -6,138 +6,135 @@
   "Layer configuration:
 This function should only modify configuration layer settings."
   (setq-default
-    ;; Base distribution to use. This is a layer contained in the directory
-    ;; `+distribution'. For now available distributions are `spacemacs-base'
-    ;; or `spacemacs'. (default 'spacemacs)
-    dotspacemacs-distribution 'spacemacs
-    ;; Lazy installation of layers (i.e. layers are installed only when a file
-    ;; with a supported type is opened). Possible values are `all', `unused'
-    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
-    ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
-    ;; lazy install any layer that support lazy installation even the layers
-    ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
-    ;; installation feature and you have to explicitly list a layer in the
-    ;; variable `dotspacemacs-configuration-layers' to install it.
-    ;; (default 'unused)
-    dotspacemacs-enable-lazy-installation 'unused
-    ;; If non-nil then Spacemacs will ask for confirmation before installing
-    ;; a layer lazily. (default t)
-    dotspacemacs-ask-for-lazy-installation t
-    ;; If non-nil layers with lazy install support are lazy installed.
-    ;; List of additional paths where to look for configuration layers.
-    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-    dotspacemacs-configuration-layer-path '()
-    ;; List of configuration layers to load.
-    dotspacemacs-configuration-layers
-    '(
-       ;; Checkers
-       spell-checking
-       syntax-checking
+   ;; Base distribution to use. This is a layer contained in the directory
+   ;; `+distribution'. For now available distributions are `spacemacs-base'
+   ;; or `spacemacs'. (default 'spacemacs)
+   dotspacemacs-distribution 'spacemacs ;
+   ;; Lazy installation of layers (i.e. layers are installed only when a file
+   ;; with a supported type is opened). Possible values are `all', `unused'
+   ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
+   ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
+   ;; lazy install any layer that support lazy installation even the layers
+   ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
+   ;; installation feature and you have to explicitly list a layer in the
+   ;; variable `dotspacemacs-configuration-layers' to install it.
+   ;; (default 'unused)
+   dotspacemacs-enable-lazy-installation 'unused
+   ;; If non-nil then Spacemacs will ask for confirmation before installing
+   ;; a layer lazily. (default t)
+   dotspacemacs-ask-for-lazy-installation t
+   ;; If non-nil layers with lazy install support are lazy installed.
+   ;; List of additional paths where to look for configuration layers.
+   ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
+   dotspacemacs-configuration-layer-path '()
+   ;; List of configuration layers to load.
+   dotspacemacs-configuration-layers
+   '(
+     ;; Checkers
+     spell-checking
+     syntax-checking
 
-       ;; Completion
-       (auto-completion :variables
-         auto-completion-return-key-behavior 'complete
-         auto-completion-tab-key-behavior 'cycle
-         auto-completion-enable-snippets-in-popup t
-         auto-completion-enable-help-tooltip nil
-         auto-completion-enable-sort-by-usage t)
-       (ivy :variables
-         ivy-extra-directories nil)
+     ;; Completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip nil
+                      auto-completion-enable-sort-by-usage t)
+     (ivy :variables
+          ivy-extra-directories nil)
 
-       ;; Emacs
-       (ibuffer :variables ibuffer-group-buffers-by 'projects)
-       ;; smex
-       ;; (typography :variables typography-enable-typographic-editing t)
+     ;; Emacs
+     (ibuffer :variables ibuffer-group-buffers-by 'projects)
+     ;; smex
+     ;; (typography :variables typography-enable-typographic-editing t)
 
-       ;; Fun
-       ;; emoji
+     ;; Fun
+     ;; emoji
 
-       ;; Languages
-       clojure
-       emacs-lisp
-       ;; html
-       ;; javascript
-       markdown
-       org
-       ;; ruby
-       ;; shell-scripts
-       ;; sql
-       ;; yaml
+     ;; Languages
+     clojure
+     emacs-lisp
+     ;; html
+     ;; javascript
+     markdown
+     org
+     ;; ruby
+     ;; shell-scripts
+     ;; sql
+     ;; yaml
 
-       ;; Misc
-       nlinum
+     ;; Misc
+     nlinum
 
-       ;; Operating Systems
-       ;; (osx :variables
-       ;;   osx-command-as 'meta
-       ;;   osx-option-as nil
-       ;;   osx-function-as 'hyper)
-       ;;osx-use-option-as-meta nil)
+     ;; Operating Systems
+     ;; (osx :variables
+     ;;      osx-command-as 'meta
+     ;;      osx-option-as 'none
+     ;;      osx-function-as 'hyper)
 
-       ;; Source Control
-       git
-       ;; github ;; needs auth token in .gitconfig, which is public rn
-       (version-control :variables
-         version-control-diff-tool 'git-gutter
-         version-control-diff-side 'left)
+     ;; Source Control
+     git
+     ;; github ;; needs auth token in .gitconfig, which is public rn
+     (version-control :variables
+                      version-control-diff-tool 'git-gutter
+                      version-control-diff-side 'left)
 
-       ;; Themes
-       colors
-       theming
+     ;; Themes
+     colors
+     theming
 
-       ;; Tools
-       ranger
-       restclient
+     ;; Tools
+     ;; ranger
+     ;; restclient
                                         ;       (shell :variables
                                         ;         shell-default-position 'bottom
                                         ;         shell-default-height 30
                                         ;         shell-default-shell 'multi-term
                                         ;         shell-default-term-shell "/usr/local/bin/fish")
 
-       ;; Vim
-       evil-cleverparens
-       vim-empty-lines)
+     ;; Vim
+     evil-cleverparens
+     vim-empty-lines)
 
-    ;; List of additional packages that will be installed wihout being
-    ;; wrapped in a layer. If you need some configuration for these
-    ;; packages, then consider creating a layer. You can also put the
-    ;; configuration in `dotspacemacs/user-config'.
-    dotspacemacs-additional-packages
-    '(sibilant-mode
-       bats-mode
-       lfe-mode
+   ;; List of additional packages that will be installed wihout being
+   ;; wrapped in a layer. If you need some configuration for these
+   ;; packages, then consider creating a layer. You can also put the
+   ;; configuration in `dotspacemacs/user-config'.
+   dotspacemacs-additional-packages
+   '(sibilant-mode
+     bats-mode
+     lfe-mode
 
-       farmhouse-theme
-       material-theme
-       doom-themes
-       ;; tannat-theme
+     farmhouse-theme
+     ;; material-theme
+     ;; doom-themes
 
-       ;; doing it manually instead of through spacemacs because I want the modeline lighters
-       parinfer
+     ;; doing it manually instead of through spacemacs because I want the modeline lighters
+     parinfer
 
-       all-the-icons
-       all-the-icons-ivy
-       pretty-mode
-       spaceline-all-the-icons
+     all-the-icons
+     all-the-icons-ivy
+     pretty-mode
+     spaceline-all-the-icons
 
-       flycheck-package
-       editorconfig
+     flycheck-package
 
-       olivetti
-       wordsmith-mode
-       osx-dictionary)
-    ;; A list of packages that cannot be updated.
-    dotspacemacs-frozen-packages '()
-    ;; A list of packages and/or extensions that will not be install and loaded.
-    dotspacemacs-excluded-packages '(org-repo-todo exec-path-from-shell)
-    ;; Defines the behaviour of Spacemacs when installing packages.
-    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
-    ;; `used-only' installs only explicitly used packages and deletes any unused
-    ;; packages as well as their unused dependencies. `used-but-keep-unused'
-    ;; installs only the used packages but won't delete unused ones. `all'
-    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
-    ;; (default is `used-only')
-    dotspacemacs-install-packages 'used-only))
+     olivetti
+     wordsmith-mode
+     osx-dictionary)
+   ;; A list of packages that cannot be updated.
+   dotspacemacs-frozen-packages '()
+   ;; A list of packages and/or extensions that will not be install and loaded.
+   dotspacemacs-excluded-packages '(org-repo-todo exec-path-from-shell)
+   ;; Defines the behaviour of Spacemacs when installing packages.
+   ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
+   ;; `used-only' installs only explicitly used packages and deletes any unused
+   ;; packages as well as their unused dependencies. `used-but-keep-unused'
+   ;; installs only the used packages but won't delete unused ones. `all'
+   ;; installs *all* packages supported by Spacemacs and never uninstalls them.
+   ;; (default is `used-only')
+   dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -187,8 +184,8 @@ It should only modify the values of Spacemacs settings."
     ;; `recents' `bookmarks' `projects' `agenda' `todos'.
     ;; List sizes may be nil, in which case
     ;; `spacemacs-buffer-startup-lists-length' takes effect.
-    dotspacemacs-startup-lists '( (recents . 5)
-                                  (projects . 7))
+    dotspacemacs-startup-lists '((recents . 5)
+                                 (projects . 7))
     ;; True if the home buffer should respond to resize events.
     dotspacemacs-startup-buffer-responsive t
     ;; Default major mode of the scratch buffer (default `text-mode')
@@ -196,18 +193,17 @@ It should only modify the values of Spacemacs settings."
     ;; List of themes, the first of the list is loaded when spacemacs starts.
     ;; Press `SPC T n' to cycle to the next theme in the list (works great
     ;; with 2 themes variants, one dark and one light)
-    dotspacemacs-themes '(;; tannat
-                           farmhouse-light
-                           farmhouse-dark)
+    dotspacemacs-themes '(farmhouse-light
+                          farmhouse-dark)
     ;; If non nil the cursor color matches the state color.
     dotspacemacs-colorize-cursor-according-to-state t
     ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
     ;; size to make separators look not too crappy.
     dotspacemacs-default-font '("Iosevka"
-                                 :size 15
-                                 :weight light
-                                 :width normal
-                                 :powerline-scale 1.3)
+                                :size 15
+                                :weight light
+                                :width normal
+                                :powerline-scale 1.3)
 
     ;; The leader key
     dotspacemacs-leader-key "SPC"
@@ -403,8 +399,7 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq custom-file "/dev/null") ;; rids us of the verbose custom settings
-  (setq-default
-    git-magit-status-fullscreen t))
+  (setq-default git-magit-status-fullscreen t))
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -412,14 +407,17 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (add-to-list 'custom-theme-load-path "/Users/mattly/projects/emacs/akkala-theme/")
+  (add-to-list 'load-path "/Users/mattly/projects/emacs/akkala-theme/")
+  (require 'akkala-themes)
 
   ;; RailwayCat Emacs specific settings
   (mac-auto-operator-composition-mode) ;; enable ligatures
 
   ;; auto complete
   (setq read-buffer-completion-ignore-case t
-    completion-ignore-case t
-    read-file-name-completion-ignore-case t)
+        completion-ignore-case t
+        read-file-name-completion-ignore-case t)
 
   ;; auto save
   (auto-save-mode 1)
@@ -432,10 +430,10 @@ before packages are loaded."
     :command ("proselint" source-inplace)
     :error-patterns
     ((warning line-start (file-name) ":" line ":" column ": "
-       (id (one-or-more (not (any " "))))
-       (message (one-or-more not-newline)
-         (zero-or-more "\n" (any " ") (one-or-more not-newline)))
-       line-end))
+              (id (one-or-more (not (any " "))))
+              (message (one-or-more not-newline)
+                       (zero-or-more "\n" (any " ") (one-or-more not-newline)))
+              line-end))
     :modes (text-mode markdown-mode gfm-mode))
   (add-to-list 'flycheck-checkers 'proselint)
 
@@ -445,8 +443,20 @@ before packages are loaded."
   ;; ivy
   (all-the-icons-ivy-setup)
 
+  ;; open ivy selections in splits with `M-o v' or such
+  (with-eval-after-load 'counsel-projectile
+    (ivy-set-actions
+     'counsel-projectile-find-file
+     '(("v" aj/projectile-find-file-vsplit "in vertical split")
+       ("s" aj/projectile-find-file-split "in horizontal split")
+       ("d" aj/projectile-delete-file-confirm "delete file"))))
+  (ivy-set-actions
+   'ivy-switch-buffer
+   '(("v" aj/pop-to-buffer-vsplit "in vertical split")
+     ("s" aj/pop-to-buffer-split "in horizontal split")))
+
   ;; javascript
-  ;; (setq js2-strict-missing-semi-warning nil)
+  (setq js2-strict-missing-semi-warning nil)
 
   ;; git fringe
   (fringe-helper-define 'git-gutter-fr:added '(center repeated)
@@ -462,49 +472,117 @@ before packages are loaded."
   ;; magit
   (setq magit-repository-directories '("~/code" "~/projects"))
 
+  ;; clean up old buffers every day
+  (setq midnight-mode t)
+
   ;; parinfer
   (setq parinfer-extensions
-    '(defaults pretty-parens evil smart-yank)
-    parinfer-auto-switch-indent-mode nil
-    parinfer-auto-switch-indent-mode-when-closing nil)
+        '(defaults pretty-parens evil smart-yank)
+        parinfer-auto-switch-indent-mode nil
+        parinfer-auto-switch-indent-mode-when-closing nil)
   (spacemacs/set-leader-keys "t/" 'parinfer-toggle-mode)
   (add-hook 'clojure-mode-hook #'parinfer-mode)
   (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
 
   ;; org
-  (setq
-    org-bullets-bullet-list '("§" "¶" "✱" "✳︎" "▪︎" "•" "・")
-    org-ellipsis "⤵"
-    org-default-notes-file "~/Documents/notes.org"
-    org-return-follows-link 1
-    org-confirm-babel-evaluate nil
-    org-src-fontify-natively t
-    org-src-tab-acts-natively t
-    org-src-preserve-indentation t
-    org-src-window-setup 'current-window)
+  (setq org-bullets-bullet-list '("Ⅰ" "Ⅱ" "Ⅲ" "Ⅳ" "Ⅴ" "Ⅵ" "Ⅶ" "Ⅷ" "Ⅸ" "Ⅹ" "Ⅺ" "Ⅻ")
+        org-ellipsis "⤵"
+        org-default-notes-file "~/Documents/notes.org"
+        org-return-follows-link 1
+        org-confirm-babel-evaluate nil
+        org-src-fontify-natively t
+        org-src-tab-acts-natively t
+        org-src-preserve-indentation t
+        org-src-window-setup 'current-window)
 
-  (org-babel-do-load-languages
-    'org-babel-load-languages '((emacs-lisp . t)
-                                (clojure . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               '((emacs-lisp . t)
+                                 (clojure . t)
+                                 (python . t)
+                                 (ruby . t)))
 
   (evil-declare-key 'normal evil-org-mode-map (kbd "<RET>") 'org-open-at-point)
   (evil-declare-key 'normal evil-org-mode-map (kbd "L") 'org-toggle-link-display)
 
-  (use-package spaceline-all-the-icons
-    :after spaceline
-    :config (progn
-              (spaceline-all-the-icons--setup-neotree)
-              (spaceline-all-the-icons--setup-git-ahead)
-              (spaceline-all-the-icons-theme)
+  (defconst spaceline-mattly-theme '("%e" (:eval (spaceline-ml-mattly))))
+  (require 'spaceline-all-the-icons)
+  (spaceline-compile "mattly"
+    '((all-the-icons-anzu
+       :face mode-line
+       :skip-alternate t)
 
-              (spaceline-toggle-all-the-icons-vc-icon-off)
-              (spaceline-toggle-all-the-icons-time-off)
-              (spaceline-toggle-all-the-icons-minor-modes-on)
-              (setq spaceline-highlight-face-func 'spaceline-highlight-face-default
-                spaceline-all-the-icons-set-modified 'toggle
-                spaceline-all-the-icons-set-window-numbering 'circle
-                spaceline-all-the-icons-separator-type 'none
-                spaceline-all-the-icons-primary-separator "")))
+      ((all-the-icons-modified
+        all-the-icons-bookmark
+        all-the-icons-dedicated
+        all-the-icons-window-number
+        ;; all-the-icons-buffer-size
+        all-the-icons-mode-icon
+        ((all-the-icons-buffer-path
+          all-the-icons-buffer-id)
+         :separator ""))
+       :face highlight-face
+       :skip-alternate t)
+
+      all-the-icons-separator-left-active-1
+      all-the-icons-separator-left-inactive
+
+      ((all-the-icons-projectile
+        all-the-icons-vc-status
+        all-the-icons-git-status
+        all-the-icons-flycheck-status
+        all-the-icons-flycheck-info
+        ;; ((all-the-icons-git-ahead
+        ;;   all-the-icons-git-status) :separator " ")
+        ;; ((all-the-icons-flycheck-status
+        ;;   all-the-icons-flycheck-status-info) :separator " ")
+        all-the-icons-package-updates)
+       :face powerline-active1
+       :separator (spaceline-all-the-icons--separator spaceline-all-the-icons-secondary-separator " "))
+
+      all-the-icons-separator-left-active-2
+
+      ((all-the-icons-separator-minor-mode-left
+        all-the-icons-minor-modes
+        all-the-icons-separator-minor-mode-right)
+       :tight t
+       :face highlight-face
+       :when spaceline-all-the-icons-minor-modes-p)
+
+      ((all-the-icons-which-function)
+       :face powerline-active2
+       :separator ""))
+
+    '(all-the-icons-separator-right-active-1
+      ((all-the-icons-process
+        ;; all-the-icons-position
+        all-the-icons-region-info
+        all-the-icons-fullscreen
+        all-the-icons-text-scale
+        all-the-icons-narrowed
+        all-the-icons-multiple-cursors)
+       :face highlight-face
+       :separator (spaceline-all-the-icons--separator spaceline-all-the-icons-primary-separator " "))
+
+      all-the-icons-separator-right-active-2
+      ((all-the-icons-hud)
+       :face powerline-active2
+       :sepatator "")))
+  
+  (spaceline-all-the-icons--setup-anzu)
+  (spaceline-all-the-icons--setup-git-ahead)
+  (spaceline-all-the-icons--setup-neotree)
+  (spaceline-all-the-icons--setup-package-updates)
+  (spaceline-toggle-all-the-icons-minor-modes-on)
+  (spaceline-toggle-all-the-icons-time-off)
+  (spaceline-toggle-all-the-icons-vc-icon-off)
+  (setq-default mode-line-format spaceline-mattly-theme)
+  (setq spaceline-all-the-icons-separator-type 'none
+        spaceline-all-the-icons-primary-separator ""
+        spaceline-all-the-icons-secondary-separator ""
+        spaceline-all-the-icons-icon-set-git-ahead 'commit
+        spaceline-all-the-icons-icon-set-modified 'toggle
+        spaceline-all-the-icons-icon-set-window-numbering 'square
+        powerline-text-scale-factor 1.1)
 
   (use-package company
     :config
@@ -520,9 +598,6 @@ before packages are loaded."
   ;; neotree
   (setq neo-theme 'icons)
 
-  ;; powerline
-  (setq powerline-default-separator 'bar)
-
   ;; themes
   ;; reset themes when loading a new one
   (defun disable-all-themes ()
@@ -532,8 +607,27 @@ before packages are loaded."
   (defadvice load-theme (before disable-themes-first activate)
     (disable-all-themes))
 
-  ;; tab stops
+  ;; stop tabs
   (setq-default indent-tabs-mode nil)
 
   ;; * NORMAL
   3)
+
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )
