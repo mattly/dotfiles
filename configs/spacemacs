@@ -484,7 +484,8 @@ before packages are loaded."
   (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
 
   ;; org
-  (setq org-bullets-bullet-list '("Ⅰ" "Ⅱ" "Ⅲ" "Ⅳ" "Ⅴ" "Ⅵ" "Ⅶ" "Ⅷ" "Ⅸ" "Ⅹ" "Ⅺ" "Ⅻ")
+  (setq org-bullets-bullet-list
+        '("𝟣" "𝟤" "𝟥" "𝟦" "𝟧" "𝟨" "𝟩" "𝟪" "𝟫")
         org-ellipsis "⤵"
         org-default-notes-file "~/Documents/notes.org"
         org-return-follows-link 1
@@ -565,7 +566,7 @@ before packages are loaded."
 
       ;; all-the-icons-separator-right-active-2
       ((all-the-icons-hud)
-       :face powerline-active2
+       :face other-face
        :sepatator "")))
 
   (spaceline-all-the-icons--setup-anzu)
