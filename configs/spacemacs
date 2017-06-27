@@ -516,14 +516,15 @@ before packages are loaded."
         all-the-icons-window-number
         ;; all-the-icons-buffer-size
         all-the-icons-mode-icon
-        ((all-the-icons-buffer-path
-          all-the-icons-buffer-id)
-         :separator ""))
+        all-the-icons-buffer-id
+        ;; ((all-the-icons-buffer-path
+        ;;   all-the-icons-buffer-id)
+        :separator "")
        :face highlight-face
        :skip-alternate t)
 
-      all-the-icons-separator-left-active-1
-      all-the-icons-separator-left-inactive
+      ;; all-the-icons-separator-left-active-1
+      ;; all-the-icons-separator-left-inactive
 
       ((all-the-icons-projectile
         all-the-icons-vc-status
@@ -535,10 +536,10 @@ before packages are loaded."
         ;; ((all-the-icons-flycheck-status
         ;;   all-the-icons-flycheck-status-info) :separator " ")
         all-the-icons-package-updates)
-       :face powerline-active1
+       :face other-face
        :separator (spaceline-all-the-icons--separator spaceline-all-the-icons-secondary-separator " "))
 
-      all-the-icons-separator-left-active-2
+      ;; all-the-icons-separator-left-active-2
 
       ((all-the-icons-separator-minor-mode-left
         all-the-icons-minor-modes
@@ -551,7 +552,7 @@ before packages are loaded."
        :face powerline-active2
        :separator ""))
 
-    '(all-the-icons-separator-right-active-1
+    '(;; all-the-icons-separator-right-active-1
       ((all-the-icons-process
         ;; all-the-icons-position
         all-the-icons-region-info
@@ -562,11 +563,11 @@ before packages are loaded."
        :face highlight-face
        :separator (spaceline-all-the-icons--separator spaceline-all-the-icons-primary-separator " "))
 
-      all-the-icons-separator-right-active-2
+      ;; all-the-icons-separator-right-active-2
       ((all-the-icons-hud)
        :face powerline-active2
        :sepatator "")))
-  
+
   (spaceline-all-the-icons--setup-anzu)
   (spaceline-all-the-icons--setup-git-ahead)
   (spaceline-all-the-icons--setup-neotree)
