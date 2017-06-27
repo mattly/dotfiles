@@ -397,7 +397,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq custom-file "/dev/null") ;; rids us of the verbose custom settings
+  (setq custom-file "/Users/mattly/.emacs.d/custom.el") ;; rids us of the verbose custom settings
   (setq-default git-magit-status-fullscreen t))
 
 (defun dotspacemacs/user-config ()
