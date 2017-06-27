@@ -46,7 +46,6 @@ This function should only modify configuration layer settings."
 
      ;; Emacs
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-     ;; smex
      ;; (typography :variables typography-enable-typographic-editing t)
 
      ;; Fun
