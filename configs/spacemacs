@@ -93,8 +93,7 @@ This function should only modify configuration layer settings."
                                         ;         shell-default-term-shell "/usr/local/bin/fish")
 
      ;; Vim
-     evil-cleverparens
-     vim-empty-lines)
+     evil-cleverparens)
 
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
@@ -111,6 +110,7 @@ This function should only modify configuration layer settings."
 
      ;; doing it manually instead of through spacemacs because I want the modeline lighters
      parinfer
+     hlinum
 
      all-the-icons
      all-the-icons-ivy
@@ -439,6 +439,9 @@ before packages are loaded."
   (add-hook 'markdown-mode-hook #'flycheck-mode)
   (add-hook 'text-mode-hook #'flycheck-mode)
 
+  ;; hlinum
+  (hlinum-activate)
+
   ;; ivy
   (all-the-icons-ivy-setup)
 
@@ -504,6 +507,7 @@ before packages are loaded."
   (evil-declare-key 'normal evil-org-mode-map (kbd "<RET>") 'org-open-at-point)
   (evil-declare-key 'normal evil-org-mode-map (kbd "L") 'org-toggle-link-display)
 
+  ;; Spaceline
   (defconst spaceline-mattly-theme '("%e" (:eval (spaceline-ml-mattly))))
   (require 'spaceline-all-the-icons)
   (spaceline-compile "mattly"
