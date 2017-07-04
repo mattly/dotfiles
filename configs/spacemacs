@@ -60,8 +60,8 @@ This function should only modify configuration layer settings."
      org
      ;; ruby
      ;; shell-scripts
-     ;; sql
-     ;; yaml
+     sql
+     yaml
 
      ;; Misc
      nlinum
@@ -411,7 +411,7 @@ before packages are loaded."
   (require 'akkala-themes)
 
   ;; RailwayCat Emacs specific settings
-  (mac-auto-operator-composition-mode) ;; enable ligatures
+  ;; (mac-auto-operator-composition-mode) ;; enable ligatures
 
   ;; auto complete
   (setq read-buffer-completion-ignore-case t
