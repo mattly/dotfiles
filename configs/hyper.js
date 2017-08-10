@@ -121,7 +121,9 @@ module.exports = {
     "hyper-tabs-enhanced",
     "hyper-monokai",
     "hypercwd",
-    "hyper-ayu-light"
+    "hyper-ayu-light",
+    "hyper-search",
+    "hyperterm-alternatescroll"
   ],
 
   // in development, you can create a directory under
