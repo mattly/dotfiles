@@ -1,17 +1,6 @@
 ;;; init.el -*- lexical-binding: t; -*-
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
-;; fonts
-(setq  doom-font (font-spec :family "Iosevka Light" :size 15)
-       doom-big-font (font-spec :family "Iosevka" :size 21)
-       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-
-;; theme
-(setq  doom-peacock-brighter-comments t
-       doom-peacock-comment-bg nil
-       doom-peacock-brighter-modeline t
-       doom-theme 'doom-peacock)
-
 (doom! :feature
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
