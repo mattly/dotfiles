@@ -1,8 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 
 (def-package! evil-cleverparens
-  :config
-  (setq evil-cleverparens-swap-move-by-word-and-symbol t)
+  :config (setq evil-cleverparens-swap-move-by-word-and-symbol t)
   (add-hook 'smartparens-enabled-hook #'evil-cleverparens-mode))
 
 (def-package! parinfer
@@ -28,7 +27,8 @@
           ">" ")")))
 
 (map! :map parinfer-mode-map
-      :localleader
-      :desc "toggle parinfer mode" :nv "m" #'parinfer-toggle-mode
       [tab] #'parinfer-smart-tab:forward-char
-      [backtab] #'parinfer-smart-tab:backward-char)
+      [backtab] #'parinfer-smart-tab:backward-char
+      :localleader
+      :desc "toggle parinfer mode" :nv "m" #'parinfer-toggle-mode)
+
