@@ -1,12 +1,11 @@
 package argu
-package battery
+package brew
+package direnv
 package docker-machine
 package emacs
+package errno
 package expand
-package fasd
+package gem
 package marlin
-package rustup
-package thefuck
-theme bobthefish
 theme default
 theme pure
