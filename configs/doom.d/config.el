@@ -47,5 +47,3 @@
       :desc "Toggle Paredit" "C-," #'parinfer-toggle-mode
       :desc "Indent to next level" [tab] #'parinfer-smart-tab:forward-char
       :desc "Deindent to prev" [backtab] #'parinfer-smart-tab:backward-char)
-
-(foo 1)
