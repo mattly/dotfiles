@@ -1,11 +1,16 @@
 ;;; init.el -*- lexical-binding: t; -*-
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
-(setq doom-font (font-spec :family "Iosevka Light" :size 15)
-      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13)
-      doom-big-font (font-spec :family "Iosevka" :size 21)
-      doom-peacock-brighter-comments t
-      doom-theme 'doom-peacock)
+;; fonts
+(setq  doom-font (font-spec :family "Iosevka Light" :size 15)
+       doom-big-font (font-spec :family "Iosevka" :size 21)
+       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+
+;; theme
+(setq  doom-peacock-brighter-comments t
+       doom-peacock-comment-bg nil
+       doom-peacock-brighter-modeline t
+       doom-theme 'doom-peacock)
 
 (doom! :feature
        (popup            ; tame sudden yet inevitable temporary windows
@@ -37,11 +42,11 @@
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-modeline     ; a snazzy Atom-inspired mode-line
-       doom-quit         ; DOOM quit-message prompts when you quit Emacs
+       ;; doom-quit         ; DOOM quit-message prompts when you quit Emacs
        evil-goggles      ; display visual hints when editing in evil
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        nav-flash         ; blink the current line after jumping
-      ;posframe          ; use child frames where possible (Emacs 26+ only)
+      posframe          ; use child frames where possible (Emacs 26+ only)
       ;tabbar            ; FIXME an (incomplete) tab bar for Emacs
       ;unicode           ; extended unicode support for various languages
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
@@ -54,13 +59,13 @@
        eshell            ; a consistent, cross-platform shell (WIP)
        gist              ; interacting with github gists
        imenu             ; an imenu sidebar and searchable code index
-       impatient-mode    ; show off code over HTTP
+       ;; impatient-mode    ; show off code over HTTP
       ;macos             ; MacOS-specific commands
-       make              ; run make tasks from Emacs
-      ;magit             ;
+       ;; make              ; run make tasks from Emacs
+       magit             ;
        neotree           ; a project drawer, like NERDTree for vim
        ;; password-store    ; password manager for nerds
-       pdf               ; pdf enhancements
+       ;; pdf               ; pdf enhancements
       ;rgb               ; creating color strings
        rotate-text       ; cycle region at point between text candidates
        term              ; terminals in Emacs
