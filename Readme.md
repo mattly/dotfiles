@@ -1,18 +1,19 @@
-I used to have some really details configs for vim and zsh. Then I started
-using [fish][], [spacemacs][] and [magit][] and really don't have a very customized
-environment anymore. And I'm happier with this.  So, find what thou wilt.
+# These are my dotfiles
+
+### doom.d
+
+I had a highly-tweaked vim config for many years. Then I started working in a
+non-scripting language, and I gave [spacemacs][] a try, and ended up using that
+for quite a while. Unfortunately its development pace hasn't scaled well with
+the project's popularity, and I tried [Atom][] for a while. I like it, but Atom
+has some rather problematic core bugs that make it unusable on my employer's
+network, so I'm back to Emacs. This time around, I decided to give Henrik
+Lissner's [doom-emacs][] a try, and quite like it. My private module is here.
 
 [spacemacs]: https://github.com/syl20bnr/spacemacs/
-[fish]: http://fishshell.com/
 [magit]: http://magit.vc/
-
-## Items of Interest
-
-### spacemacs
-
-The beauty of my dot-spacemacs file isn't anything in the file, rather what's
-not in the file and rather is a part of [spacemacs][] itself, through the power
-of spacemacs's config-layer system.
+[atom]: https://atom.io
+[doom-emacs]: https://github.com/hlissner/doom-emacs
 
 ### fish
 
@@ -20,9 +21,12 @@ After years of using zsh with a cargo-culted configuration, I gave up on it and
 switched to the [Friendly Interactive Shell][fish], aka **fish**. It has a
 simplified scripting language, has sane defaults, and straightforward
 auto-complete features. There's not much to see in the config file, because
-[fish doesn't believe in configurability][fish-evil].
+[fish doesn't believe in configurability][fish-evil].  I'm using [oh my fish][] to
+manage most of the config.
 
+[fish]: http://fishshell.com/
 [fish-evil]: http://fishshell.com/docs/current/design.html#conf
+[oh my fish]: https://github.com/oh-my-fish/oh-my-fish
 
 ### gitconfig
 
@@ -58,6 +62,9 @@ and got really into creating custom aliases. Here are a few:
 
 ## Install
 
-I am in the process of migrating the automated install of this to [bork][] and their configurations are in the install directory. Eventually there will be a compiled borkfile when I get around to writing that feature of Bork, and then a command to copy & paste and run, letting the computer work while you get coffee.
+I am in the process of migrating the automated install of this to [bork][] and
+their configurations are in the install directory. Eventually there will be a
+compiled borkfile when I get around to writing that feature of Bork, and then a
+command to copy & paste and run, letting the computer work while you get coffee.
 
 [bork]: https://github.com/mattly/bork
