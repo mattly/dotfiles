@@ -4,14 +4,27 @@
 
 ;;; Code:
 
+(add-to-list 'default-frame-alist '(height . 100))
+(add-to-list 'default-frame-alist '(width . 110))
+(set-frame-parameter (selected-frame) 'alpha '(97 . 95))
+
+;; set ligatures on railwaycat
+(when (boundp mac-auto-operator-composition-mode)
+  (mac-auto-operator-composition-mode))
+
+(auto-save-mode 1)
+
+(setq magit-repository-directories '("projects"))
+
 (defvar mattly-lisp-mode-map (make-sparse-keymap))
 
 (define-minor-mode mattly-lisp-mode
   :init-val nil
   :key-map mattly-lisp-mode-map
-  (parinfer-mode 1)
-  (add-hook 'clojure-mode-hook #'mattly-lisp-mode)
-  (add-hook 'emacs-lisp-mode-hook #'mattly-lisp-mode))
+  (parinfer-mode 1))
+
+(add-hook 'clojure-mode-hook #'mattly-lisp-mode)
+(add-hook 'emacs-lisp-mode-hook #'mattly-lisp-mode)
 
 (def-package! parinfer
   :init
@@ -21,9 +34,7 @@
              pretty-parents
              evil
              smart-tab
-             smart-yank)))
-  :config
-  )
+             smart-yank))))
 
 (def-package! evil-cleverparens
   :config
