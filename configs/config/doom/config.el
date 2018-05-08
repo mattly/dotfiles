@@ -3,7 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-;; (def-package-hook! emacs-snippets :disabled t)
 
 (auto-save-mode 1)
 

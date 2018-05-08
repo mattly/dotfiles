@@ -35,7 +35,7 @@
        evil-goggles      ; display visual hints when editing in evil
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        nav-flash         ; blink the current line after jumping
-      ;; posframe          ; use child frames where possible (Emacs 26+ only)
+      posframe          ; use child frames where possible (Emacs 26+ only)
       ;tabbar            ; FIXME an (incomplete) tab bar for Emacs
       ;unicode           ; extended unicode support for various languages
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
@@ -103,7 +103,7 @@
        ;; scala             ; java, but good
        sh                ; she sells (ba|z)sh shells on the C xor
        ;; swift             ; who asked for emoji variables?
-       ;; typescript        ; javascript, but better
+       typescript        ; javascript, but better
        web               ; the tubes
 
        ;; Applications are complex and opinionated modules that transform Emacs

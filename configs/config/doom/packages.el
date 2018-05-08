@@ -5,4 +5,3 @@
 (package! evil-cleverparens)
 
 (package! emacs-snippets :ignore t :disable t)
-;; (package! clj-refactor :disable t)
