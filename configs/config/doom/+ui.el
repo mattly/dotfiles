@@ -3,7 +3,7 @@
 ;; fonts
 (setq  doom-font (font-spec :family "Iosevka Light" :size 15)
        doom-big-font (font-spec :family "Iosevka" :size 21)
-       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+       doom-variable-pitch-font (font-spec :family "Avenir Next" :size 13))
 
 ;; theme
 (setq  doom-peacock-brighter-comments t

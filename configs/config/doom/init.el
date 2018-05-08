@@ -35,7 +35,7 @@
        evil-goggles      ; display visual hints when editing in evil
        hl-todo           ; highlight TODO/FIXME/NOTE tags
        nav-flash         ; blink the current line after jumping
-      posframe          ; use child frames where possible (Emacs 26+ only)
+      ;; posframe          ; use child frames where possible (Emacs 26+ only)
       ;tabbar            ; FIXME an (incomplete) tab bar for Emacs
       ;unicode           ; extended unicode support for various languages
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
@@ -63,7 +63,7 @@
 
        :lang
        ;; assembly          ; assembly for fun or debugging
-       cc                ; C/C++/Obj-C madness
+       ;; cc                ; C/C++/Obj-C madness
        ;; crystal           ; ruby at the speed of c
        clojure           ; java with a lisp
        ;; csharp            ; unity, .NET, and mono shenanigans
@@ -123,5 +123,5 @@
        ;; a Spacemacs-inspired keybinding scheme, a custom yasnippet library,
        ;; and additional ex commands for evil-mode. Use it as a reference for
        ;; your own modules.
-       (default +bindings +snippets +evil-commands))
+       (default +bindings +evil-commands)) ;; +snippets
 
