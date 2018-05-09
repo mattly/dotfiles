@@ -7,8 +7,10 @@
 (auto-save-mode 1)
 
 ;; magit
-(setq magit-repository-directories '("projects"))
-
+(def-package! magit
+  :config
+  (setq-default git-magit-status-fullscreen t)
+  (setq magit-repository-directories '("projects")))
 
 
 (load! +lisp)
