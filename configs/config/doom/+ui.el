@@ -1,7 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 
 ;; fonts
-(setq  doom-font (font-spec :family "Iosevka Light" :size 15)
+(setq  doom-font (font-spec :family "Iosevka" :weight 'light :size 15)
        doom-big-font (font-spec :family "Iosevka" :size 21)
        doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
@@ -10,6 +10,9 @@
        doom-peacock-comment-bg nil
        doom-peacock-brighter-modeline t
        doom-theme 'doom-peacock)
+
+;; etc
+(setq which-key-idle-delay 0.3)
 
 ;; default frame
 (add-to-list 'default-frame-alist '(height . 100))
