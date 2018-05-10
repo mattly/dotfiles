@@ -2,10 +2,9 @@ package argu
 package brew
 package direnv
 package docker-machine
-package emacs
 package errno
 package expand
+package extract
 package gem
-package marlin
 theme default
 theme pure
