@@ -15,3 +15,8 @@
 
 (load! +lisp)
 (load! +ui)
+
+(def-package! feature-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+  (setq feature-step-search-path "features/**/*steps.rb"))

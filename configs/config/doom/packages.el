@@ -7,3 +7,5 @@
 (package! emacs-snippets :ignore t :disable t)
 
 (package! flycheck-joker)
+
+(package! feature-mode)
