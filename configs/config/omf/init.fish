@@ -12,3 +12,18 @@ set LUACPATH '/Users/mattly/.luarocks/lib/lua/5.1/?.so;/Users/mattly/projects/ml
 set LD_LIBRARY_PATH /Users/mattly/projects/ml/torch/install/lib $LD_LIBRARY_PATH
 set DYLD_LIBRARY_PATH /Users/mattly/projects/ml/torch/install/lib $DYLD_LIBRARY_PATH
 set LUA_CPATH '/Users/mattly/projects/ml/torch/install/lib/?.dylib;' $LUA_CPATH
+
+
+if which exa >/dev/null
+   set -l recent "--sort date --reverse"
+   set -l long "--long --header --links --modified --time-style long-iso --git --color-scale"
+   alias l="exa --classify --git-ignore"
+   alias ll="exa --classify $long --git-ignore"
+   alias la="exa --classify $long --all"
+   alias lr="ll $recent"
+   alias lra="la $recent"
+end
+
+if which bat >/dev/null
+   alias cat="bat"
+end
