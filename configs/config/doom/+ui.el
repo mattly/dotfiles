@@ -6,10 +6,16 @@
        doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
 ;; theme
-(setq  doom-peacock-brighter-comments t
+(setq  doom-theme
+       ;; 'doom-one
+       'doom-one-light
+       ;; 'doom-peacock
+       doom-one-light-brighter-modeline nil
+       doom-one-light-brighter-comments t
+       doom-one-light-comment-bg nil
+       doom-peacock-brighter-comments t
        doom-peacock-comment-bg nil
-       doom-peacock-brighter-modeline t
-       doom-theme 'doom-peacock)
+       doom-peacock-brighter-modeline t)
 
 ;; etc
 (setq which-key-idle-delay 0.3)
