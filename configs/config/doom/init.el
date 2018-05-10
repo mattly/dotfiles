@@ -52,7 +52,7 @@
        imenu             ; an imenu sidebar and searchable code index
        ;; impatient-mode    ; show off code over HTTP
       ;macos             ; MacOS-specific commands
-       ;; make              ; run make tasks from Emacs
+       make              ; run make tasks from Emacs
        magit             ;
        neotree           ; a project drawer, like NERDTree for vim
        ;; password-store    ; password manager for nerds
@@ -100,8 +100,8 @@
        ;; plantuml          ; diagrams for confusing people more
        ;; purescript        ; javascript, but functional
        ;; python            ; beautiful is better than ugly
-       ;; rest              ; Emacs as a REST client
-       ;; ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       rest              ; Emacs as a REST client
+       ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;; rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;; scala             ; java, but good
        sh                ; she sells (ba|z)sh shells on the C xor
