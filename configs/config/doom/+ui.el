@@ -5,6 +5,9 @@
        doom-big-font (font-spec :family "Iosevka" :size 21)
        doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
+;; set neotree so open chevrons are same width as closed ones
+(setq doom-neotree-chevron-size 0.7)
+
 ;; theme
 (setq  doom-theme
        ;; -- darker
