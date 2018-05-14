@@ -7,15 +7,24 @@
 
 ;; theme
 (setq  doom-theme
-       ;; 'doom-one
-       'doom-one-light
+       ;; -- darker
+       ;; 'doom-city-lights
+       'doom-one
        ;; 'doom-peacock
-       doom-one-light-brighter-modeline nil
+       ;; -- lighter
+       ;; 'doom-nord-light
+       ;; 'doom-one-light
+       doom-city-lights-brighter-comments t
+       doom-molokai-brighter-comments t
+       doom-nord-light-brighter-comments t
+       doom-nord-light-brighter-modeline t
+       doom-one-light-brighter-modeline t
        doom-one-light-brighter-comments t
        doom-one-light-comment-bg nil
        doom-peacock-brighter-comments t
        doom-peacock-comment-bg nil
-       doom-peacock-brighter-modeline t)
+       doom-peacock-brighter-modeline t
+       doom-vibrant-brighter-comments t)
 
 ;; etc
 (setq which-key-idle-delay 0.3)
