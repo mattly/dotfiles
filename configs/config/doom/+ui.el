@@ -30,7 +30,9 @@
        doom-vibrant-brighter-comments t)
 
 ;; etc
-(setq which-key-idle-delay 0.3)
+(setq ivy-re-builders-alist
+      '((t . ivy--regex-ignore-order))
+      which-key-idle-delay 0.3)
 
 ;; default frame
 (add-to-list 'default-frame-alist '(height . 100))
