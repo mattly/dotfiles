@@ -22,6 +22,7 @@ if which exa >/dev/null
    alias la="exa --classify $long --all"
    alias lr="ll $recent"
    alias lra="la $recent"
+   alias ls="exa"
 end
 
 if which bat >/dev/null
