@@ -9,7 +9,6 @@
        (lookup           ; helps you navigate your code and documentation
         +devdocs         ; ...on devdocs.io online
         +docsets)        ; ...or in Dash docsets locally
-       services          ; TODO managing external services & code builders
        snippets          ; my elves. They type so I don't have to
        spellcheck        ; tasing you for misspelling mispelling
        (syntax-checker   ; tasing you for every semicolon you forget
@@ -56,6 +55,7 @@
        magit             ;
        ;; password-store    ; password manager for nerds
        ;; pdf               ; pdf enhancements
+       prodigy           ; Managing external services
       ;rgb               ; creating color strings
        rotate-text       ; cycle region at point between text candidates
        term              ; terminals in Emacs
@@ -82,7 +82,7 @@
        ;; julia             ; a better, faster MATLAB
        ;; latex             ; writing papers in Emacs has never been so fun
        ;; ledger            ; an accounting system in Emacs
-       ;; lua               ; one-based indices? one-based indices
+       lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
        ;; nim               ; python + lisp at the speed of c
        ;; nix               ; I hereby declare "nix geht mehr!"
