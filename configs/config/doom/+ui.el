@@ -1,9 +1,10 @@
 ;;; -*- lexical-binding: t; -*-
 
 ;; fonts
-(setq  doom-font (font-spec :family "Iosevka" :weight 'light :size 11)
+(setq  doom-font (font-spec :family "Iosevka" :weight 'light :size 13)
        doom-big-font (font-spec :family "Iosevka" :size 16)
-       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 10)
+       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 12)
+       line-spacing 0.15
        text-scale-mode-step 1.1)
 
 ;; set neotree so open chevrons are same width as closed ones
@@ -13,11 +14,12 @@
 (setq  doom-theme
        ;; -- darker
        ;; 'doom-city-lights
-       'doom-one
+       ;; 'doom-one
        ;; 'doom-peacock
        ;; -- lighter
        ;; 'doom-nord-light
-       ;; 'doom-one-light
+       'doom-one-light
+       ;; 'doom-alabaster
        doom-city-lights-brighter-comments t
        doom-molokai-brighter-comments t
        doom-nord-light-brighter-comments t
