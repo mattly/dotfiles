@@ -13,8 +13,8 @@
   (setq magit-repository-directories '("projects")))
 
 
-(load! +lisp)
-(load! +ui)
+(load! "+lisp")
+(load! "+ui")
 
 (def-package! feature-mode
   :config
