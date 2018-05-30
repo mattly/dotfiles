@@ -4,33 +4,34 @@
 (setq  doom-font (font-spec :family "Iosevka" :weight 'light :size 13)
        doom-big-font (font-spec :family "Iosevka" :size 16)
        doom-variable-pitch-font (font-spec :family "Fira Sans" :size 12)
-       line-spacing 0.15
        text-scale-mode-step 1.1)
+
+(setq-default line-spacing 0.15)
 
 ;; set neotree so open chevrons are same width as closed ones
 (setq doom-neotree-chevron-size 0.7)
 
 ;; theme
-(setq  doom-theme
-       ;; -- darker
-       ;; 'doom-city-lights
-       ;; 'doom-one
-       ;; 'doom-peacock
-       ;; -- lighter
-       ;; 'doom-nord-light
-       'doom-one-light
-       ;; 'doom-alabaster
-       doom-city-lights-brighter-comments t
-       doom-molokai-brighter-comments t
-       doom-nord-light-brighter-comments t
-       doom-nord-light-brighter-modeline t
-       doom-one-light-brighter-modeline t
-       doom-one-light-brighter-comments t
-       doom-one-light-comment-bg nil
-       doom-peacock-brighter-comments t
-       doom-peacock-comment-bg nil
-       doom-peacock-brighter-modeline t
-       doom-vibrant-brighter-comments t)
+(setq doom-theme
+      ;; -- darker
+      ;; 'doom-city-lights
+      ;; 'doom-one
+      ;; 'doom-peacock
+      ;; -- lighter
+      ;; 'doom-nord-light
+      'doom-one-light
+      ;; 'doom-alabaster
+      doom-city-lights-brighter-comments t
+      doom-molokai-brighter-comments t
+      doom-nord-light-brighter-comments t
+      doom-nord-light-brighter-modeline t
+      doom-one-light-brighter-modeline t
+      doom-one-light-brighter-comments t
+      doom-one-light-comment-bg nil
+      doom-peacock-brighter-comments t
+      doom-peacock-comment-bg nil
+      doom-peacock-brighter-modeline t
+      doom-vibrant-brighter-comments t)
 
 ;; etc
 (setq ivy-re-builders-alist
