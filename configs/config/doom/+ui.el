@@ -1,23 +1,24 @@
 ;;; -*- lexical-binding: t; -*-
 
 ;; fonts
-(setq  doom-font (font-spec :family "Iosevka" :weight 'light :size 13)
-       doom-big-font (font-spec :family "Iosevka" :size 16)
-       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 12)
-       text-scale-mode-step 1.1)
+(setq doom-font (font-spec :family "Iosevka" :weight 'light :size 14)
+      doom-big-font (font-spec :family "Iosevka" :size 18)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 14)
+      text-scale-mode-step 1.05)
 
-(setq-default line-spacing 0.15)
+(setq-default line-spacing 0.1)
 
 ;; set neotree so open chevrons are same width as closed ones
-(setq doom-neotree-chevron-size 0.7)
+(setq doom-neotree-chevron-size 0.7
+      doom-neotree-file-icons t)
 
 ;; theme
 (setq doom-theme
       ;; -- darker
       ;; 'doom-one
-      'doom-peacock
+      ;; 'doom-peacock
       ;; -- lighter
-      ;; 'doom-one-light
+      'doom-one-light
       ;; 'doom-alabaster
       doom-one-light-brighter-modeline t
       doom-one-light-brighter-comments t
