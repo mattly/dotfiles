@@ -1,9 +1,9 @@
 ;;; -*- lexical-binding: t; -*-
 
 ;; fonts
-(setq doom-font (font-spec :family "Iosevka" :weight 'light :size 14)
-      doom-big-font (font-spec :family "Iosevka" :size 18)
-      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 14)
+(setq doom-font (font-spec :family "Iosevka" :weight 'light :size 15)
+      doom-big-font (font-spec :family "Iosevka" :size 20)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 15)
       text-scale-mode-step 1.05)
 
 (setq-default line-spacing 0.1)
