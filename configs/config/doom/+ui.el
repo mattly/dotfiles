@@ -7,6 +7,7 @@
       text-scale-mode-step 1.05)
 
 (setq-default line-spacing 0.1)
+(add-hook 'magit-revision-mode-hook (lambda () (setq line-spacing 0)))
 
 ;; set neotree so open chevrons are same width as closed ones
 (setq doom-neotree-chevron-size 0.7
