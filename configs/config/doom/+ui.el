@@ -37,7 +37,7 @@
 ;; default frame
 (add-to-list 'default-frame-alist '(height . 100))
 (add-to-list 'default-frame-alist '(width . 200))
-(set-frame-parameter (selected-frame) 'alpha '(99 . 97))
+;; (set-frame-parameter (selected-frame) 'alpha '(99 . 97))
 
 ;; set ligatures on railwaycat
 (when (boundp mac-auto-operator-composition-mode)
