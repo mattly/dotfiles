@@ -116,3 +116,5 @@
 	required = true
 [rerere]
 	enabled = true
+[magithub]
+	enabled = false
