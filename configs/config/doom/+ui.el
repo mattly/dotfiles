@@ -27,7 +27,7 @@
       doom-peacock-brighter-comments t
       doom-peacock-comment-bg nil
       doom-peacock-brighter-modeline t
-      doom-peacock-padded-modeline nil)
+      doom-themes-padded-modeline nil)
 
 ;; etc
 (setq ivy-re-builders-alist
