@@ -56,12 +56,11 @@
       ;ein               ; tame Jupyter notebooks with emacs
        gist              ; interacting with github gists
       ;macos             ; MacOS-specific commands
-
        make              ; run make tasks from Emacs
        magit             ;
       ;password-store    ; password manager for nerds
-      ;pdf               ; pdf enhancements
-       prodigy           ; Managing external services
+       pdf               ; pdf enhancements
+       prodigy           ; FIXME managing external services & code builders
       ;rgb               ; creating color strings
        rotate-text       ; cycle region at point between text candidates
       ;tmux              ; an API for interacting with tmux
@@ -97,8 +96,7 @@
         +babel           ; running code in org
         +capture         ; org-capture in and outside of Emacs
         +export          ; Exporting org to whatever you want
-        +present         ; Emacs for presentations
-        +publish)        ; Emacs+Org as a static site generator
+        +present)        ; Emacs for presentations
       ;perl              ; write code no one else can comprehend
       ;php               ; perl's insecure younger brother
       ;plantuml          ; diagrams for confusing people more
@@ -121,9 +119,9 @@
       ;irc               ; how neckbeards socialize
       ;(rss +org)        ; emacs as an RSS reader
       ;twitter           ; twitter client https://twitter.com/vnought
-      ;(write            ; emacs as a word processor (latex + org + markdown)
-      ; +wordnut         ; wordnet (wn) search
-      ; +langtool)       ; a proofreader (grammar/style check) for Emacs
+       (write            ; emacs as a word processor (latex + org + markdown)
+        +wordnut         ; wordnet (wn) search
+        +langtool)       ; a proofreader (grammar/style check) for Emacs
 
        :collab
       ;floobits          ; peer programming for a price
