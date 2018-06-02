@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: console.log
+# key: clog
+# --
+(js/console.log ${1:Message})
+$0
