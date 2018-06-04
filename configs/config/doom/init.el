@@ -11,20 +11,20 @@
         +docsets)        ; ...or in Dash docsets locally
        snippets          ; my elves. They type so I don't have to
        spellcheck        ; tasing you for misspelling mispelling
-       (syntax-checker   ; tasing you for every semicolon you forget
-        +childframe)     ; use childframes for error popups (Emacs 26+ only)
+       (syntax-checker)   ; tasing you for every semicolon you forget
+        ;; +childframe)     ; use childframes for error popups (Emacs 26+ only)
        version-control   ; remember, remember that commit in November
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
        (company          ; the ultimate code completion backend
-        +auto            ; as-you-type code completion
-        +childframe)     ; a nicer company UI (Emacs 26+ only)
+        +auto)            ; as-you-type code completion
+        ;; +childframe)     ; a nicer company UI (Emacs 26+ only)
       ;helm              ; the *other* search engine for love and life
       ;ido               ; the other *other* search engine...
        (ivy              ; a search engine for love and life
-        +fuzzy           ; enable fuzzy search backend for ivy
-        +childframe)     ; uses childframes for popups (Emacs 26+ only)
+        +fuzzy)           ; enable fuzzy search backend for ivy
+        ;; +childframe)     ; uses childframes for popups (Emacs 26+ only)
 
        :ui
        doom              ; what makes DOOM look the way it does
