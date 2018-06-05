@@ -31,3 +31,6 @@ tags
 # scala
 .ensime
 .ensime_cache/*
+
+# clojure
+configs/lein/repl-history
