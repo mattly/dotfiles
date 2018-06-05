@@ -1,0 +1,2 @@
+{:known-macros
+ [rum.core/defc rum.core/defcc rum.core/defcs]}
