@@ -11,20 +11,19 @@
         +docsets)        ; ...or in Dash docsets locally
        snippets          ; my elves. They type so I don't have to
        spellcheck        ; tasing you for misspelling mispelling
-       (syntax-checker)   ; tasing you for every semicolon you forget
-        ;; +childframe)     ; use childframes for error popups (Emacs 26+ only)
+       (syntax-checker   ; tasing you for every semicolon you forget
+        +childframe)     ; use childframes for error popups (Emacs 26+ only)
        version-control   ; remember, remember that commit in November
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
        (company          ; the ultimate code completion backend
         +auto)            ; as-you-type code completion
-        ;; +childframe)     ; a nicer company UI (Emacs 26+ only)
-      ;helm              ; the *other* search engine for love and life
+      ;(helm             ; the *other* search engine for love and life
+      ; +fuzzy)          ; enable fuzzy search backend for helm
       ;ido               ; the other *other* search engine...
        (ivy              ; a search engine for love and life
         +fuzzy)           ; enable fuzzy search backend for ivy
-        ;; +childframe)     ; uses childframes for popups (Emacs 26+ only)
 
        :ui
        doom              ; what makes DOOM look the way it does
@@ -120,15 +119,19 @@
       ;irc               ; how neckbeards socialize
       ;(rss +org)        ; emacs as an RSS reader
       ;twitter           ; twitter client https://twitter.com/vnought
-       (write            ; emacs as a word processor (latex + org + markdown)
-        +wordnut         ; wordnet (wn) search
-        +langtool)       ; a proofreader (grammar/style check) for Emacs
+      ;(write            ; emacs as a word processor (latex + org + markdown)
+      ; +wordnut         ; wordnet (wn) search
+      ; +langtool)       ; a proofreader (grammar/style check) for Emacs
 
        :collab
       ;floobits          ; peer programming for a price
       ;impatient-mode    ; show off code over HTTP
 
        :config
+       ;; For literate config users. This will tangle+compile a config.org
+       ;; literate config in your `doom-private-dir' whenever it changes.
+      ;literate
+
        ;; The default module set reasonable defaults for Emacs. It also provides
        ;; a Spacemacs-inspired keybinding scheme, a custom yasnippet library,
        ;; and additional ex commands for evil-mode. Use it as a reference for
