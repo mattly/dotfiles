@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for config in $HOME/projects/dotfiles/configs/.[^.]*; do
+    echo "$config => $(basename $config)"
+    ln -s $config $(basename $config)
+done

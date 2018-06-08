@@ -1,0 +1,53 @@
+tap "candid82/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "railwaycat/emacsmacport"
+brew "bat"
+brew "direnv"
+brew "exa"
+brew "fasd"
+brew "fish"
+brew "git"
+brew "gnu-tar"
+brew "jq"
+brew "leiningen"
+brew "mas"
+brew "mtr"
+brew "node"
+brew "nvm"
+brew "pgcli"
+brew "postgresql", restart_service: true
+brew "ripgrep"
+brew "ruby"
+brew "rust"
+brew "rustup-init"
+brew "the_silver_searcher"
+brew "thefuck"
+brew "tig"
+brew "tldr"
+brew "tmux"
+brew "watchman"
+brew "yarn"
+brew "candid82/brew/joker"
+brew "railwaycat/emacsmacport/emacs-mac"
+cask "alfred"
+cask "hammerspoon"
+cask "iterm2"
+cask "launchrocket"
+cask "paw"
+cask "postbird"
+cask "homebrew/cask-fonts/font-fira-sans"
+cask "homebrew/cask-fonts/font-iosevka"
+cask "homebrew/cask-versions/java8"
+mas "1Blocker", id: 1107421413
+mas "Byword", id: 420212497
+mas "Daisy Disk", id: 411643860
+mas "Karo Graph", id: 557536642
+mas "Monosnap", id: 540348655
+mas "Mousepose", id: 405904955
+mas "StopTheMadness", id: 1376402589
+mas "Xcode", id: 497799835

@@ -62,9 +62,9 @@ and got really into creating custom aliases. Here are a few:
 
 ## Install
 
-I am in the process of migrating the automated install of this to [bork][] and
-their configurations are in the install directory. Eventually there will be a
-compiled borkfile when I get around to writing that feature of Bork, and then a
-command to copy & paste and run, letting the computer work while you get coffee.
-
-[bork]: https://github.com/mattly/bork
+- on mac: `bash -c "$(curl -fsSL https://github.com/mattly/dotfiles/blob/master/install/mac_bootstrap)"`
+  
+  This gets you homebrew, a pub key to put on GitHub, git, this repository
+  cloned, the config files symlinked, .emacs.d, and fish as the default shell.
+  
+  From there, `brew bundle` the desired files in `install/`
