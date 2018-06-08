@@ -6,7 +6,7 @@
       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 15)
       text-scale-mode-step 1.05)
 
-(setq-default line-spacing 0.1)
+(setq-default line-spacing 0.12)
 (add-hook 'magit-revision-mode-hook (lambda () (setq line-spacing 0)))
 
 ;; set neotree so open chevrons are same width as closed ones
@@ -17,13 +17,16 @@
 (setq doom-theme
       ;; -- darker
       ;; 'doom-one
+      'doom-molokai
       ;; 'doom-peacock
+      ;; 'doom-vibrant
       ;; -- lighter
-      'doom-one-light
+      ;; 'doom-one-light
       ;; 'doom-alabaster
       doom-one-light-brighter-modeline t
       doom-one-light-brighter-comments t
       doom-one-light-comment-bg nil
+      doom-molokai-brighter-comments t
       doom-peacock-brighter-comments t
       doom-peacock-comment-bg nil
       doom-peacock-brighter-modeline t
