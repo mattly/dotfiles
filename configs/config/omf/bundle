@@ -1,11 +1,9 @@
 package argu
 package brew
 package direnv
-package docker-machine
 package errno
 package expand
 package extract
 package gem
 package rustup
-theme default
 theme pure

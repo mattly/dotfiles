@@ -40,6 +40,12 @@ register types/shells.sh
 ok shells /usr/local/bin/fish
 did_install && chsh -s /usr/local/bin/fish
 
+# I'm lazy. So what
+ok check "which omf"
+if check_failed && satisfying; then
+    curl -L https://get.oh-my.fish | fish
+fi
+omf install
+
 ok github $HOME/projects/bork mattly/bork --ssh
 ok brew-tap caskroom/cask
-ok cask atom

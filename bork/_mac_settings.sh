@@ -36,4 +36,4 @@ include _mac_settings_safari.sh
 
 ##### Tweetbot
 # Bypass the annoyingly slow t.co URL shortener
-ok defaults com.tapbots.TweetbotMac OpenURLsDirectly bool true
+# ok defaults com.tapbots.TweetbotMac OpenURLsDirectly bool true
