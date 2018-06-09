@@ -6,6 +6,7 @@ package expand
 package extract
 package gem
 package rustup
+theme cmorrell
 theme es
 theme pure
 theme scorphish
