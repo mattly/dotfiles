@@ -1,12 +1,12 @@
-cask 1password
-cask arq
-cask screenflow
-cask the-unarchiver
+cask "1password"
+cask "arq"
+cask "screenflow"
+cask "the-unarchiver"
 mas "Pocket", id: 568494494
 
 mas "Capo", id: 696977615
-cask fission
-cask cycling74-max
+cask "fission"
+cask "cycling74-max"
 # Ableton Live
 # Native Instruments
 # Chromaphone
@@ -20,3 +20,4 @@ mas "Affinity Photo", id: 824183456
 mas "Color Machine", id: 510618466
 mas "Mischief", id: 928430260
 mas "Pixelmator", id: 407963104
+
