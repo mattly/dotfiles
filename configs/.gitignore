@@ -33,4 +33,7 @@ tags
 .ensime_cache/*
 
 # clojure
-configs/lein/repl-history
+configs/.lein/repl-history
+
+# direnv
+configs/.config/direnv
