@@ -45,6 +45,7 @@ cask "launchrocket"
 cask "paw"
 cask "postbird"
 cask "homebrew/cask-fonts/font-fira-sans"
+cask "homebrew/cask-fonts/font-fira-code"
 cask "homebrew/cask-fonts/font-iosevka"
 cask "homebrew/cask-versions/java8"
 mas "1Blocker", id: 1107421413
