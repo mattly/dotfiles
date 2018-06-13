@@ -45,7 +45,7 @@
        window-select     ; visually switch windows
 
        :editor
-      ;parinfer          ; turn lisp into python, sort of
+       parinfer          ; turn lisp into python, sort of
 
        :emacs
        dired             ; making dired pretty [functional]
