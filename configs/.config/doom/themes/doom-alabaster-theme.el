@@ -1,32 +1,32 @@
-;;; doom-one-light-theme.el --- inspired by Atom One Light
+;;; doom-alabaster-theme.el --- inspired by Atom One Light
 (require 'doom-themes)
 
 ;;
-;; (defgroup doom-one-light-theme nil
-;;   "Options for doom-themes"
-;;   :group 'doom-themes)
+(defgroup doom-alabaster-theme nil
+  "Options for doom-themes"
+  :group 'doom-themes)
 
-;; (defcustom doom-one-light-brighter-modeline nil
-;;   "If non-nil, more vivid colors will be used to style the mode-line."
-;;   :group 'doom-one-light-theme
-;;   :type 'boolean)
+(defcustom doom-alabaster-brighter-modeline nil
+  "If non-nil, more vivid colors will be used to style the mode-line."
+  :group 'doom-alabaster-theme
+  :type 'boolean)
 
-;; (defcustom doom-one-light-brighter-comments nil
-;;   "If non-nil, comments will be highlighted in more vivid colors."
-;;   :group 'doom-one-light-theme
-;;   :type 'boolean)
+(defcustom doom-alabaster-brighter-comments nil
+  "If non-nil, comments will be highlighted in more vivid colors."
+  :group 'doom-alabaster-theme
+  :type 'boolean)
 
-;; (defcustom doom-one-light-comment-bg doom-one-light-brighter-comments
-;;   "If non-nil, comments will have a subtle, darker background. Enhancing their
-;; legibility."
-;;   :group 'doom-one-light-theme
-;;   :type 'boolean)
+(defcustom doom-alabaster-comment-bg doom-alabaster-brighter-comments
+  "If non-nil, comments will have a subtle, darker background. Enhancing their
+legibility."
+  :group 'doom-alabaster-theme
+  :type 'boolean)
 
-;; (defcustom doom-one-light-padded-modeline doom-themes-padded-modeline
-;;   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-;; determine the exact padding."
-;;   :group 'doom-one-light-theme
-;;   :type '(or integer boolean))
+(defcustom doom-alabaster-padded-modeline doom-themes-padded-modeline
+  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
+determine the exact padding."
+  :group 'doom-alabaster-theme
+  :type '(or integer boolean))
 
 ;;
 (def-doom-theme doom-alabaster
@@ -85,10 +85,10 @@
    (vc-deleted     red)
 
    ;; custom categories
-   (-modeline-bright doom-one-light-brighter-modeline)
+   (-modeline-bright doom-alabaster-brighter-modeline)
    (-modeline-pad
-    (when doom-one-light-padded-modeline
-      (if (integerp doom-one-light-padded-modeline) doom-one-light-padded-modeline 4)))
+    (when doom-alabaster-padded-modeline
+      (if (integerp doom-alabaster-padded-modeline) doom-alabaster-padded-modeline 4)))
 
    (modeline-fg     nil)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
@@ -184,4 +184,4 @@
   ;; ()
 
 
-;;; doom-one-light-theme.el ends here
+;;; doom-alabaster-theme.el ends here
