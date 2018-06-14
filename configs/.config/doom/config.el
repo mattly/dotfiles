@@ -7,7 +7,7 @@
 (auto-save-mode 1)
 
 ;; magit
-(def-package! magit
+(after! magit
   :config
   (setq-default git-magit-status-fullscreen t)
   (setq magit-repository-directories '(("~/projects" . 1))))
@@ -17,6 +17,6 @@
 (load! "+ui")
 
 (def-package! feature-mode
+  :defer t
   :config
-  (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
   (setq feature-step-search-path "features/**/*steps.rb"))
