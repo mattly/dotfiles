@@ -1,7 +1,8 @@
 ;;; -*- lexical-binding: t; -*-
 
 ;; fonts
-(let ((mono-font "Operator Mono Lig")
+(let (;(mono-font "Operator Mono Lig" ;) ;
+      (mono-font "mononoki")
       (mono-font-weight 'normal))
   (setq text-scale-mode-step 1.05
         doom-font (font-spec :family mono-font :weight mono-font-weight :size 14)
