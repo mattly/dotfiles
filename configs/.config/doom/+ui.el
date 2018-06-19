@@ -1,14 +1,13 @@
 ;;; -*- lexical-binding: t; -*-
 
 ;; fonts
-(let (;(mono-font "Operator Mono Lig" ;) ;
-      (mono-font "mononoki")
-      (mono-font-weight 'normal))
-  (setq text-scale-mode-step 1.05
-        doom-font (font-spec :family mono-font :weight mono-font-weight :size 14)
-        doom-big-font (font-spec :family mono-font :weight mono-font-weight :size 18)
-        doom-variable-pitch-font (font-spec :family "Fira Sans" :size 14))
-  (set-face-attribute 'show-paren-match nil :weight mono-font-weight))
+(setq text-scale-mode-step 1.05
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 14)
+      doom-font (font-spec :family "mononoki" :size 14)
+      doom-big-font (font-spec :family "mononoki" :size 18))
+
+;; left over from fira code, which has different widths between bold and not
+;; (set-face-attribute 'show-paren-match nil :weight mono-font-weight)
 
 (setq-default line-spacing 0.12)
 (add-hook 'magit-revision-mode-hook (lambda () (setq line-spacing 0)))
