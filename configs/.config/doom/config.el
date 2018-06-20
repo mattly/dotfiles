@@ -14,6 +14,7 @@
 
 
 (load! "+lisp")
+(load! "+prodigy")
 (load! "+ui")
 
 (def-package! feature-mode
