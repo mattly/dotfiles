@@ -14,6 +14,7 @@
 
 
 (load! "+lisp")
+(load! "+org")
 (load! "+prodigy")
 (load! "+ui")
 
