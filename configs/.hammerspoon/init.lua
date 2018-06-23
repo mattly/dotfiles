@@ -39,19 +39,49 @@ hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "Right", function ()
     win:setFrame(f)
 end)
 
+function rightThird(f, max)
+  f.x = max.x + (max.w/5 * 3)
+  f.w = max.w / 5 * 2
+end
+
 hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "L", function ()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
     local max = screen:frame()
 
-    f.x = max.x + (max.w/5 * 3)
+    rightThird(f, max)
     f.y = max.y
-    f.w = max.w / 5 * 2
     f.h = max.h
     win:setFrame(f)
 end)
 
+-- right top
+hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "O", function ()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    rightThird(f, max)
+    f.y = max.y
+    f.h = max.h / 2
+    win:setFrame(f)
+end)
+
+
+-- right bottom
+hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "K", function ()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    rightThird(f, max)
+    f.y = max.y + (max.h / 2)
+    f.h = max.h / 2
+    win:setFrame(f)
+end)
 
 function reloadConfig(files)
   doReload = false
