@@ -6,3 +6,5 @@
 (package! flycheck-joker)
 
 (package! feature-mode)
+
+(package! default-text-scale)

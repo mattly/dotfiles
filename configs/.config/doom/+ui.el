@@ -2,9 +2,9 @@
 
 ;; fonts
 (setq text-scale-mode-step 1.05
-      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 14)
-      doom-font (font-spec :family "mononoki" :size 14)
-      doom-big-font (font-spec :family "mononoki" :size 18))
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 16)
+      doom-font (font-spec :family "mononoki" :size 16)
+      doom-big-font (font-spec :family "mononoki" :size 20))
 
 ;; left over from fira code, which has different widths between bold and not
 ;; (set-face-attribute 'show-paren-match nil :weight mono-font-weight)
@@ -40,6 +40,8 @@
 (setq ivy-re-builders-alist
       '((t . ivy--regex-ignore-order))
       which-key-idle-delay 0.3)
+
+(default-text-scale-mode)
 
 ;; default frame
 (add-to-list 'default-frame-alist '(height . 100))
