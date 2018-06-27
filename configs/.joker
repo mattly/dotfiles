@@ -1,4 +1,5 @@
-{:known-macros
+{:rules {:unused-as false}
+ :known-macros
  [clojure.test.check.clojure-test/defspec
   clojure.test.check.generators/let
   clojure.test.check.properties/for-all
