@@ -1,2 +1,6 @@
 {:known-macros
- [rum.core/defc rum.core/defcc rum.core/defcs]}
+ [clojure.test.check.clojure-test/defspec
+  clojure.test.check.generators/let
+  clojure.test.check.properties/for-all
+  com.gfredericks.test.chuck.clojure-test/checking
+  rum.core/defc rum.core/defcc rum.core/defcs]}
