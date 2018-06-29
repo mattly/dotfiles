@@ -10,7 +10,8 @@
 (after! magit
   :config
   (setq-default git-magit-status-fullscreen t)
-  (setq magit-repository-directories '(("~/projects" . 1))))
+  (setq magit-log-section-commit-count 20
+        magit-repository-directories '(("~/projects" . 1))))
 
 
 (load! "+lisp")
