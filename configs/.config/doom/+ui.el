@@ -21,12 +21,18 @@
 (setq doom-theme
       ;; -- darker
       ;; 'doom-one
-      'doom-molokai
+      'doom-dracula
+      ;; 'doom-molokai
       ;; 'doom-peacock
       ;; 'doom-vibrant
       ;; -- lighter
       ;; 'doom-one-light
       ;; 'doom-alabaster
+      doom-dracula-brighter-comments t
+      doom-dracula-brighter-modeline t
+      doom-dracula-colorful-headers t
+      doom-dracula-comment-bg nil
+      doom-dracula-padded-modeline nil
       doom-one-light-brighter-modeline t
       doom-one-light-brighter-comments t
       doom-one-light-comment-bg nil
