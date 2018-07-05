@@ -2,9 +2,9 @@
 
 ;; fonts
 (setq text-scale-mode-step 1.05
-      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 16)
-      doom-font (font-spec :family "mononoki" :size 16)
-      doom-big-font (font-spec :family "mononoki" :size 20))
+      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 14)
+      doom-font (font-spec :family "IBM Plex Mono" :size 14 :weight 'light)
+      doom-big-font (font-spec :family "IBM Plex Mono" :size 18 :weight 'light))
 
 ;; left over from fira code, which has different widths between bold and not
 ;; (set-face-attribute 'show-paren-match nil :weight mono-font-weight)
