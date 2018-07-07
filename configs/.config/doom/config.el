@@ -40,5 +40,5 @@
 
 (map-put hs-special-modes-alist
          'ruby-mode
-         '("\\(class\\|module\\|def\\|do\\|{\\)" "\\(end\\|end\\|}\\)" "#"
+         '("\\(class\\|module\\|def\\|do\\|{\\)" "\\(end\\|}\\)" "#"
            (lambda (arg) (ruby-end-of-block)) nil))
