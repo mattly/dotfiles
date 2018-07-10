@@ -8,12 +8,13 @@
 (setq parinfer-auto-switch-indent-mode t
       parinfer-auto-switch-indent-mode-when-closing t)
 
-(def-modeline-segment! parinfer
+(def-modeline-segment! +parinfer
   (if (bound-and-true-p parinfer-mode)
       (if (eq parinfer--mode 'indent)
           ">" ")")))
 
 (def-package! flycheck-joker
+  :defer t
   :after clojure-mode)
 
 (def-package! cider

@@ -42,9 +42,11 @@
       doom-themes-padded-modeline nil)
 
 ;; etc
-(setq ivy-re-builders-alist
-      '((t . ivy--regex-ignore-order))
-      which-key-idle-delay 0.3)
+(after! ivy
+  :config
+  (setq ivy-re-builders-alist
+        '((t . ivy--regex-ignore-order))
+        which-key-idle-delay 0.3))
 
 (default-text-scale-mode)
 
@@ -60,4 +62,4 @@
 ;; modeline
 (def-modeline! main
   (bar matches " " buffer-info)
-  (parinfer " " major-mode flycheck))
+  (+parinfer " " major-mode))
