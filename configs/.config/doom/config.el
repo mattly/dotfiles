@@ -34,11 +34,11 @@
         (goto-char (cadr range))
         (end-of-line)))))
 
-(map-put hs-special-modes-alist
-         'yaml-mode
-         '("\\s-*\\_<\\(?:[^:]+\\)\\_>" "" "#" +data-hideshow-forward-sexp nil))
+;; (map-put hs-special-modes-alist
+;;          'yaml-mode
+;;          '("\\s-*\\_<\\(?:[^:]+\\)\\_>" "" "#" +data-hideshow-forward-sexp nil))
 
-(map-put hs-special-modes-alist
-         'ruby-mode
-         '("\\(class\\|module\\|def\\|do\\|{\\)" "\\(end\\|}\\)" "#"
-           (lambda (arg) (ruby-end-of-block)) nil))
+;; (map-put hs-special-modes-alist
+;;          'ruby-mode
+;;          '("\\(class\\|module\\|def\\|do\\|{\\)" "\\(end\\|}\\)" "#"
+;;            (lambda (arg) (ruby-end-of-block)) nil))
