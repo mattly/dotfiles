@@ -4,12 +4,11 @@
 (setq text-scale-mode-step 1.05
       doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 14)
       doom-font (font-spec :family "IBM Plex Mono" :size 14 :weight 'light)
-      doom-big-font (font-spec :family "IBM Plex Mono" :size 18 :weight 'light))
+      doom-big-font (font-spec :family "IBM Plex Mono" :size 18 :weight 'light)
+      doom-themes-enable-bold t
+      doom-themes-enable-italic t)
 
-;; left over from fira code, which has different widths between bold and not
-;; (set-face-attribute 'show-paren-match nil :weight mono-font-weight)
-
-(setq-default line-spacing 0.12)
+;; (setq-default line-spacing 0.12)
 (add-hook 'magit-revision-mode-hook (lambda () (setq line-spacing 0)))
 
 
