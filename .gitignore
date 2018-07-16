@@ -7,3 +7,4 @@ configs/.config/pgcli/history
 configs/.config/ranger/bookmarks
 configs/.config/ranger/history
 configs/.config/ranger/tagged
+settings/vscode/workspaceStorage/

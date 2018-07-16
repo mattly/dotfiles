@@ -1,0 +1,31 @@
+{
+    "editor.fontFamily": "IBM Plex Mono, monospace",
+    "editor.fontSize": 13,
+    "editor.renderWhitespace": "none",
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Night Owl",
+    "workbench.iconTheme": "vscode-great-icons",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#000C1D",
+        "activityBar.border": "#102a44",
+        "sideBar.background": "#001122",
+        "sideBar.border": "#102a44",
+        "sideBar.foreground": "#8BADC1"
+      },
+    "gitlens.keymap": "alternate",
+    "gitlens.heatmap.toggleMode": "window",
+    "editor.highlightActiveIndentGuide": true,
+    "editor.renderIndentGuides": false,
+    "editor.lineHeight": 17,
+    "editor.fontWeight": "normal",
+    "editor.minimap.enabled": false,
+    "workbench.editor.showTabs": true,
+    "workbench.statusBar.feedback.visible": false,
+}
