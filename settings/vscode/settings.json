@@ -1,13 +1,11 @@
 {
     "editor.fontFamily": "IBM Plex Mono, monospace",
-    "editor.fontSize": 13,
+    "editor.fontSize": 12,
     "editor.renderWhitespace": "none",
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
-    "window.zoomLevel": 0,
-    "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Night Owl",
+    "window.zoomLevel": 1,
     "workbench.iconTheme": "vscode-great-icons",
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
