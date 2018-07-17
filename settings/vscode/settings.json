@@ -33,6 +33,11 @@
     "editor.minimap.enabled": false,
     "workbench.editor.showTabs": true,
     "workbench.statusBar.feedback.visible": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.codeLens.scopes": [
+        // "document",
+        "containers"
+    ],
     "[clojure]": {
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./",
     },
