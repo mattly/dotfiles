@@ -28,4 +28,5 @@
     "editor.minimap.enabled": false,
     "workbench.editor.showTabs": true,
     "workbench.statusBar.feedback.visible": false,
+    "git.autofetch": true,
 }
