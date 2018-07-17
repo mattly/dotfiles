@@ -33,4 +33,7 @@
     "editor.minimap.enabled": false,
     "workbench.editor.showTabs": true,
     "workbench.statusBar.feedback.visible": false,
+    "[clojure]": {
+        "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./",
+    },
 }
