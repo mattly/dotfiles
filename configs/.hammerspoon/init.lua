@@ -212,13 +212,13 @@ capsModePressListener = eventtap.new({eventTypes.keyDown}, function(event)
 end) -- :start()
 
 
-local hyperex = require('hyperex')
+-- local hyperex = require('hyperex')
 
-local lShift = hyperex.new('shift')
-lShift:setEmptyHitKey('9', {'shift'})
+-- local lShift = hyperex.new('shift')
+-- lShift:setEmptyHitKey('9', {'shift'})
 
-local rShift = hyperex.new('rightshift')
-rShift:setEmptyHitKey('0', {'shift'})
+-- local rShift = hyperex.new('rightshift')
+-- rShift:setEmptyHitKey('0', {'shift'})
 
 -- F19 => hyper?
 -- F19 arrows
