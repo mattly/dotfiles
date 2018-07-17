@@ -1,3 +1,9 @@
 // Place your key bindings in this file to overwrite the defaults
 [
+    {"key": "shift+ctrl+alt+cmd+e", "command": "workbench.view.explorer"},
+    {"key": "shift+ctrl+alt+cmd+x", "command": "workbench.view.extensions"},
+    {"key": "shift+ctrl+alt+cmd+g", "command": "workbench.view.scm"},
+    {"key": "shift+ctrl+alt+cmd+d", "command": "workbench.view.debug"},
+    {"key": "shift+ctrl+alt+cmd+f", "command": "workbench.view.search", 
+        "when": "!searchViewletVisible"},
 ]
