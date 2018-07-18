@@ -1,1 +1,1 @@
-/Users/mattly/.local/share/omf/themes/scorphish/fish_prompt.fish
+/Users/r632613/.local/share/omf/themes/pure/fish_prompt.fish
