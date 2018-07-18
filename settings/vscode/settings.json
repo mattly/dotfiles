@@ -10,7 +10,6 @@
     "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
     "editor.renderIndentGuides": false,
-    "editor.renderWhitespace": "none",
     "editor.tokenColorCustomizations": {
         "[Night Owl]": {
             "comments": "#A7C3C3"
@@ -41,7 +40,7 @@
             "sideBar.foreground": "#8BADC1"
         }
     },
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Night Owl",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
@@ -50,5 +49,6 @@
     "files.trimTrailingWhitespace": true,
     "editor.renderControlCharacters": true,
     "gitlens.gitExplorer.files.layout": "auto",
-    "git.path": "/usr/local/bin/git"
+    "git.path": "/usr/local/bin/git",
+    "calva.lintOnSave": true
 }
