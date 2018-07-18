@@ -1,3 +1,5 @@
 // Place your key bindings in this file to overwrite the defaults
 [
+    {"key": "cmd+=", "command": "editor.action.fontZoomIn"},
+    {"key": "cmd+-", "command": "editor.action.fontZoomOut"}
 ]
