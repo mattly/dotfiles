@@ -1,45 +1,54 @@
 {
+    "[clojure]": {
+        "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
+    },
     "editor.fontFamily": "IBM Plex Mono, monospace",
     "editor.fontSize": 12,
+    "editor.fontWeight": "normal",
+    "editor.highlightActiveIndentGuide": true,
+    "editor.lineHeight": 17,
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": false,
     "editor.renderWhitespace": "none",
+    "editor.tokenColorCustomizations": {
+        "[Night Owl]": {
+            "comments": "#A7C3C3"
+        }
+    },
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
-    "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
-    "window.zoomLevel": 1,
-    "workbench.iconTheme": "vscode-great-icons",
+    "git.autofetch": true,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "workbench.colorCustomizations": {
-        "[Night Owl]": {
-        "activityBar.background": "#000C1D",
-        "activityBar.border": "#102a44",
-        "sideBar.background": "#001122",
-        "sideBar.border": "#102a44",
-            "sideBar.foreground": "#8BADC1",
-        }
-    },
-    "editor.tokenColorCustomizations": {
-        "[Night Owl]": {
-            "comments": "#A7C3C3",
-        }
-      },
-    "gitlens.keymap": "alternate",
-    "gitlens.heatmap.toggleMode": "window",
-    "editor.highlightActiveIndentGuide": true,
-    "editor.renderIndentGuides": false,
-    "editor.lineHeight": 17,
-    "editor.fontWeight": "normal",
-    "editor.minimap.enabled": false,
-    "workbench.editor.showTabs": true,
-    "workbench.statusBar.feedback.visible": false,
-    "git.autofetch": true,
     "gitlens.advanced.telemetry.enabled": false,
     "gitlens.codeLens.scopes": [
-        // "document",
         "containers"
     ],
-    "[clojure]": {
-        "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./",
+    "gitlens.heatmap.toggleMode": "window",
+    "gitlens.keymap": "alternate",
+    "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "search.location": "panel",
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+        "[Night Owl]": {
+            "activityBar.background": "#000C1D",
+            "activityBar.border": "#102a44",
+            "sideBar.background": "#001122",
+            "sideBar.border": "#102a44",
+            "sideBar.foreground": "#8BADC1"
+        }
     },
+    "workbench.colorTheme": "Quiet Light",
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.showTabs": true,
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.statusBar.feedback.visible": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.renderControlCharacters": true,
+    "gitlens.gitExplorer.files.layout": "auto",
+    "git.path": "/usr/local/bin/git"
 }

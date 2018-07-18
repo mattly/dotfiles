@@ -4,6 +4,8 @@
     {"key": "shift+ctrl+alt+cmd+x", "command": "workbench.view.extensions"},
     {"key": "shift+ctrl+alt+cmd+g", "command": "workbench.view.scm"},
     {"key": "shift+ctrl+alt+cmd+d", "command": "workbench.view.debug"},
-    {"key": "shift+ctrl+alt+cmd+f", "command": "workbench.view.search", 
+    {"key": "shift+ctrl+alt+cmd+f", "command": "workbench.view.search",
         "when": "!searchViewletVisible"},
+    {"key": "cmd+=", "command": "editor.action.fontZoomIn"},
+    {"key": "cmd+-", "command": "editor.action.fontZoomOut"}
 ]
