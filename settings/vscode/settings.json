@@ -40,7 +40,7 @@
             "sideBar.foreground": "#8BADC1"
         }
     },
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Quiet Light",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
@@ -50,5 +50,25 @@
     "editor.renderControlCharacters": true,
     "gitlens.gitExplorer.files.layout": "auto",
     "git.path": "/usr/local/bin/git",
-    "calva.lintOnSave": true
+    "calva.lintOnSave": true,
+    "bracketPairColorizer.activeScopeCSS": [
+        // "borderStyle : solid",
+        // "borderWidth : 1px",
+        // "borderColor : {color}; opacity: 0.5",
+        "backgroundColor: {color}; opacity: 0.25"
+    ],
+    "editor.matchBrackets": false,
+    "bracketPairColorizer.showBracketsInRuler": true,
+    "bracketPairColorizer.highlightActiveScope": true,
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        [
+            "#AA2759",
+            "#0C81C6",
+            "#C60C81"
+        ],
+        "Red"
+    ]
 }
