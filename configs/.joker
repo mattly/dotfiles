@@ -4,4 +4,6 @@
   clojure.test.check.generators/let
   clojure.test.check.properties/for-all
   com.gfredericks.test.chuck.clojure-test/checking
-  rum.core/defc rum.core/defcc rum.core/defcs]}
+  rum.core/defc
+  rum.core/defcc
+  rum.core/defcs]}
