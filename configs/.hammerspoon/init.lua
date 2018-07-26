@@ -23,7 +23,8 @@ end))
 hs.hotkey.bind(hyper, "J", setFrame(function (f, max)
     f.x = max.x
     f.y = max.y
-    f.w = max.w / 5 * 3
+    f.w = max.w / 3 * 2
+    -- f.w = max.w / 5 * 3
     f.h = max.h
 end))
 
@@ -36,8 +37,10 @@ hs.hotkey.bind(hyper, "Right", setFrame(function (f, max)
 end))
 
 function rightThird(f, max)
-  f.x = max.x + (max.w/5 * 3)
-  f.w = max.w / 5 * 2
+  f.x = max.x + (max.w / 3 * 2)
+  f.w = max.w / 3
+  -- f.x = max.x + (max.w/5 * 3)
+  -- f.w = max.w / 5 * 2
 end
 
 hs.hotkey.bind(hyper, "L", setFrame(function (f, max)
