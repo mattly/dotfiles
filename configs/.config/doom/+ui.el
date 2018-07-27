@@ -20,32 +20,47 @@
       treemacs-space-between-root-nodes nil)
 
 ;; theme
-(setq doom-theme
-      ;; -- darker
-      ;; 'doom-one
-      'doom-dracula
-      ;; 'doom-molokai
-      ;; 'doom-peacock
-      ;; 'doom-vibrant
-      ;; -- lighter
-      ;; 'doom-one-light
-      ;; 'doom-alabaster
-      doom-challenger-deep-brighter-comments t
-      doom-challenger-deep-brighter-modeline t
-      doom-challenger-deep-padded-modeline nil
-      doom-dracula-brighter-comments t
-      doom-dracula-brighter-modeline t
-      doom-dracula-colorful-headers t
-      doom-dracula-comment-bg nil
-      doom-dracula-padded-modeline nil
-      doom-one-light-brighter-modeline t
-      doom-one-light-brighter-comments t
-      doom-one-light-comment-bg nil
-      doom-molokai-brighter-comments t
-      doom-peacock-brighter-comments t
-      doom-peacock-comment-bg nil
-      doom-peacock-brighter-modeline t
-      doom-themes-padded-modeline nil)
+;; (setq doom-theme
+;;       ;; -- darker
+;;       ;; 'doom-one
+;;       'doom-dracula
+;;       ;; 'doom-molokai
+;;       ;; 'doom-peacock
+;;       ;; 'doom-vibrant
+;;       ;; -- lighter
+;;       ;; 'doom-one-light
+;;       ;; 'doom-alabaster
+;;       doom-challenger-deep-brighter-comments t
+;;       doom-challenger-deep-brighter-modeline t
+;;       doom-challenger-deep-padded-modeline nil
+;;       doom-dracula-brighter-comments t
+;;       doom-dracula-brighter-modeline t
+;;       doom-dracula-colorful-headers t
+;;       doom-dracula-comment-bg nil
+;;       doom-dracula-padded-modeline nil
+;;       doom-one-light-brighter-modeline t
+;;       doom-one-light-brighter-comments t
+;;       doom-one-light-comment-bg nil
+;;       doom-molokai-brighter-comments t
+;;       doom-peacock-brighter-comments t
+;;       doom-peacock-comment-bg nil
+;;       doom-peacock-brighter-modeline t
+;;       doom-themes-padded-modeline nil)
+
+
+(setq kaolin-themes-bold t
+      kaolin-themes-italic t
+      kaolin-themes-underline t
+      kaolin-themes-underline-wave t
+      kaolin-themes-hl-line-colored t
+      kaolin-themes-italic-comments t
+      kaolin-themes-comments-style 'color
+      kaolin-themes-git-gutter-solid t
+      kaolin-themes-distinct-fringe t
+      kaolin-themes-distinct-company-scrollbar t
+      kaolin-themes-boolean t)
+
+(load-theme 'kaolin-valley-dark)
 
 ;; etc
 (after! ivy
