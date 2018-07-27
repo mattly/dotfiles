@@ -8,3 +8,6 @@
 (package! feature-mode)
 
 (package! default-text-scale)
+
+
+(package! kaolin-themes)
