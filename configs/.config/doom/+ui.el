@@ -65,4 +65,4 @@
 ;; modeline
 (def-modeline! main
   (bar matches " " buffer-info)
-  (+parinfer " " major-mode))
+  (+parinfer " " major-mode flycheck))
