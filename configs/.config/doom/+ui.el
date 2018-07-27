@@ -2,11 +2,12 @@
 
 ;; fonts
 (setq text-scale-mode-step 1.05
-      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 16)
+      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 16 :weight 'bold)
       doom-font (font-spec :family "IBM Plex Mono" :size 16 :weight 'light)
       doom-big-font (font-spec :family "IBM Plex Mono" :size 21 :weight 'light)
       doom-themes-enable-bold t
-      doom-themes-enable-italic t)
+      doom-themes-enable-italic t
+      doom-treemacs-enable-variable-pitch t)
 
 ;; (setq-default line-spacing 0.12)
 (add-hook 'magit-revision-mode-hook (lambda () (setq line-spacing 0)))
@@ -16,8 +17,6 @@
 (setq doom-neotree-chevron-size 0.7
       doom-neotree-file-icons t)
 
-(setq treemacs-indentation 1
-      treemacs-space-between-root-nodes nil)
 
 ;; theme
 ;; (setq doom-theme
@@ -59,6 +58,26 @@
       kaolin-themes-distinct-fringe t
       kaolin-themes-distinct-company-scrollbar t
       kaolin-themes-boolean t)
+
+
+(after! treemacs
+  :config
+  (setq treemacs-fringe-indicator-mode t
+        treemacs-indentation 1
+        treemacs-space-between-root-nodes nil)
+  (dolist (face '(treemacs-root-face
+                  treemacs-git-unmodified-face
+                  treemacs-git-modified-face
+                  treemacs-git-ignored-face
+                  treemacs-git-untracked-face
+                  treemacs-git-added-face
+                  treemacs-git-conflict-face
+                  treemacs-directory-face
+                  treemacs-directory-collapsed-face
+                  treemacs-file-face))
+    (let ((faces (face-attribute face :inherit nil)))
+      (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces)))))))
+
 
 (load-theme 'kaolin-valley-dark)
 
