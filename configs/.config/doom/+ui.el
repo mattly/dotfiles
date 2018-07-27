@@ -16,6 +16,9 @@
 (setq doom-neotree-chevron-size 0.7
       doom-neotree-file-icons t)
 
+(setq treemacs-indentation 1
+      treemacs-space-between-root-nodes nil)
+
 ;; theme
 (setq doom-theme
       ;; -- darker
