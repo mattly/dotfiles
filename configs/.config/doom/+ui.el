@@ -100,6 +100,6 @@
   (mac-auto-operator-composition-mode))
 
 ;; modeline
-(def-modeline! main
-  (bar matches " " buffer-info)
-  (+parinfer " " major-mode flycheck))
+(def-modeline! 'main
+  '(bar matches " " buffer-info)
+  '(+parinfer " " major-mode flycheck))
