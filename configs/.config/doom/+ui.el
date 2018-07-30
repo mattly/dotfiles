@@ -47,19 +47,6 @@
 ;;       doom-themes-padded-modeline nil)
 
 
-(setq kaolin-themes-bold t
-      kaolin-themes-italic t
-      kaolin-themes-underline t
-      kaolin-themes-underline-wave t
-      kaolin-themes-hl-line-colored t
-      kaolin-themes-italic-comments t
-      kaolin-themes-comments-style 'color
-      kaolin-themes-git-gutter-solid t
-      kaolin-themes-distinct-fringe t
-      kaolin-themes-distinct-company-scrollbar t
-      kaolin-themes-boolean t)
-
-
 (after! treemacs
   :config
   (setq treemacs-fringe-indicator-mode t
@@ -79,7 +66,28 @@
       (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces)))))))
 
 
+(setq kaolin-themes-bold t
+      kaolin-themes-italic t
+      kaolin-themes-underline t
+      kaolin-themes-underline-wave t
+      kaolin-themes-hl-line-colored t
+      kaolin-themes-italic-comments t
+      kaolin-themes-comments-style 'bright
+      kaolin-themes-git-gutter-solid t
+      kaolin-themes-distinct-fringe t
+      kaolin-themes-distinct-company-scrollbar t
+      kaolin-themes-boolean t)
+
+
 (load-theme 'kaolin-valley-dark)
+
+(if (member 'kaolin-valley-dark custom-enabled-themes)
+    (let ((fg "#eed891"))
+      (custom-theme-set-faces
+       'kaolin-valley-dark
+       `(font-lock-comment-face ((t (:foreground ,fg :italic t))))
+       `(font-lock-comment-delimiter-face ((t (:foreground ,fg :italic t)))))))
+
 
 ;; etc
 (after! ivy
