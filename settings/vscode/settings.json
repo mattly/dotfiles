@@ -3,10 +3,10 @@
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
     "editor.fontFamily": "IBM Plex Mono, monospace",
-    "editor.fontSize": 12,
+    "editor.fontSize": 16,
     "editor.fontWeight": "normal",
     "editor.highlightActiveIndentGuide": true,
-    "editor.lineHeight": 17,
+    "editor.lineHeight": 22,
     "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
     "editor.renderIndentGuides": false,
@@ -40,7 +40,7 @@
             "sideBar.foreground": "#8BADC1"
         }
     },
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Night Owl",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
@@ -63,8 +63,7 @@
     "bracketPairColorizer.consecutivePairColors": [
         "()",
         "[]",
-        "{}",
-        [
+        "{}", [
             "#AA2759",
             "#0C81C6",
             "#C60C81"
