@@ -3,7 +3,7 @@
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
     "editor.fontFamily": "IBM Plex Mono, monospace",
-    "editor.fontSize": 16,
+    "editor.fontSize": 17,
     "editor.fontWeight": "normal",
     "editor.highlightActiveIndentGuide": true,
     "editor.lineHeight": 22,
@@ -22,9 +22,7 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.codeLens.scopes": [
-        "containers"
-    ],
+    "gitlens.codeLens.scopes": [],
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
@@ -40,7 +38,7 @@
             "sideBar.foreground": "#8BADC1"
         }
     },
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Quiet Light",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
@@ -69,5 +67,6 @@
             "#C60C81"
         ],
         "Red"
-    ]
+    ],
+    "git.confirmSync": false
 }
