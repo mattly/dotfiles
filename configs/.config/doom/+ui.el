@@ -19,32 +19,32 @@
 
 
 ;; theme
-;; (setq doom-theme
-;;       ;; -- darker
-;;       ;; 'doom-one
-;;       'doom-dracula
-;;       ;; 'doom-molokai
-;;       ;; 'doom-peacock
-;;       ;; 'doom-vibrant
-;;       ;; -- lighter
-;;       ;; 'doom-one-light
-;;       ;; 'doom-alabaster
-;;       doom-challenger-deep-brighter-comments t
-;;       doom-challenger-deep-brighter-modeline t
-;;       doom-challenger-deep-padded-modeline nil
-;;       doom-dracula-brighter-comments t
-;;       doom-dracula-brighter-modeline t
-;;       doom-dracula-colorful-headers t
-;;       doom-dracula-comment-bg nil
-;;       doom-dracula-padded-modeline nil
-;;       doom-one-light-brighter-modeline t
-;;       doom-one-light-brighter-comments t
-;;       doom-one-light-comment-bg nil
-;;       doom-molokai-brighter-comments t
-;;       doom-peacock-brighter-comments t
-;;       doom-peacock-comment-bg nil
-;;       doom-peacock-brighter-modeline t
-;;       doom-themes-padded-modeline nil)
+(setq doom-theme
+      ;; -- darker
+      ;; 'doom-one
+      'doom-dracula
+      ;; 'doom-molokai
+      ;; 'doom-peacock
+      ;; 'doom-vibrant
+      ;; -- lighter
+      ;; 'doom-one-light
+      ;; 'doom-alabaster
+      doom-challenger-deep-brighter-comments t
+      doom-challenger-deep-brighter-modeline t
+      doom-challenger-deep-padded-modeline nil
+      doom-dracula-brighter-comments t
+      doom-dracula-brighter-modeline t
+      doom-dracula-colorful-headers t
+      doom-dracula-comment-bg nil
+      doom-dracula-padded-modeline nil
+      doom-one-light-brighter-modeline t
+      doom-one-light-brighter-comments t
+      doom-one-light-comment-bg nil
+      doom-molokai-brighter-comments t
+      doom-peacock-brighter-comments t
+      doom-peacock-comment-bg nil
+      doom-peacock-brighter-modeline t
+      doom-themes-padded-modeline nil)
 
 
 (after! treemacs
@@ -79,7 +79,7 @@
       kaolin-themes-boolean t)
 
 
-(load-theme 'kaolin-valley-dark)
+;; (load-theme 'kaolin-valley-dark)
 
 (if (member 'kaolin-valley-dark custom-enabled-themes)
     (let ((fg "#eed891"))
