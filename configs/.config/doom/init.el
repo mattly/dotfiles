@@ -19,12 +19,13 @@
        (company          ; the ultimate code completion backend
         +childframe
         +auto)            ; as-you-type code completion
-      ;(helm             ; the *other* search engine for love and life
-      ; +fuzzy)          ; enable fuzzy search backend for helm
-      ;ido               ; the other *other* search engine...
-       (ivy              ; a search engine for love and life
+       (helm             ; the *other* search engine for love and life
         +childframe
-        +fuzzy)           ; enable fuzzy search backend for ivy
+        +fuzzy)          ; enable fuzzy search backend for helm
+      ;ido               ; the other *other* search engine...
+      ;(ivy              ; a search engine for love and life
+      ; +childframe
+      ; +fuzzy)           ; enable fuzzy search backend for ivy
 
        :ui
        doom              ; what makes DOOM look the way it does
@@ -32,7 +33,7 @@
        doom-modeline     ; a snazzy Atom-inspired mode-line
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        evil-goggles      ; display visual hints when editing in evil
-       fci               ; a `fill-column' indicator
+      ;fci               ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
       ;modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
@@ -45,7 +46,7 @@
       ;tabbar            ; FIXME an (incomplete) tab bar for Emacs
       ;unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
-       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+      ;vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
 
        :editor
@@ -71,8 +72,8 @@
        make              ; run make tasks from Emacs
        magit             ;
       ;password-store    ; password manager for nerds
-       pdf               ; pdf enhancements
-       prodigy           ; FIXME managing external services & code builders
+      ;pdf               ; pdf enhancements
+      ;prodigy           ; FIXME managing external services & code builders
       ;rgb               ; creating color strings
       ;tmux              ; an API for interacting with tmux
       ;upload            ; map local to remote projects via ssh/ftp
