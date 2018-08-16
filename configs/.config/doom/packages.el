@@ -11,3 +11,4 @@
 
 
 (package! kaolin-themes)
+(package! night-owl-theme)
