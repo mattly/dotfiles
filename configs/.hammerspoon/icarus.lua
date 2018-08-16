@@ -16,8 +16,8 @@ kf20 = 0x5A -- karabiner right-option
 warp = kf18
 -- tilt = kf18
 
-local FRemap = require('foundation_remapping')
-local remapper = FRemap.new()
+-- local FRemap = require('foundation_remapping')
+-- local remapper = FRemap.new()
 
 -- remapper:remap(capsLock, capsLock)
 -- remapper:remap(capsLock, warp)
@@ -35,25 +35,6 @@ local warpEnabled = false
 local warpModes = {}
 local warpMods = {}
 
-
-capsPressListener = eventtap.new({eventTypes.keyDown}, function(event)
-    if event:getKeyCode() == warp then
-        print('warp!')
-        warpEnabled = true
-        return true
-    end
-    return false
-end):start()
-
-capsReleaseListener = hs.eventtap.new({eventTypes.keyUp}, function(event)
-    if event:getKeyCode() == warp then
-        print("no warp!")
-        warpEnabled = false
-        return true
-    end
-    return false
-end):start()
-
 local warpModeKeys = {}
 warpModeKeys['s'] = 'select'
 warpModeKeys['d'] = 'delete'
@@ -61,66 +42,9 @@ warpModeKeys['d'] = 'delete'
 local warpModKeys = {}
 warpModKeys['a'] = 'tri'
 
-capsModeModDownListener = eventtap.new({eventTypes.keyDown}, function(event)
-    if not warpEnabled then
-        return false
-    end
-    local char = event:getCharacters():lower()
-    local mode = warpModeKeys[char]
-    if mode then
-        local modeInUse = false
-        for _, v in pairs(warpModes) do
-            if v == mode then
-                modeInUse = true
-                break
-            end
-        end
-        if not modeInUse then
-            table.insert(warpModes, mode)
-            print("entered " .. mode)
-        end
-        return true
-    end
-    local mod = warpModKeys[char]
-    if mod then
-        if not warpMods[mod] then hs.alert.show(char .. ": adding mod " .. mod) end
-        warpMods[mod] = true
-        return true
-    end
-end):start()
-
-capsModeModListener = eventtap.new({eventTypes.keyUp}, function(event)
-    if not warpEnabled then
-        return false
-    end
-    local char = event:getCharacters():lower()
-    local mode = warpModeKeys[char]
-    if mode then
-            local idx = 0
-        for k,v in pairs(warpModes) do
-            if v == mode then
-                idx = k
-                break
-            end
-        end
-        if idx > 0 then
-            table.remove(warpModes, idx)
-            hs.alert.show("leaving ".. mode .. " | " .. table.concat(warpModes, ", "))
-        end
-        return true
-    end
-    local mod = warpModKeys[char]
-    if mod then
-        hs.alert.show("removing mod " .. mod)
-        warpMods[mod] = false
-        return true
-    end
-end):start()
-
-
 local function keystroker(mod, key)
     return function (event)
-        print(table.concat(mod, "+") .. "+" .. key)
+        print(table.concat(mod, "+"), key)
         hs.eventtap.keyStroke(mod, key, 0)
     end
 end
@@ -128,13 +52,13 @@ end
 local function keystrokers(keys)
     return function(event)
         for i, k in pairs(keys) do
-            hs.alert.show(table.concat(k[1], "+") .. "+" .. k[2])
+            print(table.concat(k[1], "+"), k[2])
             hs.eventtap.keyStroke(k[1], k[2], 0)
         end
     end
 end
 
-local actionKeys = {}
+
 
 actionKeys['u'] = {
     move = {
@@ -214,22 +138,81 @@ actionKeys['l'] = {
     }
 }
 
-capsModePressListener = eventtap.new({eventTypes.keyDown}, function(event)
-    if not warpEnabled then
-        return false
-    end
-    local action = actionKeys[event:getCharacters(true):lower()]
-    if action then
-        local mode = warpModes[#warpModes] or 'move'
-        if not mode then return true end
-        local modList = {}
-        for k, v in pairs(warpMods) do
-            if v then table.insert(modList, k) end
+
+
+function tableHasValue (table, item)
+    local found = false
+    for _, v in pairs(table) do
+        if v == item then
+            found = true
+            break
         end
-        local modeAction = action[mode]
-        local modLabel = table.concat(modList, ",")
-        local f = modeAction[modLabel] or modeAction['default']
-        if f then f(event) end
     end
-    return true
+    return found
+end
+
+function tableValueIdx (table, value)
+    local idx = 0
+    for k,v in pairs(table) do
+        if v == value then
+            idx = k
+            break
+        end
+    end
+    return idx
+end
+
+capsPressListener = eventtap.new({eventTypes.keyDown, eventTypes.keyUp}, function(event)
+    local isKeyDown = event:getType() == eventTypes.keyDown
+    if event:getKeyCode() == warp then
+        local prevWarp = warpEnabled
+        if isKeyDown then warpEnabled = true else warpEnabled = false end
+        if prevWarp == not(warpEnabled) then print('warp: ', warpEnabled) end
+        return true
+    elseif warpEnabled then
+        local char = event:getCharacters():lower()
+        local mode = warpModeKeys[char]
+        if mode then
+            if isKeyDown then
+                if not tableHasValue(warpModes, mode) then
+                    table.insert(warpModes, mode)
+                    print("entered: ", mode, table.concat(warpModes, ","))
+                end
+            else
+                local idx = tableValueIdx(warpModes, mode)
+                if idx > 0 then
+                    table.remove(warpModes, idx)
+                    print("leaving: ", mode)
+                end
+            end
+            return true
+        end
+        local mod = warpModKeys[char]
+        if mod then
+            if isKeyDown then
+                if warpMods[mod] == nil then print("adding mod: ", mod) end
+                warpMods[mod] = true
+            else
+                print("removing mod: ", mod)
+                warpMods[mod] = nil
+            end
+            return true
+        end
+        local action = actionKeys[event:getCharacters(true):lower()]
+        if isKeyDown and action then
+            local mode = warpModes[#warpModes] or 'move'
+            if not mode then return true end
+            local modList = {}
+            for k, v in pairs(warpMods) do
+                if v then table.insert(modList, k) end
+            end
+            local modeAction = action[mode]
+            local modLabel = table.concat(modList, ",")
+            local f = modeAction[modLabel] or modeAction['default']
+            if f then f(event) end
+            return true
+        end
+        return true
+    end
+    return false
 end):start()

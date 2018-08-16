@@ -1,4 +1,4 @@
-
+-- require('icarus')
 
 local hyper = {'cmd', 'alt', 'ctrl', 'shift'}
 
