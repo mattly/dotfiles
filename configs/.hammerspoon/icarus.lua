@@ -61,49 +61,58 @@ warpModeKeys['d'] = 'delete'
 local warpModKeys = {}
 warpModKeys['a'] = 'tri'
 
-capsModeModListener = eventtap.new({eventTypes.keyDown, eventTypes.keyUp}, function(event) 
+capsModeModDownListener = eventtap.new({eventTypes.keyDown}, function(event)
     if not warpEnabled then
         return false
     end
     local char = event:getCharacters():lower()
     local mode = warpModeKeys[char]
     if mode then
-        if (event:getType() == eventTypes.keyDown) then
-            local modeInUse = false
-            for _, v in pairs(warpModes) do
-                if v == mode then
-                    modeInUse = true
-                    break
-                end
+        local modeInUse = false
+        for _, v in pairs(warpModes) do
+            if v == mode then
+                modeInUse = true
+                break
             end
-            if not modeInUse then
-                table.insert(warpModes, mode)
-                hs.alert.show("entered " .. mode .. " | " .. table.concat(warpModes, ", "))
-            end
-        else
-            local idx = 0
-            for k,v in pairs(warpModes) do
-                if v == mode then
-                    idx = k
-                    break
-                end
-            end
-            if idx > 0 then
-                table.remove(warpModes, idx)
-                hs.alert.show("leaving ".. mode .. " | " .. table.concat(warpModes, ", "))
-            end
+        end
+        if not modeInUse then
+            table.insert(warpModes, mode)
+            print("entered " .. mode)
         end
         return true
     end
     local mod = warpModKeys[char]
     if mod then
-        if (event:getType() == eventTypes.keyDown) then
-            if not warpMods[mod] then hs.alert.show(char .. ": adding mod " .. mod) end
-            warpMods[mod] = true
-        else
-            hs.alert.show("removing mod " .. mod)
-            warpMods[mod] = false
+        if not warpMods[mod] then hs.alert.show(char .. ": adding mod " .. mod) end
+        warpMods[mod] = true
+        return true
+    end
+end):start()
+
+capsModeModListener = eventtap.new({eventTypes.keyUp}, function(event)
+    if not warpEnabled then
+        return false
+    end
+    local char = event:getCharacters():lower()
+    local mode = warpModeKeys[char]
+    if mode then
+            local idx = 0
+        for k,v in pairs(warpModes) do
+            if v == mode then
+                idx = k
+                break
+            end
         end
+        if idx > 0 then
+            table.remove(warpModes, idx)
+            hs.alert.show("leaving ".. mode .. " | " .. table.concat(warpModes, ", "))
+        end
+        return true
+    end
+    local mod = warpModKeys[char]
+    if mod then
+        hs.alert.show("removing mod " .. mod)
+        warpMods[mod] = false
         return true
     end
 end):start()
@@ -111,7 +120,7 @@ end):start()
 
 local function keystroker(mod, key)
     return function (event)
-        print(key)
+        print(table.concat(mod, "+") .. "+" .. key)
         hs.eventtap.keyStroke(mod, key, 0)
     end
 end
