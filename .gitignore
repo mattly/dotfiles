@@ -1,5 +1,6 @@
 *.elc
 
+configs/.config/fish/fishd.*
 configs/.config/configstore
 configs/.config/direnv/allow
 configs/.config/hub
