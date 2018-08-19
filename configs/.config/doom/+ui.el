@@ -2,9 +2,9 @@
 
 ;; fonts
 (setq text-scale-mode-step 1.05
-      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 18 :weight 'medium)
-      doom-font (font-spec :family "IBM Plex Mono" :size 18 :weight 'light)
-      doom-big-font (font-spec :family "IBM Plex Mono" :size 24 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 15 :weight 'medium)
+      doom-font (font-spec :family "IBM Plex Mono" :size 15 :weight 'light)
+      doom-big-font (font-spec :family "IBM Plex Mono" :size 21 :weight 'light)
       doom-themes-enable-bold t
       doom-themes-enable-italic t
       doom-treemacs-enable-variable-pitch t)
