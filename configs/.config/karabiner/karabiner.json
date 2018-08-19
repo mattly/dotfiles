@@ -58,30 +58,6 @@
                         ]
                     },
                     {
-                        "description": "Better Embracing: Open Curly brace on option key",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_option"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_alt"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Better Shifting: Parentheses on shift keys",
                         "manipulators": [
                             {
