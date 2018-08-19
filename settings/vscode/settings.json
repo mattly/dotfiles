@@ -22,12 +22,11 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.codeLens.scopes": [],
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
     "search.location": "panel",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
         "[Night Owl]": {
@@ -45,7 +44,7 @@
             "statusBar.noFolderBackground": "#FF7F7D"
         }
     },
-    "workbench.colorTheme": "CodinCat Lighter",
+    "workbench.colorTheme": "Night Owl",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
@@ -60,5 +59,8 @@
     "bracketPairColorizer.highlightActiveScope": true,
     "git.confirmSync": false,
     "emmet.showExpandedAbbreviation": "never",
-    "editor.renderLineHighlight": "gutter"
+    "editor.renderLineHighlight": "gutter",
+    "calva.fmt.autoAdjustIndentOnNewLines": false,
+    "editor.find.autoFindInSelection": true,
+    "calva.lintOnSave": true
 }
