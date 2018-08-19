@@ -4,6 +4,7 @@
   clojure.test.check.generators/let
   clojure.test.check.properties/for-all
   com.gfredericks.test.chuck.clojure-test/checking
+  fulcro.client.primitives/defsc
   rum.core/defc
   rum.core/defcc
   rum.core/defcs]}
