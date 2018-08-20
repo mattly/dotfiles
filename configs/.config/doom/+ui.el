@@ -20,30 +20,9 @@
 
 ;; theme
 (setq doom-theme
-      ;; -- darker
-      ;; 'doom-one
-      'doom-dracula
-      ;; 'doom-molokai
-      ;; 'doom-peacock
-      ;; 'doom-vibrant
-      ;; -- lighter
-      ;; 'doom-one-light
-      ;; 'doom-alabaster
-      doom-challenger-deep-brighter-comments t
-      doom-challenger-deep-brighter-modeline t
-      doom-challenger-deep-padded-modeline nil
-      doom-dracula-brighter-comments t
-      doom-dracula-brighter-modeline t
-      doom-dracula-colorful-headers t
-      doom-dracula-comment-bg nil
-      doom-dracula-padded-modeline nil
-      doom-one-light-brighter-modeline t
-      doom-one-light-brighter-comments t
-      doom-one-light-comment-bg nil
-      doom-molokai-brighter-comments t
-      doom-peacock-brighter-comments t
-      doom-peacock-comment-bg nil
-      doom-peacock-brighter-modeline t
+      'doom-outrun
+      doom-outrun-brighter-comments nil
+      doom-outrun-comment-bg nil
       doom-themes-padded-modeline nil)
 
 
@@ -51,42 +30,21 @@
   :config
   (setq treemacs-fringe-indicator-mode t
         treemacs-indentation 1
-        treemacs-space-between-root-nodes nil)
-  (dolist (face '(treemacs-root-face
-                  treemacs-git-unmodified-face
-                  treemacs-git-modified-face
-                  treemacs-git-ignored-face
-                  treemacs-git-untracked-face
-                  treemacs-git-added-face
-                  treemacs-git-conflict-face
-                  treemacs-directory-face
-                  treemacs-directory-collapsed-face
-                  treemacs-file-face))
-    (let ((faces (face-attribute face :inherit nil)))
-      (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces)))))))
-
-
-(setq kaolin-themes-bold t
-      kaolin-themes-italic t
-      kaolin-themes-underline t
-      kaolin-themes-underline-wave t
-      kaolin-themes-hl-line-colored t
-      kaolin-themes-italic-comments t
-      kaolin-themes-comments-style 'bright
-      kaolin-themes-git-gutter-solid t
-      kaolin-themes-distinct-fringe t
-      kaolin-themes-distinct-company-scrollbar t
-      kaolin-themes-boolean t)
-
-
-;; (load-theme 'kaolin-valley-dark)
-
-(if (member 'kaolin-valley-dark custom-enabled-themes)
-    (let ((fg "#eed891"))
-      (custom-theme-set-faces
-       'kaolin-valley-dark
-       `(font-lock-comment-face ((t (:foreground ,fg :italic t))))
-       `(font-lock-comment-delimiter-face ((t (:foreground ,fg :italic t)))))))
+        treemacs-space-between-root-nodes nil
+        treemacs-width 25)
+  (comment
+   (dolist (face '(treemacs-root-face
+                   treemacs-git-unmodified-face
+                   treemacs-git-modified-face
+                   treemacs-git-ignored-face
+                   treemacs-git-untracked-face
+                   treemacs-git-added-face
+                   treemacs-git-conflict-face
+                   treemacs-directory-face
+                   treemacs-directory-collapsed-face
+                   treemacs-file-face))
+     (let ((faces (face-attribute face :inherit nil)))
+       (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces))))))))
 
 
 ;; etc
