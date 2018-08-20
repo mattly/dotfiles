@@ -20,6 +20,7 @@
       doom-outrun-comment-bg nil
       doom-themes-padded-modeline nil)
 
+(remove-hook 'doom-load-theme-hook #'doom-themes-treemacs-config)
 
 (after! treemacs
   :config
