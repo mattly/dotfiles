@@ -1,6 +1,6 @@
 # These are my dotfiles
 
-### doom.d
+## doom.d
 
 I had a highly-tweaked vim config for many years. Then I started working in a
 non-scripting language, and I gave [spacemacs][] a try, and ended up using that
@@ -15,7 +15,7 @@ Lissner's [doom-emacs][] a try, and quite like it. My private module is here.
 [atom]: https://atom.io
 [doom-emacs]: https://github.com/hlissner/doom-emacs
 
-### fish
+## fish
 
 After years of using zsh with a cargo-culted configuration, I gave up on it and
 switched to the [Friendly Interactive Shell][fish], aka **fish**. It has a
@@ -28,7 +28,7 @@ manage most of the config.
 [fish-evil]: http://fishshell.com/docs/current/design.html#conf
 [oh my fish]: https://github.com/oh-my-fish/oh-my-fish
 
-### gitconfig
+## gitconfig
 
 Before I started using Magit, I got to know the git command line pretty well,
 and got really into creating custom aliases. Here are a few:
@@ -63,8 +63,8 @@ and got really into creating custom aliases. Here are a few:
 ## Install
 
 - on mac: `bash -c "$(curl -fsSL https://github.com/mattly/dotfiles/blob/master/install/mac_bootstrap)"`
-  
+
   This gets you homebrew, a pub key to put on GitHub, git, this repository
   cloned, the config files symlinked, .emacs.d, and fish as the default shell.
-  
+
   From there, `brew bundle` the desired files in `install/`
