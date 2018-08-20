@@ -20,6 +20,9 @@
       doom-outrun-comment-bg nil
       doom-themes-padded-modeline nil)
 
+(when IS-MAC
+  (setq mac-mouse-wheel-smooth-scroll t))
+
 (remove-hook 'doom-load-theme-hook #'doom-themes-treemacs-config)
 
 (after! treemacs
