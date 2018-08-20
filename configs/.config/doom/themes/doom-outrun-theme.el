@@ -128,6 +128,10 @@ determine the exact padding."
     :foreground functions
     :weight 'bold)
 
+   (highlight-quoted-symbol
+    :foreground type
+    :weight 'bold)
+
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
    (mode-line

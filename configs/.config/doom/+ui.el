@@ -9,13 +9,8 @@
       doom-themes-enable-italic t
       doom-treemacs-enable-variable-pitch t)
 
-;; (setq-default line-spacing 0.12)
+(setq-default line-spacing 0.1)
 (add-hook 'magit-revision-mode-hook (lambda () (setq line-spacing 0)))
-
-
-;; set neotree so open chevrons are same width as closed ones
-(setq doom-neotree-chevron-size 0.7
-      doom-neotree-file-icons t)
 
 
 ;; theme
@@ -28,23 +23,10 @@
 
 (after! treemacs
   :config
-  (setq treemacs-fringe-indicator-mode t
+  (setq ;treemacs-fringe-indicator-mode t
         treemacs-indentation 1
         treemacs-space-between-root-nodes nil
-        treemacs-width 25)
-  (comment
-   (dolist (face '(treemacs-root-face
-                   treemacs-git-unmodified-face
-                   treemacs-git-modified-face
-                   treemacs-git-ignored-face
-                   treemacs-git-untracked-face
-                   treemacs-git-added-face
-                   treemacs-git-conflict-face
-                   treemacs-directory-face
-                   treemacs-directory-collapsed-face
-                   treemacs-file-face))
-     (let ((faces (face-attribute face :inherit nil)))
-       (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces))))))))
+        treemacs-width 25))
 
 
 ;; etc
@@ -58,8 +40,8 @@
 
 ;; default frame
 (add-to-list 'default-frame-alist '(height . 100))
-(add-to-list 'default-frame-alist '(width . 200))
-;; (set-frame-parameter (selected-frame) 'alpha '(99 . 97))
+(add-to-list 'default-frame-alist '(width . 100))
+(set-frame-parameter (selected-frame) 'alpha '(99 . 97))
 
 ;; set ligatures on railwaycat
 (when (boundp mac-auto-operator-composition-mode)
