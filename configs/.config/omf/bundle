@@ -5,6 +5,7 @@ package direnv
 package errno
 package expand
 package extract
+package fasd
 package gem
 package rustup
 theme cmorrell
