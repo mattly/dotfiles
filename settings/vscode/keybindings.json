@@ -6,11 +6,13 @@
     {"key": "shift+ctrl+alt+cmd+d", "command": "workbench.view.debug"},
     {"key": "shift+ctrl+alt+cmd+f", "command": "workbench.view.search",
         "when": "!searchViewletVisible"},
+
+    // {"key": "ctrl+f", "command": "scrollPageDown", "when": "textInputFocus"},
+    // {"key": "ctrl+b", "command": "scrollPageUp", "when": "textInputFocus"},
+
     {"key": "cmd+=", "command": "editor.action.fontZoomIn"},
-    {
-        "key": "cmd+-",
-        "command": "editor.action.fontZoomOut"
-    },
+    {"key": "cmd+-", "command": "editor.action.fontZoomOut"},
+
     {
         "key": "a",
         "command": "explorer.newFile",

@@ -2,33 +2,77 @@
     "[clojure]": {
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
+    "bracketPairColorizer.highlightActiveScope": true,
+    "bracketPairColorizer.showBracketsInRuler": true,
+    "breadcrumbs.enabled": false,
+    "calva.fmt.autoAdjustIndentOnNewLines": true,
+    "calva.lintOnSave": true,
+    "editor.cursorStyle": "line",
+    "editor.find.autoFindInSelection": true,
     "editor.fontFamily": "IBM Plex Mono, monospace",
     "editor.fontSize": 14,
-    "editor.fontWeight": "normal",
+    "editor.fontWeight": "400",
     "editor.highlightActiveIndentGuide": true,
     "editor.lineHeight": 20,
     "editor.lineNumbers": "on",
+    "editor.matchBrackets": false,
     "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
     "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "gutter",
     "editor.tokenColorCustomizations": {
         "[Night Owl]": {
             "comments": "#A7C3C3"
         }
     },
+    "emmet.showExpandedAbbreviation": "never",
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
+    "files.trimTrailingWhitespace": true,
     "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.path": "/usr/local/bin/git",
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.gitExplorer.files.layout": "auto",
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
     "search.location": "panel",
+    "vim.autoindent": false,
+    "vim.easymotion": false,
+    "vim.easymotionMarkerFontFamily": "IBM Plex Mono",
+    "vim.foldfix": true,
+    "vim.incsearch": true,
+    "vim.leader": "space",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [ "<leader>", "<leader>" ],
+            "commands": [ "workbench.action.showCommands" ]
+        },
+        {
+            "before": [ "<leader>", "g"],
+            "commands": ["workbench.view.scm"]
+        },
+        {
+            "before": ["<leader>", "f"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<leader>", "x"],
+            "commands": ["workbench.view.extensions"]
+        }
+    ],
+    "vim.sneak": true,
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
+        "[CodinCat Lighter]": {
+            "statusBar.background": "#9E8C3C",
+            "statusBar.noFolderBackground": "#FF7F7D"
+        },
         "[Night Owl]": {
             "activityBar.background": "#000C1D",
             "activityBar.border": "#102a44",
@@ -36,31 +80,20 @@
             "sideBar.border": "#102a44",
             "sideBar.foreground": "#8BADC1"
         },
+        "[Outrun]": {
+            "scrollbarSlider.activeBackground": "#484f7db5",
+            "scrollbarSlider.background": "#24264fb5",
+            "scrollbarSlider.hoverBackground": "#484f7db5"
+        },
         "[Quiet Light]": {
             "statusBar.background": "#AC3543"
-        },
-        "[CodinCat Lighter]": {
-            "statusBar.background": "#9E8C3C",
-            "statusBar.noFolderBackground": "#FF7F7D"
         }
     },
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Outrun",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "files.trimTrailingWhitespace": true,
-    "editor.renderControlCharacters": true,
-    "gitlens.gitExplorer.files.layout": "auto",
-    "git.path": "/usr/local/bin/git",
-    "editor.matchBrackets": false,
-    "bracketPairColorizer.showBracketsInRuler": true,
-    "bracketPairColorizer.highlightActiveScope": true,
-    "git.confirmSync": false,
-    "emmet.showExpandedAbbreviation": "never",
-    "editor.renderLineHighlight": "gutter",
-    "calva.fmt.autoAdjustIndentOnNewLines": false,
-    "editor.find.autoFindInSelection": true,
-    "calva.lintOnSave": true
+    "vim.disableExtension": true
 }
