@@ -10,5 +10,3 @@
 (package! default-text-scale)
 
 
-(package! kaolin-themes)
-(package! night-owl-theme)
