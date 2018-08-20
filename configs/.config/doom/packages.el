@@ -9,4 +9,5 @@
 
 (package! default-text-scale)
 
+(package! highlight-blocks)
 
