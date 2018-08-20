@@ -33,8 +33,8 @@ determine the exact padding."
   "A dark theme inspired by outruntheme.com"
 
   ;; name        default   256       16
-  ((bg         '("#080715" nil       nil))
-   (bg-alt     '("#0c0a20" nil       nil))
+  ((bg         '("#0c0a20" nil       nil))
+   (bg-alt     '("#474E7F" nil       nil))
    (base0      '("#212020" "black"   "black"))
    (base1      '("#393838" "#3a3a3a" "brightblack"))
    (base2      '("#484f7d" "#585858" "brightblack"))
@@ -61,7 +61,7 @@ determine the exact padding."
    (dark-cyan  '("#44c6aa" "#00ffaf" "cyan"))
 
    ;; face categories -- required for all themes
-   (highlight      blue)
+   (highlight      magenta)
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
    (builtin        blue)
