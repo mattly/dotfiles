@@ -3,7 +3,7 @@
 ;; fonts
 (setq text-scale-mode-step 1.05
       doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 15 :weight 'medium)
-      doom-font (font-spec :family "IBM Plex Mono" :size 15 :weight 'light)
+      doom-font (font-spec :family "IBM Plex Mono" :size 15 :weight 'medium)
       doom-big-font (font-spec :family "IBM Plex Mono" :size 21 :weight 'light)
       doom-themes-enable-bold t
       doom-themes-enable-italic t
@@ -23,7 +23,7 @@
 (when IS-MAC
   (setq mac-mouse-wheel-smooth-scroll t))
 
-(remove-hook 'doom-load-theme-hook #'doom-themes-treemacs-config)
+;; (remove-hook 'doom-load-theme-hook #'doom-themes-treemacs-config)
 
 (after! treemacs
   :config
