@@ -34,7 +34,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#0c0a20" nil       nil))
-   (bg-alt     '("#474E7F" nil       nil))
+   (bg-alt     '("#23273D" nil       nil))
    (base0      '("#212020" "black"   "black"))
    (base1      '("#393838" "#3a3a3a" "brightblack"))
    (base2      '("#484f7d" "#585858" "brightblack"))
@@ -55,8 +55,8 @@ determine the exact padding."
    (yellow     '("#f4b80c" "#ffd700" "yellow"))
    (blue       '("#42c6ff" "#5fafff" "brightblue"))
    (dark-blue  '("#456b7c" "#5f5f87" "blue"))
-   (magenta    '("#ff2afc" "#ff5fff" "magenta"))
-   (violet     '("#ee44dd" "#ff87af" "brightmagenta"))
+   (magenta    '("#FE2BFC" "#ff5fff" "magenta"))
+   (violet     '("#D16BFF" "#ff87af" "brightmagenta"))
    (cyan       '("#66ffff" "#5fffff" "brightcyan"))
    (dark-cyan  '("#44c6aa" "#00ffaf" "cyan"))
 
@@ -67,16 +67,16 @@ determine the exact padding."
    (builtin        blue)
    (comments       (if doom-outrun-brighter-comments dark-cyan base5))
    (doc-comments   (doom-lighten (if doom-outrun-brighter-comments dark-cyan base5) 0.25))
-   (constants      fg-alt)
+   (constants      fg)
    (functions      base8)
-   (keywords       violet)
+   (keywords       magenta)
    (methods        orange)
    (operators      blue)
-   (type           red)
+   (type           fg)
    (strings        green)
    (variables      base8)
    (numbers        yellow)
-   (region         base2)
+   (region         bg-alt)
    (error          red)
    (warning        yellow)
    (success        green)
@@ -126,6 +126,10 @@ determine the exact padding."
 
    (font-lock-function-name-face
     :foreground functions
+    :weight 'bold)
+
+   (font-lock-type-face
+    :foreground type
     :weight 'bold)
 
    (highlight-quoted-symbol
@@ -180,11 +184,19 @@ determine the exact padding."
    (org-hide :foreground hidden)
    (org-block :background base2)
    (org-block-begin-line :background base2 :foreground comments)
-   (solaire-org-hide-face :foreground hidden)))
-
+   (solaire-org-hide-face :foreground hidden)
+   ;;
+   (web-mode-html-tag-face
+    :foreground type
+    :slant 'italic)
+   (web-mode-html-attr-name-face
+    :foreground keywords)
+   (web-mode-html-tag-bracket-face
+    :foreground fg)))
 
   ;; --- extra variables ---------------------
   ;; ()
+
 
 
 ;;; doom-outrun-theme.el ends here
