@@ -67,12 +67,12 @@ determine the exact padding."
    (builtin        blue)
    (comments       (if doom-outrun-brighter-comments dark-cyan base5))
    (doc-comments   (doom-lighten (if doom-outrun-brighter-comments dark-cyan base5) 0.25))
-   (constants      fg)
+   (constants      violet)
    (functions      base8)
    (keywords       magenta)
    (methods        orange)
    (operators      blue)
-   (type           fg)
+   (type           magenta)
    (strings        green)
    (variables      base8)
    (numbers        yellow)
@@ -130,7 +130,7 @@ determine the exact padding."
 
    (font-lock-type-face
     :foreground type
-    :weight 'bold)
+    :weight 'normal)
 
    (highlight-quoted-symbol
     :foreground type
