@@ -14,8 +14,7 @@
           ">" ")")))
 
 (def-package! flycheck-joker
-  :defer t
-  :after clojure-mode)
+  :after (flycheck clojure-mode))
 
 (def-package! cider
   :defer t
