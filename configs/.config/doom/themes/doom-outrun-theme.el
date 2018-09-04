@@ -89,21 +89,21 @@ determine the exact padding."
    (-modeline-bright doom-outrun-brighter-modeline)
    (-modeline-pad
     (when doom-outrun-padded-modeline
-      (if (integerp doom-outrun-padded-modeline) doom-city-lights-padded-modeline 4)))
+      (if (integerp doom-outrun-padded-modeline) doom-themes-padded-modeline 4)))
 
    (modeline-fg     nil)
    (modeline-fg-alt base5)
 
    (modeline-bg
     (if -modeline-bright
-        base3
+        base2
         `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        base3
+        base2
         `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
+   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base4))))
 
 
   ;; --- extra faces ------------------------

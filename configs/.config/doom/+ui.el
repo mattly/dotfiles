@@ -18,6 +18,7 @@
       'doom-outrun
       doom-outrun-brighter-comments nil
       doom-outrun-comment-bg nil
+      doom-outrun-brighter-modeline t
       doom-themes-padded-modeline nil)
 
 (when IS-MAC
