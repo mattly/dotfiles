@@ -6,6 +6,11 @@
   :config
 
   (prodigy-define-service
+    :name "localstack"
+    :command "localstack start"
+    :tags '(work dev server))
+
+  (prodigy-define-service
     :name "mountebank"
     :command "mb"
     :tags '(work test server)))
