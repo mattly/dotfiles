@@ -33,7 +33,7 @@ determine the exact padding."
   "A dark theme inspired by outruntheme.com"
 
   ;; name        default   256       16
-  ((bg         '("#0c0a20" nil       nil))
+  ((bg         '("#161130" nil       nil))
    (bg-alt     '("#23273D" nil       nil))
    (base0      '("#212020" "black"   "black"))
    (base1      '("#393838" "#3a3a3a" "brightblack"))
@@ -97,11 +97,11 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         base2
-        `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
         base2
-        `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
+      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
    (modeline-bg-inactive   (doom-darken bg-alt 0.1))
    (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base4))))
 
@@ -194,8 +194,8 @@ determine the exact padding."
    (web-mode-html-tag-bracket-face
     :foreground fg)))
 
-  ;; --- extra variables ---------------------
-  ;; ()
+;; --- extra variables ---------------------
+;; ()
 
 
 
