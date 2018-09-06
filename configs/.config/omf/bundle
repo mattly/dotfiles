@@ -1,11 +1,14 @@
 package argu
 package asdf
+package autojump
 package brew
 package direnv
 package errno
 package expand
 package extract
 package fasd
+package fzf
+package fzf-autojump
 package gem
 package rustup
 theme cmorrell
