@@ -23,6 +23,11 @@
     "editor.tokenColorCustomizations": {
         "[Night Owl]": {
             "comments": "#A7C3C3"
+        },
+        "[Outrun Night]": {
+            "comments": "#add0e5",
+            "strings": "#a6e22e",
+            "variables": "#ff2afc"
         }
     },
     "emmet.showExpandedAbbreviation": "never",
@@ -40,7 +45,6 @@
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
-    "search.location": "panel",
     "vim.autoindent": false,
     "vim.easymotion": false,
     "vim.easymotionMarkerFontFamily": "IBM Plex Mono",
@@ -80,11 +84,6 @@
             "sideBar.border": "#102a44",
             "sideBar.foreground": "#8BADC1"
         },
-        "[Outrun]": {
-            "scrollbarSlider.activeBackground": "#484f7db5",
-            "scrollbarSlider.background": "#24264fb5",
-            "scrollbarSlider.hoverBackground": "#484f7db5"
-        },
         "[Quiet Light]": {
             "statusBar.background": "#AC3543"
         }
@@ -95,5 +94,11 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "vim.disableExtension": true
+    "vim.disableExtension": true,
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1.1,
+    "editor.showFoldingControls": "always",
+    "terminal.external.osxExec": "ITerm.app",
+    "terminal.integrated.cursorBlinking": true
 }
