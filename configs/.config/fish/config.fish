@@ -17,7 +17,7 @@ set -g fish_color_operator bryellow
 set -g fish_color_escape bryellow
 set -g fish_color_cwd green
 set -g fish_color_cwd_root brgreen
-set -g fish_color_autosuggestion brblack
+set -g fish_color_autosuggestion brgreen
 set -g fish_color_user brgreen
 set -g fish_color_host normal
 set -g fish_color_cancel normal --bold
