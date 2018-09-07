@@ -38,8 +38,8 @@ determine the exact padding."
    (base0      '("#212020" "black"   "black"))
    (base1      '("#393838" "#3a3a3a" "brightblack"))
    (base2      '("#484f7d" "#585858" "brightblack"))
-   (base3      '("#696866" "#6c6c6c" "brightblack"))
-   (base4      '("#81807e" "#808080" "brightblack"))
+   (base3      '("#2F2947" "#6c6c6c" "brightblack"))
+   (base4      '("#474e7f" "#808080" "brightblack"))
    (base5      '("#989895" "#949494" "brightblack"))
    (base6      '("#b0b0ac" "#b2b2b2" "brightblack"))
    (base7      '("#c8c8c3" "#c6c6c6" "brightblack"))
@@ -64,7 +64,7 @@ determine the exact padding."
    (highlight      magenta)
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
-   (builtin        blue)
+   (builtin        magenta)
    (comments       (if doom-outrun-brighter-comments dark-cyan base5))
    (doc-comments   (doom-lighten (if doom-outrun-brighter-comments dark-cyan base5) 0.25))
    (constants      violet)
@@ -74,7 +74,7 @@ determine the exact padding."
    (operators      blue)
    (type           magenta)
    (strings        green)
-   (variables      base8)
+   (variables      red)
    (numbers        yellow)
    (region         bg-alt)
    (error          red)
@@ -155,6 +155,8 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+
+   (magit-diff-hunk-heading :foreground bg :background (doom-blend violet base3 0.5))
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
