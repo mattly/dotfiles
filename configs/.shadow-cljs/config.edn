@@ -1,0 +1,6 @@
+{:open-file-command
+  #_
+  ["emacsclient" "-n" ["+%s:%s" :line :column] :file]
+  ["code"
+   "--goto" ["%s:%s:%s" :file :line :column]
+   "--reuse-window"]}
