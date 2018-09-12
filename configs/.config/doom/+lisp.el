@@ -13,9 +13,6 @@
       (if (eq parinfer--mode 'indent)
           ">" ")")))
 
-(def-package! flycheck-joker
-  :after (flycheck clojure-mode))
-
 (def-package! cider
   :defer t
   :config
