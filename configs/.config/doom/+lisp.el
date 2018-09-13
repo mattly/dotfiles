@@ -11,7 +11,8 @@
 (def-modeline-segment! +parinfer
   (if (bound-and-true-p parinfer-mode)
       (if (eq parinfer--mode 'indent)
-          ">" ")")))
+          (all-the-icons-faicon "angle-right" :v-adjust 0.0)
+        (all-the-icons-faicon "arrows" :v-adjust 0.0))))
 
 (def-package! cider
   :defer t
