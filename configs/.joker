@@ -5,6 +5,7 @@
   clojure.test.check.properties/for-all
   com.gfredericks.test.chuck.clojure-test/checking
   fulcro.client.primitives/defsc
+  secretary.core/defroute
   rum.core/defc
   rum.core/defcc
   rum.core/defcs]}
