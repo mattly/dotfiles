@@ -177,8 +177,8 @@
 ;; (set-frame-parameter (selected-frame) 'alpha '(99 . 97))
 
 ;; set ligatures on railwaycat
-(when (boundp mac-auto-operator-composition-mode)
-  (mac-auto-operator-composition-mode))
+;; (when (boundp mac-auto-operator-composition-mode)
+;;   (mac-auto-operator-composition-mode))
 
 
 ;; modeline
