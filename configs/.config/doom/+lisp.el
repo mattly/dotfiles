@@ -19,3 +19,8 @@
   :config
   (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
   (add-hook 'cider-mode-hook #'cider-company-enable-fuzzy-completion))
+
+
+(after! clojure-mode
+  :config
+  (put-clojure-indent 'clojure.core.match 1))
