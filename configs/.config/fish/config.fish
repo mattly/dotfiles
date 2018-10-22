@@ -26,3 +26,4 @@ set -g fish_color_valid_path normal --underline
 test -e {$HOME}/.iterm2_shell_integration.fish
 and source {$HOME}/.iterm2_shell_integration.fish
 
+alias ping='prettyping --nolegend'
