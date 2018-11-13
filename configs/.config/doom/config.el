@@ -25,3 +25,5 @@
   (projectile-add-known-project "~/projects/emacs/emacs-doom-themes"))
 
 (load "~/local.el" 'noerror 'nomessage)
+
+(setenv "EDITOR" "emacsclient")
