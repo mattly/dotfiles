@@ -19,10 +19,10 @@
   (setq feature-step-search-path "features/**/*steps.rb"))
 
 (map!
- :desc "previous word" :n "<A-left>" 'evil-backward-word-begin
- :desc "previous WORD" :n "<M-A-left>" 'evil-backward-WORD-begin
- :desc "forward word"  :n "<A-right>" 'evil-forward-word-end
- :desc "forward WORD"  :n "<M-A-right>" 'evil-forward-WORD-end)
+ :desc "previous word" :nvi "<A-left>" 'evil-backward-word-begin
+ :desc "previous WORD" :nvi "<M-A-left>" 'evil-backward-WORD-begin
+ :desc "forward word"  :nvi "<A-right>" 'evil-forward-word-end
+ :desc "forward WORD"  :nvi "<M-A-right>" 'evil-forward-WORD-end)
 
 
 (after! projectile
