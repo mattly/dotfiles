@@ -10,16 +10,13 @@
         +docsets)        ; ...or in Dash docsets locally
        snippets          ; my elves. They type so I don't have to
        spellcheck        ; tasing you for misspelling mispelling
-       (syntax-checker   ; tasing you for every semicolon you forget
-        +childframe)     ; use childframes for error popups (Emacs 26+ only)
+       (syntax-checker)   ; tasing you for every semicolon you forget
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :completion
        (company          ; the ultimate code completion backend
-        +childframe
         +auto)           ; as-you-type code completion
        ;;(helm             ; the *other* search engine for love and life
-       ;; +childframe
        ;; +fuzzy)          ; enable fuzzy search backend for helm
        ;;ido               ; the other *other* search engine...
        (ivy              ; a search engine for love and life
@@ -59,8 +56,8 @@
        :emacs
        (dired            ; making dired pretty [functional]
          +ranger         ; bringing the goodness of ranger to dired
-         +icons          ; colorful icons for dired-mode
-        )
+         +icons)          ; colorful icons for dired-mode
+
        ediff             ; comparing files in Emacs
        electric          ; smarter, keyword-based electric-indent
        eshell            ; a consistent, cross-platform shell (WIP)
@@ -131,7 +128,7 @@
        rest              ; Emacs as a REST client
        ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
-       ;;scala             ; java, but good
+       ;;scala             ; java, but somehow worse
        (sh +fish)        ; she sells (ba|z|fi)sh shells on the C xor
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
