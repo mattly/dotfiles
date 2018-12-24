@@ -1,18 +1,35 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    {"key": "shift+ctrl+alt+cmd+e", "command": "workbench.view.explorer"},
-    {"key": "shift+ctrl+alt+cmd+x", "command": "workbench.view.extensions"},
-    {"key": "shift+ctrl+alt+cmd+g", "command": "workbench.view.scm"},
-    {"key": "shift+ctrl+alt+cmd+d", "command": "workbench.view.debug"},
-    {"key": "shift+ctrl+alt+cmd+f", "command": "workbench.view.search",
-        "when": "!searchViewletVisible"},
-
-    // {"key": "ctrl+f", "command": "scrollPageDown", "when": "textInputFocus"},
-    // {"key": "ctrl+b", "command": "scrollPageUp", "when": "textInputFocus"},
-
+    // projects
+    { "key": "ctrl+alt+cmd+r", "command": "workbench.action.openRecent" },
+    { "key": "ctrl+r", "command": "-workbench.action.openRecent" },
+    // window management
+    { "key": "cmd+alt+ctrl+w", "command": "workbench.action.switchWindow" },
+    { "key": "ctrl+w", "command": "-workbench.action.switchWindow" },
+    // font sizing
     {"key": "cmd+=", "command": "editor.action.fontZoomIn"},
     {"key": "cmd+-", "command": "editor.action.fontZoomOut"},
-
+    // panel
+    {"key": "cmd+alt+ctrl+j j", "command": "workbench.action.togglePanel"},
+    {"key": "cmd+alt+ctrl+j u", "command": "workbench.action.focusPanel"},
+    {"key": "cmd+alt+ctrl+j x", "command": "workbench.action.closePanel"},
+    {"key": "cmd+alt+ctrl+j d", "command": "workbench.action.nextPanelView"},
+    {"key": "cmd+alt+ctrl+j e", "command": "workbench.action.previousPanelView"},
+    {"key": "cmd+alt+ctrl+j m", "command": "workbench.action.toggleMaximizedPanel"},
+    // terminal
+    {"key": "cmd+alt+ctrl+t t", "command": "workbench.action.terminal.new"},
+    {"key": "cmd+alt+ctrl+t d", "command": "workbench.action.terminal.focusNext"},
+    {"key": "cmd+alt+ctrl+t e", "command": "workbench.action.terminal.focusPrevious"},
+    // split navigation
+    { "key": "ctrl+alt+cmd+d e", "command": "workbench.action.navigateUp", },
+    { "key": "cmd+alt+ctrl+d d", "command": "workbench.action.navigateDown"},
+    { "key": "cmd+alt+ctrl+d s", "command": "workbench.action.navigateLeft"},
+    { "key": "cmd+alt+ctrl+d f", "command": "workbench.action.navigateRight"},
+    { "key": "cmd+alt+ctrl+d w", "command": "workbench.action.navigateEditorGroups"},
+    // split creation
+    { "key": "cmd+alt+ctrl+d g", "command": "workbench.action.splitEditorRight"},
+    { "key": "cmd+alt+ctrl+d c", "command": "workbench.action.splitEditorDown"},
+    // explorer navigation
     {
         "key": "a",
         "command": "explorer.newFile",
@@ -24,24 +41,10 @@
         "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
     },
     {
-        "key": "k",
-        "command": "list.focusDown",
-        "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
-    },
-    {
-        "key": "l",
-        "command": "list.expand",
-        "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
-    },
-    {
-        "key": "i",
-        "command": "list.focusUp",
-        "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
-    },
-    {
         "key": "d",
         "command": "deleteFile",
         "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
     },
+
 
 ]

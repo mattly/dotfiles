@@ -87,7 +87,7 @@
                 "<leader>"
             ],
             "commands": [
-                "workbench.action.showCommands"
+                "workbench.action.quickOpen"
             ]
         },
         {
@@ -139,10 +139,9 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "vim.disableExtension": false,
     "gitlens.views.repositories.files.layout": "auto",
     "calva.paredit.defaultKeyMap": "strict",
-    "vim.hlsearch": true,
-    "vim.useCtrlKeys": false
+    "vim.hlsearch": true
 }
