@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+case $1 in
+    save)
+        mkdir -p ~/.config/vscode
+        code --list-extensions > ~/.config/vscode/extensions
+        ;;
+    load)
+        installed=$(code --list-extensions)
+        for line in $(cat ~/.config/vscode/extensions); do
+            match=$(echo $installed | grep -E "$line" > /dev/null)
+            if [ $? -ne 0 ]; then
+                echo "installing $line"
+                code --install-extension $line
+            fi
+        done
+        ;;
+    *) echo "unknown action." ;;
+esac
