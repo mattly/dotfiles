@@ -46,5 +46,16 @@
         "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
     },
 
+    // selection
+    {
+        "key": "ctrl+alt+cmd+u",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+cmd+i",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
 
 ]

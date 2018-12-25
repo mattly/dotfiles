@@ -2,26 +2,23 @@
     "[clojure]": {
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
-    "bracketPairColorizer.consecutivePairColors": [
-        "()",
-        "[]",
-        "{}",
-        [
-            "#D73ABA",
-            "#ED3157",
-            "#178E84"
-        ],
-        "Red"
+    "bracket-pair-colorizer-2.colors": [
+        "#A4E405",
+        "#ED3157",
+        "#178E84"
     ],
-    "bracketPairColorizer.highlightActiveScope": true,
-    "bracketPairColorizer.showBracketsInRuler": true,
+    "bracket-pair-colorizer-2.highlightActiveScope": true,
+    "bracket-pair-colorizer-2.showBracketsInGutter": true,
+    "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "breadcrumbs.enabled": false,
+    "calva.jokerPath": "",
     "calva.lintOnSave": true,
+    "calva.paredit.defaultKeyMap": "strict",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
-    "editor.fontFamily": "IBM Plex Mono, monospace",
+    "editor.fontFamily": "Iosevka, IBM Plex Mono, monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "editor.fontWeight": "400",
     "editor.highlightActiveIndentGuide": true,
     "editor.lineNumbers": "on",
@@ -53,6 +50,7 @@
     "gitlens.advanced.telemetry.enabled": false,
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
+    "gitlens.views.repositories.files.layout": "auto",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
@@ -60,18 +58,18 @@
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.lineHeight": 1.1,
     "vim.autoindent": true,
+    "vim.disableExtension": false,
     "vim.easymotion": false,
     "vim.easymotionMarkerFontFamily": "IBM Plex Mono",
     "vim.foldfix": true,
+    "vim.hlsearch": true,
     "vim.ignorecase": true,
     "vim.incsearch": true,
     "vim.leader": "space",
     "vim.normalModeKeyBindings": [
         {
             "before": [":"],
-            "commands": [
-                "workbench.action.showCommands",
-            ]
+            "commands": [ "workbench.action.showCommands", ]
         },
         {
             "before": ["O"],
@@ -82,46 +80,26 @@
             "after": [ "A", "\n" ]
         },
         {
-            "before": [
-                "<leader>",
-                "<leader>"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
+            "before": [ "<leader>", "<leader>" ],
+            "commands": [ "workbench.action.quickOpen" ]
         },
         {
-            "before": [
-                "<leader>",
-                "g"
-            ],
-            "commands": [
-                "workbench.view.scm"
-            ]
+            "before": [ "<leader>", "g", "g" ],
+            "commands": [ "workbench.view.scm" ]
         },
         {
-            "before": [
-                "<leader>",
-                "f"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "x"
-            ],
-            "commands": [
-                "workbench.view.extensions"
-            ]
+            "before": [ "<leader>", "x", "x" ],
+            "commands": [ "workbench.view.extensions" ]
         }
     ],
     "vim.smartcase": true,
     "vim.sneak": true,
+    "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
+        "[Gruvbox Dark (Hard)]": {
+            "statusBar.background": "#111213"
+        },
         "[Night Owl]": {
             "activityBar.background": "#000C1D",
             "activityBar.border": "#102a44",
@@ -139,9 +117,5 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "window.zoomLevel": 0,
-    "vim.disableExtension": false,
-    "gitlens.views.repositories.files.layout": "auto",
-    "calva.paredit.defaultKeyMap": "strict",
-    "vim.hlsearch": true
+    "workbench.statusBar.visible": true,
 }
