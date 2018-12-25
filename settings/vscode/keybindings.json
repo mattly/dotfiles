@@ -57,5 +57,18 @@
         "command": "editor.action.smartSelect.shrink",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+alt+f",
+        "command": "paredit.sexpRangeExpansion",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-paredit.sexpRangeExpansion",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+
+
+    // inbox
 
 ]
