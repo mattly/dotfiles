@@ -59,8 +59,8 @@
     "terminal.integrated.lineHeight": 1.1,
     "vim.autoindent": true,
     "vim.disableExtension": false,
-    "vim.easymotion": false,
-    "vim.easymotionMarkerFontFamily": "IBM Plex Mono",
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Fira Code",
     "vim.foldfix": true,
     "vim.hlsearch": true,
     "vim.ignorecase": true,
@@ -80,8 +80,12 @@
             "after": [ "A", "\n" ]
         },
         {
-            "before": [ "<leader>", "<leader>" ],
+            "before": [ "<leader>", "f", "f" ],
             "commands": [ "workbench.action.quickOpen" ]
+        },
+        {
+            "before": [ "<leader>", "f", "s" ],
+            "commands": [ "workbench.action.files.save" ]
         },
         {
             "before": [ "<leader>", "g", "g" ],
