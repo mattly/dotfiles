@@ -13,6 +13,7 @@
 
 # Logging
 *.log
+configs/.config/pgcli/log
 
 # Subversion
 .svn
@@ -37,3 +38,4 @@ configs/.lein/repl-history
 
 # direnv
 configs/.config/direnv
+
