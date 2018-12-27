@@ -1,18 +1,21 @@
 #! /usr/bin/env bash
 
+extfile=~/.config/vscode/extensions
+
 case $1 in
     save)
         mkdir -p ~/.config/vscode
-        code --list-extensions > ~/.config/vscode/extensions
+        code --list-extensions > $extfile
         ;;
     load)
         installed=$(code --list-extensions)
-        for line in $(cat ~/.config/vscode/extensions); do
-            match=$(echo $installed | grep -E "$line" > /dev/null)
-            if [ $? -ne 0 ]; then
-                echo "installing $line"
-                code --install-extension $line
-            fi
+        # to install
+        for package in $(code --list-extensions | comm -23 $extfile -); do
+            code --install-extension $package
+        done
+        # to remove
+        for package in $(code --list-extensions | comm -13 $extfile -); do
+            code --uninstall-extension $package
         done
         ;;
     *) echo "unknown action." ;;
