@@ -92,7 +92,7 @@
             "commands": [ "workbench.view.scm" ]
         },
         {
-            "before": [ "<leader>", "x", "x" ],
+            "before": [ "<leader>", "-", "x" ],
             "commands": [ "workbench.view.extensions" ]
         }
     ],
