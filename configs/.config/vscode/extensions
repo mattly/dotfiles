@@ -1,4 +1,3 @@
-
 aaron-bond.better-comments
 alexkrechik.cucumberautocomplete
 bierner.color-info
@@ -10,6 +9,7 @@ cospaia.calva-fmt
 cospaia.clojure4vscode
 cospaia.paredit-revived
 cucumber-mapper-ruby.cucumber-mapper-ruby
+cymonk.sql-formatter
 davidedmiston.bettergitcommits
 deerawan.vscode-dash
 eamodio.gitlens
@@ -22,6 +22,7 @@ glen-84.sass-lint
 humao.rest-client
 jolaleye.horizon-theme-vscode
 kumar-harsh.graphql-for-vscode
+liviuschera.noctis
 marclipovsky.string-manipulation
 martinklepsch.clojure-joker-linter
 mrmlnc.vscode-scss
@@ -29,6 +30,7 @@ PeterJausovec.vscode-docker
 pnp.polacode
 rebornix.ruby
 richie5um2.vscode-sort-json
+rickynormandeau.mariana-pro
 robinbentley.sass-indented
 samrapdev.outrun
 sdras.night-owl
