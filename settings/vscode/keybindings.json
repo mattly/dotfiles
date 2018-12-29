@@ -26,6 +26,10 @@
     { "key": "cmd+alt+ctrl+d s", "command": "workbench.action.navigateLeft"},
     { "key": "cmd+alt+ctrl+d f", "command": "workbench.action.navigateRight"},
     { "key": "cmd+alt+ctrl+d w", "command": "workbench.action.navigateEditorGroups"},
+    // split sizing
+    { "key": "ctrl+alt+cmd+d r", "command": "workbench.action.increaseViewSize" },
+    { "key": "ctrl+alt+cmd+d v", "command": "workbench.action.decreaseViewSize" },
+    { "key": "ctrl+alt+cmd+d x", "command": "workbench.action.minimizeOtherEditors" },
     // split creation
     { "key": "cmd+alt+ctrl+d g", "command": "workbench.action.splitEditorRight"},
     { "key": "cmd+alt+ctrl+d c", "command": "workbench.action.splitEditorDown"},
