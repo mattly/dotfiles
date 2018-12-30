@@ -1,35 +1,23 @@
 [user]
   email=matthew@lyonheart.us
   name = Matthew Lyon
-[github]
-  user = mattly
-	oauth-token = !security find-generic-password -a GitHub-API-Token -gs Github 2>&1 >/dev/null   | awk '/password/ {print $2}' | tr -d \\\"
+
 [hub]
   protocol=https
 
 [core]
   excludesfile=~/.gitignore
-  pager=cat
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
-  ui = auto
+	ui = true
   diff=auto
   status=auto
   branch=auto
 
-[merge "gemfilelock"]
-  name = relocks the gemfile.lock
-  driver = bundle lock
-[merge "compass"]
-  name = recompile the sass files
-  driver = rake compass
-
 [diff]
   renames = copies
 	compactionHeuristic = true
-
-[diff "ruby"]
-  funcname="^ *\\(\\(class\\|module\\|def\\) .*\\)"
 
 [format]
   pretty="format:%Cred%ae %Creset- %C(yellow)%h %s %Creset(%ar)"
@@ -118,3 +106,15 @@
 	enabled = true
 [magithub]
 	enabled = false
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

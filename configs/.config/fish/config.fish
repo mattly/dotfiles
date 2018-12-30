@@ -27,3 +27,4 @@ test -e {$HOME}/.iterm2_shell_integration.fish
 and source {$HOME}/.iterm2_shell_integration.fish
 
 alias ping='prettyping --nolegend'
+set -x PATH ~/projects/dotfiles/bin $PATH
