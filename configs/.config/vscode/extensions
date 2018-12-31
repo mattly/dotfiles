@@ -1,5 +1,6 @@
 aaron-bond.better-comments
 alexkrechik.cucumberautocomplete
+apust.rubber-theme
 bierner.color-info
 bpruitt-goddard.sourcerer
 budparr.language-hugo-vscode
@@ -23,6 +24,7 @@ humao.rest-client
 jolaleye.horizon-theme-vscode
 kumar-harsh.graphql-for-vscode
 liviuschera.noctis
+lunaryorn.fish-ide
 marclipovsky.string-manipulation
 martinklepsch.clojure-joker-linter
 mrmlnc.vscode-scss
@@ -37,11 +39,11 @@ sdras.night-owl
 shaunlebron.vscode-parinfer
 shinnn.stylelint
 shuworks.vscode-table-formatter
-steve8708.Align
+skyapps.fish-vscode
+TobiasTimm.shuriken
 tomphilbin.gruvbox-themes
 tonsky.theme-alabaster
 trixnz.vscode-lua
 vscodevim.vim
 vsmobile.vscode-react-native
 wmaurer.change-case
-zolocode.editorzoom
