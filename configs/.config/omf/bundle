@@ -11,6 +11,7 @@ package fzf
 package fzf-autojump
 package gem
 package rustup
-theme cmorrell
+package vcs
+theme chain
+theme es
 theme pure
-theme scorphish
