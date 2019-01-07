@@ -63,10 +63,10 @@
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
         "[Alabaster]": {
-            "statusBar.background": "#AC362D",
-            "statusBar.foreground": "#F7F7F7",
+            "statusBar.background": "#F0F0F0",
+            "statusBar.foreground": "#000028",
             "statusBar.noFolderBackground": "#F7F7F7",
-            "statusBar.noFolderForeground": "#000028"
+            "statusBar.noFolderForeground": "#000028",
         },
         "[Gruvbox Dark (Hard)]": {
             "statusBar.background": "#111213"
