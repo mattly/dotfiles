@@ -52,6 +52,7 @@
     "gitlens.keymap": "alternate",
     "gitlens.views.repositories.files.layout": "auto",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
@@ -127,6 +128,5 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true,
-    "search.location": "panel",
+    "workbench.statusBar.visible": true
 }
