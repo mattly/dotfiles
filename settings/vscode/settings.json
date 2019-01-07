@@ -128,4 +128,5 @@
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": true,
+    "search.location": "panel",
 }
