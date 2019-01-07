@@ -16,7 +16,7 @@
     "calva.paredit.defaultKeyMap": "strict",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
-    "editor.fontFamily": "Fira Code, Iosevka, IBM Plex Mono, monospace",
+    "editor.fontFamily": "Fira Code, IBM Plex Mono, monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 15,
     "editor.fontWeight": "400",
