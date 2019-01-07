@@ -3,9 +3,9 @@
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
     "bracket-pair-colorizer-2.colors": [
-        "#A4E405",
-        "#ED3157",
-        "#178E84"
+        "#AC362D",
+        "#3BA3F8",
+        "#E826AE",
     ],
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
