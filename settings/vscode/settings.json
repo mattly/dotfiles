@@ -11,6 +11,7 @@
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "breadcrumbs.enabled": false,
+    "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.lintOnSave": true,
     "calva.paredit.defaultKeyMap": "strict",
@@ -58,47 +59,6 @@
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.lineHeight": 1.1,
-    "vim.autoindent": true,
-    "vim.disableExtension": false,
-    "vim.easymotion": true,
-    "vim.easymotionMarkerFontFamily": "Fira Code",
-    "vim.foldfix": true,
-    "vim.hlsearch": true,
-    "vim.ignorecase": true,
-    "vim.incsearch": true,
-    "vim.leader": "space",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [":"],
-            "commands": [ "workbench.action.showCommands", ]
-        },
-        {
-            "before": ["O"],
-            "after": [ "k", "A", "\n" ]
-        },
-        {
-            "before": ["o"],
-            "after": [ "A", "\n" ]
-        },
-        {
-            "before": [ "<leader>", "f", "f" ],
-            "commands": [ "workbench.action.quickOpen" ]
-        },
-        {
-            "before": [ "<leader>", "f", "s" ],
-            "commands": [ "workbench.action.files.save" ]
-        },
-        {
-            "before": [ "<leader>", "g", "g" ],
-            "commands": [ "workbench.view.scm" ]
-        },
-        {
-            "before": [ "<leader>", "-", "x" ],
-            "commands": [ "workbench.view.extensions" ]
-        }
-    ],
-    "vim.smartcase": true,
-    "vim.sneak": true,
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
