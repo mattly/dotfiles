@@ -101,6 +101,12 @@
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
+        "[Alabaster]": {
+            "statusBar.background": "#AC362D",
+            "statusBar.foreground": "#F7F7F7",
+            "statusBar.noFolderBackground": "#F7F7F7",
+            "statusBar.noFolderForeground": "#000028"
+        },
         "[Gruvbox Dark (Hard)]": {
             "statusBar.background": "#111213"
         },
@@ -115,7 +121,7 @@
             "statusBar.background": "#AC3543"
         }
     },
-    "workbench.colorTheme": "Outrun Night",
+    "workbench.colorTheme": "Alabaster",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
