@@ -19,7 +19,7 @@
     "editor.find.autoFindInSelection": true,
     "editor.fontFamily": "Fira Code, IBM Plex Mono, monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 15,
+    "editor.fontSize": 13,
     "editor.fontWeight": "400",
     "editor.highlightActiveIndentGuide": true,
     "editor.lineNumbers": "on",
@@ -57,8 +57,7 @@
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.fontSize": 13,
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
@@ -88,5 +87,8 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true
+    "workbench.statusBar.visible": true,
+    "editor.formatOnType": true,
+    "terminal.integrated.lineHeight": 1.2,
+    "rest-client.fontSize": 13
 }
