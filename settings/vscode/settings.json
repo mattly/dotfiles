@@ -3,20 +3,21 @@
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
     "bracket-pair-colorizer-2.colors": [
-        "#A4E405",
-        "#ED3157",
-        "#178E84"
+        "#AC362D",
+        "#3BA3F8",
+        "#E826AE",
     ],
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "breadcrumbs.enabled": false,
+    "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.lintOnSave": true,
     "calva.paredit.defaultKeyMap": "strict",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
-    "editor.fontFamily": "Fira Code, Iosevka, IBM Plex Mono, monospace",
+    "editor.fontFamily": "Fira Code, IBM Plex Mono, monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 15,
     "editor.fontWeight": "400",
@@ -52,55 +53,21 @@
     "gitlens.keymap": "alternate",
     "gitlens.views.repositories.files.layout": "auto",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.lineHeight": 1.1,
-    "vim.autoindent": true,
-    "vim.disableExtension": false,
-    "vim.easymotion": true,
-    "vim.easymotionMarkerFontFamily": "Fira Code",
-    "vim.foldfix": true,
-    "vim.hlsearch": true,
-    "vim.ignorecase": true,
-    "vim.incsearch": true,
-    "vim.leader": "space",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [":"],
-            "commands": [ "workbench.action.showCommands", ]
-        },
-        {
-            "before": ["O"],
-            "after": [ "k", "A", "\n" ]
-        },
-        {
-            "before": ["o"],
-            "after": [ "A", "\n" ]
-        },
-        {
-            "before": [ "<leader>", "f", "f" ],
-            "commands": [ "workbench.action.quickOpen" ]
-        },
-        {
-            "before": [ "<leader>", "f", "s" ],
-            "commands": [ "workbench.action.files.save" ]
-        },
-        {
-            "before": [ "<leader>", "g", "g" ],
-            "commands": [ "workbench.view.scm" ]
-        },
-        {
-            "before": [ "<leader>", "-", "x" ],
-            "commands": [ "workbench.view.extensions" ]
-        }
-    ],
-    "vim.smartcase": true,
-    "vim.sneak": true,
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
+        "[Alabaster]": {
+            "statusBar.background": "#F0F0F0",
+            "statusBar.foreground": "#000028",
+            "statusBar.noFolderBackground": "#F7F7F7",
+            "statusBar.noFolderForeground": "#000028",
+        },
         "[Gruvbox Dark (Hard)]": {
             "statusBar.background": "#111213"
         },
@@ -115,11 +82,11 @@
             "statusBar.background": "#AC3543"
         }
     },
-    "workbench.colorTheme": "Outrun Night",
+    "workbench.colorTheme": "Alabaster",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true,
+    "workbench.statusBar.visible": true
 }
