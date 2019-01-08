@@ -12,6 +12,4 @@ package fzf-autojump
 package gem
 package rustup
 package vcs
-theme chain
-theme es
-theme pure
+theme uggedal
