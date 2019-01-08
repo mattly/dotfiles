@@ -34,10 +34,6 @@
 [alias]
   # amend to the last commit
   amend = commit --amend -C HEAD
-  # add only part of the commit to index
-  addp = add --patch
-  # search through the log
-  axe = !sh -c 'git log -S"$0"'
   # show all branches, even across remotes
   branches = branch -a --color -v
   # remove all local branches included in the current branch
@@ -52,8 +48,6 @@
   fold = merge --no-ff
   # put this branch at a particular ref
   goto = reset --hard
-  # set an ignore pattern
-  ignore = !"f () { local ignore_file=$( git rev-parse --show-cdup ).gitignore arg; for arg in $*; do echo $arg >> $ignore_file; done; sort -u -o $ignore_file $ignore_file; }; f"
   # set a tag
   label = tag -a
   # mirror branches (including deletions) and tags
@@ -64,22 +58,14 @@
   poop = !sh -c 'while [ "$?" -eq 0 ]; do git stash pop; done'
   # creates a remote branch
   push-remote = !sh -c 'git push "$0" HEAD'
-  # current lines by last committer
-  rank = !sh -c 'for file in $(git ls-files); do git blame $file | sed -e 's/^[^(]*(//' | awk '{print $1 $2}'; done | sort | uniq -ic | sort -nr'
-  # interactive rebase
-  ri = rebase --interactive --autosquash
   # diff the index against the previous commit
   staged = diff --cached
   # better status
   stat = status -sb
   # update all submodules
   submodule-pull = submodule foreach "git checkout master && git pull origin master"
-  # tags a release with 'release/YYYY-MM-DD-HH-MM-SS'
-  tag-release = !sh -c 'git tag release/`date +%Y/%m/%d/%H%M`'
   # track a remote branch
   track = checkout -t
-  # push --force without clobber
-  triforce = push --force-with-lease
   # retains a commit as staged
   undo = reset --soft HEAD^
   # remove a file from the index
