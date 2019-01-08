@@ -4,6 +4,7 @@ apust.rubber-theme
 bierner.color-info
 bpruitt-goddard.sourcerer
 budparr.language-hugo-vscode
+bungcip.better-toml
 christian-kohler.path-intellisense
 CoenraadS.bracket-pair-colorizer-2
 cospaia.calva-fmt
@@ -27,6 +28,7 @@ liviuschera.noctis
 lunaryorn.fish-ide
 marclipovsky.string-manipulation
 martinklepsch.clojure-joker-linter
+mattn.Lisp
 mrmlnc.vscode-scss
 PeterJausovec.vscode-docker
 pnp.polacode
