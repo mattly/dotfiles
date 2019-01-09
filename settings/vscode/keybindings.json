@@ -25,7 +25,7 @@
     { "key": "cmd+alt+ctrl+k d", "command": "workbench.action.navigateDown"},
     { "key": "cmd+alt+ctrl+k s", "command": "workbench.action.navigateLeft"},
     { "key": "cmd+alt+ctrl+k f", "command": "workbench.action.navigateRight"},
-    { "key": "cmd+alt+ctrl+k w", "command": "workbench.action.navigateEditorGroups"},
+    { "key": "cmd+alt+ctrl+k k", "command": "workbench.action.navigateEditorGroups"},
     // split sizing
     { "key": "ctrl+alt+cmd+k r", "command": "workbench.action.increaseViewSize" },
     { "key": "ctrl+alt+cmd+k v", "command": "workbench.action.decreaseViewSize" },
@@ -60,6 +60,7 @@
         "key": "ctrl+w", "command": "-paredit.sexpRangeExpansion",
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
+    // navigation
     {
         "key": "ctrl+alt+cmd+s", "command": "editor.action.jumpToBracket",
         "when": "editorTextFocus"
@@ -68,6 +69,7 @@
         "key": "shift+cmd+\\", "command": "-editor.action.jumpToBracket",
         "when": "editorTextFocus"
     },
+    // paredit
     {
         "key": "delete",
         "command": "paredit.deleteForward",
@@ -88,7 +90,6 @@
         "command": "-paredit.killSexpForward",
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
-
 
     // inbox
 
