@@ -27,7 +27,6 @@ kumar-harsh.graphql-for-vscode
 liviuschera.noctis
 lunaryorn.fish-ide
 marclipovsky.string-manipulation
-martinklepsch.clojure-joker-linter
 mattn.Lisp
 mrmlnc.vscode-scss
 PeterJausovec.vscode-docker
@@ -38,13 +37,11 @@ rickynormandeau.mariana-pro
 robinbentley.sass-indented
 samrapdev.outrun
 sdras.night-owl
-shaunlebron.vscode-parinfer
 shinnn.stylelint
 shuworks.vscode-table-formatter
 skyapps.fish-vscode
 TobiasTimm.shuriken
 tomphilbin.gruvbox-themes
-tonsky.clojure-warrior
 tonsky.theme-alabaster
 trixnz.vscode-lua
 vscodevim.vim
