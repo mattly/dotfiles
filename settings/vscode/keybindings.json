@@ -90,6 +90,31 @@
         "command": "-paredit.killSexpForward",
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
+    {
+        "key": "ctrl+alt+t",
+        "command": "paredit.transpose",
+        "when": "editorTextFocus && !editorReadOnly && paredit:keyMap == /original|strict/ && editorLangId =~ /clojure|scheme|lisp/"
+    },
+    {
+        "key": "ctrl+alt+m",
+        "command": "paredit.spliceSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "-paredit.spliceSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+/",
+        "command": "paredit.splitSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+alt+s",
+        "command": "-paredit.splitSexp",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
 
     // inbox
 
