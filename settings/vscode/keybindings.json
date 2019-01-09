@@ -7,7 +7,7 @@
     { "key": "cmd+alt+ctrl+w", "command": "workbench.action.switchWindow" },
     { "key": "ctrl+w", "command": "-workbench.action.switchWindow" },
     // font sizing
-    {"key": "cmd+=", "command": "editor.action.fontZoomIn"},
+    {"key": "cmd+shift+-", "command": "editor.action.fontZoomIn"},
     {"key": "cmd+-", "command": "editor.action.fontZoomOut"},
     // panel
     {"key": "cmd+alt+ctrl+j j", "command": "workbench.action.togglePanel"},
@@ -21,54 +21,71 @@
     {"key": "cmd+alt+ctrl+t d", "command": "workbench.action.terminal.focusNext"},
     {"key": "cmd+alt+ctrl+t e", "command": "workbench.action.terminal.focusPrevious"},
     // split navigation
-    { "key": "ctrl+alt+cmd+d e", "command": "workbench.action.navigateUp", },
-    { "key": "cmd+alt+ctrl+d d", "command": "workbench.action.navigateDown"},
-    { "key": "cmd+alt+ctrl+d s", "command": "workbench.action.navigateLeft"},
-    { "key": "cmd+alt+ctrl+d f", "command": "workbench.action.navigateRight"},
-    { "key": "cmd+alt+ctrl+d w", "command": "workbench.action.navigateEditorGroups"},
+    { "key": "ctrl+alt+cmd+k e", "command": "workbench.action.navigateUp", },
+    { "key": "cmd+alt+ctrl+k d", "command": "workbench.action.navigateDown"},
+    { "key": "cmd+alt+ctrl+k s", "command": "workbench.action.navigateLeft"},
+    { "key": "cmd+alt+ctrl+k f", "command": "workbench.action.navigateRight"},
+    { "key": "cmd+alt+ctrl+k w", "command": "workbench.action.navigateEditorGroups"},
     // split sizing
-    { "key": "ctrl+alt+cmd+d r", "command": "workbench.action.increaseViewSize" },
-    { "key": "ctrl+alt+cmd+d v", "command": "workbench.action.decreaseViewSize" },
-    { "key": "ctrl+alt+cmd+d x", "command": "workbench.action.minimizeOtherEditors" },
+    { "key": "ctrl+alt+cmd+k r", "command": "workbench.action.increaseViewSize" },
+    { "key": "ctrl+alt+cmd+k v", "command": "workbench.action.decreaseViewSize" },
+    { "key": "ctrl+alt+cmd+k x", "command": "workbench.action.minimizeOtherEditors" },
     // split creation
-    { "key": "cmd+alt+ctrl+d g", "command": "workbench.action.splitEditorRight"},
-    { "key": "cmd+alt+ctrl+d c", "command": "workbench.action.splitEditorDown"},
+    { "key": "cmd+alt+ctrl+k g", "command": "workbench.action.splitEditorRight"},
+    { "key": "cmd+alt+ctrl+k c", "command": "workbench.action.splitEditorDown"},
     // explorer navigation
     {
-        "key": "a",
-        "command": "explorer.newFile",
+        "key": "a", "command": "explorer.newFile",
         "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
     },
     {
-        "key": "shift+a",
-        "command": "explorer.newFolder",
+        "key": "shift+a", "command": "explorer.newFolder",
         "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
     },
     {
-        "key": "d",
-        "command": "deleteFile",
+        "key": "d", "command": "deleteFile",
         "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
     },
 
     // selection
     {
-        "key": "ctrl+alt+cmd+u",
-        "command": "editor.action.smartSelect.grow",
+        "key": "ctrl+alt+cmd+f", "command": "editor.action.smartSelect.grow",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+alt+cmd+i",
-        "command": "editor.action.smartSelect.shrink",
+        "key": "ctrl+alt+cmd+d", "command": "editor.action.smartSelect.shrink",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+alt+f",
-        "command": "paredit.sexpRangeExpansion",
+        "key": "ctrl+w", "command": "-paredit.sexpRangeExpansion",
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
     {
-        "key": "ctrl+w",
-        "command": "-paredit.sexpRangeExpansion",
+        "key": "ctrl+alt+cmd+s", "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+\\", "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "delete",
+        "command": "paredit.deleteForward",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && paredit:keyMap == 'strict' && editorLangId =~ /clojure|scheme|lisp/"
+    },
+    {
+        "key": "shift+backspace",
+        "command": "-paredit.deleteForward",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && paredit:keyMap == 'strict' && editorLangId =~ /clojure|scheme|lisp/"
+    },
+    {
+        "key": "ctrl+delete",
+        "command": "paredit.killSexpForward",
+        "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+shift+backspace",
+        "command": "-paredit.killSexpForward",
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
 
