@@ -11,6 +11,7 @@
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "breadcrumbs.enabled": false,
+    "calva.fmt.allgnMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.lintOnSave": true,
@@ -49,6 +50,7 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.codeLens.scopes": ["blocks", "containers"],
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
     "gitlens.views.repositories.files.layout": "auto",
@@ -90,5 +92,5 @@
     "workbench.statusBar.visible": true,
     "editor.formatOnType": true,
     "terminal.integrated.lineHeight": 1.2,
-    "rest-client.fontSize": 13
+    "rest-client.fontSize": 13,
 }
