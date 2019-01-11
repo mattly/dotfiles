@@ -115,7 +115,47 @@
         "command": "-paredit.splitSexp",
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
-
+    // folding
+    {
+        "key": "ctrl+alt+cmd+a",
+        "command": "editor.fold",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+[",
+        "command": "-editor.fold",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+cmd+-",
+        "command": "editor.unfold",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+]",
+        "command": "-editor.unfold",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+cmd+q",
+        "command": "editor.foldAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+0",
+        "command": "-editor.foldAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+cmd+p",
+        "command": "editor.unfoldAll",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+j",
+        "command": "-editor.unfoldAll",
+        "when": "editorTextFocus"
+    },
     // inbox
-
+    {}
 ]
