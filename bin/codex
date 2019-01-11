@@ -7,8 +7,17 @@ case $1 in
         mkdir -p ~/.config/vscode
         code --list-extensions > $extfile
         ;;
+    unsaved)
+        code --list-extensions | comm -23 - $extfileq
+        ;;
+    append)
+        for package in $(code --list-extensions | comm -23 - $extfile); do
+            echo $package
+            echo $package >> $extfile
+        done
+        sort --ignore-case --output=$extfile $extfile
+        ;;
     load)
-        installed=$(code --list-extensions)
         # to install
         for package in $(code --list-extensions | comm -23 $extfile -); do
             code --install-extension $package
@@ -20,3 +29,4 @@ case $1 in
         ;;
     *) echo "unknown action." ;;
 esac
+
