@@ -1,4 +1,4 @@
-set diff-highlight = true
+#set diff-highlight = true
 set line-graphics = utf-8
 set horizontal-scroll = 80%
 set tab-size = 2
