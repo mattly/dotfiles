@@ -1,8 +1,6 @@
 aaron-bond.better-comments
 alexkrechik.cucumberautocomplete
-apust.rubber-theme
 bierner.color-info
-bpruitt-goddard.sourcerer
 budparr.language-hugo-vscode
 bungcip.better-toml
 christian-kohler.path-intellisense
@@ -19,13 +17,9 @@ EditorConfig.EditorConfig
 emmanuelbeziat.vscode-great-icons
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
-Framer.framer-syntax
 glen-84.sass-lint
 humao.rest-client
-jaredkent.laserwave
-jolaleye.horizon-theme-vscode
 kumar-harsh.graphql-for-vscode
-liviuschera.noctis
 lunaryorn.fish-ide
 marclipovsky.string-manipulation
 mattn.Lisp
@@ -37,11 +31,9 @@ richie5um2.vscode-sort-json
 rickynormandeau.mariana-pro
 robinbentley.sass-indented
 samrapdev.outrun
-sdras.night-owl
 shinnn.stylelint
 shuworks.vscode-table-formatter
 skyapps.fish-vscode
-TobiasTimm.shuriken
 tomphilbin.gruvbox-themes
 tonsky.theme-alabaster
 trixnz.vscode-lua
