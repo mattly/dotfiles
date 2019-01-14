@@ -16,6 +16,7 @@
     "calva.jokerPath": "",
     "calva.lintOnSave": true,
     "calva.paredit.defaultKeyMap": "strict",
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
     "editor.fontFamily": "Fira Code, IBM Plex Mono, monospace",
@@ -44,6 +45,7 @@
     "git.confirmSync": false,
     "git.path": "/usr/local/bin/git",
     "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true,
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.advanced.telemetry.enabled": false,
@@ -73,7 +75,7 @@
             "statusBar.background": "#AC3543"
         }
     },
-    "workbench.colorTheme": "Alabaster",
+    "workbench.colorTheme": "Outrun Night",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
