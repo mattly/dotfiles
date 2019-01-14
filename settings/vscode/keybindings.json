@@ -157,5 +157,33 @@
         "when": "editorTextFocus"
     },
     // inbox
-    {}
+    {},
+    {
+        "key": "ctrl+alt+cmd+g d",
+        "command": "editor.action.dirtydiff.next",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+f3",
+        "command": "-editor.action.dirtydiff.next",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+cmd+g e",
+        "command": "editor.action.dirtydiff.previous",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+f3",
+        "command": "-editor.action.dirtydiff.previous",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+cmd+g r",
+        "command": "git.revertChange"
+    },
+    {
+        "key": "ctrl+alt+cmd+g s",
+        "command": "git.stageChange"
+    }
 ]
