@@ -19,7 +19,7 @@
     "editor.acceptSuggestionOnEnter": "off",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
-    "editor.fontFamily": "Fira Code, IBM Plex Mono, monospace",
+    "editor.fontFamily": "IBM Plex Mono, monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
     "editor.fontWeight": "400",
@@ -29,14 +29,16 @@
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": true,
     "editor.renderIndentGuides": false,
-    "editor.renderLineHighlight": "gutter",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {
         "[Outrun Night]": {
             "comments": "#add0e5",
             "strings": "#a6e22e",
             "variables": "#ff2afc"
-        }
+        },
+        "[Quiet Light for VSC]": {
+            "comments": "#277A95"
+        },
     },
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
@@ -68,14 +70,15 @@
             "statusBar.noFolderBackground": "#F7F7F7",
             "statusBar.noFolderForeground": "#000028",
         },
-        "[Gruvbox Dark (Hard)]": {
-            "statusBar.background": "#111213"
-        },
         "[Quiet Light]": {
             "statusBar.background": "#AC3543"
-        }
+        },
+        "[Quiet Light for VSC]": {
+            "statusBar.background": "#AC3543",
+            "statusBar.noFolderBackground": "#277A95"
+        },
     },
-    "workbench.colorTheme": "Outrun Night",
+    "workbench.colorTheme": "Quiet Light for VSC",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
@@ -85,4 +88,7 @@
     "editor.formatOnType": true,
     "terminal.integrated.lineHeight": 1.2,
     "rest-client.fontSize": 13,
+    "editor.renderLineHighlight": "all",
+    "scm.alwaysShowActions": true,
+    "git.fetchOnPull": true
 }
