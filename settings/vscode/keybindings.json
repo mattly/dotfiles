@@ -185,5 +185,9 @@
     {
         "key": "ctrl+alt+cmd+g s",
         "command": "git.stageChange"
+    },
+    {
+        "key": "ctrl+alt+x",
+        "command": "paredit.cutForwardSexp"
     }
 ]
