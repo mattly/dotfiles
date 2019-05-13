@@ -78,7 +78,7 @@
             "statusBar.noFolderBackground": "#277A95"
         },
     },
-    "workbench.colorTheme": "Quiet Light for VSC",
+    "workbench.colorTheme": "Night Owl Light",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
