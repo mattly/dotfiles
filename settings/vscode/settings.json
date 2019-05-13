@@ -90,5 +90,13 @@
     "rest-client.fontSize": 13,
     "editor.renderLineHighlight": "all",
     "scm.alwaysShowActions": true,
-    "git.fetchOnPull": true
+    "git.fetchOnPull": true,
+    "go.gopath": "/Users/mlyon/projects",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always"
 }
