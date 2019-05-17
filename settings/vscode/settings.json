@@ -16,7 +16,7 @@
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
-    "breadcrumbs.enabled": false,
+    "breadcrumbs.enabled": true,
     "calva.autoConnect": false,
     "calva.fmt.allgnMapItems": true,
     "calva.fmt.newIndentEngine": true,
