@@ -49,6 +49,9 @@
     "explorer.confirmDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
+    "files.associations": {
+        ".envrc": "shellscript"
+    },
     "files.trimTrailingWhitespace": true,
     "git.autofetch": true,
     "git.confirmSync": false,
@@ -95,5 +98,13 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true
+    "workbench.statusBar.visible": true,
+    "explorer.openEditors.visible": 0,
+    "prettier.eslintIntegration": true,
+    "prettier.printWidth": 110,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.stylelintIntegration": true,
+    "prettier.trailingComma": "es5",
+    "prettier.tslintIntegration": true
 }
