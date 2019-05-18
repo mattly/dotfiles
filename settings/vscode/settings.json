@@ -40,15 +40,11 @@
     "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
     "editor.showFoldingControls": "always",
+    // testing comments
     "editor.tokenColorCustomizations": {
-        "[Outrun Night]": {
-            "comments": "#add0e5",
-            "strings": "#a6e22e",
-            "variables": "#ff2afc"
+        "[Night Owl Light]": {
+            "comments": "#20989B"
         },
-        "[Quiet Light for VSC]": {
-            "comments": "#277A95"
-        }
     },
     "explorer.confirmDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
@@ -84,19 +80,14 @@
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
-        "[Alabaster]": {
-            "statusBar.background": "#F0F0F0",
-            "statusBar.foreground": "#000028",
-            "statusBar.noFolderBackground": "#F7F7F7",
-            "statusBar.noFolderForeground": "#000028"
+        "[Night Owl Light]": {
+            "activityBar.background": "#FBFBFB",
+            "activityBar.border": "#FBFBFB",
+            "sideBar.background": "#FBFBFB",
+            "sideBar.border": "#FBFBFB",
+            "statusBar.background": "#FBFBFB",
+            "statusBar.border": "#FBFBFB"
         },
-        "[Quiet Light for VSC]": {
-            "statusBar.background": "#AC3543",
-            "statusBar.noFolderBackground": "#277A95"
-        },
-        "[Quiet Light]": {
-            "statusBar.background": "#AC3543"
-        }
     },
     "workbench.colorTheme": "Night Owl Light",
     "workbench.editor.enablePreview": true,
