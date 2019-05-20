@@ -10,7 +10,7 @@
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
-    "breadcrumbs.enabled": false,
+    "breadcrumbs.enabled": true,
     "calva.fmt.allgnMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
@@ -31,17 +31,18 @@
     "editor.renderIndentGuides": false,
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {
-        "[Outrun Night]": {
-            "comments": "#add0e5",
-            "strings": "#a6e22e",
-            "variables": "#ff2afc"
-        },
         "[Quiet Light for VSC]": {
             "comments": "#277A95"
         },
+        "[Night Owl Light]": {
+            "comments": "#4876d6"
+        }
     },
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
+    "files.associations": {
+        ".envrc": "shellscript"
+    },
     "files.trimTrailingWhitespace": true,
     "git.autofetch": true,
     "git.confirmSync": false,
@@ -51,7 +52,7 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.codeLens.scopes": ["blocks", "containers"],
+    "gitlens.codeLens.scopes": [],
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
     "gitlens.views.repositories.files.layout": "auto",
@@ -64,12 +65,6 @@
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
-        "[Alabaster]": {
-            "statusBar.background": "#F0F0F0",
-            "statusBar.foreground": "#000028",
-            "statusBar.noFolderBackground": "#F7F7F7",
-            "statusBar.noFolderForeground": "#000028",
-        },
         "[Quiet Light]": {
             "statusBar.background": "#AC3543"
         },
@@ -98,5 +93,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "javascript.updateImportsOnFileMove.enabled": "always"
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.statusBar.reduceFlicker": true
 }
