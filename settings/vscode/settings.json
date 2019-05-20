@@ -2,20 +2,28 @@
     "[clojure]": {
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "bracket-pair-colorizer-2.colors": [
         "#AC362D",
         "#3BA3F8",
-        "#E826AE",
+        "#E826AE"
     ],
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "breadcrumbs.enabled": true,
+    "calva.autoConnect": false,
     "calva.fmt.allgnMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.lintOnSave": true,
     "calva.paredit.defaultKeyMap": "strict",
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
@@ -23,21 +31,22 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 13,
     "editor.fontWeight": "400",
+    "editor.formatOnType": true,
     "editor.highlightActiveIndentGuide": true,
     "editor.lineNumbers": "on",
     "editor.matchBrackets": false,
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": true,
     "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "all",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {
-        "[Quiet Light for VSC]": {
-            "comments": "#277A95"
-        },
         "[Night Owl Light]": {
             "comments": "#4876d6"
         }
     },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "files.associations": {
@@ -46,6 +55,7 @@
     "files.trimTrailingWhitespace": true,
     "git.autofetch": true,
     "git.confirmSync": false,
+    "git.fetchOnPull": true,
     "git.path": "/usr/local/bin/git",
     "gitlens.advanced.messages": {
         "suppressLineUncommittedWarning": true,
@@ -55,23 +65,38 @@
     "gitlens.codeLens.scopes": [],
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.statusBar.reduceFlicker": true,
     "gitlens.views.repositories.files.layout": "auto",
+    "go.gopath": "/Users/mlyon/projects",
+    "javascript.updateImportsOnFileMove.enabled": "always",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "prettier.eslintIntegration": true,
+    "prettier.printWidth": 110,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.stylelintIntegration": true,
+    "prettier.trailingComma": "es5",
+    "prettier.tslintIntegration": true,
+    "rest-client.fontSize": 13,
+    "scm.alwaysShowActions": true,
     "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.fontSize": 13,
+    "terminal.integrated.lineHeight": 1.2,
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
-        "[Quiet Light]": {
-            "statusBar.background": "#AC3543"
-        },
-        "[Quiet Light for VSC]": {
-            "statusBar.background": "#AC3543",
-            "statusBar.noFolderBackground": "#277A95"
-        },
+        "[Night Owl Light]": {
+            "activityBar.background": "#FBFBFB",
+            "activityBar.border": "#FBFBFB",
+            "sideBar.background": "#FBFBFB",
+            "sideBar.border": "#FBFBFB",
+            "statusBar.background": "#FBFBFB",
+            "statusBar.border": "#FBFBFB"
+        }
     },
     "workbench.colorTheme": "Night Owl Light",
     "workbench.editor.enablePreview": true,
@@ -79,21 +104,5 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true,
-    "editor.formatOnType": true,
-    "terminal.integrated.lineHeight": 1.2,
-    "rest-client.fontSize": 13,
-    "editor.renderLineHighlight": "all",
-    "scm.alwaysShowActions": true,
-    "git.fetchOnPull": true,
-    "go.gopath": "/Users/mlyon/projects",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "gitlens.showWhatsNewAfterUpgrades": false,
-    "gitlens.statusBar.reduceFlicker": true
+    "workbench.statusBar.visible": true
 }

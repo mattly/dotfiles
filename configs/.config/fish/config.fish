@@ -26,6 +26,9 @@ set -g fish_color_valid_path normal --underline
 test -e {$HOME}/.iterm2_shell_integration.fish
 and source {$HOME}/.iterm2_shell_integration.fish
 
+test -e {$HOME}/.local.fish
+and source {$HOME}/.local.fish
+
 alias ping='prettyping --nolegend'
 set -x PATH ~/projects/dotfiles/bin $PATH
 

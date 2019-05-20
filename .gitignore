@@ -1,6 +1,5 @@
 *.elc
 
-configs/.config/fish/fishd.*
 configs/.config/configstore
 configs/.config/direnv/allow
 configs/.config/hub
@@ -9,3 +8,4 @@ configs/.config/ranger/bookmarks
 configs/.config/ranger/history
 configs/.config/ranger/tagged
 settings/vscode/workspaceStorage/
+settings/vscode/globalStorage/state.*
