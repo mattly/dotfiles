@@ -29,7 +29,7 @@
     "editor.find.autoFindInSelection": true,
     "editor.fontFamily": "IBM Plex Mono, monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 13,
+    "editor.fontSize": 15,
     "editor.fontWeight": "400",
     "editor.formatOnType": true,
     "editor.highlightActiveIndentGuide": true,
@@ -43,7 +43,7 @@
     "editor.tokenColorCustomizations": {
         "[Night Owl Light]": {
             "comments": "#4876d6"
-        }
+        },
     },
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -69,6 +69,7 @@
     "gitlens.statusBar.reduceFlicker": true,
     "gitlens.views.repositories.files.layout": "auto",
     "go.gopath": "/Users/mlyon/projects",
+    "go.useLanguageServer": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
     "prettier.eslintIntegration": true,
@@ -96,7 +97,11 @@
             "sideBar.border": "#FBFBFB",
             "statusBar.background": "#FBFBFB",
             "statusBar.border": "#FBFBFB"
-        }
+        },
+        "[Gruvbox Dark (Medium)]": {
+            "statusBar.background": "#282828",
+            "statusBar.noFolderBackground": "#458588"
+        },
     },
     "workbench.colorTheme": "Night Owl Light",
     "workbench.editor.enablePreview": true,
@@ -104,5 +109,6 @@
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true
+    "workbench.statusBar.visible": true,
+    "workbench.sideBar.location": "left",
 }
