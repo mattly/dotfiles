@@ -106,5 +106,8 @@
     "prettier.singleQuote": true,
     "prettier.stylelintIntegration": true,
     "prettier.trailingComma": "es5",
-    "prettier.tslintIntegration": true
+    "prettier.tslintIntegration": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
