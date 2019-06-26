@@ -2,6 +2,9 @@
     "[clojure]": {
         "editor.wordSeparators": "\t ()\"':,;~@#$%^&{}[]`-./"
     },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -29,7 +32,7 @@
     "editor.find.autoFindInSelection": true,
     "editor.fontFamily": "IBM Plex Mono, monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 13,
+    "editor.fontSize": 15,
     "editor.fontWeight": "400",
     "editor.formatOnType": true,
     "editor.highlightActiveIndentGuide": true,
@@ -40,13 +43,13 @@
     "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
     "editor.showFoldingControls": "always",
-    // testing comments
     "editor.tokenColorCustomizations": {
         "[Night Owl Light]": {
-            "comments": "#20989B"
+            "comments": "#4876d6"
         },
     },
     "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "files.associations": {
@@ -62,16 +65,23 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.codeLens.scopes": [
-        "blocks",
-        "containers"
-    ],
+    "gitlens.codeLens.scopes": [],
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.statusBar.reduceFlicker": true,
     "gitlens.views.repositories.files.layout": "auto",
     "go.gopath": "/Users/mlyon/projects",
+    "go.useLanguageServer": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "prettier.eslintIntegration": true,
+    "prettier.printWidth": 110,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.stylelintIntegration": true,
+    "prettier.trailingComma": "es5",
+    "prettier.tslintIntegration": true,
     "rest-client.fontSize": 13,
     "scm.alwaysShowActions": true,
     "search.location": "panel",
@@ -91,6 +101,10 @@
             "statusBar.background": "#FBFBFB",
             "statusBar.border": "#FBFBFB"
         },
+        "[Gruvbox Dark (Medium)]": {
+            "statusBar.background": "#282828",
+            "statusBar.noFolderBackground": "#458588"
+        },
     },
     "workbench.colorTheme": "Night Owl Light",
     "workbench.editor.enablePreview": true,
@@ -99,15 +113,5 @@
     "workbench.iconTheme": "vscode-great-icons",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": true,
-    "explorer.openEditors.visible": 0,
-    "prettier.eslintIntegration": true,
-    "prettier.printWidth": 110,
-    "prettier.semi": false,
-    "prettier.singleQuote": true,
-    "prettier.stylelintIntegration": true,
-    "prettier.trailingComma": "es5",
-    "prettier.tslintIntegration": true,
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    "workbench.sideBar.location": "left",
 }

@@ -15,9 +15,17 @@ cask "cycling74-max"
 # Ultra Analog
 # Audio Damage
 
+
+mas "1Blocker", id: 1107421413
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
+mas "Byword", id: 420212497
 mas "Color Machine", id: 510618466
+mas "Daisy Disk", id: 411643860
+mas "Karo Graph", id: 557536642
 mas "Mischief", id: 928430260
+mas "Monosnap", id: 540348655
+mas "Mousepose", id: 405904955
 mas "Pixelmator", id: 407963104
-
+mas "StopTheMadness", id: 1376402589
+mas "Xcode", id: 497799835

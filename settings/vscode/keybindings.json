@@ -11,7 +11,7 @@
     {"key": "cmd+-", "command": "editor.action.fontZoomOut"},
     // panel
     {"key": "cmd+alt+ctrl+j j", "command": "workbench.action.togglePanel"},
-    {"key": "cmd+alt+ctrl+j u", "command": "workbench.action.focusPanel"},
+    {"key": "cmd+alt+ctrl+j f", "command": "workbench.action.focusPanel"},
     {"key": "cmd+alt+ctrl+j x", "command": "workbench.action.closePanel"},
     {"key": "cmd+alt+ctrl+j d", "command": "workbench.action.nextPanelView"},
     {"key": "cmd+alt+ctrl+j e", "command": "workbench.action.previousPanelView"},
@@ -115,49 +115,17 @@
         "command": "-paredit.splitSexp",
         "when": "editorTextFocus && !editorReadOnly && editorLangId =~ /clojure|scheme|lisp/ && paredit:keyMap =~ /original|strict/"
     },
-    // folding
-    {
-        "key": "ctrl+alt+cmd+a",
-        "command": "editor.fold",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+cmd+[",
-        "command": "-editor.fold",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+cmd+-",
-        "command": "editor.unfold",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+cmd+]",
-        "command": "-editor.unfold",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+cmd+q",
-        "command": "editor.foldAll",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "cmd+k cmd+0",
-        "command": "-editor.foldAll",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+cmd+p",
-        "command": "editor.unfoldAll",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "cmd+k cmd+j",
-        "command": "-editor.unfoldAll",
-        "when": "editorTextFocus"
-    },
+    // folding, unbinding
+    { "key": "alt+cmd+[", "command": "-editor.fold", "when": "editorTextFocus" },
+    { "key": "alt+cmd+]", "command": "-editor.unfold", "when": "editorTextFocus" },
+    { "key": "cmd+k cmd+0", "command": "-editor.foldAll", "when": "editorTextFocus" },
+    { "key": "cmd+k cmd+j", "command": "-editor.unfoldAll", "when": "editorTextFocus" },
+    //
+    { "key": "ctrl+alt+cmd+a", "command": "editor.fold", "when": "editorTextFocus" },
+    { "key": "ctrl+alt+cmd+q", "command": "editor.foldAll", "when": "editorTextFocus" },
+    { "key": "ctrl+alt+cmd+-", "command": "editor.unfold", "when": "editorTextFocus" },
+    { "key": "ctrl+alt+cmd+p", "command": "editor.unfoldAll", "when": "editorTextFocus" },
     // inbox
-    {},
     {
         "key": "ctrl+alt+cmd+g d",
         "command": "editor.action.dirtydiff.next",

@@ -45,15 +45,11 @@ cask "launchrocket"
 cask "paw"
 cask "postbird"
 cask "sip"
+cask "visual-studio-code"
+
 cask "homebrew/cask-fonts/font-fira-sans"
 cask "homebrew/cask-fonts/font-fira-code"
+cask "homebrew/cask-fonts/font-ibm-plex"
 cask "homebrew/cask-fonts/font-iosevka"
 cask "homebrew/cask-versions/java8"
-mas "1Blocker", id: 1107421413
-mas "Byword", id: 420212497
-mas "Daisy Disk", id: 411643860
-mas "Karo Graph", id: 557536642
-mas "Monosnap", id: 540348655
-mas "Mousepose", id: 405904955
-mas "StopTheMadness", id: 1376402589
-mas "Xcode", id: 497799835
+
