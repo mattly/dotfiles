@@ -17,7 +17,7 @@
     {"key": "cmd+alt+ctrl+j e", "command": "workbench.action.previousPanelView"},
     {"key": "cmd+alt+ctrl+j m", "command": "workbench.action.toggleMaximizedPanel"},
     // terminal
-    {"key": "cmd+alt+ctrl+t t", "command": "workbench.action.terminal.new"},
+    {"key": "cmd+alt+ctrl+t t", "command": "workbench.action.terminal.focus"},
     {"key": "cmd+alt+ctrl+t d", "command": "workbench.action.terminal.focusNext"},
     {"key": "cmd+alt+ctrl+t e", "command": "workbench.action.terminal.focusPrevious"},
     // split navigation
