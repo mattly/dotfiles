@@ -33,3 +33,5 @@ alias ping='prettyping --nolegend'
 set -x PATH ~/projects/dotfiles/bin $PATH
 
 set -x GOPATH ~/projects
+
+eval (starship init fish)

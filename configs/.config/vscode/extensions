@@ -1,13 +1,11 @@
 aaron-bond.better-comments
 alexkrechik.cucumberautocomplete
+betterthantomorrow.calva
 bierner.color-info
 budparr.language-hugo-vscode
 bungcip.better-toml
 christian-kohler.path-intellisense
 CoenraadS.bracket-pair-colorizer-2
-cospaia.calva-fmt
-cospaia.clojure4vscode
-cospaia.paredit-revived
 cucumber-mapper-ruby.cucumber-mapper-ruby
 cymonk.sql-formatter
 davidedmiston.bettergitcommits
@@ -23,6 +21,7 @@ igochkov.vscode-ebnf
 kumar-harsh.graphql-for-vscode
 lunaryorn.fish-ide
 marclipovsky.string-manipulation
+marcomorain.clojure-lint
 mattn.Lisp
 mauve.terraform
 mhutchie.git-graph
