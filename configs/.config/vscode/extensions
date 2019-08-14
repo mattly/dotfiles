@@ -25,6 +25,7 @@ lunaryorn.fish-ide
 marclipovsky.string-manipulation
 mattn.Lisp
 mauve.terraform
+mhutchie.git-graph
 mrmlnc.vscode-scss
 ms-vscode.Go
 mtdmali.daybreak-theme
@@ -39,5 +40,4 @@ shuworks.vscode-table-formatter
 skyapps.fish-vscode
 tomphilbin.gruvbox-themes
 trixnz.vscode-lua
-vsmobile.vscode-react-native
 wmaurer.change-case
