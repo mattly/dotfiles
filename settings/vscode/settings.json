@@ -104,11 +104,11 @@
             "statusBar.noFolderBackground": "#458588"
         },
     },
-    "workbench.colorTheme": "Night Owl Light",
+    "workbench.colorTheme": "Daybreak",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "Daybreak",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": true,
     "workbench.sideBar.location": "left",
