@@ -58,6 +58,7 @@
     "git.fetchOnPull": true,
     "git.path": "/usr/local/bin/git",
     "gitlens.advanced.messages": {
+        "suppressFileNotUnderSourceControlWarning": true,
         "suppressLineUncommittedWarning": true,
         "suppressShowKeyBindingsNotice": true
     },
