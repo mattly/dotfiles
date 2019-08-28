@@ -2,6 +2,15 @@
 
 extfile=~/.config/vscode/extensions
 
+instructions=$(cat <<-END
+  Example usage:
+    codex append
+    codex diff
+    codex load
+    codex save
+END
+)
+
 case $1 in
     save)
         mkdir -p ~/.config/vscode
@@ -27,6 +36,18 @@ case $1 in
             code --uninstall-extension $package
         done
         ;;
-    *) echo "unknown action." ;;
+    diff)
+        echo "-- INSTALL --"
+        for package in $(code --list-extensions | comm -23 $extfile -); do
+            echo "$package"
+        done
+        echo "-- REMOVE --"
+        for package in $(code --list-extensions | comm -13 $extfile -); do
+            echo "$package"
+        done
+        ;;
+    *)
+        echo "$instructions"
+        ;;
 esac
 
