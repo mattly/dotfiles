@@ -29,6 +29,11 @@ and source {$HOME}/.iterm2_shell_integration.fish
 test -e {$HOME}/.local.fish
 and source {$HOME}/.local.fish
 
+which most > /dev/null
+if test $status -eq 0
+    set -x PAGER most
+end
+
 alias ping='prettyping --nolegend'
 set -x PATH ~/projects/dotfiles/bin $PATH
 
