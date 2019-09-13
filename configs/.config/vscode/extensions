@@ -6,6 +6,7 @@ budparr.language-hugo-vscode
 bungcip.better-toml
 christian-kohler.path-intellisense
 CoenraadS.bracket-pair-colorizer-2
+cometeer.spacemacs
 cucumber-mapper-ruby.cucumber-mapper-ruby
 cymonk.sql-formatter
 davidedmiston.bettergitcommits
@@ -18,6 +19,7 @@ formulahendry.auto-close-tag
 glen-84.sass-lint
 humao.rest-client
 igochkov.vscode-ebnf
+kaiwood.endwise
 kumar-harsh.graphql-for-vscode
 lunaryorn.fish-ide
 marclipovsky.string-manipulation
