@@ -19,18 +19,30 @@
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        [
+            "#AC362D",
+            "#3BA3F8",
+            "#E826AE"
+        ],
+        "Red"
+    ],
+    "bracketPairColorizer.highlightActiveScope": true,
     "breadcrumbs.enabled": true,
     "calva.autoConnect": false,
-    "calva.fmt.allgnMapItems": true,
+    "calva.fmt.alignMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
-    "calva.lintOnSave": true,
     "calva.paredit.defaultKeyMap": "strict",
+    "calva.statusColor": {},
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
-    "editor.fontFamily": "mononoki Nerd Font, monospace",
+    "editor.fontFamily": "mononoki, monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.fontWeight": "400",
@@ -42,11 +54,12 @@
     "editor.renderControlCharacters": true,
     "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {
         "[Night Owl Light]": {
             "comments": "#4876d6"
-        },
+        }
     },
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -86,8 +99,9 @@
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.rendererType": "dom",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
@@ -110,6 +124,7 @@
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "Daybreak",
-    "workbench.statusBar.visible": true,
     "workbench.sideBar.location": "left",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.statusBar.visible": true
 }
