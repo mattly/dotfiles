@@ -99,10 +99,11 @@
             "statusBar.background": "#FBFBFB",
             "statusBar.border": "#FBFBFB"
         },
-        "[Gruvbox Dark (Medium)]": {
-            "statusBar.background": "#282828",
-            "statusBar.noFolderBackground": "#458588"
-        },
+        "[Spacemacs - light]": {
+            "terminal.ansiBlack": "#131313",
+            "terminal.ansiWhite": "#808080",
+            "terminal.ansiBrightWhite": "#909090"
+        }
     },
     "workbench.colorTheme": "Spacemacs - light",
     "workbench.editor.enablePreview": true,
