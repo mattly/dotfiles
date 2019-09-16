@@ -119,11 +119,11 @@
             "terminal.ansiBrightWhite": "#909090"
         }
     },
-    "workbench.colorTheme": "Spacemacs - light",
+    "workbench.colorTheme": "Ayu Light",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
-    "workbench.iconTheme": "Daybreak",
+    "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": true
