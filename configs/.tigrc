@@ -4,6 +4,6 @@ set horizontal-scroll = 80%
 set tab-size = 2
 set truncation-delimiter = utf-8
 
-color cursor        black   white       bold
-color title-focus   black   yellow
-color title-blur    black   cyan
+#color cursor        black   white       bold
+#color title-focus   black   yellow
+#color title-blur    black   cyan
