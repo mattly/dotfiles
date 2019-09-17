@@ -72,7 +72,6 @@
     "go.gopath": "/Users/mlyon/projects",
     "go.useLanguageServer": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "markdown.preview.fontFamily": "'IBM Plex Serif', -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
     "prettier.printWidth": 110,
     "prettier.semi": false,
     "prettier.singleQuote": true,
