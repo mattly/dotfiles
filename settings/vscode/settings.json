@@ -11,25 +11,9 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "bracket-pair-colorizer-2.colors": [
-        "#AC362D",
-        "#3BA3F8",
-        "#E826AE"
-    ],
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
-    "bracketPairColorizer.consecutivePairColors": [
-        "()",
-        "[]",
-        "{}",
-        [
-            "#AC362D",
-            "#3BA3F8",
-            "#E826AE"
-        ],
-        "Red"
-    ],
     "bracketPairColorizer.highlightActiveScope": true,
     "breadcrumbs.enabled": true,
     "calva.autoConnect": false,
