@@ -43,6 +43,12 @@
     "editor.tokenColorCustomizations": {
         "[Night Owl Light]": {
             "comments": "#4876d6"
+        },
+        "[Horizon Italic]": {
+            "comments": "#D5D8DA"
+        },
+        "[Horizon Bright Italic]": {
+            "comments": "#06060C",
         }
     },
     "explorer.confirmDragAndDrop": false,
@@ -100,14 +106,22 @@
             "terminal.ansiBlack": "#131313",
             "terminal.ansiWhite": "#808080",
             "terminal.ansiBrightWhite": "#909090"
+        },
+        "[Horizon Italic]": {
+            "diffEditor.insertedTextBackground": "#25B0BC20",
+            "diffEditor.removedTextBackground": "#FAC29A20"
+        },
+        "[Horizon Bright Italic]": {
+            "diffEditor.insertedTextBackground": "#1D899120",
+            "diffEditor.removedTextBackground": "#F77D2620"
         }
     },
-    "workbench.colorTheme": "Ayu Light",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true
+    "workbench.statusBar.visible": true,
+    "workbench.colorTheme": "Horizon Italic"
 }
