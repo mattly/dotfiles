@@ -41,14 +41,20 @@
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {
-        "[Night Owl Light]": {
-            "comments": "#4876d6"
-        },
-        "[Horizon Italic]": {
-            "comments": "#D5D8DA"
-        },
-        "[Horizon Bright Italic]": {
-            "comments": "#06060C",
+        "[Quiet Light for VSC]": {
+            "comments": "#000",
+            "textMateRules": [
+                {
+                    "scope": [
+                        "comment.keyword", "keyword.codetag", "keyword.phpdoc",
+                        "entity.name.function", "entity.name.class", "entity.method.name",
+                        "entity.name.type", "entity.other.inherited-class", "support.class",
+                        "entity.name.section",
+                        "keyword.other.important",
+                    ],
+                    "settings": {"fontStyle": "bold italic"}
+                }
+            ]
         }
     },
     "explorer.confirmDragAndDrop": false,
@@ -94,34 +100,21 @@
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
-        "[Night Owl Light]": {
-            "activityBar.background": "#FBFBFB",
-            "activityBar.border": "#FBFBFB",
-            "sideBar.background": "#FBFBFB",
-            "sideBar.border": "#FBFBFB",
-            "statusBar.background": "#FBFBFB",
-            "statusBar.border": "#FBFBFB"
-        },
-        "[Spacemacs - light]": {
-            "terminal.ansiBlack": "#131313",
-            "terminal.ansiWhite": "#808080",
-            "terminal.ansiBrightWhite": "#909090"
-        },
-        "[Horizon Italic]": {
-            "diffEditor.insertedTextBackground": "#25B0BC20",
-            "diffEditor.removedTextBackground": "#FAC29A20"
-        },
-        "[Horizon Bright Italic]": {
-            "diffEditor.insertedTextBackground": "#1D899120",
-            "diffEditor.removedTextBackground": "#F77D2620"
+        "[Quiet Light for VSC]": {
+            "statusBar.background": "#f2f2f2",
+            "statusBar.foreground": "#333",
+            "statusBar.noFolderBackground": "#e4f6d4",
+            "diffEditor.insertedTextBackground": "#4b83cd20",
+            "diffEditor.removedTextBackground": "#fef93530",
+            "titleBar.activeBackground": "#f2f2f2",
         }
     },
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
-    "workbench.iconTheme": "ayu",
+    "workbench.iconTheme": "file-icons",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": true,
-    "workbench.colorTheme": "Horizon Italic"
+    "workbench.colorTheme": "Quiet Light for VSC",
 }
