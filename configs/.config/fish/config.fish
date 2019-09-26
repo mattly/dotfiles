@@ -37,6 +37,16 @@ end
 alias ping='prettyping --nolegend'
 set -x PATH ~/projects/dotfiles/bin $PATH
 
+# garbage variables for garbage languages
+# =========================================================
 set -x GOPATH ~/projects
+
+if test -e /usr/local/opt/ruby/bin
+    set -x PATH /usr/local/opt/ruby/bin $PATH
+end
+if test -e /usr/local/lib/ruby/gems/2.6.0/bin
+    set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
+end
+# =========================================================
 
 eval (starship init fish)
