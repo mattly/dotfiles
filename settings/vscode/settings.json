@@ -112,7 +112,7 @@
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.showTabs": true,
-    "workbench.iconTheme": "file-icons",
+    "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": true,
