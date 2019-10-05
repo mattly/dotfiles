@@ -14,7 +14,9 @@
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
-    "bracketPairColorizer.highlightActiveScope": true,
+    "bracket-pair-colorizer-2.colors": [
+        "#888",
+    ],
     "breadcrumbs.enabled": true,
     "calva.autoConnect": false,
     "calva.fmt.alignMapItems": true,
@@ -41,6 +43,9 @@
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {
+        "[Daybreak (Italic)]": {
+            "comments": "#ff0"
+        },
         "[Quiet Light for VSC]": {
             "comments": "#000",
             "textMateRules": [
@@ -116,5 +121,5 @@
     "workbench.sideBar.location": "left",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": true,
-    "workbench.colorTheme": "Quiet Light for VSC",
+    "workbench.colorTheme": "Daybreak (Italic)",
 }
