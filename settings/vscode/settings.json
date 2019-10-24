@@ -22,14 +22,15 @@
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.paredit.defaultKeyMap": "strict",
+    "calva.prettyPrint": false,
     "calva.statusColor": {},
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
-    "editor.fontFamily": "mononoki, monospace",
+    "editor.fontFamily": "\"Dank Mono\", monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "editor.fontWeight": "400",
     "editor.formatOnType": true,
     "editor.highlightActiveIndentGuide": true,
@@ -42,9 +43,6 @@
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {
-        "[Daybreak (Italic)]": {
-            "comments": "#ff0"
-        },
         "[Quiet Light for VSC]": {
             "comments": "#000",
             "textMateRules": [
@@ -56,11 +54,12 @@
                         "entity.name.section",
                         "keyword.other.important",
                     ],
-                    "settings": {"fontStyle": "bold italic"}
+                    "settings": {"fontStyle": "italic"}
                 }
             ]
         }
     },
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     "extensions.ignoreRecommendations": true,
@@ -69,10 +68,12 @@
         ".envrc": "shellscript"
     },
     "files.trimTrailingWhitespace": true,
+    "git.allowForcePush": true,
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.fetchOnPull": true,
     "git.path": "/usr/local/bin/git",
+    "git.suggestSmartCommit": false,
     "gitlens.advanced.messages": {
         "suppressFileNotUnderSourceControlWarning": true,
         "suppressLineUncommittedWarning": true,
@@ -94,19 +95,21 @@
     "prettier.trailingComma": "es5",
     "rest-client.fontSize": 13,
     "scm.alwaysShowActions": true,
+    "scm.defaultViewMode": "tree",
     "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.drawBoldTextInBrightColors": false,
     "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontWeightBold": "normal",
     "terminal.integrated.lineHeight": 1.2,
-    "terminal.integrated.rendererType": "dom",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
         "[Quiet Light for VSC]": {
-            "statusBar.background": "#f2f2f2",
-            "statusBar.foreground": "#333",
+            "statusBar.background": "#333",
+            "statusBar.foreground": "#f2f2f2",
             "statusBar.noFolderBackground": "#e4f6d4",
             "diffEditor.insertedTextBackground": "#4b83cd20",
             "diffEditor.removedTextBackground": "#fef93530",
@@ -119,5 +122,5 @@
     "workbench.iconTheme": "file-icons",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.colorTheme": "Daybreak (Italic)",
+    "workbench.colorTheme": "Quiet Light for VSC",
 }

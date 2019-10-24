@@ -34,18 +34,7 @@
     { "key": "cmd+alt+ctrl+k g", "command": "workbench.action.splitEditorRight"},
     { "key": "cmd+alt+ctrl+k c", "command": "workbench.action.splitEditorDown"},
     // explorer navigation
-    {
-        "key": "a", "command": "explorer.newFile",
-        "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
-    },
-    {
-        "key": "shift+a", "command": "explorer.newFolder",
-        "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
-    },
-    {
-        "key": "d", "command": "deleteFile",
-        "when": "explorerViewletFocus && filesExplorerFocus  && !explorerResourceIsRoot && !inputFocus"
-    },
+
 
     // selection
     {
@@ -93,7 +82,7 @@
     {
         "key": "ctrl+alt+t",
         "command": "paredit.transpose",
-        "when": "editorTextFocus && !editorReadOnly && paredit:keyMap == /original|strict/ && editorLangId =~ /clojure|scheme|lisp/"
+        "when": "editorTextFocus && !editorReadOnly && paredit:keyMap =~ /original|strict/ && editorLangId =~ /clojure|scheme|lisp/"
     },
     {
         "key": "ctrl+alt+m",
