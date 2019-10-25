@@ -96,9 +96,9 @@
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.lineHeight": 1.2,
-    "terminal.integrated.rendererType": "dom",
+    "terminal.integrated.enableFileLinks": false,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontWeightBold": "normal",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
