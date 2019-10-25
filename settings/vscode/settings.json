@@ -69,6 +69,7 @@
     "git.confirmSync": false,
     "git.fetchOnPull": true,
     "git.path": "/usr/local/bin/git",
+    "git.suggestSmartCommit": false,
     "gitlens.advanced.messages": {
         "suppressFileNotUnderSourceControlWarning": true,
         "suppressLineUncommittedWarning": true,
