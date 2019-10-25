@@ -23,6 +23,7 @@
     "calva.paredit.defaultKeyMap": "strict",
     "calva.statusColor": {},
     "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": true,
