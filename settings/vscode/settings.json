@@ -90,6 +90,7 @@
     "prettier.singleQuote": true,
     "prettier.trailingComma": "es5",
     "rest-client.fontSize": 13,
+    "ruby.rubocop.executePath": "/usr/local/lib/ruby/gems/2.6.0/bin/",
     "scm.alwaysShowActions": true,
     "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
