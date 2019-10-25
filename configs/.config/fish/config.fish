@@ -37,6 +37,8 @@ end
 alias ping='prettyping --nolegend'
 set -x PATH ~/projects/dotfiles/bin $PATH
 
+set -x HOMEBREW_NO_AUTO_UPDATE no
+
 # garbage variables for garbage languages
 # =========================================================
 set -x GOPATH ~/projects
