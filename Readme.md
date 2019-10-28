@@ -1,20 +1,5 @@
 # These are my dotfiles
 
-## doom.d
-
-I had a highly-tweaked vim config for many years. Then I started working in a
-non-scripting language, and I gave [spacemacs][] a try, and ended up using that
-for quite a while. Unfortunately its development pace hasn't scaled well with
-the project's popularity, and I tried [Atom][] for a while. I like it, but Atom
-has some rather problematic core bugs that make it unusable on my employer's
-network, so I'm back to Emacs. This time around, I decided to give Henrik
-Lissner's [doom-emacs][] a try, and quite like it. My private module is here.
-
-[spacemacs]: https://github.com/syl20bnr/spacemacs/
-[magit]: http://magit.vc/
-[atom]: https://atom.io
-[doom-emacs]: https://github.com/hlissner/doom-emacs
-
 ## fish
 
 After years of using zsh with a cargo-culted configuration, I gave up on it and
