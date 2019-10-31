@@ -106,6 +106,7 @@
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeightBold": "normal",
     "terminal.integrated.scrollback": 5000,
+    "window.newWindowDimensions": "inherit",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
