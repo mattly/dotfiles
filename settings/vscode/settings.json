@@ -31,7 +31,7 @@
     "editor.find.autoFindInSelection": true,
     "editor.fontFamily": "\"Dank Mono\",mononoki,monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "editor.fontWeight": "400",
     "editor.formatOnType": true,
     "editor.highlightActiveIndentGuide": true,
