@@ -101,10 +101,11 @@
     "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeightBold": "normal",
+    "terminal.integrated.scrollback": 5000,
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {
