@@ -17,7 +17,7 @@
     "bracket-pair-colorizer-2.colors": [
         "#888",
     ],
-    "breadcrumbs.enabled": true,
+    "breadcrumbs.enabled": false,
     "calva.fmt.alignMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
