@@ -109,6 +109,7 @@
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Gruvbox Material Hard Dark",
     "workbench.colorCustomizations": {
         "[Quiet Light for VSC]": {
             "statusBar.background": "#333",
@@ -126,5 +127,5 @@
     "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.colorTheme": "Quiet Light for VSC",
+    "workbench.view.alwaysShowHeaderActions": true,
 }
