@@ -2,6 +2,7 @@ aaron-bond.better-comments
 alexkrechik.cucumberautocomplete
 betterthantomorrow.calva
 bierner.color-info
+borkdude.clj-kondo
 budparr.language-hugo-vscode
 bungcip.better-toml
 christian-kohler.path-intellisense
@@ -17,7 +18,6 @@ formulahendry.auto-close-tag
 glen-84.sass-lint
 humao.rest-client
 igochkov.vscode-ebnf
-jaredly.reason-vscode
 kaiwood.endwise
 kumar-harsh.graphql-for-vscode
 lunaryorn.fish-ide
@@ -26,15 +26,16 @@ marcomorain.clojure-lint
 mattn.Lisp
 mauve.terraform
 mhutchie.git-graph
+misogi.ruby-rubocop
 mrmlnc.vscode-scss
 ms-vscode.Go
-mtdmali.daybreak-theme
 onecrayon.theme-quietlight-vsc
 pnp.polacode
 rebornix.ruby
 richie5um2.vscode-sort-json
 robinbentley.sass-indented
-shaunlebron.vscode-parinfer
+sainnhe.gruvbox-material
+sdras.night-owl
 shinnn.stylelint
 shuworks.vscode-table-formatter
 skyapps.fish-vscode
