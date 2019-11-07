@@ -11,3 +11,8 @@ indent_style = space
 
 [*.{py,ts}]
 indent_size = 4
+indent_style = space
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
