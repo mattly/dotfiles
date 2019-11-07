@@ -22,7 +22,7 @@
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.paredit.defaultKeyMap": "strict",
-    "calva.prettyPrint": false,
+    "calva.prettyPrint": true,
     "calva.statusColor": {},
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
