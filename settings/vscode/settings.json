@@ -37,7 +37,7 @@
     "editor.highlightActiveIndentGuide": true,
     "editor.lineHeight": 21,
     "editor.lineNumbers": "on",
-    "editor.matchBrackets": false,
+    "editor.matchBrackets": true,
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": true,
     "editor.renderIndentGuides": false,
