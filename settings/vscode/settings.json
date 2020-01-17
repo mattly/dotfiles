@@ -11,12 +11,12 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "bracket-pair-colorizer-2.colors": [
+        "#888"
+    ],
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
-    "bracket-pair-colorizer-2.colors": [
-        "#888",
-    ],
     "breadcrumbs.enabled": true,
     "calva.fmt.alignMapItems": true,
     "calva.fmt.newIndentEngine": true,
@@ -50,13 +50,21 @@
             "textMateRules": [
                 {
                     "scope": [
-                        "comment.keyword", "keyword.codetag", "keyword.phpdoc",
-                        "entity.name.function", "entity.name.class", "entity.method.name",
-                        "entity.name.type", "entity.other.inherited-class", "support.class",
+                        "comment.keyword",
+                        "keyword.codetag",
+                        "keyword.phpdoc",
+                        "entity.name.function",
+                        "entity.name.class",
+                        "entity.method.name",
+                        "entity.name.type",
+                        "entity.other.inherited-class",
+                        "support.class",
                         "entity.name.section",
-                        "keyword.other.important",
+                        "keyword.other.important"
                     ],
-                    "settings": {"fontStyle": "italic"}
+                    "settings": {
+                        "fontStyle": "italic"
+                    }
                 }
             ]
         }
@@ -110,17 +118,17 @@
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Gruvbox Material Hard Dark",
     "workbench.colorCustomizations": {
         "[Quiet Light for VSC]": {
+            "diffEditor.insertedTextBackground": "#4b83cd20",
+            "diffEditor.removedTextBackground": "#fef93530",
             "statusBar.background": "#333",
             "statusBar.foreground": "#f2f2f2",
             "statusBar.noFolderBackground": "#e4f6d4",
-            "diffEditor.insertedTextBackground": "#4b83cd20",
-            "diffEditor.removedTextBackground": "#fef93530",
-            "titleBar.activeBackground": "#f2f2f2",
+            "titleBar.activeBackground": "#f2f2f2"
         }
     },
+    "workbench.colorTheme": "Gruvbox Material Hard Dark",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.highlightModifiedTabs": true,
@@ -128,5 +136,5 @@
     "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.view.alwaysShowHeaderActions": true
 }
