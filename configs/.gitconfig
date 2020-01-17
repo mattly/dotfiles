@@ -7,7 +7,7 @@
 
 [core]
   excludesfile=~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta --light | less --tabs=4 -RFX
 
 [fetch]
 	prune = true
