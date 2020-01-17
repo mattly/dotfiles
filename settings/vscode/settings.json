@@ -18,11 +18,17 @@
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "breadcrumbs.enabled": true,
+    "calva.evalOnSave": true,
     "calva.fmt.alignMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.paredit.defaultKeyMap": "strict",
     "calva.prettyPrint": true,
+    "calva.prettyPrintingOptions": {
+        "enabled": true,
+        "printEngine": "pprint",
+        "width": 120
+    },
     "calva.statusColor": {},
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
