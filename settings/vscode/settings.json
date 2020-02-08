@@ -132,4 +132,7 @@
     "gruvboxMaterial.darkContrast": "hard",
     "gruvboxMaterial.italicKeywords": true,
     "gruvboxMaterial.lightContrast": "hard",
+    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "workbench.preferredLightColorTheme": "Quiet Light for VSC",
+    "window.autoDetectColorScheme": true,
 }
