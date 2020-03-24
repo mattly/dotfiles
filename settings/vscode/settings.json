@@ -109,7 +109,6 @@
     "ruby.rubocop.executePath": "/usr/local/lib/ruby/gems/2.6.0/bin/",
     "scm.alwaysShowActions": true,
     "scm.defaultViewMode": "tree",
-    "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
@@ -138,5 +137,8 @@
     "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.view.alwaysShowHeaderActions": true
+    "workbench.view.alwaysShowHeaderActions": true,
+    "prettier.requireConfig": true,
+    "editor.cursorBlinking": "smooth",
+    "go.lintOnSave": "file"
 }

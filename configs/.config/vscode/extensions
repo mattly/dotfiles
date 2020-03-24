@@ -7,6 +7,7 @@ budparr.language-hugo-vscode
 bungcip.better-toml
 christian-kohler.path-intellisense
 CoenraadS.bracket-pair-colorizer-2
+cssho.vscode-svgviewer
 cucumber-mapper-ruby.cucumber-mapper-ruby
 cymonk.sql-formatter
 davidedmiston.bettergitcommits
@@ -29,16 +30,16 @@ mhutchie.git-graph
 misogi.ruby-rubocop
 mrmlnc.vscode-scss
 ms-vscode.Go
-onecrayon.theme-quietlight-vsc
 pnp.polacode
 rebornix.ruby
 richie5um2.vscode-sort-json
 robinbentley.sass-indented
-sainnhe.gruvbox-material
-sdras.night-owl
+rust-lang.rust
 shinnn.stylelint
 shuworks.vscode-table-formatter
 skyapps.fish-vscode
 teabyii.ayu
 trixnz.vscode-lua
+wheredoesyourmindgo.gruvbox-concoctis
+wingrunr21.vscode-ruby
 wmaurer.change-case
