@@ -50,31 +50,7 @@
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
-    "editor.tokenColorCustomizations": {
-        "[Quiet Light for VSC]": {
-            "comments": "#000",
-            "textMateRules": [
-                {
-                    "scope": [
-                        "comment.keyword",
-                        "keyword.codetag",
-                        "keyword.phpdoc",
-                        "entity.name.function",
-                        "entity.name.class",
-                        "entity.method.name",
-                        "entity.name.type",
-                        "entity.other.inherited-class",
-                        "support.class",
-                        "entity.name.section",
-                        "keyword.other.important"
-                    ],
-                    "settings": {
-                        "fontStyle": "italic"
-                    }
-                }
-            ]
-        }
-    },
+    "editor.tokenColorCustomizations": {},
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -115,21 +91,12 @@
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeightBold": "normal",
-    "terminal.integrated.scrollback": 5000,
+    "terminal.integrated.scrollback": 10000,
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
-    "workbench.colorCustomizations": {
-        "[Quiet Light for VSC]": {
-            "diffEditor.insertedTextBackground": "#4b83cd20",
-            "diffEditor.removedTextBackground": "#fef93530",
-            "statusBar.background": "#333",
-            "statusBar.foreground": "#f2f2f2",
-            "statusBar.noFolderBackground": "#e4f6d4",
-            "titleBar.activeBackground": "#f2f2f2"
-        }
-    },
-    "workbench.colorTheme": "Gruvbox Material Hard Dark",
+    "workbench.colorCustomizations": {},
+    "workbench.colorTheme": "gruvboxConcoctis light hard",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.highlightModifiedTabs": true,
