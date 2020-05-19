@@ -15,14 +15,11 @@ end
 
 
 if which exa >/dev/null
-   set -l recent "--sort date --reverse"
    set -l long "--long --header --classify --modified --time-style long-iso --git --color-scale"
    alias l="exa --classify --git-ignore"
-   alias ll="exa --classify $long --git-ignore"
-   alias la="exa --classify $long --all"
-   alias lr="ll $recent"
-   alias lrr="ll $recent --time-style full-iso"
-   alias lra="la $recent"
+   alias ll="exa $long --git-ignore"
+   alias la="exa $long --all "
+   alias lna="exa $long --all --sort=newest"
    alias ls="exa"
 end
 
