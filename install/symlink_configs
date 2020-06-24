@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+SOURCE="$(cd -P "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" && pwd)"
+
 cd ~
 
-for config in $HOME/projects/dotfiles/configs/.[^.]*; do
+for config in $SOURCE/configs/.[^.]*; do
     echo "$config => $(basename $config)"
     ln -s $config $(basename $config)
 done
