@@ -28,7 +28,7 @@
     "diffEditor.renderSideBySide": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.cursorStyle": "line",
-    "editor.find.autoFindInSelection": true,
+    "editor.find.autoFindInSelection": "multiline",
     "editor.fontFamily": "\"Dank Mono\",mononoki,monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
@@ -37,30 +37,14 @@
     "editor.highlightActiveIndentGuide": true,
     "editor.lineHeight": 21,
     "editor.lineNumbers": "on",
-    "editor.matchBrackets": false,
+    "editor.matchBrackets": "near",
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": true,
     "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
-    "editor.tokenColorCustomizations": {
-        "[Quiet Light for VSC]": {
-            "comments": "#000",
-            "textMateRules": [
-                {
-                    "scope": [
-                        "comment.keyword", "keyword.codetag", "keyword.phpdoc",
-                        "entity.name.function", "entity.name.class", "entity.method.name",
-                        "entity.name.type", "entity.other.inherited-class", "support.class",
-                        "entity.name.section",
-                        "keyword.other.important",
-                    ],
-                    "settings": {"fontStyle": "italic"}
-                }
-            ]
-        }
-    },
+    "editor.tokenColorCustomizations": { },
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -99,7 +83,6 @@
     "ruby.rubocop.executePath": "/usr/local/lib/ruby/gems/2.6.0/bin/",
     "scm.alwaysShowActions": true,
     "scm.defaultViewMode": "tree",
-    "search.location": "panel",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
@@ -110,22 +93,13 @@
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Gruvbox Material Dark",
-    "workbench.colorCustomizations": {
-        "[Quiet Light for VSC]": {
-            "statusBar.background": "#333",
-            "statusBar.foreground": "#f2f2f2",
-            "statusBar.noFolderBackground": "#e4f6d4",
-            "diffEditor.insertedTextBackground": "#4b83cd20",
-            "diffEditor.removedTextBackground": "#fef93530",
-            "titleBar.activeBackground": "#f2f2f2",
-        }
-    },
+    "workbench.colorTheme": "Nüshu",
+    "workbench.colorCustomizations": {},
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showTabs": true,
-    "workbench.iconTheme": "ayu",
+    "workbench.iconTheme": "chalice-icon-theme",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
     "workbench.view.alwaysShowHeaderActions": true,
@@ -133,6 +107,7 @@
     "gruvboxMaterial.italicKeywords": true,
     "gruvboxMaterial.lightContrast": "hard",
     "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
-    "workbench.preferredLightColorTheme": "Quiet Light for VSC",
+    "workbench.preferredLightColorTheme": "Nüshu",
     "window.autoDetectColorScheme": true,
+    "terminal.integrated.shell.windows": "C:\\Windows\\system32\\wsl.exe",
 }
