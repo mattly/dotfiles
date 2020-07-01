@@ -37,6 +37,9 @@ end
 alias ping='prettyping --nolegend'
 set -x PATH ~/projects/dotfiles/bin $PATH
 
+test -e ~/.local/bin
+and set -x PATH ~/.local/bin $PATH
+
 test (which brew)
 and set -x HOMEBREW_NO_AUTO_UPDATE no
 
