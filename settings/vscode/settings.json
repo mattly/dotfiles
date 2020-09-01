@@ -6,7 +6,10 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true,
+        }
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -51,6 +54,8 @@
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {},
+    "eslint.validate": ["javascript", "javascriptreact"],
+    "eslint.format.enable": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -79,6 +84,7 @@
     "gitlens.statusBar.reduceFlicker": true,
     "gitlens.views.repositories.files.layout": "auto",
     "go.gopath": "/Users/mlyon/projects",
+    "go.goroot": "/usr/local/Cellar/go/1.13.1/libexec",
     "go.useLanguageServer": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "rest-client.fontSize": 13,
@@ -93,19 +99,19 @@
     "terminal.integrated.fontWeightBold": "normal",
     "terminal.integrated.scrollback": 10000,
     "window.newWindowDimensions": "inherit",
-    "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {},
-    "workbench.colorTheme": "gruvboxConcoctis light hard",
+    "workbench.colorTheme": "Nüshu",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showTabs": true,
-    "workbench.iconTheme": "ayu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
     "workbench.view.alwaysShowHeaderActions": true,
     "prettier.requireConfig": true,
     "editor.cursorBlinking": "smooth",
-    "go.lintOnSave": "file"
+    "go.lintOnSave": "file",
+    "scm.inputFontFamily": "editor",
+    "workbench.iconTheme": "material-icon-theme",
 }
