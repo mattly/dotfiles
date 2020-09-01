@@ -2,6 +2,7 @@ aaron-bond.better-comments
 alexkrechik.cucumberautocomplete
 betterthantomorrow.calva
 bierner.color-info
+bodil.file-browser
 borkdude.clj-kondo
 budparr.language-hugo-vscode
 bungcip.better-toml
@@ -22,6 +23,7 @@ golang.go
 hashicorp.terraform
 humao.rest-client
 igochkov.vscode-ebnf
+jacobdufault.fuzzy-search
 kahole.magit
 kaiwood.endwise
 kumar-harsh.graphql-for-vscode
@@ -43,6 +45,9 @@ shinnn.stylelint
 shuworks.vscode-table-formatter
 skyapps.fish-vscode
 trixnz.vscode-lua
+vscodevim.vim
+VSpaceCode.vspacecode
+VSpaceCode.whichkey
 wheredoesyourmindgo.nushu-vscode-theme
 wingrunr21.vscode-ruby
 wmaurer.change-case
