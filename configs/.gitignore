@@ -22,7 +22,7 @@ configs/.config/pgcli/log
 tags
 
 # ruby
-*.gem
+# *.gem
 
 # rails
 .sass-cache
@@ -39,3 +39,6 @@ configs/.lein/repl-history
 # direnv
 configs/.config/direnv
 .envrc
+
+# me
+mattly/*

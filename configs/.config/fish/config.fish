@@ -42,6 +42,7 @@ set -x HOMEBREW_NO_AUTO_UPDATE no
 # garbage variables for garbage languages
 # =========================================================
 set -x GOPATH ~/projects
+set -x PATH $GOPATH/bin $PATH
 
 if test -e /usr/local/opt/ruby/bin
     set -x PATH /usr/local/opt/ruby/bin $PATH
@@ -50,5 +51,13 @@ if test -e /usr/local/lib/ruby/gems/2.6.0/bin
     set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
 end
 # =========================================================
+
+test -e /usr/local/opt/terraform@0.11/bin
+and set -x PATH /usr/local/opt/terraform@0.11/bin $PATH
+
+# worky work
+# =========================================================
+set -x PCS_DEV_TOOLS_DIRECTORY "$HOME/projects/pcs-dev-tools"
+set -x PATH $PATH "$PCS_DEV_TOOLS_DIRECTORY/bin"
 
 eval (starship init fish)
