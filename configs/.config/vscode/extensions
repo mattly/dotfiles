@@ -1,6 +1,7 @@
 aaron-bond.better-comments
 betterthantomorrow.calva
 bierner.color-info
+bodil.file-browser
 borkdude.clj-kondo
 bungcip.better-toml
 christian-kohler.path-intellisense
@@ -18,6 +19,7 @@ golang.go
 hashicorp.terraform
 humao.rest-client
 igochkov.vscode-ebnf
+jacobdufault.fuzzy-search
 kahole.magit
 kaiwood.endwise
 kumar-harsh.graphql-for-vscode
@@ -29,6 +31,7 @@ mhutchie.git-graph
 misogi.ruby-rubocop
 mrmlnc.vscode-scss
 octref.vetur
+PKief.material-icon-theme
 pnp.polacode
 rebornix.ruby
 richie5um2.vscode-sort-json
@@ -39,6 +42,9 @@ shinnn.stylelint
 shuworks.vscode-table-formatter
 skyapps.fish-vscode
 trixnz.vscode-lua
+vscodevim.vim
+VSpaceCode.vspacecode
+VSpaceCode.whichkey
 wheredoesyourmindgo.gruvbox-concoctis
 wheredoesyourmindgo.nushu-vscode-theme
 wingrunr21.vscode-ruby
