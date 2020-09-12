@@ -136,4 +136,12 @@
             ]
         }
     ],
+    "vspacecode.bindingOverrides": [
+        {
+            "keys": "g.g",
+            "name": "Graph",
+            "type": "command",
+            "command": "git-graph.view"
+        }
+    ]
 }
