@@ -6,12 +6,15 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true,
-        }
+            "source.fixAll.eslint": true
+        },
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "bracket-pair-colorizer-2.colors": [
@@ -36,6 +39,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.cursorBlinking": "smooth",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": "multiline",
     "editor.fontFamily": "\"Dank Mono\",monospace",
@@ -54,8 +58,11 @@
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {},
-    "eslint.validate": ["javascript", "javascriptreact"],
     "eslint.format.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact"
+    ],
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -85,61 +92,40 @@
     "gitlens.views.repositories.files.layout": "auto",
     "go.gopath": "/Users/mlyon/projects",
     "go.goroot": "/usr/local/Cellar/go/1.13.1/libexec",
+    "go.lintOnSave": "file",
     "go.useLanguageServer": true,
+    "html.format.endWithNewline": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "prettier.requireConfig": true,
     "rest-client.fontSize": 13,
     "ruby.rubocop.executePath": "/usr/local/lib/ruby/gems/2.6.0/bin/",
     "scm.alwaysShowActions": true,
     "scm.defaultViewMode": "tree",
+    "scm.inputFontFamily": "editor",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeightBold": "normal",
-    "terraform.languageServer": {
-        "external": true,
-        "args": [
-            "serve"
-        ]
-    },
     "terminal.integrated.scrollback": 10000,
-    "window.newWindowDimensions": "inherit",
-    "workbench.activityBar.visible": false,
-    "workbench.colorCustomizations": {},
-    "workbench.colorTheme": "Nüshu",
-    "workbench.editor.enablePreview": true,
-    "workbench.editor.enablePreviewFromQuickOpen": true,
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.showTabs": true,
-    // "workbench.iconTheme": "chalice-icon-theme",
+    "terminal.integrated.shell.windows": "C:\\Windows\\system32\\wsl.exe",
     "terraform.indexing": {
-        "enabled": false,
-        "liveIndexing": false,
         "delay": 500,
+        "enabled": false,
         "exclude": [
             ".terraform/**/*",
             "**/.terraform/**/*"
-        ]
+        ],
+        "liveIndexing": false
     },
-    "workbench.preferredDarkColorTheme": "gruvboxConcoctis dark hard",
-    "workbench.preferredLightColorTheme": "Nüshu",
-    // "window.autoDetectColorScheme": true,
-    "html.format.endWithNewline": true,
-    "[vue]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "terraform.languageServer": {
+        "args": [
+            "serve"
+        ],
+        "external": true
     },
-    "terminal.integrated.shell.windows": "C:\\Windows\\system32\\wsl.exe",
-    "workbench.sideBar.location": "left",
-    "workbench.statusBar.visible": true,
-    "workbench.view.alwaysShowHeaderActions": true,
-    "prettier.requireConfig": true,
-    "editor.cursorBlinking": "smooth",
-    "go.lintOnSave": "file",
-    "scm.inputFontFamily": "editor",
-    "workbench.iconTheme": "material-icon-theme",
     "vim.easymotion": true,
-    "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -150,6 +136,7 @@
             ]
         }
     ],
+    "vim.useSystemClipboard": true,
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -162,10 +149,24 @@
     ],
     "vspacecode.bindingOverrides": [
         {
+            "command": "git-graph.view",
             "keys": "g.g",
             "name": "Graph",
-            "type": "command",
-            "command": "git-graph.view"
+            "type": "command"
         }
-    ]
+    ],
+    "window.newWindowDimensions": "inherit",
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {},
+    "workbench.colorTheme": "Nüshu",
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.showTabs": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.preferredDarkColorTheme": "gruvboxConcoctis dark hard",
+    "workbench.preferredLightColorTheme": "Nüshu",
+    "workbench.sideBar.location": "left",
+    "workbench.statusBar.visible": true,
+    "workbench.view.alwaysShowHeaderActions": true
 }
