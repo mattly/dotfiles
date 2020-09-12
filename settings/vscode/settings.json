@@ -106,6 +106,12 @@
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeightBold": "normal",
     "terminal.integrated.scrollback": 5000,
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
@@ -127,6 +133,15 @@
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
     "workbench.view.alwaysShowHeaderActions": true,
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
     "gruvboxMaterial.darkContrast": "hard",
     "gruvboxMaterial.italicKeywords": true,
     "gruvboxMaterial.lightContrast": "hard",
