@@ -153,7 +153,51 @@
             "keys": "g.g",
             "name": "Graph",
             "type": "command"
-        }
+        },
+        { "keys": "w.h", "position": -1 },
+        {
+            "command": "workbench.action.navigateLeft",
+            "keys": "w.j",
+            "name": "Focus editor left",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.navigateDown",
+            "keys": "w.k",
+            "name": "Focus editor down",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.navigateUp",
+            "keys": "w.i",
+            "name": "Focus editor up",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.navigateRight",
+            "keys": "w.l",
+            "name": "Focus editor right",
+            "type": "command"
+        },
+        {   "keys": "w.H", "position": -1 },
+        {
+            "command": "workbench.action.moveActiveEditorGroupLeft",
+            "keys": "w.J",
+            "name": "Move editor group left",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.moveActiveEditorGroupUp",
+            "keys": "w.I",
+            "name": "Move editor group up",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.moveActiveEditorGroupDown",
+            "keys": "w.K",
+            "name": "Move editor group down",
+            "type": "command"
+        },
     ],
     "window.newWindowDimensions": "inherit",
     "workbench.activityBar.visible": false,
