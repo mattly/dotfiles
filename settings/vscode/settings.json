@@ -122,7 +122,7 @@
             "**/.terraform/**/*"
         ]
     },
-    "workbench.preferredDarkColorTheme": "",
+    "workbench.preferredDarkColorTheme": "gruvboxConcoctis dark hard",
     "workbench.preferredLightColorTheme": "Nüshu",
     // "window.autoDetectColorScheme": true,
     "html.format.endWithNewline": true,
