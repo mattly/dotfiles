@@ -6,8 +6,10 @@ budparr.language-hugo-vscode
 bungcip.better-toml
 christian-kohler.path-intellisense
 CoenraadS.bracket-pair-colorizer-2
+cssho.vscode-svgviewer
 cymonk.sql-formatter
 davidedmiston.bettergitcommits
+dbaeumer.vscode-eslint
 deerawan.vscode-dash
 eamodio.gitlens
 EditorConfig.EditorConfig
@@ -18,6 +20,7 @@ golang.go
 hashicorp.terraform
 humao.rest-client
 igochkov.vscode-ebnf
+kahole.magit
 kaiwood.endwise
 kumar-harsh.graphql-for-vscode
 lunaryorn.fish-ide
@@ -28,11 +31,13 @@ mhutchie.git-graph
 misogi.ruby-rubocop
 mrmlnc.vscode-scss
 octref.vetur
-onecrayon.theme-quietlight-vsc
+ms-vscode.Go
 pnp.polacode
 rebornix.ruby
 richie5um2.vscode-sort-json
 robinbentley.sass-indented
+rust-lang.rust
+rvest.vs-code-prettier-eslint
 shinnn.stylelint
 shuworks.vscode-table-formatter
 silvenon.mdx
@@ -40,6 +45,7 @@ skyapps.fish-vscode
 teabyii.ayu
 trixnz.vscode-lua
 wheredoesyourmindgo.nushu-vscode-theme
+wheredoesyourmindgo.gruvbox-concoctis
 wingrunr21.vscode-ruby
 wmaurer.change-case
 wwm.better-align
