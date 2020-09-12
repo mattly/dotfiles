@@ -8,4 +8,4 @@ configs/.config/ranger/bookmarks
 configs/.config/ranger/history
 configs/.config/ranger/tagged
 settings/vscode/workspaceStorage/
-settings/vscode/globalStorage/state.*
+settings/vscode/globalStorage/

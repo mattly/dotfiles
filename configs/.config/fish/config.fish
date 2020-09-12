@@ -37,18 +37,25 @@ end
 alias ping='prettyping --nolegend'
 set -x PATH ~/projects/dotfiles/bin $PATH
 
-set -x HOMEBREW_NO_AUTO_UPDATE no
+test -e ~/.local/bin
+and set -x PATH ~/.local/bin $PATH
+
+test (which brew)
+and set -x HOMEBREW_NO_AUTO_UPDATE no
 
 # garbage variables for garbage languages
 # =========================================================
 set -x GOPATH ~/projects
 
-if test -e /usr/local/opt/ruby/bin
-    set -x PATH /usr/local/opt/ruby/bin $PATH
-end
-if test -e /usr/local/lib/ruby/gems/2.6.0/bin
-    set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
-end
+test -e /usr/local/opt/ruby/bin
+and set -x PATH /usr/local/opt/ruby/bin $PATH
+
+test -e /usr/local/lib/ruby/gems/2.6.0/bin
+and set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
 # =========================================================
+
+if test -n $WSL_DISTRO_NAME
+  set -x XDG_CONFIG_HOME {$HOME}/.config
+end
 
 eval (starship init fish)
