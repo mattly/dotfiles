@@ -6,31 +6,45 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "bracket-pair-colorizer-2.colors": [
+        "#888"
+    ],
     "bracket-pair-colorizer-2.highlightActiveScope": true,
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
-    "bracket-pair-colorizer-2.colors": [
-        "#888",
-    ],
     "breadcrumbs.enabled": true,
+    "calva.evalOnSave": true,
     "calva.fmt.alignMapItems": true,
     "calva.fmt.newIndentEngine": true,
     "calva.jokerPath": "",
     "calva.paredit.defaultKeyMap": "strict",
     "calva.prettyPrint": true,
+    "calva.prettyPrintingOptions": {
+        "enabled": true,
+        "printEngine": "pprint",
+        "width": 120
+    },
     "calva.statusColor": {},
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.cursorBlinking": "smooth",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": "multiline",
-    "editor.fontFamily": "\"Dank Mono\",mononoki,monospace",
-    "editor.fontLigatures": false,
+    "editor.fontFamily": "\"Dank Mono\",monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
     "editor.fontWeight": "400",
     "editor.formatOnType": true,
     "editor.highlightActiveIndentGuide": true,
@@ -43,7 +57,12 @@
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "selection",
     "editor.showFoldingControls": "always",
-    "editor.tokenColorCustomizations": { },
+    "editor.tokenColorCustomizations": {},
+    "eslint.format.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact"
+    ],
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -72,28 +91,119 @@
     "gitlens.statusBar.reduceFlicker": true,
     "gitlens.views.repositories.files.layout": "auto",
     "go.gopath": "/Users/mlyon/projects",
+    "go.goroot": "/usr/local/Cellar/go/1.13.1/libexec",
+    "go.lintOnSave": "file",
     "go.useLanguageServer": true,
+    "html.format.endWithNewline": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "prettier.printWidth": 110,
-    "prettier.semi": false,
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "es5",
+    "prettier.requireConfig": true,
     "rest-client.fontSize": 13,
     "ruby.rubocop.executePath": "/usr/local/lib/ruby/gems/2.6.0/bin/",
     "scm.alwaysShowActions": true,
     "scm.defaultViewMode": "tree",
+    "scm.inputFontFamily": "editor",
     "terminal.external.osxExec": "ITerm.app",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeightBold": "normal",
-    "terminal.integrated.scrollback": 5000,
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.shell.windows": "C:\\Windows\\system32\\wsl.exe",
+    "terraform.indexing": {
+        "delay": 500,
+        "enabled": false,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ],
+        "liveIndexing": false
+    },
+    "terraform.languageServer": {
+        "args": [
+            "serve"
+        ],
+        "external": true
+    },
+    "vim.easymotion": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        }
+    ],
+    "vim.useSystemClipboard": true,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        }
+    ],
+    "vspacecode.bindingOverrides": [
+        {
+            "command": "git-graph.view",
+            "keys": "g.g",
+            "name": "Graph",
+            "type": "command"
+        },
+        { "keys": "w.h", "position": -1 },
+        {
+            "command": "workbench.action.navigateLeft",
+            "keys": "w.j",
+            "name": "Focus editor left",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.navigateDown",
+            "keys": "w.k",
+            "name": "Focus editor down",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.navigateUp",
+            "keys": "w.i",
+            "name": "Focus editor up",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.navigateRight",
+            "keys": "w.l",
+            "name": "Focus editor right",
+            "type": "command"
+        },
+        {   "keys": "w.H", "position": -1 },
+        {
+            "command": "workbench.action.moveActiveEditorGroupLeft",
+            "keys": "w.J",
+            "name": "Move editor group left",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.moveActiveEditorGroupUp",
+            "keys": "w.I",
+            "name": "Move editor group up",
+            "type": "command"
+        },
+        {
+            "command": "workbench.action.moveActiveEditorGroupDown",
+            "keys": "w.K",
+            "name": "Move editor group down",
+            "type": "command"
+        },
+    ],
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": -0.5,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Nüshu",
     "workbench.colorCustomizations": {},
+    "workbench.colorTheme": "Nüshu",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.highlightModifiedTabs": true,

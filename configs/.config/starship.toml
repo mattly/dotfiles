@@ -1,27 +1,4 @@
 [aws]
 disabled = true
 
-[golang]
-disabled = true
-
-[kubernetes]
-disabled = true
-
-[java]
-disabled = true
-
-[nodejs]
-disabled = true
-
-[package]
-disabled = true
-
-[python]
-disabled = true
-
-[ruby]
-disabled = true
-
-[rust]
-disabled = true
 

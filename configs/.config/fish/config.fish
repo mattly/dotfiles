@@ -46,6 +46,7 @@ and set -x HOMEBREW_NO_AUTO_UPDATE no
 # garbage variables for garbage languages
 # =========================================================
 set -x GOPATH ~/projects
+set -x PATH $GOPATH/bin $PATH
 
 test -e /usr/local/opt/ruby/bin
 and set -x PATH /usr/local/opt/ruby/bin $PATH
