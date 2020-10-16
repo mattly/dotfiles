@@ -146,5 +146,40 @@
     {
         "key": "ctrl+alt+x",
         "command": "paredit.cutForwardSexp"
+    },
+    {
+        "key": "ctrl+alt+win+t r",
+        "when": "isWindows",
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "when": "isWindows",
+        "command": "-workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+j",
+        "when": "isWindows",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "-workbench.action.search.toggleQueryDetails",
+        "when": "isWindows && (inSearchEditor || searchViewletFocus)"
+    },
+    {
+        "key": "ctrl+j",
+        "when": "isWindows",
+        "command": "editor.action.joinLines"
+    },
+    {
+        "key": "alt+delete",
+        "when": "isWindows",
+        "command": "deleteAllRight"
+    },
+    {
+        "key": "alt+backspace",
+        "when": "isWindows",
+        "command": "deleteAllLeft"
     }
 ]
