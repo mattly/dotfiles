@@ -9,7 +9,7 @@
         "editor.codeActionsOnSave": {
             "source.fixAll.eslint": true
         },
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -136,6 +136,7 @@
             ]
         }
     ],
+    "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -200,7 +201,7 @@
         },
     ],
     "window.newWindowDimensions": "inherit",
-    "window.zoomLevel": -0.5,
+    "window.zoomLevel": -1,
     "workbench.activityBar.visible": false,
     "workbench.colorCustomizations": {},
     "workbench.colorTheme": "Nüshu",
@@ -214,15 +215,9 @@
     "workbench.view.alwaysShowHeaderActions": true,
     "workbench.preferredLightColorTheme": "Nüshu",
     "window.autoDetectColorScheme": true,
-    "terminal.integrated.shell.windows": "C:\\Windows\\system32\\wsl.exe",
-    "[vue]": {
-        "editor.defaultFormatter": "octref.vetur"
-    },
     "vim.gdefault": true,
     "vim.foldfix": true,
-    "vim.handleKeys": {
-        "<C-w>": true,
-        "<C-d>": true
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "vim.highlightedyank.enable": true,
 }
