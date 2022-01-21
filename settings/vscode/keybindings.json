@@ -422,6 +422,16 @@
         "key": "j",
         "command": "cursorDown",
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "calva.clearInlineResults",
+        "when": "calva:keybindingsEnabled && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadOnly && !hasOtherSuggestions && !parameterHintsVisible && !selectionAnchorSet && !suggestWidgetVisible && editorLangId == 'clojure' && editorLangId == 'clojure'"
+    },
+    {
+        "key": "escape",
+        "command": "-calva.clearInlineResults",
+        "when": "calva:keybindingsEnabled && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadOnly && !hasOtherSuggestions && !parameterHintsVisible && !selectionAnchorSet && !suggestWidgetVisible && editorLangId == 'clojure' && editorLangId == 'clojure'"
     }
     // inbox
 ]

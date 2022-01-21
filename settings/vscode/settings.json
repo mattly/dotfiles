@@ -14,22 +14,23 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "comments": false,
+            "other": false,
+            "strings": false
+        }
+    },
     "[vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "bracket-pair-colorizer-2.colors": [
-        "#888"
-    ],
-    "bracket-pair-colorizer-2.highlightActiveScope": true,
-    "bracket-pair-colorizer-2.showBracketsInGutter": true,
-    "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "breadcrumbs.enabled": true,
     "calva.evalOnSave": true,
-    "calva.fmt.alignMapItems": true,
     "calva.fmt.newIndentEngine": true,
-    "calva.jokerPath": "",
     "calva.paredit.defaultKeyMap": "strict",
-    "calva.prettyPrint": true,
     "calva.prettyPrintingOptions": {
         "enabled": true,
         "printEngine": "pprint",
@@ -39,35 +40,29 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.renderSideBySide": false,
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.bracketPairColorization.enabled": true,
     "editor.cursorBlinking": "smooth",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": "multiline",
-    "editor.fontFamily": "\"Dank Mono\",monospace",
-    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Triplicate A Code', monospace",
+    "editor.fontLigatures": false,
     "editor.fontSize": 16,
     "editor.fontWeight": "400",
     "editor.formatOnType": true,
-    "editor.highlightActiveIndentGuide": true,
+    "editor.guides.bracketPairs": true,
     "editor.lineHeight": 0,
     "editor.lineNumbers": "on",
     "editor.matchBrackets": "near",
     "editor.minimap.enabled": false,
     "editor.renderControlCharacters": true,
-    "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
-    "editor.renderWhitespace": "selection",
+    "editor.renderWhitespace": "all",
     "editor.showFoldingControls": "always",
     "editor.tokenColorCustomizations": {},
-    "eslint.format.enable": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact"
-    ],
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     "extensions.ignoreRecommendations": true,
-    "extensions.showRecommendationsOnlyOnDemand": true,
     "files.associations": {
         ".envrc": "shellscript"
     },
@@ -80,25 +75,17 @@
     "git.suggestSmartCommit": false,
     "gitlens.advanced.messages": {
         "suppressFileNotUnderSourceControlWarning": true,
-        "suppressLineUncommittedWarning": true,
-        "suppressShowKeyBindingsNotice": true
+        "suppressLineUncommittedWarning": true
     },
-    "gitlens.advanced.telemetry.enabled": false,
     "gitlens.codeLens.scopes": [],
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.keymap": "alternate",
     "gitlens.showWhatsNewAfterUpgrades": false,
     "gitlens.statusBar.reduceFlicker": true,
     "gitlens.views.repositories.files.layout": "auto",
-    "go.gopath": "/Users/mlyon/projects",
-    "go.goroot": "/usr/local/Cellar/go/1.13.1/libexec",
-    "go.lintOnSave": "file",
-    "go.useLanguageServer": true,
     "html.format.endWithNewline": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "prettier.requireConfig": true,
     "rest-client.fontSize": 13,
-    "ruby.rubocop.executePath": "/usr/local/lib/ruby/gems/2.6.0/bin/",
     "scm.alwaysShowActions": true,
     "scm.defaultViewMode": "tree",
     "scm.inputFontFamily": "editor",
@@ -108,24 +95,11 @@
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeightBold": "normal",
+    "terminal.integrated.profiles.windows": {},
     "terminal.integrated.scrollback": 10000,
-    "terminal.integrated.shell.windows": "C:\\Windows\\system32\\wsl.exe",
-    "terraform.indexing": {
-        "delay": 500,
-        "enabled": false,
-        "exclude": [
-            ".terraform/**/*",
-            "**/.terraform/**/*"
-        ],
-        "liveIndexing": false
-    },
-    "terraform.languageServer": {
-        "args": [
-            "serve"
-        ],
-        "external": true
-    },
     "vim.easymotion": true,
+    "vim.foldfix": true,
+    "vim.gdefault": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -155,7 +129,10 @@
             "name": "Graph",
             "type": "command"
         },
-        { "keys": "w.h", "position": -1 },
+        {
+            "keys": "w.h",
+            "position": -1
+        },
         {
             "command": "workbench.action.navigateLeft",
             "keys": "w.j",
@@ -180,7 +157,10 @@
             "name": "Focus editor right",
             "type": "command"
         },
-        {   "keys": "w.H", "position": -1 },
+        {
+            "keys": "w.H",
+            "position": -1
+        },
         {
             "command": "workbench.action.moveActiveEditorGroupLeft",
             "keys": "w.J",
@@ -198,8 +178,9 @@
             "keys": "w.K",
             "name": "Move editor group down",
             "type": "command"
-        },
+        }
     ],
+    "window.autoDetectColorScheme": true,
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": -1,
     "workbench.activityBar.visible": false,
@@ -210,14 +191,8 @@
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.showTabs": true,
     "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.preferredLightColorTheme": "Nüshu",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.view.alwaysShowHeaderActions": true,
-    "workbench.preferredLightColorTheme": "Nüshu",
-    "window.autoDetectColorScheme": true,
-    "vim.gdefault": true,
-    "vim.foldfix": true,
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
+    "workbench.view.alwaysShowHeaderActions": true
 }
