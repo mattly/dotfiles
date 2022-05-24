@@ -40,14 +40,20 @@ set -x PATH ~/projects/dotfiles/bin $PATH
 test -e ~/.local/bin
 and set -x PATH ~/.local/bin $PATH
 
+test -e /opt/homebrew/bin
+and fish_add_path /opt/homebrew/bin
+
 test (which brew)
 and set -x HOMEBREW_NO_AUTO_UPDATE no
 
-# garbage variables for garbage languages
+# language-specific stuff
 # =========================================================
+
+# --- go
 set -x GOPATH ~/projects
 set -x PATH $GOPATH/bin $PATH
 
+# --- ruby
 test -e /usr/local/opt/ruby/bin
 and set -x PATH /usr/local/opt/ruby/bin $PATH
 
