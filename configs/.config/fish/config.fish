@@ -53,7 +53,7 @@ and set -x GPG_TTY (tty)
 # =========================================================
 
 # --- go
-set -x GOPATH ~/projects
+set -x GOPATH ~/projects/golang
 set -x PATH $GOPATH/bin $PATH
 
 # --- ruby
