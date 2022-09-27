@@ -6,6 +6,7 @@
   protocol=https
 
 [core]
+  attributesfile=~/.gitattributes
   excludesfile=~/.gitignore
 	# pager = delta --light | less --tabs=4 -RFX
 
