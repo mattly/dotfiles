@@ -1,6 +1,8 @@
 *.elc
-
+.clj-kondo/*
+.lsp/*
 configs/.config/configstore
+configs/.config/clojure/.cpcache
 configs/.config/direnv/allow
 configs/.config/gatsby
 configs/.config/hub
