@@ -294,12 +294,7 @@
         "command": "deleteAllLeft"
     },
     // vspacecode bindings
-    {
-        "key": "space",
-        "command": "vspacecode.space",
-        "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive"
-    },
-    {
+	{
         "key": "tab",
         "command": "extension.vim_tab",
         "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
@@ -432,6 +427,43 @@
         "key": "escape",
         "command": "-calva.clearInlineResults",
         "when": "calva:keybindingsEnabled && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadOnly && !hasOtherSuggestions && !parameterHintsVisible && !selectionAnchorSet && !suggestWidgetVisible && editorLangId == 'clojure' && editorLangId == 'clojure'"
+    },
+    {
+        "key": "ctrl+alt+cmd+k",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+alt+cmd+g",
+        "command": "magit.status"
+    },
+    {
+        "key": "alt+x g",
+        "command": "-magit.status"
+	},
+	{
+		"key": "ctrl+alt+cmd+space",
+		"command": "vspacecode.space",
+		"when": "activeEditorGroupEmpty && !inputFocus && !whichkeyActive && focusedView == ''"
+	},
+	{
+		"key": "ctrl+alt+cmd+space",
+		"command": "vspacecode.space",
+		"when": "sideBarFocus && !inputFocus && !whichkeyActive"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "acceptSelectedSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     }
     // inbox
 ]
