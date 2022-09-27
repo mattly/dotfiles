@@ -62,6 +62,10 @@ and set -x PATH /usr/local/opt/ruby/bin $PATH
 
 test -e /usr/local/lib/ruby/gems/2.6.0/bin
 and set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
 # =========================================================
 
 if test -n $WSL_DISTRO_NAME
