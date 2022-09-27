@@ -46,6 +46,9 @@ and fish_add_path /opt/homebrew/bin
 test (which brew)
 and set -x HOMEBREW_NO_AUTO_UPDATE no
 
+test (which gpg)
+and set -x GPG_TTY (tty)
+
 # language-specific stuff
 # =========================================================
 
