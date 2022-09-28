@@ -45,7 +45,7 @@
     "editor.cursorBlinking": "smooth",
     "editor.cursorStyle": "line",
     "editor.find.autoFindInSelection": "multiline",
-    "editor.fontFamily": "'Triplicate A Code', Menlo, monospace",
+    "editor.fontFamily": "'Triplicate A Code', 'MesloLGL Nerd Font',  Menlo, monospace",
     "editor.fontLigatures": false,
     "editor.fontSize": 14,
     "editor.fontWeight": "400",
