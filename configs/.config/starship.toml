@@ -1,4 +1,135 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+[character]
+
+[directory]
+read_only = ""
+truncation_symbol = " "
+
+[env_var]
+[fill]
+[hostname]
+[jobs]
+[line_break]
+[localip]
+[memory_usage]
+[shell]
+[shlvl]
+[status]
+disabled = false
+[sudo]
+disabled = false
+symbol = " "
+format = " $symbol SUDO"
+[time]
+[username]
+
+# ---
 [aws]
-disabled = true
+format= " $symbol AWSףּ $profile  $region"
+symbol = "🅰"
+# disabled= true
+[aws.region_aliases]
+us-east-1 = "va"
 
+[azure]
+[battery]
+[buf]
+format = " $symbol buf$version"
+symbol = "ﯟ"
 
+[bun]
+format = " $symbol bun$version"
+disabled = false
+symbol = ""
+
+[c]
+[cmake]
+[cobol]
+[conda]
+[container]
+[crystal]
+[daml]
+[dart]
+[deno]
+[docker_context]
+[dotnet]
+[elixir]
+[elm]
+[erlang]
+[gcloud]
+
+[git_branch]
+symbol = ""
+format = "$symbol$branch($remote_branch)"
+
+[git_commit]
+[git_state]
+[git_metrics]
+disabled = false
+format = "(([ $added]($added_style)) ([ $deleted]($deleted_style)))"
+
+[git_status]
+style = "f"
+modified = " $count"
+untracked = "  $count"
+conflicted = " $count"
+stashed = "  $count"
+staged = "  $count"
+renamed = " 凜 $count"
+deleted = "  $count"
+
+ahead = " $count"
+behind = " $count"
+diverged = "$ahead $behind"
+up_to_date = ""
+
+format = "($all_status$ahead_behind)"
+
+[golang]
+symbol = ""
+format = " $symbol go$version"
+
+[haskell]
+[helm]
+
+[java]
+symbol = ""
+format = " $symbol jvm$version"
+
+[julia]
+[kotlin]
+[kubernetes]
+[lua]
+[hg_branch]
+[nim]
+[nix_shell]
+[nodejs]
+[ocaml]
+[openstack]
+[perl]
+[php]
+[pulumi]
+[purescript]
+[python]
+[rlang]
+[raku]
+[red]
+[ruby]
+[rust]
+[scala]
+[singularity]
+[spack]
+[swift]
+
+[terraform]
+symbol = "﩯"
+format = " TF$version ($workspace)"
+
+[vagrant]
+[vlang]
+[vcsh]
+[zig]
