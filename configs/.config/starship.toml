@@ -5,6 +5,9 @@
 add_newline = true
 [character]
 
+[cmd_duration]
+format = "  took [$duration]($style)"
+
 [directory]
 read_only = ""
 truncation_symbol = " "
@@ -29,7 +32,7 @@ format = " $symbol SUDO"
 
 # ---
 [aws]
-format= " $symbol AWS ףּ $profile  $region"
+format= "  $symbol AWS ףּ $profile  $region"
 symbol = "🅰"
 # disabled= true
 [aws.region_aliases]
@@ -38,11 +41,11 @@ us-east-1 = "va"
 [azure]
 [battery]
 [buf]
-format = " $symbol buf $version"
+format = "  $symbol buf $version"
 symbol = "ﯟ"
 
 [bun]
-format = " $symbol bun $version"
+format = "  $symbol bun $version"
 disabled = false
 symbol = ""
 
@@ -70,7 +73,7 @@ format = " $symbol $branch($remote_branch)"
 [git_state]
 [git_metrics]
 disabled = false
-format = " ([ $added]($added_style)) ([ $deleted]($deleted_style))"
+format = "( ([ $added]($added_style))( [ $deleted]($deleted_style)))"
 
 [git_status]
 style = "f"
@@ -90,13 +93,13 @@ up_to_date = ""
 format = "( $all_status$ahead_behind)"
 
 [golang]
-format = " $symbol go $version"
+format = "  go $version"
 
 [haskell]
 [helm]
 
 [java]
-format = " JVM $version"
+format = "  JVM $version"
 
 [julia]
 [kotlin]
@@ -125,7 +128,7 @@ format = " JVM $version"
 
 [terraform]
 symbol = "﩯"
-format = " TF $version ($workspace)"
+format = "  TF $version ($workspace)"
 
 [vagrant]
 [vlang]
