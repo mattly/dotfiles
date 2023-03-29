@@ -15,35 +15,16 @@ manage most of the config.
 
 ## gitconfig
 
-Before I started using Magit, I got to know the git command line pretty well,
-and got really into creating custom aliases. Here are a few:
+I used to use the git command line a lot. Then I discovered Magit, then was mostly satisfied with the built-in tools in VSCode. There's still a lot of aliases in there, here are the ones I still use:
 
 - **`amend`**: `commit --amend` after an accidental `commit -amend` and
   instead of `--amend` that took an hour to undo, I started this list.
-- **`addp`**: `add --patch`
-- **`axe <term>`**: `log -S<term>` searches your git history for *term*
-- **`cleanup`**: removes all local branches merged into HEAD
-- **`cleanup-remotes`**: removes all remote branches merged into HEAD.
-- **`delete <remotename> <branchname>`**: Deletes *branch* from *remote*
 - **`fold`**:`merge --no-ff` takes some branches and merges them in,
   keeping their full branch and commit history.
 - **`goto <refspec>`**: `reset --hard <refspec>` hard resets to the given
   refspec
-- **`label`**: `tag -a` creates an annotated tag, for versioning or such
-- **`staged`**: `diff --cached` displays the contents of the index
-- **`tag-release`**: Creates an unannotated tag named
-  `release/YYYY/MM/DD/HHMM`.  Preferably, your build tools do this
-  instead.
-- **`track <remote refspec>`**: `checkout -t <remote refspec>` checks out
-  a remote branch as a local branch and sets tracking.
 - **`undo`**: `reset --soft HEAD^` Revert a commit, but leave its contents
   as staged.
-- **`unstage <path>`**: `reset HEAD -- <path>` removes `path` from the
-  index
-- **`update-remotes`**: `remote update --prune` for each remote, fetches
-  and prunes.
-
-
 
 ## Install
 
@@ -53,7 +34,6 @@ and got really into creating custom aliases. Here are a few:
   cloned, the config files symlinked, .emacs.d, and fish as the default shell.
 
   From there, `brew bundle` the desired files in `install/`
-
 
 # Using the Magic Trackpad in Windows
 
