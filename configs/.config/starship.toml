@@ -10,7 +10,7 @@ format = "  took [$duration]($style)"
 
 [directory]
 read_only = ""
-truncation_symbol = " "
+truncation_symbol = "… "
 
 [env_var]
 [fill]
@@ -32,7 +32,7 @@ format = " $symbol SUDO"
 
 # ---
 [aws]
-format= "  $symbol AWS ףּ $profile  $region"
+format= "  $symbol AWS $profile  $region"
 symbol = "🅰"
 # disabled= true
 [aws.region_aliases]
@@ -42,7 +42,7 @@ us-east-1 = "va"
 [battery]
 [buf]
 format = "  $symbol buf $version"
-symbol = "ﯟ"
+symbol = "𝌤"
 
 [bun]
 format = "  $symbol bun $version"
@@ -63,11 +63,12 @@ symbol = ""
 [elixir]
 [elm]
 [erlang]
+[fennel]
 [gcloud]
 
 [git_branch]
 symbol = ""
-format = " $symbol $branch($remote_branch)"
+format = " $symbol $branch( $remote_branch)"
 
 [git_commit]
 [git_state]
@@ -82,12 +83,12 @@ untracked = "  $count"
 conflicted = " $count"
 stashed = "  $count"
 staged = "  $count"
-renamed = " 凜 $count"
-deleted = "  $count"
+renamed = " ↯ $count"
+deleted = " ｘ $count"
 
-ahead = " $count"
-behind = " $count"
-diverged = "李 $ahead $behind"
+ahead = "↑ $count"
+behind = "↓ $count"
+diverged = "↕ ↑$ahead ↓$behind"
 up_to_date = ""
 
 format = "( $all_status$ahead_behind)"
@@ -127,7 +128,7 @@ format = "  JVM $version"
 [swift]
 
 [terraform]
-symbol = "﩯"
+symbol = "𝌤"
 format = "  TF $version ($workspace)"
 
 [vagrant]

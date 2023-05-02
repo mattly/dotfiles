@@ -51,7 +51,6 @@ and set -x GPG_TTY (tty)
 
 # language-specific stuff
 # =========================================================
-
 # --- go
 set -x GOPATH ~/projects/golang
 set -x PATH $GOPATH/bin $PATH
@@ -66,6 +65,11 @@ and set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# rust
+test -e ~/.cargo/bin
+and set -x PATH ~/.cargo/bin $PATH
+
 # =========================================================
 
 if test -n $WSL_DISTRO_NAME
