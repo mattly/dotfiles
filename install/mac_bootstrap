@@ -12,8 +12,8 @@ brew install git
 mkdir $HOME/projects
 git clone git@github.com:mattly/dotfiles $HOME/projects/dotfiles
 ./symlink_configs
-git clone https://github.com/hlissner/doom-emacs .emacs.d
-defaults write org.gnu.Emacs NSAppSleepDisabled bool YES
+#git clone https://github.com/hlissner/doom-emacs .emacs.d
+#defaults write org.gnu.Emacs NSAppSleepDisabled bool YES
 
 brew install fish
 sudo tee -a /etc/shells /usr/local/bin/fish
