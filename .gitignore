@@ -15,4 +15,4 @@ configs/.config/wslu
 configs/.config/yarn/global
 settings/vscode/workspaceStorage/
 settings/vscode/globalStorage/
-configs/.config/iterm2
+settings/vscode/history/

@@ -128,8 +128,9 @@
     "window.commandCenter": false,
     "window.newWindowDimensions": "inherit",
     "window.zoomLevel": 1,
-    "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Bearded Theme Surprising Watermelon",
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {},
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.highlightModifiedTabs": true,
@@ -137,5 +138,15 @@
     "workbench.iconTheme": "bearded-icons",
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": true,
-    "workbench.view.alwaysShowHeaderActions": true
+    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.preferredLightColorTheme": "Nüshu",
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }

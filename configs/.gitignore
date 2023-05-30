@@ -35,10 +35,14 @@ tags
 
 # clojure
 configs/.lein/repl-history
+.clj-kondo/.cache
 
 # direnv
 configs/.config/direnv
 .envrc
+
+# vscode
+.lsp/.cache
 
 # me
 mattly/*
