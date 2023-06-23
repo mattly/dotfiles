@@ -6,10 +6,10 @@ add_newline = true
 [character]
 
 [cmd_duration]
-format = "  took [$duration]($style)"
+format = " > took [$duration]($style)"
 
 [directory]
-read_only = ""
+read_only = "⛔︎"
 truncation_symbol = "… "
 
 [env_var]
@@ -21,19 +21,21 @@ truncation_symbol = "… "
 [memory_usage]
 [shell]
 [shlvl]
+
 [status]
 disabled = false
+
 [sudo]
 disabled = false
-symbol = " "
+symbol = "☢︎ "
 format = " $symbol SUDO"
+
 [time]
 [username]
 
 # ---
 [aws]
-format= "  $symbol AWS $profile  $region"
-symbol = "🅰"
+format= "⎮ AWS $profile $region"
 # disabled= true
 [aws.region_aliases]
 us-east-1 = "va"
@@ -41,13 +43,11 @@ us-east-1 = "va"
 [azure]
 [battery]
 [buf]
-format = "  $symbol buf $version"
-symbol = "𝌤"
+format = "⎮ buf $version"
 
 [bun]
-format = "  $symbol bun $version"
+format = "⎮ bun $version"
 disabled = false
-symbol = ""
 
 [c]
 [cmake]
@@ -67,22 +67,22 @@ symbol = ""
 [gcloud]
 
 [git_branch]
-symbol = ""
-format = " $symbol $branch( $remote_branch)"
+symbol = "⎇"
+format = "$symbol $branch(⇢ $remote_branch) "
 
 [git_commit]
 [git_state]
 [git_metrics]
 disabled = false
-format = "( ([ $added]($added_style))( [ $deleted]($deleted_style)))"
+format = "( ([▲ $added]($added_style))( [▼ $deleted]($deleted_style)))"
 
 [git_status]
 style = "f"
-modified = " $count"
-untracked = "  $count"
-conflicted = " $count"
-stashed = "  $count"
-staged = "  $count"
+modified = " ▲ $count"
+untracked = " ⛔︎ $count"
+conflicted = " ◼︎ $count"
+stashed = " ▽ $count"
+staged = " △ $count"
 renamed = " ↯ $count"
 deleted = " ｘ $count"
 
@@ -94,13 +94,13 @@ up_to_date = ""
 format = "( $all_status$ahead_behind)"
 
 [golang]
-format = "  go $version"
+format = "⎮ go $version"
 
 [haskell]
 [helm]
 
 [java]
-format = "  JVM $version"
+format = "⎮ JVM $version"
 
 [julia]
 [kotlin]
@@ -112,6 +112,10 @@ format = "  JVM $version"
 [nodejs]
 [ocaml]
 [openstack]
+
+[package]
+disabled = true
+
 [perl]
 [php]
 [pulumi]
@@ -128,8 +132,7 @@ format = "  JVM $version"
 [swift]
 
 [terraform]
-symbol = "𝌤"
-format = "  TF $version ($workspace)"
+format = "⎮ TF $version (▶︎$workspace)"
 
 [vagrant]
 [vlang]
