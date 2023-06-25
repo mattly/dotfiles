@@ -7,18 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  // appearances
   "active_pane_magnification": 1.1,
   "theme": "Rosé Pine Dawn",
-  // editor features
   "soft_wrap": "editor_width",
-  // other features
+  "format_on_save": "off",
   "git_status": true,
   "project_panel": {
     "dock": "right",
     "git_status": true
   },
-  // terminal
   "terminal": {
     "font_family": "MonoLisa Nerd Font"
   }

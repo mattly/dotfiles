@@ -127,7 +127,6 @@
   "window.autoDetectHighContrast": false,
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
-  "window.zoomLevel": 1,
   "workbench.colorCustomizations": {},
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Rosé Pine Dawn",
@@ -135,7 +134,7 @@
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.showTabs": true,
-  "workbench.iconTheme": "bearded-icons",
+  "workbench.iconTheme": "rose-pine-icons",
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": true,
   "workbench.view.alwaysShowHeaderActions": true,
@@ -151,5 +150,8 @@
   "workbench.preferredDarkColorTheme": "Rosé Pine Moon",
   "workbench.preferredLightColorTheme": "Rosé Pine Dawn",
   "window.autoDetectColorScheme": true,
-  "git-graph.maxDepthOfRepoSearch": 1
+  "git-graph.maxDepthOfRepoSearch": 1,
+  "window.zoomLevel": 1,
+  "editor.accessibilitySupport": "off",
+  "calva.keybindingsEnabled": true
 }

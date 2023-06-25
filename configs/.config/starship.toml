@@ -9,7 +9,7 @@ add_newline = true
 format = " > took [$duration]($style)"
 
 [directory]
-read_only = "⛔︎"
+read_only = "⍉"
 truncation_symbol = "… "
 
 [env_var]
@@ -27,28 +27,20 @@ disabled = false
 
 [sudo]
 disabled = false
-symbol = "☢︎ "
-format = " $symbol SUDO"
+symbol = "⌘ "
+format = "$symbol SUDO"
 
 [time]
 [username]
 
 # ---
 [aws]
-format= "⎮ AWS $profile $region"
-# disabled= true
-[aws.region_aliases]
-us-east-1 = "va"
+disabled= true
 
 [azure]
 [battery]
 [buf]
-format = "⎮ buf $version"
-
 [bun]
-format = "⎮ bun $version"
-disabled = false
-
 [c]
 [cmake]
 [cobol]
@@ -79,7 +71,7 @@ format = "( ([▲ $added]($added_style))( [▼ $deleted]($deleted_style)))"
 [git_status]
 style = "f"
 modified = " ▲ $count"
-untracked = " ⛔︎ $count"
+untracked = " ▿ $count"
 conflicted = " ◼︎ $count"
 stashed = " ▽ $count"
 staged = " △ $count"
@@ -94,13 +86,13 @@ up_to_date = ""
 format = "( $all_status$ahead_behind)"
 
 [golang]
-format = "⎮ go $version"
+disabled= true
 
 [haskell]
 [helm]
 
 [java]
-format = "⎮ JVM $version"
+disabled = true
 
 [julia]
 [kotlin]
@@ -109,7 +101,10 @@ format = "⎮ JVM $version"
 [hg_branch]
 [nim]
 [nix_shell]
+
 [nodejs]
+disabled = true
+
 [ocaml]
 [openstack]
 
@@ -120,7 +115,10 @@ disabled = true
 [php]
 [pulumi]
 [purescript]
+
 [python]
+disabled = true
+
 [rlang]
 [raku]
 [red]
@@ -132,7 +130,7 @@ disabled = true
 [swift]
 
 [terraform]
-format = "⎮ TF $version (▶︎$workspace)"
+disabled = true
 
 [vagrant]
 [vlang]
