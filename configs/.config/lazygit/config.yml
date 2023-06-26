@@ -1,6 +1,6 @@
 gui:
   theme:
     selectedLineBgColor:
-      - white
+      - default
+      - reverse
   showBottomLine: false
-  # border: hidden
