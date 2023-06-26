@@ -13,10 +13,10 @@
   "format_on_save": "off",
   "git_status": true,
   "project_panel": {
-    "dock": "right",
+    "dock": "left",
     "git_status": true
   },
   "terminal": {
-    "font_family": "MonoLisa Nerd Font"
+    "line_height": "standard"
   }
 }
