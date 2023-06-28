@@ -151,7 +151,7 @@
   "workbench.preferredLightColorTheme": "Rosé Pine Dawn",
   "window.autoDetectColorScheme": true,
   "git-graph.maxDepthOfRepoSearch": 1,
-  "window.zoomLevel": 1,
   "editor.accessibilitySupport": "off",
-  "calva.keybindingsEnabled": true
+  "calva.keybindingsEnabled": true,
+  "window.zoomLevel": 0.8
 }
