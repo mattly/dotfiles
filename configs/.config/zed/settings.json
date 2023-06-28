@@ -7,16 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "active_pane_magnification": 1.1,
   "theme": "Rosé Pine Dawn",
   "soft_wrap": "editor_width",
-  "format_on_save": "off",
   "git_status": true,
+  "language_overrides": {
+    "C": {
+      "format_on_save": "off"
+    }
+  },
   "project_panel": {
     "dock": "left",
     "git_status": true
   },
   "terminal": {
-    "line_height": "standard"
+    "line_height": "standard",
+    "option_as_meta": true
   }
 }
