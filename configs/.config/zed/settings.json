@@ -8,6 +8,11 @@
 // from the command palette or from `Zed` application menu.
 {
   "theme": "Rosé Pine Dawn",
+  "buffer_font_size": 15,
+  "buffer_font_features": {
+    "liga": false,
+    "calt": false,
+  },
   "soft_wrap": "editor_width",
   "git_status": true,
   "language_overrides": {
