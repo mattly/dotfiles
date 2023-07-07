@@ -4,3 +4,12 @@ gui:
       - default
       - reverse
   showBottomLine: false
+  border: rounded
+
+git:
+  log:
+    showGraph: 'always'
+  paging:
+    colorArg: always
+    pager: diff-so-fancy
+  branchLogCmd: "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
