@@ -3,8 +3,8 @@ gui:
     selectedLineBgColor:
       - default
       - reverse
-  showBottomLine: false
   border: rounded
+  showBottomLine: false
 
 git:
   log:
@@ -12,4 +12,16 @@ git:
   paging:
     colorArg: always
     pager: diff-so-fancy
-  branchLogCmd: "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  branchLogCmd: git log --all --decorate --oneline --graph
+
+customCommands:
+  - key: 'G'
+    command: "git reset --hard {{.Form.Ref}}"
+    context: localBranches
+    prompts:
+      - type: 'menuFromCommand'
+        title: "Branch:"
+        key: 'Ref'
+        command: 'git branch -a --format="%(refname)"'
+        filter: 'refs/(heads|remotes)/(.*)'
+        valueFormat: '{{ .group_2 }}'

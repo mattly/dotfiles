@@ -38,44 +38,26 @@
 [alias]
   # amend to the last commit
   amend = commit --amend -C HEAD
+
   # show all branches, even across remotes
   branches = branch -a --color -v
-  # remove all local branches included in the current branch
-  cleanup = !sh -c 'git branch --merged | grep -E "^[^*]" --exclude "^\\s*master" | xargs -n1 git branch -d'
-  # removes remote branches that have been merged into HEAD
-  cleanup-remotes = !"f() { git branch -r --merged | cut -d \\  -f 3 | while read branch; do test `git rev-parse $branch` == `git rev-parse HEAD` && echo \"skipping branch $branch\" || (echo \"deleting branch $branch\" && echo $branch | sed 's/\\//\\ :/' | xargs -t git push ); done }; f"
+
   # shallow clone a repository, because we don't care about history
   clone-shallow = clone --depth 1
-  # delete a remote branch
-  delete = !sh -c 'git push "$0" :refs/heads/"$1"'
+  shallow-clone = clone --depth 1
+
   # merge the branch, keeping its commits in their own branch
   fold = merge --no-ff
+
   # put this branch at a particular ref
   goto = reset --hard
-  # set a tag
-  label = tag -a
-  # mirror branches (including deletions) and tags
-  mirror = push --mirror
-  # show commits that haven't been pushed to the remote yet
-  pending = !sh -c 'git --no-pager log "$0"/HEAD..HEAD && echo'
-  # pop all stashes
-  poop = !sh -c 'while [ "$?" -eq 0 ]; do git stash pop; done'
-  # creates a remote branch
-  push-remote = !sh -c 'git push "$0" HEAD'
+
   # diff the index against the previous commit
   staged = diff --cached
+
   # better status
   stat = status -sb
-  # update all submodules
-  submodule-pull = submodule foreach "git checkout master && git pull origin master"
-  # track a remote branch
-  track = checkout -t
-  # retains a commit as staged
-  undo = reset --soft HEAD^
-  # remove a file from the index
-  unstage = reset HEAD --
-  # pull changes, show commits since last pull/push
-  up = !sh -c 'git pull "$0" HEAD && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+
   # update all remotes, pruning removed tracking branches
   update-remotes = remote update --prune
 
@@ -111,3 +93,5 @@
 
 [url "ssh://git@github.com"]
   insteadOf = https://github.com
+[init]
+	defaultBranch = main
