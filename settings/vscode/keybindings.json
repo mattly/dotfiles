@@ -491,7 +491,7 @@
         "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure'"
     },
     {
-        "key": "ctrl+cmd+k",
+        "key": "ctrl+shift+k",
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     },
