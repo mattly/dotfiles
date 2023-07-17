@@ -29,9 +29,6 @@ test -e {$HOME}/.iterm2_shell_integration.fish
 test -e {$HOME}/.local.fish
     and source {$HOME}/.local.fish
 
-test (which most)
-    and set -x PAGER most
-
 # prefer zed, fall back to vscode
 test (which code)
     and set -x EDITOR code
