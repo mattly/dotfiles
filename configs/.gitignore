@@ -4,34 +4,12 @@
 # Linux
 *~
 
-# Vim
-.viminfo
-*.un~
-
-# Textmate
-*.tmproj
-
 # Logging
 *.log
 configs/.config/pgcli/log
 
-# Subversion
-.svn
-
 # ctags
 tags
-
-# ruby
-# *.gem
-
-# rails
-.sass-cache
-/log/*
-/tmp/*
-
-# scala
-.ensime
-.ensime_cache/*
 
 # clojure
 configs/.lein/repl-history
@@ -41,8 +19,9 @@ configs/.lein/repl-history
 configs/.config/direnv
 .envrc
 
-# vscode
+# editor
 .lsp/.cache
 
 # me
 mattly/*
+*.local
