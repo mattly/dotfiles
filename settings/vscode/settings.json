@@ -72,7 +72,6 @@
   "files.exclude": {
     "**/.trunk/*out": true
   },
-  "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
     "**/.trunk/*out": true
   },
@@ -113,7 +112,6 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.drawBoldTextInBrightColors": false,
-  "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontWeightBold": "normal",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.profiles.osx": {
@@ -129,12 +127,12 @@
   "window.newWindowDimensions": "inherit",
   "workbench.colorCustomizations": {},
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Rosé Pine Dawn",
+  "workbench.colorTheme": "Atelier_EstuaryLight",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.showTabs": true,
-  "workbench.iconTheme": "rose-pine-icons",
+  "workbench.iconTheme": null,
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": true,
   "workbench.view.alwaysShowHeaderActions": true,
@@ -153,5 +151,8 @@
   "git-graph.maxDepthOfRepoSearch": 1,
   "editor.accessibilitySupport": "off",
   "calva.keybindingsEnabled": true,
-  "window.zoomLevel": 0.8
+  "window.zoomLevel": 0.8,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.customGlyphs": false,
+  "javascript.format.semicolons": "remove"
 }
