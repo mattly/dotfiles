@@ -11,6 +11,7 @@ configs/.config/pgcli/history
 configs/.config/ranger/bookmarks
 configs/.config/ranger/history
 configs/.config/ranger/tagged
+configs/.config/raycast/extensions/*
 configs/.config/rest-client
 configs/.config/wslu
 configs/.config/yarn/global
