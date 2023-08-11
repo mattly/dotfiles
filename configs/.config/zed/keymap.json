@@ -3,5 +3,13 @@
     "bindings": {
       "ctrl-alt-cmd-j": "workspace::ToggleBottomDock"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-cmd-r": "editor::Rename",
+      "ctrl-alt-cmd-d": "editor::GoToDefinitionSplit",
+      "ctrl-alt-cmd-t": "editor::GoToTypeDefinitionSplit"
+    }
   }
 ]
