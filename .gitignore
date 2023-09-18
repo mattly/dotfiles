@@ -15,6 +15,7 @@ configs/.config/raycast/extensions/*
 configs/.config/rest-client
 configs/.config/wslu
 configs/.config/yarn/global
+configs/.config/zed/conversations
 settings/vscode/workspaceStorage/
 settings/vscode/globalStorage/
 settings/vscode/history/

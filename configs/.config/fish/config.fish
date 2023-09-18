@@ -69,6 +69,10 @@ test (which brew)
 test (which gpg)
     and set -x GPG_TTY (tty)
 
+test (which asdf) -a -e /opt/homebrew/opt/asdf/libexec
+    and source /opt/homebrew/opt/asdf/libexec/asdf.fish
+
+
 # language-specific stuff
 # =========================================================
 
