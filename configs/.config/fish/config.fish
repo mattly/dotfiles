@@ -72,6 +72,9 @@ test (which gpg)
 test (which asdf) -a -e /opt/homebrew/opt/asdf/libexec
     and source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
+#test (which asdf-plugin-manager)
+#    and set -x ASDF_PLUGIN_MANAGER_PLUGIN_VERSIONS_FILENAME ~/.config/asdf/plugin-versions
+
 
 # language-specific stuff
 # =========================================================
@@ -93,15 +96,14 @@ test -e /usr/local/opt/ruby/bin
 test -e /usr/local/lib/ruby/gems/2.6.0/bin
     and set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
 
+if test (which pyenv)
+    pyenv init - | source
+end
 
 # --- rust
 test -e ~/.cargo/bin
     and set -x PATH ~/.cargo/bin $PATH
 
 # =========================================================
-
-if test -n $WSL_DISTRO_NAME
-  set -x XDG_CONFIG_HOME {$HOME}/.config
-end
 
 eval (starship init fish)

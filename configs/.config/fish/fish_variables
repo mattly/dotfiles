@@ -1,9 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export PYENV_ROOT:/Users/mattly/\x2epyenv
 SETUVAR __fish_initialized:3400
+SETUVAR _fisher_daenney_2F_pyenv_files:\x7e/\x2econfig/fish/functions/pyenv\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/pyenv\x2efish\x1e\x7e/\x2econfig/fish/completions/pyenv\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish\x1eusami\x2dk/fish\x2ddirenv\x1erose\x2dpine/fish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eusami\x2dk/fish\x2ddirenv\x1erose\x2dpine/fish\x1edaenney/pyenv
 SETUVAR _fisher_rose_2D_pine_2F_fish_files:\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x20Dawn\x2etheme\x1e\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x20Moon\x2etheme\x1e\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x2etheme
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _fisher_usami_2D_k_2F_fish_2D_direnv_files:\x7e/\x2econfig/fish/conf\x2ed/direnv\x2efish
