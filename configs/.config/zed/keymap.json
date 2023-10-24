@@ -9,7 +9,10 @@
     "bindings": {
       "ctrl-alt-cmd-r": "editor::Rename",
       "ctrl-alt-cmd-d": "editor::GoToDefinitionSplit",
-      "ctrl-alt-cmd-t": "editor::GoToTypeDefinitionSplit"
+      "ctrl-alt-cmd-t": "editor::GoToTypeDefinitionSplit",
+      "ctrl-alt-cmd-p": "projects::OpenRecent",
+      "alt-cmd-up": "editor::MoveLineUp",
+      "alt-cmd-down": "editor::MoveLineDown"
     }
   }
 ]

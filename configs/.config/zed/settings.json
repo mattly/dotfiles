@@ -7,17 +7,16 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Rosé Pine Dawn",
+  "theme": "Summercamp",
   "buffer_font_size": 16,
   "buffer_font_features": {
     "liga": false,
     "calt": false
   },
   "buffer_line_height": "comfortable",
-  "soft_wrap": "editor_width",
-  "git_status": true,
-  "tabs": {
-    "git_status": true
+  "formatter": "language_server",
+  "git": {
+    "git_gutter": "tracked_files"
   },
   "language_overrides": {
     "C": {
@@ -26,6 +25,10 @@
   },
   "project_panel": {
     "dock": "left",
+    "git_status": true
+  },
+  "soft_wrap": "editor_width",
+  "tabs": {
     "git_status": true
   },
   "terminal": {
