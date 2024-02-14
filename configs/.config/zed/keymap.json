@@ -1,7 +1,8 @@
 [
   {
     "bindings": {
-      "ctrl-alt-cmd-j": "workspace::ToggleBottomDock"
+      "ctrl-alt-cmd-j": "workspace::ToggleBottomDock",
+      "ctrl-alt-cmd-w": "workspace::CloseWindow"
     }
   },
   {
@@ -11,8 +12,8 @@
       "ctrl-alt-cmd-d": "editor::GoToDefinitionSplit",
       "ctrl-alt-cmd-t": "editor::GoToTypeDefinitionSplit",
       "ctrl-alt-cmd-p": "projects::OpenRecent",
-      "alt-cmd-up": "editor::MoveLineUp",
-      "alt-cmd-down": "editor::MoveLineDown"
+      "alt-up": "editor::MoveLineUp",
+      "alt-down": "editor::MoveLineDown"
     }
   }
 ]

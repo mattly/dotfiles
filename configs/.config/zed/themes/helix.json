@@ -1,0 +1,194 @@
+{
+  "$schema": "https://zed.dev/schema/themes/v0.1.0.json",
+  "name": "Helix Theme",
+  "author": "Mauricio Coelho",
+  "themes": [
+    {
+      "name": "Helix Dark Theme",
+      "appearance": "dark",
+      "style": {
+        "border": null,
+        "border.variant": null,
+        "border.focused": null,
+        "border.selected": null,
+        "border.transparent": null,
+        "border.disabled": null,
+        "elevated_surface.background": "#281733",
+        "background": "#3B224C",
+        "editor.background": "#3B224C",
+        "editor.foreground": null,
+        "editor.gutter.background": "#3B224C",
+        "editor.subheader.background": null,
+        "editor.active_line.background": "#281733",
+        "editor.highlighted_line.background": null,
+        "editor.active_line_number": null,
+        "editor.invisible": null,
+        "editor.wrap_guide": null,
+        "editor.active_wrap_guide": null,
+        "editor.document_highlight.read_background": null,
+        "editor.document_highlight.write_background": null,
+        "status_bar.background": "#281733",
+        "title_bar.background": "#281733",
+        "toolbar.background": "#281733",
+        "tab_bar.background": "#281733",
+        "tab.active_background": "#281733",
+        "panel.background": "#281733",
+        "terminal.background": "#281733",
+        "syntax": {
+          "attribute": {
+            "color": "#9FF28F",
+            "font_style": null,
+            "font_weight": null
+          },
+          "boolean": {
+            "color": "#FFFFFF",
+            "font_style": null,
+            "font_weight": null
+          },
+          "comment": {
+            "color": "#697C81",
+            "font_style": null,
+            "font_weight": null
+          },
+          "comment.doc": {
+            "color": "#697C81",
+            "font_style": null,
+            "font_weight": null
+          },
+          "constant": {
+            "color": "#DBBFEF",
+            "font_style": null,
+            "font_weight": null
+          },
+          "constructor": {
+            "color": "#ECCDBA",
+            "font_style": null,
+            "font_weight": null
+          },
+          "function": {
+            "color": "#FFFFFF",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword": {
+            "color": "#ECCDBA",
+            "font_style": null,
+            "font_weight": null
+          },
+          "number": {
+            "color": "#E8DCA0",
+            "font_style": null,
+            "font_weight": null
+          },
+          "operator": {
+            "color": "#ECCDBA",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.bracket": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.delimiter": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.list_marker": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.special": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.escape": {
+            "color": "#FFFFFF",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.regex": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special.symbol": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "tag": {
+            "color": "#ECCDBA",
+            "font_style": null,
+            "font_weight": null
+          },
+          "text.literal": {
+            "color": "#CCCCCC",
+            "font_style": null,
+            "font_weight": null
+          },
+          "type": {
+            "color": "#D9BDED",
+            "font_style": null,
+            "font_weight": null
+          },
+          "variable": {
+            "color": "#A4A0E8",
+            "font_style": null,
+            "font_weight": null
+          },
+          "variable.special": {
+            "color": "#A4A0E8",
+            "font_style": null,
+            "font_weight": null
+          }
+        },
+        "terminal.foreground": null,
+        "terminal.bright_foreground": null,
+        "terminal.dim_foreground": null,
+        "terminal.ansi.black": "#333333",
+        "terminal.ansi.bright_black": "#666666",
+        "terminal.ansi.dim_black": null,
+        "terminal.ansi.red": "#C4265E",
+        "terminal.ansi.bright_red": "#f92672",
+        "terminal.ansi.dim_red": null,
+        "terminal.ansi.green": "#86B42B",
+        "terminal.ansi.bright_green": "#9FF28F",
+        "terminal.ansi.dim_green": null,
+        "terminal.ansi.yellow": "#B3B42B",
+        "terminal.ansi.bright_yellow": "#e2e22e",
+        "terminal.ansi.dim_yellow": null,
+        "terminal.ansi.blue": "#6A7EC8",
+        "terminal.ansi.bright_blue": "#819aff",
+        "terminal.ansi.dim_blue": null,
+        "terminal.ansi.magenta": "#8C6BC8",
+        "terminal.ansi.bright_magenta": "#AE81FF",
+        "terminal.ansi.dim_magenta": null,
+        "terminal.ansi.cyan": "#56ADBC",
+        "terminal.ansi.bright_cyan": "#66D9EF",
+        "terminal.ansi.dim_cyan": null,
+        "terminal.ansi.white": "#e3e3dd",
+        "terminal.ansi.bright_white": "#f8f8f2",
+        "terminal.ansi.dim_white": null
+      }
+    }
+  ]
+}
