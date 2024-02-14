@@ -16,6 +16,8 @@ configs/.config/rest-client
 configs/.config/wslu
 configs/.config/yarn/global
 configs/.config/zed/conversations
+configs/.config/zed/.tmp*
+configs/.config/zed/embeddings
 settings/vscode/workspaceStorage/
 settings/vscode/globalStorage/
 settings/vscode/history/
