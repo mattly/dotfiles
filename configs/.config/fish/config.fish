@@ -85,6 +85,11 @@ if test (which bun)
     set --export PATH $BUN_INSTALL/bin $PATH
 end
 
+# --- dotnet
+if test (which dotnet)
+    set --export PATH "$HOME/.dotnet/tools" $PATH
+end
+
 # --- go
 set -x GOPATH ~/projects/golang
 set -x PATH $GOPATH/bin $PATH
