@@ -7,7 +7,7 @@
   },
   "[javascript]": {
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": "explicit"
     },
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -38,7 +38,6 @@
     "width": 120
   },
   "calva.statusColor": {},
-  "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.bracketPairColorization.enabled": true,
@@ -46,9 +45,9 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
   "editor.find.autoFindInSelection": "multiline",
-  "editor.fontFamily": "'MonoLisa Nerd Font', 'Dank Mono', 'MesloLGL Nerd Font',  Menlo, monospace",
-  "editor.fontLigatures": false,
-  "editor.fontSize": 13,
+  "editor.fontFamily": "'Monaspace Neon Var'",
+  "editor.fontLigatures": "'calt'",
+  "editor.fontSize": 14,
   "editor.fontWeight": "400",
   "editor.formatOnType": true,
   "editor.guides.bracketPairs": true,
@@ -126,12 +125,11 @@
   "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
   "workbench.colorCustomizations": {},
-  "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Atelier_EstuaryLight",
+  "workbench.colorTheme": "Rosé Pine Moon",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
   "workbench.iconTheme": null,
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": true,
@@ -152,7 +150,14 @@
   "editor.accessibilitySupport": "off",
   "calva.keybindingsEnabled": true,
   "window.zoomLevel": 0.8,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.customGlyphs": false,
-  "javascript.format.semicolons": "remove"
+  "javascript.format.semicolons": "remove",
+  "terminal.integrated.lineHeight": 1.2,
+  "editor.letterSpacing": 1,
+  "terminal.integrated.letterSpacing": 1,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
+  "javascript.suggest.enabled": false,
+  "typescript.suggest.enabled": false
 }
