@@ -94,16 +94,17 @@ end
 set -x GOPATH ~/projects/golang
 set -x PATH $GOPATH/bin $PATH
 
+# --- python
+if test (which pyenv)
+    pyenv init - | source
+end
+
 # --- ruby
 test -e /usr/local/opt/ruby/bin
     and set -x PATH /usr/local/opt/ruby/bin $PATH
 
 test -e /usr/local/lib/ruby/gems/2.6.0/bin
     and set -x PATH /usr/local/lib/ruby/gems/2.6.0/bin $PATH
-
-if test (which pyenv)
-    pyenv init - | source
-end
 
 # --- rust
 test -e ~/.cargo/bin
