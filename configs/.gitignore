@@ -6,22 +6,12 @@
 
 # Logging
 *.log
-configs/.config/pgcli/log
-
-# ctags
-tags
-
-# clojure
-configs/.lein/repl-history
-.clj-kondo/.cache
 
 # direnv
-configs/.config/direnv
 .envrc
 
 # editor
 .lsp/.cache
 
 # me
-mattly/*
-*.local
+mattly.local/*
